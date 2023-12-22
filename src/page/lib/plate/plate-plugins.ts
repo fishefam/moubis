@@ -22,6 +22,7 @@ import {
   createLinkPlugin,
   createListPlugin,
   createMediaEmbedPlugin,
+  createNodeIdPlugin,
   createParagraphPlugin,
   createPlugins,
   createSoftBreakPlugin,
@@ -101,27 +102,37 @@ import { autoformatPlugin } from './autoformatPlugin'
 
 export const plugins = createPlugins(
   [
-    createHeadingPlugin(),
+    createAutoformatPlugin(autoformatPlugin),
+    createBlockquotePlugin(),
     createBoldPlugin(),
-    createItalicPlugin(),
-    createUnderlinePlugin(),
-    createStrikethroughPlugin(),
+    createCodeBlockPlugin(),
     createCodePlugin(),
+    createComboboxPlugin(),
+    createDeletePlugin(),
+    createFontBackgroundColorPlugin(),
+    createFontColorPlugin(),
+    createFontSizePlugin(),
+    createHeadingPlugin(),
+    createHighlightPlugin(),
+    createHorizontalRulePlugin(),
+    createImagePlugin(),
+    createItalicPlugin(),
+    createKbdPlugin(),
+    createListPlugin(),
+    createMediaEmbedPlugin(),
+    createNodeIdPlugin(),
+    createParagraphPlugin(),
+    createStrikethroughPlugin(),
     createSubscriptPlugin(),
     createSuperscriptPlugin(),
-    createFontColorPlugin(),
-    createFontBackgroundColorPlugin(),
-    createFontSizePlugin(),
-    createHighlightPlugin(),
-    createParagraphPlugin(),
-    createBlockquotePlugin(),
-    createHorizontalRulePlugin(),
-    createListPlugin(),
-    createCodeBlockPlugin(),
-    createLinkPlugin({
-      renderAfterEditable: LinkFloatingToolbar as RenderAfterEditable,
+    createTablePlugin(),
+    createTodoListPlugin(),
+    createUnderlinePlugin(),
+    createTrailingBlockPlugin({ options: { type: ELEMENT_PARAGRAPH } }),
+    createLinkPlugin({ renderAfterEditable: LinkFloatingToolbar as RenderAfterEditable }),
+    createEmojiPlugin({
+      /* renderAfterEditable: EmojiCombobox, */
     }),
-    createImagePlugin(),
     createAlignPlugin({
       inject: {
         props: {
@@ -144,12 +155,6 @@ export const plugins = createPlugins(
           validTypes: [ELEMENT_PARAGRAPH, ELEMENT_H1, ELEMENT_H2, ELEMENT_H3],
         },
       },
-    }),
-    createTodoListPlugin(),
-    createKbdPlugin(),
-    createComboboxPlugin(),
-    createEmojiPlugin({
-      // renderAfterEditable: EmojiCombobox,
     }),
     createExitBreakPlugin({
       options: {
@@ -174,7 +179,6 @@ export const plugins = createPlugins(
         ],
       },
     }),
-    createDeletePlugin(),
     createSoftBreakPlugin({
       options: {
         rules: [
@@ -188,12 +192,6 @@ export const plugins = createPlugins(
         ],
       },
     }),
-    createTrailingBlockPlugin({
-      options: { type: ELEMENT_PARAGRAPH },
-    }),
-    createAutoformatPlugin(autoformatPlugin),
-    createTablePlugin(),
-    createMediaEmbedPlugin(),
   ],
   {
     components: withDraggables(
