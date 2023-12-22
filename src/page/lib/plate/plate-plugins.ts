@@ -1,23 +1,36 @@
 import {
+  createAlignPlugin,
+  createAutoformatPlugin,
   createBlockquotePlugin,
   createBoldPlugin,
+  createCodeBlockPlugin,
   createCodePlugin,
   createComboboxPlugin,
+  createDeletePlugin,
+  createExitBreakPlugin,
   createFontBackgroundColorPlugin,
   createFontColorPlugin,
   createFontSizePlugin,
   createHeadingPlugin,
   createHighlightPlugin,
   createHorizontalRulePlugin,
+  createImagePlugin,
+  createIndentPlugin,
   createItalicPlugin,
   createKbdPlugin,
+  createLineHeightPlugin,
+  createLinkPlugin,
   createListPlugin,
+  createMediaEmbedPlugin,
   createParagraphPlugin,
   createPlugins,
+  createSoftBreakPlugin,
   createStrikethroughPlugin,
   createSubscriptPlugin,
   createSuperscriptPlugin,
+  createTablePlugin,
   createTodoListPlugin,
+  createTrailingBlockPlugin,
   createUnderlinePlugin,
   ELEMENT_BLOCKQUOTE,
   ELEMENT_CODE_BLOCK,
@@ -42,6 +55,7 @@ import {
   ELEMENT_TODO_LI,
   ELEMENT_TR,
   ELEMENT_UL,
+  KEYS_HEADING,
   MARK_BOLD,
   MARK_CODE,
   MARK_HIGHLIGHT,
@@ -53,8 +67,10 @@ import {
   MARK_UNDERLINE,
   PlateElement,
   PlateLeaf,
+  RenderAfterEditable,
   withProps,
 } from '@udecode/plate'
+import { createEmojiPlugin } from '@udecode/plate-emoji'
 
 import {
   BlockquoteElement,
@@ -68,6 +84,7 @@ import {
   ImageElement,
   KbdLeaf,
   LinkElement,
+  LinkFloatingToolbar,
   ListElement,
   MediaEmbedElement,
   ParagraphElement,
@@ -77,6 +94,8 @@ import {
   TableRowElement,
   TodoListElement,
 } from '@/components/plate-ui'
+
+import { autoformatPlugin } from './autoformatPlugin'
 
 export const plugins = createPlugins(
   [
@@ -96,85 +115,83 @@ export const plugins = createPlugins(
     createBlockquotePlugin(),
     createHorizontalRulePlugin(),
     createListPlugin(),
-    // createLinkPlugin({
-    //   renderAfterEditable: LinkFloatingToolbar as RenderAfterEditable,
-    // }),
-    // createImagePlugin(),
-    // createMediaEmbedPlugin(),
-    // createAlignPlugin({
-    //   inject: {
-    //     props: {
-    //       validTypes: [ELEMENT_PARAGRAPH, ELEMENT_H1, ELEMENT_H2, ELEMENT_H3],
-    //     },
-    //   },
-    // }),
-    // createIndentPlugin({
-    //   inject: {
-    //     props: {
-    //       validTypes: [ELEMENT_PARAGRAPH, ELEMENT_H1, ELEMENT_H2, ELEMENT_H3, ELEMENT_BLOCKQUOTE, ELEMENT_CODE_BLOCK],
-    //     },
-    //   },
-    // }),
-    // createLineHeightPlugin({
-    //   inject: {
-    //     props: {
-    //       defaultNodeValue: 1.5,
-    //       validNodeValues: [1, 1.2, 1.5, 2, 3],
-    //       validTypes: [ELEMENT_PARAGRAPH, ELEMENT_H1, ELEMENT_H2, ELEMENT_H3],
-    //     },
-    //   },
-    // }),
-    // createCodeBlockPlugin(),
-    // createTodoListPlugin(),
-
+    createCodeBlockPlugin(),
+    createLinkPlugin({
+      renderAfterEditable: LinkFloatingToolbar as RenderAfterEditable,
+    }),
+    createImagePlugin(),
+    createAlignPlugin({
+      inject: {
+        props: {
+          validTypes: [ELEMENT_PARAGRAPH, ELEMENT_H1, ELEMENT_H2, ELEMENT_H3],
+        },
+      },
+    }),
+    createIndentPlugin({
+      inject: {
+        props: {
+          validTypes: [ELEMENT_PARAGRAPH, ELEMENT_H1, ELEMENT_H2, ELEMENT_H3, ELEMENT_BLOCKQUOTE, ELEMENT_CODE_BLOCK],
+        },
+      },
+    }),
+    createLineHeightPlugin({
+      inject: {
+        props: {
+          defaultNodeValue: 1.5,
+          validNodeValues: [1, 1.2, 1.5, 2, 3],
+          validTypes: [ELEMENT_PARAGRAPH, ELEMENT_H1, ELEMENT_H2, ELEMENT_H3],
+        },
+      },
+    }),
     createTodoListPlugin(),
     createKbdPlugin(),
     createComboboxPlugin(),
-    // createEmojiPlugin({
-    //   renderAfterEditable: EmojiCombobox,
-    // }),
-    // createExitBreakPlugin({
-    //   options: {
-    //     rules: [
-    //       {
-    //         hotkey: 'mod+enter',
-    //       },
-    //       {
-    //         before: true,
-    //         hotkey: 'mod+shift+enter',
-    //       },
-    //       {
-    //         hotkey: 'enter',
-    //         level: 1,
-    //         query: {
-    //           allow: KEYS_HEADING,
-    //           end: true,
-    //           start: true,
-    //         },
-    //         relative: true,
-    //       },
-    //     ],
-    //   },
-    // }),
-    // createDeletePlugin(),
-    // createSoftBreakPlugin({
-    //   options: {
-    //     rules: [
-    //       { hotkey: 'shift+enter' },
-    //       {
-    //         hotkey: 'enter',
-    //         query: {
-    //           allow: [ELEMENT_CODE_BLOCK, ELEMENT_BLOCKQUOTE, ELEMENT_TD],
-    //         },
-    //       },
-    //     ],
-    //   },
-    // }),
-    // createTrailingBlockPlugin({
-    //   options: { type: ELEMENT_PARAGRAPH },
-    // }),
-    // createAutoformatPlugin(autoformatPlugin),
-    // createTablePlugin(),
+    createEmojiPlugin({
+      // renderAfterEditable: EmojiCombobox,
+    }),
+    createExitBreakPlugin({
+      options: {
+        rules: [
+          {
+            hotkey: 'mod+enter',
+          },
+          {
+            before: true,
+            hotkey: 'mod+shift+enter',
+          },
+          {
+            hotkey: 'enter',
+            level: 1,
+            query: {
+              allow: KEYS_HEADING,
+              end: true,
+              start: true,
+            },
+            relative: true,
+          },
+        ],
+      },
+    }),
+    createDeletePlugin(),
+    createSoftBreakPlugin({
+      options: {
+        rules: [
+          { hotkey: 'shift+enter' },
+          {
+            hotkey: 'enter',
+            query: {
+              allow: [ELEMENT_CODE_BLOCK, ELEMENT_BLOCKQUOTE, ELEMENT_TD],
+            },
+          },
+        ],
+      },
+    }),
+    createTrailingBlockPlugin({
+      options: { type: ELEMENT_PARAGRAPH },
+    }),
+    createAutoformatPlugin(autoformatPlugin),
+    createTablePlugin(),
+    createMediaEmbedPlugin(),
   ],
   {
     components: {
