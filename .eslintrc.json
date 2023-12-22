@@ -20,7 +20,6 @@
   "plugins": ["@typescript-eslint", "react", "sort-keys-fix", "simple-import-sort", "unused-imports"],
   "rules": {
     "react/prop-types": "off",
-    "indent": ["warn", 2],
     "linebreak-style": ["warn", "unix"],
     "quotes": ["warn", "single", { "avoidEscape": true }],
     "semi": ["warn", "never"],
