@@ -3,7 +3,9 @@ import PlateEditor from './components/plate-editor'
 export default function App() {
   return (
     <>
-      <PlateEditor />
+      <div className='p-10'>
+        <PlateEditor />
+      </div>
     </>
   )
 }

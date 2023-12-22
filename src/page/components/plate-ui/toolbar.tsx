@@ -4,17 +4,8 @@ import * as ToolbarPrimitive from '@radix-ui/react-toolbar'
 import { Tooltip, TooltipContent, TooltipPortal, TooltipTrigger } from '@radix-ui/react-tooltip'
 import type { VariantProps } from 'class-variance-authority'
 import { cva } from 'class-variance-authority'
-import type {
-  ComponentPropsWithoutRef,
-  ElementRef,
-  HTMLAttributes,
-  ReactNode} from 'react'
-import {
-  Children,
-  forwardRef,
-  useEffect,
-  useState,
-} from 'react'
+import type { ComponentPropsWithoutRef, ElementRef, HTMLAttributes, ReactNode } from 'react'
+import { Children, forwardRef, useEffect, useState } from 'react'
 
 import { cn } from '@/lib/utils'
 
@@ -26,8 +17,7 @@ const toolbarVariants = cva('relative flex select-none items-stretch gap-1 bg-ba
 
 export const linkVariants = cva('font-medium underline underline-offset-4')
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const ToolbarToggleGroup = ToolbarPrimitive.ToggleGroup as any
+const ToolbarToggleGroup = ToolbarPrimitive.ToggleGroup
 
 export type ToolbarProps = object & ComponentPropsWithoutRef<typeof Toolbar>
 
