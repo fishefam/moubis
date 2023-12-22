@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "baseUrl": "src",
+    "alwaysStrict": true,
+    "jsx": "react-jsx",
+    "strict": true,
+    "noEmit": true,
+    "typeRoots": ["node_modules/@types", "node_modules/web-ext-types"],
+    "paths": {
+      "@/*": ["page/*"]
+    }
+  },
+  "exclude": ["node_modules", "dist"]
+}
