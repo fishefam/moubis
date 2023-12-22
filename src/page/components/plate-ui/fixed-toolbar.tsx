@@ -2,7 +2,8 @@ import { forwardRef } from 'react'
 
 import { cn } from '@/lib/utils'
 
-import { Toolbar, ToolbarProps } from './toolbar'
+import type { ToolbarProps } from './toolbar'
+import { Toolbar } from './toolbar'
 
 const FixedToolbar = forwardRef<HTMLDivElement, ToolbarProps>(({ className, ...props }: ToolbarProps, ref) => {
   return (

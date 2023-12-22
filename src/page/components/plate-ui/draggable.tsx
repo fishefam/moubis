@@ -1,8 +1,9 @@
 import { Tooltip, TooltipContent, TooltipTrigger } from '@radix-ui/react-tooltip'
-import { ClassNames, PlateElementProps, TEditor } from '@udecode/plate'
-import { DragItemNode, useDraggable, useDraggableState } from '@udecode/plate-dnd'
+import type { ClassNames, PlateElementProps, TEditor } from '@udecode/plate'
+import type { DragItemNode} from '@udecode/plate-dnd'
+import { useDraggable, useDraggableState } from '@udecode/plate-dnd'
 import { forwardRef } from 'react'
-import { DropTargetMonitor } from 'react-dnd'
+import type { DropTargetMonitor } from 'react-dnd'
 
 import { cn } from '@/lib/utils'
 

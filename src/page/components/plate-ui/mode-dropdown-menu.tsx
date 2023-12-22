@@ -1,13 +1,14 @@
+import type {
+  DropdownMenuProps} from '@radix-ui/react-dropdown-menu'
 import {
   DropdownMenu,
   DropdownMenuContent,
-  DropdownMenuProps,
   DropdownMenuRadioGroup,
   DropdownMenuRadioItem,
   DropdownMenuTrigger,
 } from '@radix-ui/react-dropdown-menu'
 import { focusEditor, useEditorReadOnly, useEditorState, usePlateStore } from '@udecode/plate'
-import { ReactNode } from 'react'
+import type { ReactNode } from 'react'
 
 import { Icons } from '../icons'
 import { useOpenState } from './dropdown-menu'

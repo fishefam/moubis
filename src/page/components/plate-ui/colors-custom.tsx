@@ -2,7 +2,7 @@ import { DropdownMenuItem } from '@radix-ui/react-dropdown-menu'
 import { useColorsCustom, useColorsCustomState } from '@udecode/plate'
 
 import { buttonVariants } from './button'
-import { TColor } from './color-dropdown-menu'
+import type { TColor } from './color-dropdown-menu'
 import { ColorDropdownMenuItems } from './color-dropdown-menu-items'
 import { ColorInput } from './color-input'
 

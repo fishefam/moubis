@@ -1,13 +1,16 @@
-import { Toolbar, ToolbarProps } from '@radix-ui/react-toolbar'
+import type { ToolbarProps } from '@radix-ui/react-toolbar'
+import { Toolbar } from '@radix-ui/react-toolbar'
 import { PortalBody, useComposedRef } from '@udecode/plate'
+import type {
+  FloatingToolbarState} from '@udecode/plate-floating'
 import {
   flip,
-  FloatingToolbarState,
   offset,
   useFloatingToolbar,
   useFloatingToolbarState,
 } from '@udecode/plate-floating'
-import { ElementRef, forwardRef } from 'react'
+import type { ElementRef} from 'react'
+import { forwardRef } from 'react'
 
 import { cn } from '@/lib/utils'
 

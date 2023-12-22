@@ -2,7 +2,8 @@ import { ListStyleType, useIndentListToolbarButton, useIndentListToolbarButtonSt
 
 import { Icons } from '@/components/icons'
 
-import { ToolbarButton, ToolbarButtonProps } from './toolbar'
+import type { ToolbarButtonProps } from './toolbar'
+import { ToolbarButton } from './toolbar'
 
 export function IndentListToolbarButton({
   nodeType = ListStyleType.Disc,

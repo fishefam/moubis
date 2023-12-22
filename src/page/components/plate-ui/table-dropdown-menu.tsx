@@ -1,8 +1,9 @@
+import type {
+  DropdownMenuProps} from '@radix-ui/react-dropdown-menu'
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuProps,
   DropdownMenuSub,
   DropdownMenuSubContent,
   DropdownMenuSubTrigger,

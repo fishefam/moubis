@@ -1,9 +1,10 @@
+import type {
+  PlaceholderProps} from '@udecode/plate'
 import {
   createNodeHOC,
   createNodesHOC,
   ELEMENT_H1,
   ELEMENT_PARAGRAPH,
-  PlaceholderProps,
   usePlaceholderState,
 } from '@udecode/plate'
 import { Children, cloneElement } from 'react'

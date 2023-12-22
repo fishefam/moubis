@@ -1,4 +1,4 @@
-import { UseEmojiPickerType } from '@udecode/plate-emoji'
+import type { UseEmojiPickerType } from '@udecode/plate-emoji'
 
 import { Icons } from '@/components/icons'
 import { cn } from '@/lib/utils'

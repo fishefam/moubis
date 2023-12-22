@@ -1,8 +1,9 @@
+import type {
+  DropdownMenuProps} from '@radix-ui/react-dropdown-menu'
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuProps,
   DropdownMenuTrigger,
 } from '@radix-ui/react-dropdown-menu'
 import { focusEditor, MARK_SUBSCRIPT, MARK_SUPERSCRIPT, toggleMark, useEditorState } from '@udecode/plate'

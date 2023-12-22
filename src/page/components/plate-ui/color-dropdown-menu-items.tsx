@@ -1,10 +1,11 @@
-import { DropdownMenuItem, DropdownMenuItemProps } from '@radix-ui/react-dropdown-menu'
+import type { DropdownMenuItemProps } from '@radix-ui/react-dropdown-menu'
+import { DropdownMenuItem } from '@radix-ui/react-dropdown-menu'
 
 import { cn } from '@/lib/utils'
 
 import { Icons } from '../icons'
 import { buttonVariants } from './button'
-import { TColor } from './color-dropdown-menu'
+import type { TColor } from './color-dropdown-menu'
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from './tooltip'
 
 type ColorDropdownMenuItemProps = {

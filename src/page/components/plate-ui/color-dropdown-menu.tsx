@@ -1,7 +1,8 @@
+import type {
+  DropdownMenuProps} from '@radix-ui/react-dropdown-menu'
 import {
   DropdownMenu,
   DropdownMenuContent,
-  DropdownMenuProps,
   DropdownMenuTrigger,
 } from '@radix-ui/react-dropdown-menu'
 import { useColorDropdownMenu, useColorDropdownMenuState } from '@udecode/plate'

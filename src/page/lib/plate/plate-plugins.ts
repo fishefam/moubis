@@ -1,3 +1,5 @@
+import type {
+  RenderAfterEditable} from '@udecode/plate'
 import {
   createAlignPlugin,
   createAutoformatPlugin,
@@ -68,7 +70,6 @@ import {
   MARK_UNDERLINE,
   PlateElement,
   PlateLeaf,
-  RenderAfterEditable,
   withProps,
 } from '@udecode/plate'
 import { createEmojiPlugin } from '@udecode/plate-emoji'

@@ -1,15 +1,17 @@
 import { Separator } from '@radix-ui/react-dropdown-menu'
-import { ToggleProps } from '@radix-ui/react-toggle'
+import type { ToggleProps } from '@radix-ui/react-toggle'
 import * as ToolbarPrimitive from '@radix-ui/react-toolbar'
 import { Tooltip, TooltipContent, TooltipPortal, TooltipTrigger } from '@radix-ui/react-tooltip'
-import { cva, VariantProps } from 'class-variance-authority'
-import {
-  Children,
+import type { VariantProps } from 'class-variance-authority'
+import { cva } from 'class-variance-authority'
+import type {
   ComponentPropsWithoutRef,
   ElementRef,
-  forwardRef,
   HTMLAttributes,
-  ReactNode,
+  ReactNode} from 'react'
+import {
+  Children,
+  forwardRef,
   useEffect,
   useState,
 } from 'react'

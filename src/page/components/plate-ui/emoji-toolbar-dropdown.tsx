@@ -1,5 +1,5 @@
 import * as Popover from '@radix-ui/react-popover'
-import { ReactNode } from 'react'
+import type { ReactNode } from 'react'
 
 type EmojiToolbarDropdownProps = {
   control: ReactNode

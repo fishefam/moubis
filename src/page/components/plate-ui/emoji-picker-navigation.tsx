@@ -1,4 +1,4 @@
-import { EmojiCategoryList, IEmojiFloatingLibrary, UseEmojiPickerType } from '@udecode/plate-emoji'
+import type { EmojiCategoryList, IEmojiFloatingLibrary, UseEmojiPickerType } from '@udecode/plate-emoji'
 
 import { cn } from '@/lib/utils'
 

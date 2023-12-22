@@ -1,4 +1,5 @@
-import { ELEMENT_IMAGE, ELEMENT_MEDIA_EMBED, useMediaToolbarButton } from '@udecode/plate-media'
+import type { ELEMENT_IMAGE, ELEMENT_MEDIA_EMBED} from '@udecode/plate-media'
+import { useMediaToolbarButton } from '@udecode/plate-media'
 
 import { Icons } from '../icons'
 import { ToolbarButton } from './toolbar'

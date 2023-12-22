@@ -1,11 +1,13 @@
 import { createNodesWithHOC, ELEMENT_BLOCKQUOTE, ELEMENT_PARAGRAPH } from '@udecode/plate'
 import { ELEMENT_CODE_BLOCK } from '@udecode/plate-code-block'
-import { withDraggable as withDraggablePrimitive, WithDraggableOptions } from '@udecode/plate-dnd'
+import type { WithDraggableOptions } from '@udecode/plate-dnd'
+import { withDraggable as withDraggablePrimitive } from '@udecode/plate-dnd'
 import { ELEMENT_H1, ELEMENT_H2, ELEMENT_H3, ELEMENT_H4, ELEMENT_H5, ELEMENT_H6 } from '@udecode/plate-heading'
 import { ELEMENT_OL, ELEMENT_UL } from '@udecode/plate-list'
-import { FC } from 'react'
+import type { FC } from 'react'
 
-import { Draggable, DraggableProps } from './draggable'
+import type { DraggableProps } from './draggable'
+import { Draggable } from './draggable'
 
 export const withDraggable = (
   Component: FC,

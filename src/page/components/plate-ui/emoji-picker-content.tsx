@@ -1,4 +1,5 @@
-import { Emoji, EmojiCategoryList, EmojiSettings, GridRow, UseEmojiPickerType } from '@udecode/plate-emoji'
+import type { Emoji, EmojiCategoryList, GridRow, UseEmojiPickerType } from '@udecode/plate-emoji'
+import { EmojiSettings } from '@udecode/plate-emoji'
 import { memo, useCallback } from 'react'
 
 import { cn } from '@/lib/utils'

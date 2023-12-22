@@ -1,6 +1,7 @@
 import { useMarkToolbarButton, useMarkToolbarButtonState } from '@udecode/plate'
 
-import { ToolbarButton, ToolbarButtonProps } from './toolbar'
+import type { ToolbarButtonProps } from './toolbar'
+import { ToolbarButton } from './toolbar'
 
 export type MarkToolbarButtonProps = {
   nodeType: string

@@ -1,5 +1,6 @@
 import { useColorInput } from '@udecode/plate'
-import { Children, cloneElement, InputHTMLAttributes, ReactElement } from 'react'
+import type { InputHTMLAttributes, ReactElement } from 'react'
+import { Children, cloneElement } from 'react'
 
 import { cn } from '@/lib/utils'
 

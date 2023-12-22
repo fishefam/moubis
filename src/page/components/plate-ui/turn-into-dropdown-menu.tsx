@@ -1,12 +1,15 @@
+import type {
+  DropdownMenuProps} from '@radix-ui/react-dropdown-menu'
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuLabel,
-  DropdownMenuProps,
   DropdownMenuRadioGroup,
   DropdownMenuRadioItem,
   DropdownMenuTrigger,
 } from '@radix-ui/react-dropdown-menu'
+import type {
+  TElement} from '@udecode/plate'
 import {
   collapseSelection,
   ELEMENT_BLOCKQUOTE,
@@ -17,11 +20,11 @@ import {
   findNode,
   focusEditor,
   isCollapsed,
-  TElement,
   toggleNodeType,
   useEditorState,
 } from '@udecode/plate'
-import { BaseEditor, BaseElement, isBlock } from 'slate'
+import type { BaseEditor, BaseElement} from 'slate'
+import { isBlock } from 'slate'
 
 import { Icons } from '../icons'
 import { useOpenState } from './dropdown-menu'
