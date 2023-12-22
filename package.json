@@ -30,6 +30,7 @@
     "@udecode/plate-caption": "^27.0.3",
     "@udecode/plate-code-block": "^27.0.3",
     "@udecode/plate-combobox": "^27.0.3",
+    "@udecode/plate-cursor": "^24.3.5",
     "@udecode/plate-dnd": "^28.0.0",
     "@udecode/plate-emoji": "^27.0.3",
     "@udecode/plate-floating": "^27.0.3",

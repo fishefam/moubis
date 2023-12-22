@@ -1,6 +1,6 @@
 import { Tooltip, TooltipContent, TooltipTrigger } from '@radix-ui/react-tooltip'
 import type { ClassNames, PlateElementProps, TEditor } from '@udecode/plate'
-import type { DragItemNode} from '@udecode/plate-dnd'
+import type { DragItemNode } from '@udecode/plate-dnd'
 import { useDraggable, useDraggableState } from '@udecode/plate-dnd'
 import { forwardRef } from 'react'
 import type { DropTargetMonitor } from 'react-dnd'
@@ -78,7 +78,9 @@ const dragHandle = (
       <TooltipTrigger>
         <Icons.dragHandle className='h-4 w-4 text-slate-500 dark:text-slate-400' />
       </TooltipTrigger>
-      <TooltipContent>Drag to move</TooltipContent>
+      <TooltipContent className='text-xs z-[1000] shadow border px-3 py-1 rounded-md bg-white text-slate-500'>
+        Drag to move
+      </TooltipContent>
     </Tooltip>
   </TooltipProvider>
 )

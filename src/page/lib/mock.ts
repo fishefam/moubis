@@ -264,7 +264,7 @@ export const plateDefaultValue = [
       },
     ],
     id: '32',
-    lineHeight: 2,
+    lineHeight: 3,
     type: 'p',
   },
   { children: [{ text: 'Indentation' }], id: '33', type: 'h2' },

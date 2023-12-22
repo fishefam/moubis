@@ -1,5 +1,4 @@
-import type {
-  RenderAfterEditable} from '@udecode/plate'
+import type { RenderAfterEditable } from '@udecode/plate'
 import {
   createAlignPlugin,
   createAutoformatPlugin,
@@ -72,6 +71,7 @@ import {
   PlateLeaf,
   withProps,
 } from '@udecode/plate'
+import { createDndPlugin } from '@udecode/plate-dnd'
 import { createEmojiPlugin } from '@udecode/plate-emoji'
 
 import {
@@ -100,9 +100,11 @@ import { withPlaceholders } from '@/components/plate-ui/placeholder'
 import { withDraggables } from '@/components/plate-ui/with-draggables'
 
 import { autoformatPlugin } from './autoformatPlugin'
+import { dragOverCursorPlugin } from './dragOverCursorPlugin'
 
 export const plugins = createPlugins(
   [
+    dragOverCursorPlugin,
     createAutoformatPlugin(autoformatPlugin),
     createBlockquotePlugin(),
     createBoldPlugin(),
@@ -110,6 +112,7 @@ export const plugins = createPlugins(
     createCodePlugin(),
     createComboboxPlugin(),
     createDeletePlugin(),
+    createDndPlugin({ options: { enableScroller: true } }),
     createFontBackgroundColorPlugin(),
     createFontColorPlugin(),
     createFontSizePlugin(),
@@ -137,14 +140,24 @@ export const plugins = createPlugins(
     createAlignPlugin({
       inject: {
         props: {
-          validTypes: [ELEMENT_PARAGRAPH, ELEMENT_H1, ELEMENT_H2, ELEMENT_H3],
+          validTypes: [ELEMENT_PARAGRAPH, ELEMENT_H1, ELEMENT_H2, ELEMENT_H3, ELEMENT_H4, ELEMENT_H5, ELEMENT_H6],
         },
       },
     }),
     createIndentPlugin({
       inject: {
         props: {
-          validTypes: [ELEMENT_PARAGRAPH, ELEMENT_H1, ELEMENT_H2, ELEMENT_H3, ELEMENT_BLOCKQUOTE, ELEMENT_CODE_BLOCK],
+          validTypes: [
+            ELEMENT_PARAGRAPH,
+            ELEMENT_H1,
+            ELEMENT_H2,
+            ELEMENT_H3,
+            ELEMENT_H4,
+            ELEMENT_H5,
+            ELEMENT_H6,
+            ELEMENT_BLOCKQUOTE,
+            ELEMENT_CODE_BLOCK,
+          ],
         },
       },
     }),
@@ -153,7 +166,7 @@ export const plugins = createPlugins(
         props: {
           defaultNodeValue: 1.5,
           validNodeValues: [1, 1.2, 1.5, 2, 3],
-          validTypes: [ELEMENT_PARAGRAPH, ELEMENT_H1, ELEMENT_H2, ELEMENT_H3],
+          validTypes: [ELEMENT_PARAGRAPH, ELEMENT_H1, ELEMENT_H2, ELEMENT_H3, ELEMENT_H4, ELEMENT_H5, ELEMENT_H6],
         },
       },
     }),

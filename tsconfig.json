@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "baseUrl": "src",
+    "downlevelIteration": true,
     "alwaysStrict": true,
     "jsx": "react-jsx",
     "strict": true,
