@@ -9,6 +9,7 @@ import {
   insertEmptyElement,
   useEditorState,
 } from '@udecode/plate'
+import { Fragment } from 'react'
 
 import { Icons } from '@/components/icons'
 
@@ -22,7 +23,6 @@ import {
   useOpenState,
 } from './dropdown-menu'
 import { ToolbarButton } from './toolbar'
-import React = require('react')
 
 const items = [
   {
@@ -140,7 +140,7 @@ export function InsertDropdownMenu(props: DropdownMenuProps) {
 
       <DropdownMenuContent align='start' className='flex max-h-[500px] min-w-0 flex-col gap-0.5 overflow-y-auto'>
         {items.map(({ items: nestedItems, label }, index) => (
-          <React.Fragment key={label}>
+          <Fragment key={label}>
             {index !== 0 && <DropdownMenuSeparator />}
 
             <DropdownMenuLabel>{label}</DropdownMenuLabel>
@@ -209,7 +209,7 @@ export function InsertDropdownMenu(props: DropdownMenuProps) {
                 {itemLabel}
               </DropdownMenuItem>
             ))}
-          </React.Fragment>
+          </Fragment>
         ))}
       </DropdownMenuContent>
     </DropdownMenu>

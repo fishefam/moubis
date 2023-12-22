@@ -1,5 +1,4 @@
-import type {
-  DropdownMenuProps} from '@radix-ui/react-dropdown-menu'
+import type { DropdownMenuProps } from '@radix-ui/react-dropdown-menu'
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -47,7 +46,7 @@ export function ModeDropdownMenu(props: DropdownMenuProps) {
           isDropdown
           className='min-w-[auto] lg:min-w-[130px]'
         >
-          {item[value]}
+          {item[value] as ReactNode}
         </ToolbarButton>
       </DropdownMenuTrigger>
 
