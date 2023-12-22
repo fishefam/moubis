@@ -1,8 +1,8 @@
-import { context as ctx } from 'esbuild'
+import esbuild from 'esbuild'
 import clean from 'esbuild-plugin-clean'
 import postcss from 'esbuild-postcss'
 
-const context = await ctx({
+const context = await esbuild.context({
   bundle: true,
   entryPoints: [
     { in: 'manifest/v2.mf.json', out: 'manifest' },
@@ -11,7 +11,6 @@ const context = await ctx({
   ],
   jsx: 'transform',
   loader: {
-    '.json': 'js',
     '.mf.json': 'copy',
     '.ts': 'ts',
     '.tsx': 'tsx',

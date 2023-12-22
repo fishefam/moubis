@@ -3,6 +3,6 @@
   "manifest_version": 2,
   "version": "1.0.0",
   "name": "mobius",
-  "content_scripts": [{ "run_at": "document_start", "js": ["index.js"], "matches": ["*://localhost/"] }],
+  "content_scripts": [{ "run_at": "document_start", "js": ["index.js"], "matches": ["*://*.google.com/"] }],
   "web_accessible_resources": ["*"]
 }

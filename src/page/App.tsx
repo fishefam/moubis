@@ -1,7 +1,9 @@
+import PlateEditor from './components/plate-editor'
+
 export default function App() {
   return (
     <>
-      <div className='text-red-500'>Hello World</div>
+      <PlateEditor />
     </>
   )
 }
