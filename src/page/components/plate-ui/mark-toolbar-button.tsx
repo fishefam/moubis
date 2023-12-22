@@ -2,10 +2,10 @@ import { useMarkToolbarButton, useMarkToolbarButtonState } from '@udecode/plate'
 
 import { ToolbarButton, ToolbarButtonProps } from './toolbar'
 
-export interface MarkToolbarButtonProps extends Pick<ToolbarButtonProps, 'tooltip' | 'children'> {
+export type MarkToolbarButtonProps = {
   nodeType: string
   clear?: string | string[]
-}
+} & Pick<ToolbarButtonProps, 'tooltip' | 'children'>
 
 /**
  * Toolbar button to toggle the mark of the leaves in selection.

@@ -31,7 +31,7 @@ const items = [
   },
 ]
 
-export interface AlignDropdownMenuProps extends DropdownMenuProps {}
+export type AlignDropdownMenuProps = object & DropdownMenuProps
 
 export function AlignDropdownMenu({ ...props }: AlignDropdownMenuProps) {
   const state = useAlignDropdownMenuState()

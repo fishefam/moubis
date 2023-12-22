@@ -72,10 +72,10 @@ export function isTextTag(tag: string): tag is HtmlTextTag {
 }
 
 type CreateElementOptions<T> = {
-  attributes?: Array<[string, string]>,
-  classnames?: string[],
+  attributes?: Array<[string, string]>
+  classnames?: string[]
   innerHtml?: string
-  parent?: string | Element,
-  tag: T,
+  parent?: string | Element
+  tag: T
   text?: string
 }

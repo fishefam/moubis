@@ -9,53 +9,7 @@ import { cn } from '@/lib/utils'
 import { Icons } from '../icons'
 import { TooltipProvider } from './tooltip'
 
-export interface DraggableProps
-  extends PlateElementProps,
-    ClassNames<{
-      /**
-       * Block and gutter.
-       */
-      blockAndGutter: string
-
-      /**
-       * Block.
-       */
-      block: string
-
-      /**
-       * Gutter at the left side of the editor.
-       * It has the height of the block
-       */
-      gutterLeft: string
-
-      /**
-       * Block toolbar wrapper in the gutter left.
-       * It has the height of a line of the block.
-       */
-      blockToolbarWrapper: string
-
-      /**
-       * Block toolbar in the gutter.
-       */
-      blockToolbar: string
-
-      blockWrapper: string
-
-      /**
-       * Button to dnd the block, in the block toolbar.
-       */
-      dragHandle: string
-
-      /**
-       * Icon of the drag button, in the drag icon.
-       */
-      dragIcon: string
-
-      /**
-       * Show a dropline above or below the block when dragging a block.
-       */
-      dropLine: string
-    }> {
+export type DraggableProps = {
   /**
    * Intercepts the drop handling.
    * If `false` is returned, the default drop behavior is called after.
@@ -70,7 +24,52 @@ export interface DraggableProps
       id: string
     },
   ) => boolean
-}
+} & PlateElementProps &
+  ClassNames<{
+    /**
+     * Block and gutter.
+     */
+    blockAndGutter: string
+
+    /**
+     * Block.
+     */
+    block: string
+
+    /**
+     * Gutter at the left side of the editor.
+     * It has the height of the block
+     */
+    gutterLeft: string
+
+    /**
+     * Block toolbar wrapper in the gutter left.
+     * It has the height of a line of the block.
+     */
+    blockToolbarWrapper: string
+
+    /**
+     * Block toolbar in the gutter.
+     */
+    blockToolbar: string
+
+    blockWrapper: string
+
+    /**
+     * Button to dnd the block, in the block toolbar.
+     */
+    dragHandle: string
+
+    /**
+     * Icon of the drag button, in the drag icon.
+     */
+    dragIcon: string
+
+    /**
+     * Show a dropline above or below the block when dragging a block.
+     */
+    dropLine: string
+  }>
 
 const dragHandle = (
   <TooltipProvider>

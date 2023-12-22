@@ -5,7 +5,9 @@
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "build": "node esbuild",
-    "webext": "web-ext run --source-dir dist --firefox-profile %APPDATA%/Mozilla/Firefox/Profiles/iy4keeqd.default-release"
+    "webext": "web-ext run --source-dir dist --firefox-profile %APPDATA%/Mozilla/Firefox/Profiles/iy4keeqd.default-release",
+    "lint": "eslint . --ext .ts,.tsx --fix",
+    "format": "prettier . --write"
   },
   "dependencies": {
     "@radix-ui/react-checkbox": "^1.0.4",

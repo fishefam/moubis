@@ -27,7 +27,7 @@ export const linkVariants = cva('font-medium underline underline-offset-4')
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const ToolbarToggleGroup = ToolbarPrimitive.ToggleGroup as any
 
-export interface ToolbarProps extends ComponentPropsWithoutRef<typeof Toolbar> {}
+export type ToolbarProps = object & ComponentPropsWithoutRef<typeof Toolbar>
 
 const Toolbar = forwardRef<
   ElementRef<typeof ToolbarPrimitive.Root>,
@@ -53,15 +53,14 @@ const ToolbarSeparator = forwardRef<
 ))
 ToolbarSeparator.displayName = ToolbarPrimitive.Separator.displayName
 
-export interface ToolbarButtonProps
-  extends ComponentPropsWithoutRef<typeof ToolbarPrimitive.Button>,
-    VariantProps<typeof toggleVariants>,
-    Omit<ToggleProps, 'type'> {
+export type ToolbarButtonProps = {
   buttonType?: 'button' | 'toggle'
   pressed?: boolean
   tooltip?: ReactNode
   isDropdown?: boolean
-}
+} & ComponentPropsWithoutRef<typeof ToolbarPrimitive.Button> &
+  VariantProps<typeof toggleVariants> &
+  Omit<ToggleProps, 'type'>
 
 const ToolbarButton = forwardRef<ElementRef<typeof ToolbarPrimitive.Button>, ToolbarButtonProps>(
   ({ className, variant, size = 'sm', isDropdown, children, pressed, tooltip, ...props }, ref) => {

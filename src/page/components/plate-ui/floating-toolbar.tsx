@@ -11,9 +11,9 @@ import { ElementRef, forwardRef } from 'react'
 
 import { cn } from '@/lib/utils'
 
-export interface FloatingToolbarProps extends ToolbarProps {
+export type FloatingToolbarProps = {
   state?: FloatingToolbarState
-}
+} & ToolbarProps
 
 const FloatingToolbar = forwardRef<ElementRef<typeof Toolbar>, FloatingToolbarProps>(
   ({ state, children, ...props }, componentRef) => {
