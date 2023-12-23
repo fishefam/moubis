@@ -17,7 +17,8 @@ const toolbarVariants = cva('relative flex select-none items-stretch gap-1 bg-ba
 
 export const linkVariants = cva('font-medium underline underline-offset-4')
 
-const ToolbarToggleGroup = ToolbarPrimitive.ToggleGroup
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const ToolbarToggleGroup = ToolbarPrimitive.ToggleGroup as any
 
 export type ToolbarProps = object & ComponentPropsWithoutRef<typeof Toolbar>
 
@@ -102,10 +103,12 @@ const ToolbarButton = forwardRef<ElementRef<typeof ToolbarPrimitive.Button>, Too
     return isLoaded && tooltip ? (
       <TooltipProvider>
         <Tooltip>
-          <TooltipTrigger>{content}</TooltipTrigger>
+          <TooltipTrigger asChild>{content}</TooltipTrigger>
 
           <TooltipPortal>
-            <TooltipContent>{tooltip}</TooltipContent>
+            <TooltipContent className='rounded text-sm p-2 shadow-md transition mb-3 text-gray-600 bg-white select-none'>
+              {tooltip}
+            </TooltipContent>
           </TooltipPortal>
         </Tooltip>
       </TooltipProvider>

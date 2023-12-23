@@ -8,6 +8,8 @@ import { plateDefaultValue } from '@/lib/mock'
 import { plugins } from '@/lib/plate/plate-plugins'
 
 import { CursorOverlay } from './plate-ui/cursor-overlay'
+import { FloatingToolbar } from './plate-ui/floating-toolbar'
+import { FloatingToolbarButtons } from './plate-ui/floating-toolbar-buttons'
 
 export default function PlateEditor() {
   const containerRef = useRef(null)
@@ -19,9 +21,9 @@ export default function PlateEditor() {
           <FixedToolbarButtons />
         </FixedToolbar> */}
           <Editor className='px-16 py-10 h-[45rem] overflow-y-scroll' />
-          {/* <FloatingToolbar>
-          <FloatingToolbarButtons />
-        </FloatingToolbar> */}
+          <FloatingToolbar>
+            <FloatingToolbarButtons />
+          </FloatingToolbar>
           <CursorOverlay containerRef={containerRef} />
         </div>
       </Plate>

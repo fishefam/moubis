@@ -1,5 +1,4 @@
-import type {
-  DropdownMenuProps} from '@radix-ui/react-dropdown-menu'
+import type { DropdownMenuProps } from '@radix-ui/react-dropdown-menu'
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -8,14 +7,16 @@ import {
   DropdownMenuRadioItem,
   DropdownMenuTrigger,
 } from '@radix-ui/react-dropdown-menu'
-import type {
-  TElement} from '@udecode/plate'
+import type { TElement } from '@udecode/plate'
 import {
   collapseSelection,
   ELEMENT_BLOCKQUOTE,
   ELEMENT_H1,
   ELEMENT_H2,
   ELEMENT_H3,
+  ELEMENT_H4,
+  ELEMENT_H5,
+  ELEMENT_H6,
   ELEMENT_PARAGRAPH,
   findNode,
   focusEditor,
@@ -23,7 +24,7 @@ import {
   toggleNodeType,
   useEditorState,
 } from '@udecode/plate'
-import type { BaseEditor, BaseElement} from 'slate'
+import type { BaseEditor, BaseElement } from 'slate'
 import { isBlock } from 'slate'
 
 import { Icons } from '../icons'
@@ -56,23 +57,29 @@ const items = [
     value: ELEMENT_H3,
   },
   {
+    description: 'Heading 4',
+    icon: Icons.h4,
+    label: 'Heading 4',
+    value: ELEMENT_H4,
+  },
+  {
+    description: 'Heading 5',
+    icon: Icons.h5,
+    label: 'Heading 5',
+    value: ELEMENT_H5,
+  },
+  {
+    description: 'Heading 6',
+    icon: Icons.h6,
+    label: 'Heading 6',
+    value: ELEMENT_H6,
+  },
+  {
     description: 'Quote (⌘+⇧+.)',
     icon: Icons.blockquote,
     label: 'Quote',
     value: ELEMENT_BLOCKQUOTE,
   },
-  // {
-  //   value: 'ul',
-  //   label: 'Bulleted list',
-  //   description: 'Bulleted list',
-  //   icon: Icons.ul,
-  // },
-  // {
-  //   value: 'ol',
-  //   label: 'Numbered list',
-  //   description: 'Numbered list',
-  //   icon: Icons.ol,
-  // },
 ]
 
 const defaultItem = items.find((item) => item.value === ELEMENT_PARAGRAPH)!
@@ -103,32 +110,27 @@ export function TurnIntoDropdownMenu(props: DropdownMenuProps) {
         </ToolbarButton>
       </DropdownMenuTrigger>
 
-      <DropdownMenuContent align='start' className='min-w-0'>
-        <DropdownMenuLabel>Turn into</DropdownMenuLabel>
+      <DropdownMenuContent
+        align='start'
+        className='z-50 overflow-hidden rounded-md border bg-white p-1 shadow-md data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 min-w-0'
+      >
+        <DropdownMenuLabel className='select-none px-2 py-1.5 text-sm font-semibold'>Turn into</DropdownMenuLabel>
 
         <DropdownMenuRadioGroup
           className='flex flex-col gap-0.5'
           value={value}
           onValueChange={(type) => {
-            // if (type === 'ul' || type === 'ol') {
-            //   if (settingsStore.get.checkedId(KEY_LIST_STYLE_TYPE)) {
-            //     toggleIndentList(editor, {
-            //       listStyleType: type === 'ul' ? 'disc' : 'decimal',
-            //     });
-            //   } else if (settingsStore.get.checkedId('list')) {
-            //     toggleList(editor, { type });
-            //   }
-            // } else {
-            //   unwrapList(editor);
             toggleNodeType(editor, { activeType: type })
-            // }
-
             collapseSelection(editor)
             focusEditor(editor)
           }}
         >
           {items.map(({ value: itemValue, label, icon: Icon }) => (
-            <DropdownMenuRadioItem key={itemValue} value={itemValue} className='min-w-[180px]'>
+            <DropdownMenuRadioItem
+              key={itemValue}
+              value={itemValue}
+              className='relative flex select-none items-center rounded-sm text-sm outline-none transition-colors focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50 h-9 cursor-pointer px-2 data-[state=checked]:bg-accent data-[state=checked]:text-accent-foreground min-w-[180px]'
+            >
               <Icon className='mr-2 h-5 w-5' />
               {label}
             </DropdownMenuRadioItem>
