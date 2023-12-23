@@ -15,9 +15,17 @@ const Checkbox = forwardRef<
       className,
     )}
     {...props}
+    style={{ minHeight: '20px', minWidth: '20px' }}
   >
-    <CheckboxPrimitive.Indicator className={cn('flex items-center justify-center text-current')}>
-      <Icons.check className='h-4 w-4' />
+    <CheckboxPrimitive.Indicator
+      style={{
+        alignItems: 'center',
+        color: 'currentcolor',
+        display: 'flex',
+        justifyContent: 'center',
+      }}
+    >
+      <Icons.check style={{ height: '1rem', width: '1rem' }} />
     </CheckboxPrimitive.Indicator>
   </CheckboxPrimitive.Root>
 ))

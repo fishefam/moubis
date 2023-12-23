@@ -13,17 +13,32 @@ export function TodoListElement({ className, children, ...props }: TodoListEleme
   const { checkboxProps } = useTodoListElement(state)
 
   return (
-    <PlateElement className={cn('flex flex-row py-1', className)} {...props}>
-      <div className='mr-1.5 flex select-none items-center justify-center' contentEditable={false}>
-        <Checkbox {...checkboxProps} />
+    <PlateElement className={cn(className)} {...props}>
+      <div style={{ display: 'flex', flexDirection: 'row', padding: '0.25rem 0' }}>
+        <div
+          contentEditable={false}
+          style={{
+            alignItems: 'center',
+            display: 'flex',
+            justifyContent: 'center',
+            marginRight: '0.375rem',
+            userSelect: 'none',
+          }}
+        >
+          <Checkbox {...checkboxProps} />
+        </div>
+        <span
+          contentEditable={!state.readOnly}
+          suppressContentEditableWarning
+          style={
+            state.checked
+              ? { color: 'rgb(100 116 139)', flex: '1 1 0%', textDecorationLine: 'line-through' }
+              : { flex: '1 1 0%' }
+          }
+        >
+          {children}
+        </span>
       </div>
-      <span
-        className={cn('flex-1 focus:outline-none', state.checked && 'text-slate-500 line-through dark:text-slate-400')}
-        contentEditable={!state.readOnly}
-        suppressContentEditableWarning
-      >
-        {children}
-      </span>
     </PlateElement>
   )
 }
