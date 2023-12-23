@@ -155,8 +155,8 @@ TableFloatingToolbar.displayName = 'TableFloatingToolbar'
 
 const TableElement = forwardRef<ElementRef<typeof PlateElement>, PlateElementProps>(
   ({ className, children, ...props }, ref) => {
-    const { colSizes, isSelectingCell, minColumnWidth, marginLeft } = useTableElementState()
-    const { props: tableProps, colGroupProps } = useTableElement()
+    const { isSelectingCell } = useTableElementState()
+    const { props: tableProps } = useTableElement()
 
     return (
       <TableFloatingToolbar>
