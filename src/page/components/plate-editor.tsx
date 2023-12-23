@@ -1,25 +1,28 @@
 import { Plate } from '@udecode/plate'
+import { CursorOverlay } from '@udecode/plate-cursor'
 import { useRef } from 'react'
 import { DndProvider } from 'react-dnd'
 import { HTML5Backend } from 'react-dnd-html5-backend'
 
-import { Editor } from '@/components/plate-ui'
-import { plateDefaultValue } from '@/lib/mock'
-import { plugins } from '@/lib/plate/plate-plugins'
+import { plateDefaultValue, plugins } from '@/lib'
 
-import { CursorOverlay } from './plate-ui/cursor-overlay'
-import { FloatingToolbar } from './plate-ui/floating-toolbar'
-import { FloatingToolbarButtons } from './plate-ui/floating-toolbar-buttons'
+import { Editor, FixedToolbar, FixedToolbarButtons, FloatingToolbar, FloatingToolbarButtons } from './plate-ui'
 
 export default function PlateEditor() {
   const containerRef = useRef(null)
   return (
     <DndProvider backend={HTML5Backend}>
-      <Plate plugins={plugins} initialValue={plateDefaultValue}>
+      <Plate
+        plugins={plugins}
+        initialValue={plateDefaultValue}
+        onChange={(val) => {
+          console.log(val)
+        }}
+      >
         <div ref={containerRef}>
-          {/* <FixedToolbar>
-          <FixedToolbarButtons />
-        </FixedToolbar> */}
+          <FixedToolbar>
+            <FixedToolbarButtons />
+          </FixedToolbar>
           <Editor className='px-16 py-10 h-[45rem] overflow-y-scroll' />
           <FloatingToolbar>
             <FloatingToolbarButtons />

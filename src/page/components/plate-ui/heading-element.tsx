@@ -1,5 +1,7 @@
 import { PlateElement, type PlateElementProps } from '@udecode/plate'
 
+import { nanoid } from '@/lib/utils'
+
 const headingVariants = {
   h1: {
     fontSize: '2.25rem',
@@ -36,12 +38,13 @@ const headingVariants = {
 export function HeadingElement({
   variant = 'h1',
   children,
+  element,
   ...props
 }: PlateElementProps & { variant: keyof typeof headingVariants }) {
   const Element = variant!
 
   return (
-    <PlateElement asChild {...props}>
+    <PlateElement data-node-id={element.id ?? nanoid()} asChild {...props}>
       <Element style={{ ...headingVariants[variant], margin: '1rem 0' }}>{children}</Element>
     </PlateElement>
   )

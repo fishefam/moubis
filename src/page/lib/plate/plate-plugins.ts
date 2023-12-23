@@ -67,6 +67,7 @@ import {
   MARK_SUBSCRIPT,
   MARK_SUPERSCRIPT,
   MARK_UNDERLINE,
+  nanoid,
   PlateElement,
   PlateLeaf,
   withProps,
@@ -95,12 +96,10 @@ import {
   TableElement,
   TableRowElement,
   TodoListElement,
+  withDraggables,
+  withPlaceholders,
 } from '@/components/plate-ui'
-import { withPlaceholders } from '@/components/plate-ui/placeholder'
-import { withDraggables } from '@/components/plate-ui/with-draggables'
-
-import { autoformatPlugin } from './autoformatPlugin'
-import { dragOverCursorPlugin } from './dragOverCursorPlugin'
+import { autoformatPlugin, dragOverCursorPlugin } from '@/lib'
 
 export const plugins = createPlugins(
   [
@@ -124,7 +123,7 @@ export const plugins = createPlugins(
     createKbdPlugin(),
     createListPlugin(),
     createMediaEmbedPlugin(),
-    createNodeIdPlugin(),
+    createNodeIdPlugin({ options: { idCreator: nanoid } }),
     createParagraphPlugin(),
     createStrikethroughPlugin(),
     createSubscriptPlugin(),

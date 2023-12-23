@@ -108,3 +108,4 @@ function createSlateHTML(html: string): SlateVoidHTML {
 //   }
 //   return result as SlateElement[]
 // }
+export const placeholder = ''
