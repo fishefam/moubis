@@ -160,35 +160,21 @@ const TableElement = forwardRef<ElementRef<typeof PlateElement>, PlateElementPro
 
     return (
       <TableFloatingToolbar>
-        <div style={{ paddingLeft: marginLeft }}>
-          <PlateElement
-            asChild
-            ref={ref}
-            className={cn(
-              'my-4 ml-px mr-0 table h-px w-full table-fixed border-collapse',
-              isSelectingCell && '[&_*::selection]:bg-none',
-              className,
-            )}
-            {...tableProps}
-            {...props}
-          >
-            <table>
-              <colgroup {...colGroupProps}>
-                {colSizes.map((width, index) => (
-                  <col
-                    key={index}
-                    style={{
-                      minWidth: minColumnWidth,
-                      width: width || undefined,
-                    }}
-                  />
-                ))}
-              </colgroup>
-
-              <tbody className='min-w-full'>{children}</tbody>
-            </table>
-          </PlateElement>
-        </div>
+        <PlateElement
+          asChild
+          ref={ref}
+          className={cn(
+            'my-4 ml-px mr-0 table h-px w-full table-fixed border-collapse',
+            isSelectingCell && '[&_*::selection]:bg-none',
+            className,
+          )}
+          {...tableProps}
+          {...props}
+        >
+          <table style={{ borderRadius: '0.25rem', borderSpacing: '0' }}>
+            <tbody className='min-w-full'>{children}</tbody>
+          </table>
+        </PlateElement>
       </TableFloatingToolbar>
     )
   },

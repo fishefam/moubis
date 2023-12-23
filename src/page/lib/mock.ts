@@ -639,7 +639,7 @@ export const plateDefaultValue = [
             type: 'td',
           },
           {
-            children: [{ children: [{ text: 'Yes' }], id: '5xfld', type: 'p' }],
+            children: [{ align: 'right', children: [{ text: 'Yes' }], id: '5xfld', type: 'p' }],
             id: 'jhq11',
             type: 'td',
           },

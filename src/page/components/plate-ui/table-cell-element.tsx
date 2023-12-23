@@ -18,10 +18,10 @@ export type TableCellElementProps = {
 } & PlateElementProps<Value, TTableCellElement>
 
 const TableCellElement = forwardRef<ElementRef<typeof PlateElement>, TableCellElementProps>(
-  ({ children, className, style, hideBorder, isHeader, ...props }, ref) => {
+  ({ children, style, isHeader, ...props }, ref) => {
     const { element } = props
 
-    const { colIndex, rowIndex, readOnly, selected, hovered, hoveredLeft, rowSize, borders, isSelectingCell, colSpan } =
+    const { colIndex, rowIndex, readOnly, hovered, hoveredLeft, rowSize, borders, isSelectingCell, colSpan } =
       useTableCellElementState()
     const { props: cellProps } = useTableCellElement({ element: props.element })
     const resizableState = useTableCellElementResizableState({
@@ -38,26 +38,6 @@ const TableCellElement = forwardRef<ElementRef<typeof PlateElement>, TableCellEl
       <PlateElement
         asChild
         ref={ref}
-        className={cn(
-          'relative h-full overflow-visible border-none bg-white p-0 dark:bg-slate-950',
-          hideBorder && 'before:border-none',
-          element.background ? 'bg-[--cellBackground]' : 'bg-white dark:bg-slate-950',
-          !hideBorder &&
-            cn(
-              isHeader && 'text-left [&_>_*]:m-0',
-              'before:h-full before:w-full',
-              selected && 'before:z-10 before:bg-slate-100 dark:before:bg-slate-800',
-              'before:absolute before:box-border before:select-none before:content-[]',
-              borders &&
-                cn(
-                  borders.bottom?.size && 'before:border-b before:border-b-border',
-                  borders.right?.size && 'before:border-r before:border-r-border',
-                  borders.left?.size && 'before:border-l before:border-l-border',
-                  borders.top?.size && 'before:border-t before:border-t-border',
-                ),
-            ),
-          className,
-        )}
         {...cellProps}
         {...props}
         style={
@@ -67,11 +47,24 @@ const TableCellElement = forwardRef<ElementRef<typeof PlateElement>, TableCellEl
           } as CSSProperties
         }
       >
-        <Cell>
+        <Cell
+          style={{
+            border: 'solid',
+            borderBottomWidth: borders.bottom?.size ?? 0,
+            borderLeftWidth: borders.left?.size ?? 0,
+            borderRightWidth: borders.right?.size ?? 0,
+            borderTopWidth: borders.top?.size ?? 0,
+            textAlign: 'start',
+          }}
+        >
           <div
-            className='relative z-20 box-border h-full px-3 py-2'
             style={{
+              boxSizing: 'border-box',
+              height: '100%',
               minHeight: rowSize,
+              padding: '0.5rem 0.75rem',
+              position: 'relative',
+              zIndex: 20,
             }}
           >
             {children}
@@ -82,6 +75,7 @@ const TableCellElement = forwardRef<ElementRef<typeof PlateElement>, TableCellEl
               className='group absolute top-0 h-full w-full select-none'
               contentEditable={false}
               suppressContentEditableWarning={true}
+              style={{ display: 'none' }}
             >
               {!readOnly && (
                 <>
