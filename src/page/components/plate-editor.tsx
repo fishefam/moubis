@@ -19,8 +19,8 @@ export default function PlateEditor() {
           console.log(val)
         }}
       >
-        <div ref={containerRef}>
-          <FixedToolbar>
+        <div ref={containerRef} className='relative'>
+          <FixedToolbar className='overflow-visible'>
             <FixedToolbarButtons />
           </FixedToolbar>
           <Editor className='px-16 py-10 h-[45rem] overflow-y-scroll' />

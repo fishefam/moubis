@@ -9,6 +9,8 @@ import {
 import { focusEditor, useEditorReadOnly, useEditorState, usePlateStore } from '@udecode/plate'
 import type { ReactNode } from 'react'
 
+import { cn } from '@/lib'
+
 import { Icons } from '../icons'
 import { useOpenState } from './dropdown-menu'
 import { ToolbarButton } from './toolbar'
@@ -42,15 +44,18 @@ export function ModeDropdownMenu(props: DropdownMenuProps) {
       <DropdownMenuTrigger asChild>
         <ToolbarButton
           pressed={openState.open}
-          tooltip='Editing mode'
+          tooltip={readOnly ? 'Viewing Mode' : 'Editing Mode'}
           isDropdown
-          className='min-w-[auto] lg:min-w-[130px]'
+          className='inline-flex items-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg:not([data-icon])]:h-5 [&_svg:not([data-icon])]:w-5 bg-transparent justify-between hover:bg-slate-100 data-[state=on]:bg-accent data-[state=on]:text-accent-foreground h-9 px-2 my-1 justify-between pr-1 min-w-[auto] lg:min-w-[130px]'
         >
           {item[value] as ReactNode}
         </ToolbarButton>
       </DropdownMenuTrigger>
 
-      <DropdownMenuContent align='start' className='min-w-[180px]'>
+      <DropdownMenuContent
+        align='start'
+        className='z-50 overflow-hidden rounded-md border bg-white p-1 shadow-md data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 flex max-h-[500px] flex-col gap-0.5 overflow-y-auto'
+      >
         <DropdownMenuRadioGroup
           className='flex flex-col gap-0.5'
           value={value}
@@ -70,9 +75,27 @@ export function ModeDropdownMenu(props: DropdownMenuProps) {
             }
           }}
         >
-          <DropdownMenuRadioItem value='editing'>{item.editing as ReactNode}</DropdownMenuRadioItem>
+          <DropdownMenuRadioItem
+            value='editing'
+            className={cn(
+              'justify-between hover:bg-slate-100 relative flex select-none items-center rounded-sm text-sm outline-none transition-colors focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50 h-9 cursor-pointer px-2 data-[state=checked]:bg-accent data-[state=checked]:text-accent-foreground min-w-[140px]',
+              !readOnly ? 'bg-slate-100' : '',
+            )}
+          >
+            <div className='flex items-center'>{item.editing as ReactNode}</div>
+            {!readOnly && <Icons.check className='h-4 w-4' />}
+          </DropdownMenuRadioItem>
 
-          <DropdownMenuRadioItem value='viewing'>{item.viewing as ReactNode}</DropdownMenuRadioItem>
+          <DropdownMenuRadioItem
+            value='viewing'
+            className={cn(
+              'justify-between hover:bg-slate-100 relative flex select-none items-center rounded-sm text-sm outline-none transition-colors focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50 h-9 cursor-pointer px-2 data-[state=checked]:bg-accent data-[state=checked]:text-accent-foreground min-w-[140px]',
+              readOnly ? 'bg-slate-100' : '',
+            )}
+          >
+            <div className='flex items-center'>{item.viewing as ReactNode}</div>
+            {readOnly && <Icons.check className='h-4 w-4' />}
+          </DropdownMenuRadioItem>
         </DropdownMenuRadioGroup>
       </DropdownMenuContent>
     </DropdownMenu>
