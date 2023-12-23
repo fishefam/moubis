@@ -55,9 +55,9 @@ const resizableVariants = cva('', {
 const Resizable = forwardRef<
   ElementRef<typeof ResizablePrimitive>,
   ComponentProps<typeof ResizablePrimitive> & VariantProps<typeof resizableVariants>
->(({ className, align, ...props }, ref) => (
-  <ResizablePrimitive ref={ref} className={cn(resizableVariants({ align }), className)} {...props} />
-))
+>(({ className, align, ...props }, ref) => {
+  return <ResizablePrimitive ref={ref} className={cn(resizableVariants({ align }), className)} {...props} />
+})
 Resizable.displayName = 'Resizable'
 
 export { Resizable, ResizeHandle }
