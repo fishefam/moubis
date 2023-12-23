@@ -8,9 +8,9 @@ import {
   useElement,
   useRemoveNodeButton,
 } from '@udecode/plate'
+import type { TTableElement } from '@udecode/plate-table'
 import {
   mergeTableCells,
-  type TTableElement,
   unmergeTableCells,
   useTableBordersDropdownMenuContentState,
   useTableElement,
