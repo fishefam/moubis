@@ -1,3 +1,5 @@
+import { ListStyleType } from '@udecode/plate'
+
 export const html =
   '<p>Y<span class="inline numeric" contenteditable="false" data-questiontext="%3Cinput%20type%3D%22text%22%20size%3D%2220%22%20value%3D%22Numeric%20with%20Units%22%20class%3D%22blankdisabled%20form-control%22%20readonly%3D%22readonly%22%3E" data-source="mode%3DNumeric%40negStyle%3Dminus%40grading%3Dexact_value%40name%3DresponseNaN%40answer.num%3D43%40numStyle%3Dthousands%20scientific%20%20arithmetic%40comment%3D%40weighting%3D1%40answer.units%3Dff%40showUnits%3Dtrue%40" id="sro_id_1" style="display:inline" title="Double-click the response area to edit">&zwnj;</span><span>&nbsp;</span>OOOOOOOOOOOOO IT WORKDS NOWWWWWWWWW</p><p>testing new one stuffwdraftedork great agin</p><div class="question-container"><div class="input-container"><div><label for="radius-range">Radius</label><input class="radius-range" id="radius-range" type="range"></div><fieldset><legend>Position</legend><div><label for="x-range">Left Right</label><input class="x-range" id="x-range" max="500" type="range"></div><div><label for="y-range">Up Down</label><input class="y-range" id="y-range" max="300" type="range"></div></fieldset><fieldset><legend>Color</legend><div><label for="red-range">Red</label><input class="red-range" defaultvalue="50" id="red-range" max="255" type="range"></div><div><label for="green-range">Green</label><input class="green-range" defaultvalue="50" id="green-range" max="255" type="range"></div><div><label for="blue-range">Blue</label><input class="blue-range" defaultvalue="50" id="blue-range" max="255" type="range"></div></fieldset></div><svg height="300" width="500"><circle class="circle" cx="250" cy="150" r="50" style="fill:#7b7b7b"></circle></svg>Now it should save again</div>'
 
@@ -352,6 +354,7 @@ export const plateDefaultValue = [
                       },
                     ],
                     id: 'yq002',
+                    listSymbol: ListStyleType.LowerRoman,
                     type: 'ul',
                   },
                 ],
@@ -360,6 +363,7 @@ export const plateDefaultValue = [
               },
             ],
             id: 'wuuzm',
+            listSymbol: ListStyleType.Decimal,
             type: 'ul',
           },
         ],
@@ -368,6 +372,7 @@ export const plateDefaultValue = [
       },
     ],
     id: '41',
+    listSymbol: ListStyleType.UpperRoman,
     type: 'ul',
   },
   {
@@ -426,6 +431,7 @@ export const plateDefaultValue = [
                       },
                     ],
                     id: 'qyatq',
+                    listSymbol: ListStyleType.LowerAlpha,
                     type: 'ol',
                   },
                 ],
@@ -434,6 +440,7 @@ export const plateDefaultValue = [
               },
             ],
             id: '5hsa7',
+            listSymbol: ListStyleType.KatakanaIroha,
             type: 'ul',
           },
         ],
@@ -447,6 +454,7 @@ export const plateDefaultValue = [
       },
     ],
     id: '42',
+    listSymbol: ListStyleType.DecimalLeadingZero,
     type: 'ol',
   },
   { children: [{ text: '📸 Image' }], id: '43', type: 'h2' },
