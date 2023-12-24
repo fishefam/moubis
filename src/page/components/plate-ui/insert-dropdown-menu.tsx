@@ -4,14 +4,16 @@ import {
   ELEMENT_H1,
   ELEMENT_H2,
   ELEMENT_H3,
+  ELEMENT_H4,
+  ELEMENT_H5,
+  ELEMENT_H6,
+  ELEMENT_HR,
   ELEMENT_PARAGRAPH,
   focusEditor,
   insertEmptyElement,
   useEditorState,
 } from '@udecode/plate'
 import { Fragment } from 'react'
-
-import { Icons } from '@/components/icons'
 
 import {
   DropdownMenu,
@@ -20,9 +22,10 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
+  Icons,
+  ToolbarButton,
   useOpenState,
-} from './dropdown-menu'
-import { ToolbarButton } from './toolbar'
+} from '@/components'
 
 const items = [
   {
@@ -52,6 +55,24 @@ const items = [
         value: ELEMENT_H3,
       },
       {
+        description: 'Heading 4',
+        icon: Icons.h4,
+        label: 'Heading 4',
+        value: ELEMENT_H4,
+      },
+      {
+        description: 'Heading 5',
+        icon: Icons.h5,
+        label: 'Heading 5',
+        value: ELEMENT_H5,
+      },
+      {
+        description: 'Heading 6',
+        icon: Icons.h6,
+        label: 'Heading 6',
+        value: ELEMENT_H6,
+      },
+      {
         description: 'Quote (⌘+⇧+.)',
         icon: Icons.blockquote,
         label: 'Quote',
@@ -63,24 +84,24 @@ const items = [
       //   description: 'Table',
       //   icon: Icons.table,
       // },
-      // {
-      //   value: 'ul',
-      //   label: 'Bulleted list',
-      //   description: 'Bulleted list',
-      //   icon: Icons.ul,
-      // },
-      // {
-      //   value: 'ol',
-      //   label: 'Numbered list',
-      //   description: 'Numbered list',
-      //   icon: Icons.ol,
-      // },
-      // {
-      //   value: ELEMENT_HR,
-      //   label: 'Divider',
-      //   description: 'Divider (---)',
-      //   icon: Icons.hr,
-      // },
+      {
+        description: 'Bulleted list',
+        icon: Icons.ul,
+        label: 'Bulleted list',
+        value: 'ul',
+      },
+      {
+        description: 'Numbered list',
+        icon: Icons.ol,
+        label: 'Numbered list',
+        value: 'ol',
+      },
+      {
+        description: 'Divider (---)',
+        icon: Icons.hr,
+        label: 'Divider',
+        value: ELEMENT_HR,
+      },
     ],
     label: 'Basic blocks',
   },
@@ -132,7 +153,10 @@ export function InsertDropdownMenu(props: DropdownMenuProps) {
 
   return (
     <DropdownMenu modal={false} {...openState} {...props}>
-      <DropdownMenuTrigger asChild>
+      <DropdownMenuTrigger
+        asChild
+        className='inline-flex items-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg:not([data-icon])]:h-5 [&_svg:not([data-icon])]:w-5 bg-transparent hover:bg-slate-100 data-[state=on]:bg-accent data-[state=on]:text-accent-foreground h-9 px-2 my-1 justify-between pr-1'
+      >
         <ToolbarButton pressed={openState.open} tooltip='Insert' isDropdown>
           <Icons.add />
         </ToolbarButton>

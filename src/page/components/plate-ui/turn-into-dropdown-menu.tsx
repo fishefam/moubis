@@ -1,14 +1,5 @@
 import type { DropdownMenuProps } from '@radix-ui/react-dropdown-menu'
 import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuLabel,
-  DropdownMenuRadioGroup,
-  DropdownMenuRadioItem,
-  DropdownMenuTrigger,
-} from '@radix-ui/react-dropdown-menu'
-import type { TElement } from '@udecode/plate'
-import {
   collapseSelection,
   ELEMENT_BLOCKQUOTE,
   ELEMENT_H1,
@@ -18,14 +9,22 @@ import {
   ELEMENT_H5,
   ELEMENT_H6,
   ELEMENT_PARAGRAPH,
-  findNode,
   focusEditor,
   isCollapsed,
   toggleNodeType,
   useEditorState,
 } from '@udecode/plate'
-import type { BaseEditor, BaseElement } from 'slate'
-import { isBlock } from 'slate'
+
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuLabel,
+  DropdownMenuRadioGroup,
+  DropdownMenuRadioItem,
+  DropdownMenuTrigger,
+} from '@/components'
+import { cn } from '@/lib'
+import type { TPlateBlockElement } from '@/types'
 
 import { Icons } from '../icons'
 import { useOpenState } from './dropdown-menu'
@@ -89,13 +88,10 @@ export function TurnIntoDropdownMenu(props: DropdownMenuProps) {
   const openState = useOpenState()
 
   let value: string = ELEMENT_PARAGRAPH
-  if (isCollapsed(editor?.selection)) {
-    const entry = findNode<TElement>(editor!, {
-      match: (n) => isBlock(editor as BaseEditor, n as BaseElement),
-    })
-    if (entry) {
-      value = items.find((item) => item.value === entry[0].type)?.value ?? ELEMENT_PARAGRAPH
-    }
+  if (editor && editor.selection && isCollapsed(editor.selection)) {
+    const entry = editor.above<TPlateBlockElement>({ at: editor.selection.focus })
+    if (entry) value = items.find((item) => item.value === entry[0].type)?.value ?? 'other'
+    if (!entry) value = 'other'
   }
 
   const selectedItem = items.find((item) => item.value === value) ?? defaultItem
@@ -104,7 +100,12 @@ export function TurnIntoDropdownMenu(props: DropdownMenuProps) {
   return (
     <DropdownMenu modal={false} {...openState} {...props}>
       <DropdownMenuTrigger asChild>
-        <ToolbarButton pressed={openState.open} tooltip='Turn into' isDropdown className='lg:min-w-[130px]'>
+        <ToolbarButton
+          pressed={openState.open}
+          tooltip='Turn into'
+          isDropdown
+          className='inline-flex items-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg:not([data-icon])]:h-5 [&_svg:not([data-icon])]:w-5 bg-transparent justify-between hover:bg-slate-100 data-[state=on]:bg-accent data-[state=on]:text-accent-foreground h-9 px-2 my-1 justify-between pr-1 min-w-[auto] lg:min-w-[130px]'
+        >
           <SelectedItemIcon className='h-5 w-5 lg:hidden' />
           <span className='max-lg:hidden'>{selectedItemLabel}</span>
         </ToolbarButton>
@@ -129,7 +130,10 @@ export function TurnIntoDropdownMenu(props: DropdownMenuProps) {
             <DropdownMenuRadioItem
               key={itemValue}
               value={itemValue}
-              className='relative flex select-none items-center rounded-sm text-sm outline-none transition-colors focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50 h-9 cursor-pointer px-2 data-[state=checked]:bg-accent data-[state=checked]:text-accent-foreground min-w-[180px]'
+              className={cn(
+                'hover:bg-slate-100 relative flex select-none items-center rounded-sm text-sm outline-none transition-colors duration-75 focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50 h-9 cursor-pointer px-2 data-[state=checked]:bg-accent data-[state=checked]:text-accent-foreground min-w-[180px]',
+                itemValue === value ? 'bg-slate-100' : '',
+              )}
             >
               <Icon className='mr-2 h-5 w-5' />
               {label}

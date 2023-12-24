@@ -202,11 +202,13 @@ export const Icons = {
   h4: Heading4,
   h5: Heading5,
   h6: Heading6,
+  hr: Minus,
   image: Image,
   indent: Indent,
   italic: Italic,
   kbd: Keyboard,
   lineHeight: WrapText,
+
   link: Link2,
 
   logo: (props: LucideProps) => (
@@ -217,7 +219,6 @@ export const Icons = {
       />
     </svg>
   ),
-
   minus: Minus,
   moon: Moon,
   more: MoreHorizontal,

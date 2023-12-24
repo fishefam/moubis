@@ -15,9 +15,9 @@ export default function PlateEditor() {
       <Plate
         plugins={plugins}
         initialValue={plateDefaultValue}
-        onChange={(val) => {
-          console.log(val)
-        }}
+        // onChange={(val) => {
+        //   console.log(val)
+        // }}
       >
         <div ref={containerRef} className='relative'>
           <FixedToolbar className='overflow-visible'>
