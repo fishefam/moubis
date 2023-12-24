@@ -14,3 +14,10 @@ export function toArray<T extends Node>(iterable: Iterable<T> | ArrayLike<T> | N
 export function nanoid(size = 9) {
   return customAlphabet('0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz', size)()
 }
+
+export function toTitleCase(str: string) {
+  return str
+    .split(' ')
+    .map((v) => v.charAt(0).toUpperCase() + v.slice(1))
+    .join(' ')
+}

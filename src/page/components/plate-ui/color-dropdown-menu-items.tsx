@@ -1,7 +1,7 @@
 import type { DropdownMenuItemProps } from '@radix-ui/react-dropdown-menu'
 import { DropdownMenuItem } from '@radix-ui/react-dropdown-menu'
 
-import { cn } from '@/lib/utils'
+import { cn, toTitleCase } from '@/lib/utils'
 
 import { Icons } from '../icons'
 import { buttonVariants } from './button'
@@ -51,7 +51,7 @@ export function ColorDropdownMenuItem({
     <TooltipProvider>
       <Tooltip>
         <TooltipTrigger>{content}</TooltipTrigger>
-        <TooltipContent>{name}</TooltipContent>
+        <TooltipContent className='bg-white text-slate-600'>{toTitleCase(name)}</TooltipContent>
       </Tooltip>
     </TooltipProvider>
   ) : (
