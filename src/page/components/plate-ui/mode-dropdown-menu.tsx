@@ -54,7 +54,7 @@ export function ModeDropdownMenu(props: DropdownMenuProps) {
 
       <DropdownMenuContent
         align='start'
-        className='z-50 overflow-hidden rounded-md border bg-white p-1 shadow-md data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 flex max-h-[500px] flex-col gap-0.5 overflow-y-auto'
+        className='z-50 overflow-hidden rounded-md border bg-white p-1 shadow-md data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 flex max-h-[500px] flex-col gap-0.5 overflow-y-auto min-w-[auto]'
       >
         <DropdownMenuRadioGroup
           className='flex flex-col gap-0.5'
@@ -78,7 +78,7 @@ export function ModeDropdownMenu(props: DropdownMenuProps) {
           <DropdownMenuRadioItem
             value='editing'
             className={cn(
-              'justify-between hover:bg-slate-100 relative flex select-none items-center rounded-sm text-sm outline-none transition-colors duration-75 focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50 h-9 cursor-pointer px-2 data-[state=checked]:bg-accent data-[state=checked]:text-accent-foreground min-w-[140px]',
+              'justify-between hover:bg-slate-100 relative flex select-none items-center rounded-sm text-sm outline-none transition-colors duration-75 focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50 h-9 cursor-pointer px-2 data-[state=checked]:bg-accent data-[state=checked]:text-accent-foreground min-w-[auto] lg:min-w-[140px]',
               !readOnly ? 'bg-slate-100' : '',
             )}
           >
@@ -89,7 +89,7 @@ export function ModeDropdownMenu(props: DropdownMenuProps) {
           <DropdownMenuRadioItem
             value='viewing'
             className={cn(
-              'justify-between hover:bg-slate-100 relative flex select-none items-center rounded-sm text-sm outline-none transition-colors focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50 h-9 cursor-pointer px-2 data-[state=checked]:bg-accent data-[state=checked]:text-accent-foreground min-w-[140px]',
+              'justify-between hover:bg-slate-100 relative flex select-none items-center rounded-sm text-sm outline-none transition-colors focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50 h-9 cursor-pointer px-2 data-[state=checked]:bg-accent data-[state=checked]:text-accent-foreground min-w-[auto] lg:min-w-[140px]',
               readOnly ? 'bg-slate-100' : '',
             )}
           >
