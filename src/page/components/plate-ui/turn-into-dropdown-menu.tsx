@@ -104,7 +104,7 @@ export function TurnIntoDropdownMenu(props: DropdownMenuProps) {
           pressed={openState.open}
           tooltip='Turn into'
           isDropdown
-          className='inline-flex items-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg:not([data-icon])]:h-5 [&_svg:not([data-icon])]:w-5 bg-transparent justify-between hover:bg-slate-100 data-[state=on]:bg-accent data-[state=on]:text-accent-foreground h-9 px-2 my-1 justify-between pr-1 min-w-[auto] lg:min-w-[130px]'
+          className='inline-flex items-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg:not([data-icon])]:h-5 [&_svg:not([data-icon])]:w-5 bg-transparent hover:bg-slate-100 data-[state=on]:bg-accent data-[state=on]:text-accent-foreground h-9 px-2 my-1 justify-between pr-1 min-w-[auto] lg:min-w-[130px]'
         >
           <SelectedItemIcon className='h-5 w-5 lg:hidden' />
           <span className='max-lg:hidden'>{selectedItemLabel}</span>
