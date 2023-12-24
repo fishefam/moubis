@@ -103,7 +103,12 @@ const ToolbarButton = forwardRef<ElementRef<typeof ToolbarPrimitive.Button>, Too
     return isLoaded && tooltip ? (
       <TooltipProvider>
         <Tooltip>
-          <TooltipTrigger asChild>{content}</TooltipTrigger>
+          <TooltipTrigger
+            asChild
+            className='inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg:not([data-icon])]:h-5 [&_svg:not([data-icon])]:w-5 bg-transparent hover:bg-slate-100 data-[state=on]:bg-accent data-[state=on]:text-accent-foreground'
+          >
+            {content}
+          </TooltipTrigger>
 
           <TooltipPortal>
             <TooltipContent className='rounded text-sm p-2 shadow-md transition mb-3 text-gray-600 bg-white select-none'>

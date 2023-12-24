@@ -13,7 +13,7 @@ export function IndentListToolbarButton({
 
   return (
     <ToolbarButton tooltip={nodeType === ListStyleType.Disc ? 'Bulleted List' : 'Numbered List'} {...props}>
-      {nodeType === ListStyleType.Disc ? <Icons.ul /> : <Icons.ol />}
+      {nodeType === ListStyleType.Disc ? <Icons.ul className='h-5 w-5' /> : <Icons.ol className='h-5 w-5' />}
     </ToolbarButton>
   )
 }

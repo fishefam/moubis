@@ -9,7 +9,7 @@ export function OutdentToolbarButton() {
 
   return (
     <ToolbarButton tooltip='Outdent' {...props}>
-      <Icons.outdent />
+      <Icons.outdent className='h-5 w-5' />
     </ToolbarButton>
   )
 }

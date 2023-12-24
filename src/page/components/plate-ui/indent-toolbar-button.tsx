@@ -9,7 +9,7 @@ export function IndentToolbarButton() {
 
   return (
     <ToolbarButton tooltip='Indent' {...props}>
-      <Icons.indent />
+      <Icons.indent className='h-5 w-5' />
     </ToolbarButton>
   )
 }

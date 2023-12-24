@@ -50,20 +50,20 @@ export function FixedToolbarButtons() {
 
             <ToolbarGroup>
               <MarkToolbarButton tooltip='Bold (⌘+B)' nodeType={MARK_BOLD}>
-                <Icons.bold />
+                <Icons.bold className='h-5 w-5' />
               </MarkToolbarButton>
               <MarkToolbarButton tooltip='Italic (⌘+I)' nodeType={MARK_ITALIC}>
-                <Icons.italic />
+                <Icons.italic className='h-5 w-5' />
               </MarkToolbarButton>
               <MarkToolbarButton tooltip='Underline (⌘+U)' nodeType={MARK_UNDERLINE}>
-                <Icons.underline />
+                <Icons.underline className='h-5 w-5' />
               </MarkToolbarButton>
 
               <MarkToolbarButton tooltip='Strikethrough (⌘+⇧+M)' nodeType={MARK_STRIKETHROUGH}>
-                <Icons.strikethrough />
+                <Icons.strikethrough className='h-5 w-5' />
               </MarkToolbarButton>
               <MarkToolbarButton tooltip='Code (⌘+E)' nodeType={MARK_CODE}>
-                <Icons.code />
+                <Icons.code className='h-5 w-5' />
               </MarkToolbarButton>
             </ToolbarGroup>
 
