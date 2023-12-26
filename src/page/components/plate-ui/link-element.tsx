@@ -1,5 +1,5 @@
+import { PlateElement } from '@udecode/plate'
 import type { PlateElementProps, Value } from '@udecode/plate-common'
-import { PlateElement } from '@udecode/plate-common'
 import type { TLinkElement } from '@udecode/plate-link'
 import { useLink } from '@udecode/plate-link'
 import React from 'react'
