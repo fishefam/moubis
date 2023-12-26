@@ -11,7 +11,7 @@ type PlateCommentProps = {
 }
 
 function CommentItemContent() {
-  const { comment, isMyComment, isReplyComment, user, editingValue, commentText } = useCommentItemContentState()
+  const { comment, commentText, editingValue, isMyComment, isReplyComment, user } = useCommentItemContentState()
 
   return (
     <div>
@@ -45,7 +45,7 @@ export function CommentItem({ commentId }: PlateCommentProps) {
   if (!comment) return null
 
   return (
-    <CommentProvider key={commentId} id={commentId}>
+    <CommentProvider id={commentId} key={commentId}>
       <CommentItemContent />
     </CommentProvider>
   )

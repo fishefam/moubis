@@ -10,20 +10,20 @@ import { cn } from '@/lib/utils'
 import type { TColor } from './color-dropdown-menu'
 
 type ColorDropdownMenuItemProps = {
-  value: string
   isBrightColor: boolean
   isSelected: boolean
-  updateColor: (color: string) => void
   name?: string
+  updateColor: (color: string) => void
+  value: string
 } & DropdownMenuItemProps
 
 export function ColorDropdownMenuItem({
-  name,
-  value,
+  className,
   isBrightColor,
   isSelected,
+  name,
   updateColor,
-  className,
+  value,
   ...props
 }: ColorDropdownMenuItemProps) {
   const content = (
@@ -37,11 +37,11 @@ export function ColorDropdownMenuItem({
         !isBrightColor && 'border-transparent text-white',
         className,
       )}
-      style={{ backgroundColor: value }}
       onSelect={(e) => {
         e.preventDefault()
         updateColor(value)
       }}
+      style={{ backgroundColor: value }}
       {...props}
     >
       {isSelected ? <Icons.check /> : null}
@@ -65,22 +65,22 @@ type ColorDropdownMenuItemsProps = {
 } & React.HTMLAttributes<HTMLDivElement>
 
 export function ColorDropdownMenuItems({
+  className,
   color,
   colors,
   updateColor,
-  className,
   ...props
 }: ColorDropdownMenuItemsProps) {
   return (
     <div className={cn('grid grid-cols-[repeat(10,1fr)] gap-1', className)} {...props}>
-      {colors.map(({ name, value, isBrightColor }) => (
+      {colors.map(({ isBrightColor, name, value }) => (
         <ColorDropdownMenuItem
-          key={name ?? value}
-          name={name}
-          value={value}
           isBrightColor={isBrightColor}
           isSelected={color === value}
+          key={name ?? value}
+          name={name}
           updateColor={updateColor}
+          value={value}
         />
       ))}
     </div>

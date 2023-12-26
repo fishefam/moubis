@@ -1,14 +1,14 @@
-import { isCollapsed, useEditorState, useElement, useRemoveNodeButton } from '@udecode/plate-common'
-import {
-  FloatingMedia as FloatingMediaPrimitive,
-  floatingMediaActions,
-  useFloatingMediaSelectors,
-} from '@udecode/plate-media'
 import type React from 'react'
-import { useEffect } from 'react'
-import { useReadOnly, useSelected } from 'slate-react'
 
 import { Icons } from '@/components/icons'
+import { isCollapsed, useEditorState, useElement, useRemoveNodeButton } from '@udecode/plate-common'
+import {
+  floatingMediaActions,
+  FloatingMedia as FloatingMediaPrimitive,
+  useFloatingMediaSelectors,
+} from '@udecode/plate-media'
+import { useEffect } from 'react'
+import { useReadOnly, useSelected } from 'slate-react'
 
 import { Button, buttonVariants } from './button'
 import { inputVariants } from './input'
@@ -16,11 +16,11 @@ import { Popover, PopoverAnchor, PopoverContent } from './popover'
 import { Separator } from './separator'
 
 export type MediaPopoverProps = {
-  pluginKey?: string
   children: React.ReactNode
+  pluginKey?: string
 }
 
-export function MediaPopover({ pluginKey, children }: MediaPopoverProps) {
+export function MediaPopover({ children, pluginKey }: MediaPopoverProps) {
   const readOnly = useReadOnly()
   const selected = useSelected()
   const editor = useEditorState()
@@ -41,7 +41,7 @@ export function MediaPopover({ pluginKey, children }: MediaPopoverProps) {
   if (readOnly) return <>{children}</>
 
   return (
-    <Popover open={isOpen} modal={false}>
+    <Popover modal={false} open={isOpen}>
       <PopoverAnchor>{children}</PopoverAnchor>
 
       <PopoverContent className='w-auto p-1' onOpenAutoFocus={(e) => e.preventDefault()}>
@@ -54,10 +54,10 @@ export function MediaPopover({ pluginKey, children }: MediaPopoverProps) {
 
               <FloatingMediaPrimitive.UrlInput
                 className={inputVariants({ h: 'sm', variant: 'ghost' })}
-                placeholder='Paste the embed link...'
                 options={{
                   pluginKey,
                 }}
+                placeholder='Paste the embed link...'
               />
             </div>
           </div>
@@ -67,9 +67,9 @@ export function MediaPopover({ pluginKey, children }: MediaPopoverProps) {
               Edit link
             </FloatingMediaPrimitive.EditButton>
 
-            <Separator orientation='vertical' className='my-1' />
+            <Separator className='my-1' orientation='vertical' />
 
-            <Button variant='ghost' size='sms' {...buttonProps}>
+            <Button size='sms' variant='ghost' {...buttonProps}>
               <Icons.delete className='h-4 w-4' />
             </Button>
           </div>

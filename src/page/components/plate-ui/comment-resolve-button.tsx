@@ -1,8 +1,7 @@
-import { CommentResolveButton as CommentResolveButtonPrimitive, useComment } from '@udecode/plate-comments'
-
 import { Icons } from '@/components/icons'
 import { buttonVariants } from '@/components/plate-ui/button'
 import { cn } from '@/lib/utils'
+import { CommentResolveButton as CommentResolveButtonPrimitive, useComment } from '@udecode/plate-comments'
 
 export function CommentResolveButton() {
   const comment = useComment()!

@@ -1,4 +1,3 @@
-import * as Popover from '@radix-ui/react-popover'
 import type {
   ComboboxContentItemProps,
   ComboboxContentProps,
@@ -7,6 +6,9 @@ import type {
   NoData,
   TComboboxItem,
 } from '@udecode/plate-combobox'
+
+import { cn } from '@/lib/utils'
+import * as Popover from '@radix-ui/react-popover'
 import {
   comboboxActions,
   useActiveComboboxStore,
@@ -19,8 +21,6 @@ import {
 import { useEditorState, useEventEditorSelectors } from '@udecode/plate-common'
 import { createVirtualRef } from '@udecode/plate-floating'
 import { useEffect } from 'react'
-
-import { cn } from '@/lib/utils'
 
 export function ComboboxItem<TData extends Data = NoData>({
   combobox,
@@ -42,7 +42,7 @@ export function ComboboxItem<TData extends Data = NoData>({
 }
 
 export function ComboboxContent<TData extends Data = NoData>(props: ComboboxContentProps<TData>) {
-  const { component: Component, items, portalElement, combobox, onRenderItem } = props
+  const { combobox, component: Component, items, onRenderItem, portalElement } = props
 
   const editor = useEditorState()
 
@@ -59,16 +59,16 @@ export function ComboboxContent<TData extends Data = NoData>(props: ComboboxCont
       <Popover.Portal container={portalElement}>
         <Popover.Content
           {...menuProps}
-          sideOffset={5}
-          side='bottom'
           align='start'
           className={cn('z-[500] m-0 max-h-[288px] w-[300px] overflow-scroll rounded-md bg-popover p-0 shadow-md')}
           onOpenAutoFocus={(event) => event.preventDefault()}
+          side='bottom'
+          sideOffset={5}
         >
           {Component ? Component({ store: activeComboboxStore }) : null}
 
           {filteredItems.map((item, index) => (
-            <ComboboxItem key={item.key} item={item} combobox={combobox} index={index} onRenderItem={onRenderItem} />
+            <ComboboxItem combobox={combobox} index={index} item={item} key={item.key} onRenderItem={onRenderItem} />
           ))}
         </Popover.Content>
       </Popover.Portal>
@@ -81,15 +81,15 @@ export function ComboboxContent<TData extends Data = NoData>(props: ComboboxCont
  * Renders the combobox if active.
  */
 export function Combobox<TData extends Data = NoData>({
-  id,
-  trigger,
-  searchPattern,
-  onSelectItem,
   controlled,
-  maxSuggestions,
-  filter,
-  sort,
   disabled: _disabled,
+  filter,
+  id,
+  maxSuggestions,
+  onSelectItem,
+  searchPattern,
+  sort,
+  trigger,
   ...props
 }: ComboboxProps<TData>) {
   const storeItems = useComboboxSelectors.items()

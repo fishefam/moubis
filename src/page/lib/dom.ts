@@ -7,7 +7,7 @@ export function selectElement(selector: string) {
 }
 
 export function createElement<T extends keyof HTMLElementTagNameMap>(options: CreateElementOptions<T>) {
-  const { tag, parent, attributes, classnames, innerHtml, text } = options
+  const { attributes, classnames, innerHtml, parent, tag, text } = options
   const element = document.createElement(tag)
   if (innerHtml) element.innerHTML = innerHtml
   if (!innerHtml && text) element.textContent = text
@@ -75,7 +75,7 @@ type CreateElementOptions<T> = {
   attributes?: Array<[string, string]>
   classnames?: string[]
   innerHtml?: string
-  parent?: string | Element
+  parent?: Element | string
   tag: T
   text?: string
 }

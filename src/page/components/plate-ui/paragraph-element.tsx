@@ -1,13 +1,12 @@
 import type { PlateElementProps } from '@udecode/plate-common'
+
 import { PlateElement } from '@udecode/plate-common'
 import React from 'react'
 
-import { cn } from '@/lib/utils'
-
 const ParagraphElement = React.forwardRef<React.ElementRef<typeof PlateElement>, PlateElementProps>(
-  ({ className, children, ...props }: PlateElementProps, ref) => {
+  ({ children, className, style = { lineHeight: 1.5 }, ...props }: PlateElementProps, ref) => {
     return (
-      <PlateElement ref={ref} className={cn('m-0 px-0 py-1', className)} {...props}>
+      <PlateElement className={className} ref={ref} style={{ margin: 0, padding: '0.25rem 0', ...style }} {...props}>
         {children}
       </PlateElement>
     )

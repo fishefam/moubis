@@ -1,8 +1,8 @@
 import type { DropdownMenuProps } from '@radix-ui/react-dropdown-menu'
-import { MARK_SUBSCRIPT, MARK_SUPERSCRIPT } from '@udecode/plate-basic-marks'
-import { focusEditor, toggleMark, useEditorState } from '@udecode/plate-common'
 
 import { Icons } from '@/components/icons'
+import { MARK_SUBSCRIPT, MARK_SUPERSCRIPT } from '@udecode/plate-basic-marks'
+import { focusEditor, toggleMark, useEditorState } from '@udecode/plate-common'
 
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger, useOpenState } from './dropdown-menu'
 import { ToolbarButton } from './toolbar'

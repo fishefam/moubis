@@ -1,16 +1,15 @@
+import { cn } from '@/lib/utils'
 import { useColorInput } from '@udecode/plate-font'
 import React from 'react'
 
-import { cn } from '@/lib/utils'
-
 export function ColorInput({
-  value = '#000000',
-  onChange,
   children,
   className,
+  onChange,
+  value = '#000000',
   ...props
 }: React.InputHTMLAttributes<HTMLInputElement>) {
-  const { inputRef, childProps } = useColorInput()
+  const { childProps, inputRef } = useColorInput()
 
   return (
     <div className={cn('flex flex-col items-center', className)} {...props}>
@@ -21,11 +20,11 @@ export function ColorInput({
       })}
 
       <input
-        ref={inputRef}
         className='h-0 w-0 overflow-hidden border-0 p-0'
+        onChange={onChange}
+        ref={inputRef}
         type='color'
         value={value}
-        onChange={onChange}
       />
     </div>
   )

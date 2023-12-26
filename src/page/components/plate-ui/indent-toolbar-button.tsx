@@ -1,6 +1,5 @@
-import { useIndentButton } from '@udecode/plate-indent'
-
 import { Icons } from '@/components/icons'
+import { useIndentButton } from '@udecode/plate-indent'
 
 import { ToolbarButton } from './toolbar'
 

@@ -1,4 +1,5 @@
 import type { AutoformatBlockRule, PlateEditor } from '@udecode/plate'
+
 import {
   ELEMENT_CODE_BLOCK,
   ELEMENT_CODE_LINE,

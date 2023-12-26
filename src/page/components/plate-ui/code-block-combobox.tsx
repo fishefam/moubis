@@ -1,3 +1,5 @@
+import { Icons } from '@/components/icons'
+import { cn } from '@/lib/utils'
 import {
   CODE_BLOCK_LANGUAGES,
   CODE_BLOCK_LANGUAGES_POPULAR,
@@ -6,14 +8,11 @@ import {
 } from '@udecode/plate-code-block'
 import { useState } from 'react'
 
-import { Icons } from '@/components/icons'
-import { cn } from '@/lib/utils'
-
 import { Button } from './button'
 import { Command, CommandEmpty, CommandInput, CommandItem, CommandList } from './command'
 import { Popover, PopoverContent, PopoverTrigger } from './popover'
 
-const languages: { value: string; label: string }[] = [
+const languages: { label: string; value: string }[] = [
   { label: 'Plain Text', value: 'text' },
   ...Object.entries({
     ...CODE_BLOCK_LANGUAGES_POPULAR,
@@ -33,14 +32,14 @@ export function CodeBlockCombobox() {
   if (state.readOnly) return null
 
   return (
-    <Popover open={open} onOpenChange={setOpen}>
+    <Popover onOpenChange={setOpen} open={open}>
       <PopoverTrigger asChild>
         <Button
-          variant='ghost'
-          role='combobox'
           aria-expanded={open}
           className='h-5 justify-between px-1 text-xs'
+          role='combobox'
           size='xs'
+          variant='ghost'
         >
           {state.value ? languages.find((language) => language.value === state.value)?.label : 'Plain Text'}
           <Icons.chevronsUpDown className='ml-2 h-4 w-4 shrink-0 opacity-50' />
@@ -54,13 +53,13 @@ export function CodeBlockCombobox() {
           <CommandList>
             {languages.map((language) => (
               <CommandItem
-                key={language.value}
-                value={language.value}
                 className='cursor-pointer'
+                key={language.value}
                 onSelect={(_value) => {
                   commandItemProps.onSelect(_value)
                   setOpen(false)
                 }}
+                value={language.value}
               >
                 <Icons.check
                   className={cn('mr-2 h-4 w-4', state.value === language.value ? 'opacity-100' : 'opacity-0')}

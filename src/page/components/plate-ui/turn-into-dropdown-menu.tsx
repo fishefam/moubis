@@ -1,6 +1,8 @@
 import type { DropdownMenuProps } from '@radix-ui/react-dropdown-menu'
-import { ELEMENT_BLOCKQUOTE } from '@udecode/plate-block-quote'
 import type { TElement } from '@udecode/plate-common'
+
+import { Icons } from '@/components/icons'
+import { ELEMENT_BLOCKQUOTE } from '@udecode/plate-block-quote'
 import {
   collapseSelection,
   findNode,
@@ -12,8 +14,6 @@ import {
 } from '@udecode/plate-common'
 import { ELEMENT_H1, ELEMENT_H2, ELEMENT_H3 } from '@udecode/plate-heading'
 import { ELEMENT_PARAGRAPH } from '@udecode/plate-paragraph'
-
-import { Icons } from '@/components/icons'
 
 import {
   DropdownMenu,
@@ -93,7 +93,7 @@ export function TurnIntoDropdownMenu(props: DropdownMenuProps) {
   return (
     <DropdownMenu modal={false} {...openState} {...props}>
       <DropdownMenuTrigger asChild>
-        <ToolbarButton pressed={openState.open} tooltip='Turn into' isDropdown className='lg:min-w-[130px]'>
+        <ToolbarButton className='lg:min-w-[130px]' isDropdown pressed={openState.open} tooltip='Turn into'>
           <SelectedItemIcon className='h-5 w-5 lg:hidden' />
           <span className='max-lg:hidden'>{selectedItemLabel}</span>
         </ToolbarButton>
@@ -104,7 +104,6 @@ export function TurnIntoDropdownMenu(props: DropdownMenuProps) {
 
         <DropdownMenuRadioGroup
           className='flex flex-col gap-0.5'
-          value={value}
           onValueChange={(type) => {
             // if (type === 'ul' || type === 'ol') {
             //   if (settingsStore.get.checkedId(KEY_LIST_STYLE_TYPE)) {
@@ -122,9 +121,10 @@ export function TurnIntoDropdownMenu(props: DropdownMenuProps) {
             collapseSelection(editor)
             focusEditor(editor)
           }}
+          value={value}
         >
-          {items.map(({ value: itemValue, label, icon: Icon }) => (
-            <DropdownMenuRadioItem key={itemValue} value={itemValue} className='min-w-[180px]'>
+          {items.map(({ icon: Icon, label, value: itemValue }) => (
+            <DropdownMenuRadioItem className='min-w-[180px]' key={itemValue} value={itemValue}>
               <Icon className='mr-2 h-5 w-5' />
               {label}
             </DropdownMenuRadioItem>

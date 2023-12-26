@@ -1,11 +1,12 @@
-import { PortalBody, useComposedRef } from '@udecode/plate-common'
 import type { FloatingToolbarState } from '@udecode/plate-floating'
+
+import { cn } from '@/lib/utils'
+import { PortalBody, useComposedRef } from '@udecode/plate-common'
 import { flip, offset, useFloatingToolbar, useFloatingToolbarState } from '@udecode/plate-floating'
 import React from 'react'
 
-import { cn } from '@/lib/utils'
-
 import type { ToolbarProps } from './toolbar'
+
 import { Toolbar } from './toolbar'
 
 export type FloatingToolbarProps = {
@@ -13,7 +14,7 @@ export type FloatingToolbarProps = {
 } & ToolbarProps
 
 const FloatingToolbar = React.forwardRef<React.ElementRef<typeof Toolbar>, FloatingToolbarProps>(
-  ({ state, children, ...props }, componentRef) => {
+  ({ children, state, ...props }, componentRef) => {
     const floatingToolbarState = useFloatingToolbarState({
       ...state,
       floatingOptions: {
@@ -29,7 +30,7 @@ const FloatingToolbar = React.forwardRef<React.ElementRef<typeof Toolbar>, Float
       },
     })
 
-    const { ref: floatingRef, props: rootProps, hidden } = useFloatingToolbar(floatingToolbarState)
+    const { hidden, props: rootProps, ref: floatingRef } = useFloatingToolbar(floatingToolbarState)
 
     const ref = useComposedRef<HTMLDivElement>(componentRef, floatingRef)
 
@@ -38,8 +39,8 @@ const FloatingToolbar = React.forwardRef<React.ElementRef<typeof Toolbar>, Float
     return (
       <PortalBody>
         <Toolbar
-          ref={ref}
           className={cn('absolute z-50 whitespace-nowrap border bg-popover px-1 opacity-100 shadow-md print:hidden')}
+          ref={ref}
           {...rootProps}
           {...props}
         >

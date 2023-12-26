@@ -1,8 +1,8 @@
+import { Icons } from '@/components/icons'
 import { ListStyleType, useIndentListToolbarButton, useIndentListToolbarButtonState } from '@udecode/plate-indent-list'
 
-import { Icons } from '@/components/icons'
-
 import type { ToolbarButtonProps } from './toolbar'
+
 import { ToolbarButton } from './toolbar'
 
 export function IndentListToolbarButton({

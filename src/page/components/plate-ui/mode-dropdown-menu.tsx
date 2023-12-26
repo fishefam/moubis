@@ -1,8 +1,8 @@
 import type { DropdownMenuProps } from '@radix-ui/react-dropdown-menu'
-import { focusEditor, useEditorReadOnly, useEditorState, usePlateStore } from '@udecode/plate-common'
 import type React from 'react'
 
 import { Icons } from '@/components/icons'
+import { focusEditor, useEditorReadOnly, useEditorState, usePlateStore } from '@udecode/plate-common'
 
 import {
   DropdownMenu,
@@ -42,10 +42,10 @@ export function ModeDropdownMenu(props: DropdownMenuProps) {
     <DropdownMenu modal={false} {...openState} {...props}>
       <DropdownMenuTrigger asChild>
         <ToolbarButton
+          className='min-w-[auto] lg:min-w-[130px]'
+          isDropdown
           pressed={openState.open}
           tooltip='Editing mode'
-          isDropdown
-          className='min-w-[auto] lg:min-w-[130px]'
         >
           {item[value]}
         </ToolbarButton>
@@ -54,7 +54,6 @@ export function ModeDropdownMenu(props: DropdownMenuProps) {
       <DropdownMenuContent align='start' className='min-w-[180px]'>
         <DropdownMenuRadioGroup
           className='flex flex-col gap-0.5'
-          value={value}
           onValueChange={(newValue) => {
             if (newValue !== 'viewing') {
               setReadOnly(false)
@@ -70,6 +69,7 @@ export function ModeDropdownMenu(props: DropdownMenuProps) {
               return
             }
           }}
+          value={value}
         >
           <DropdownMenuRadioItem value='editing'>{item.editing}</DropdownMenuRadioItem>
 

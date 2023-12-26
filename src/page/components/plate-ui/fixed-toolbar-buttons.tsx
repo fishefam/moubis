@@ -1,9 +1,3 @@
-import { MARK_BOLD, MARK_CODE, MARK_ITALIC, MARK_STRIKETHROUGH, MARK_UNDERLINE } from '@udecode/plate-basic-marks'
-import { useEditorReadOnly } from '@udecode/plate-common'
-import { MARK_BG_COLOR, MARK_COLOR } from '@udecode/plate-font'
-import { ListStyleType } from '@udecode/plate-indent-list'
-import { ELEMENT_IMAGE } from '@udecode/plate-media'
-
 import { Icons, iconVariants } from '@/components/icons'
 import { AlignDropdownMenu } from '@/components/plate-ui/align-dropdown-menu'
 import { ColorDropdownMenu } from '@/components/plate-ui/color-dropdown-menu'
@@ -17,6 +11,11 @@ import { MediaToolbarButton } from '@/components/plate-ui/media-toolbar-button'
 import { MoreDropdownMenu } from '@/components/plate-ui/more-dropdown-menu'
 import { OutdentToolbarButton } from '@/components/plate-ui/outdent-toolbar-button'
 import { TableDropdownMenu } from '@/components/plate-ui/table-dropdown-menu'
+import { MARK_BOLD, MARK_CODE, MARK_ITALIC, MARK_STRIKETHROUGH, MARK_UNDERLINE } from '@udecode/plate-basic-marks'
+import { useEditorReadOnly } from '@udecode/plate-common'
+import { MARK_BG_COLOR, MARK_COLOR } from '@udecode/plate-font'
+import { ListStyleType } from '@udecode/plate-indent-list'
+import { ELEMENT_IMAGE } from '@udecode/plate-media'
 
 import { InsertDropdownMenu } from './insert-dropdown-menu'
 import { MarkToolbarButton } from './mark-toolbar-button'
@@ -43,20 +42,20 @@ export function FixedToolbarButtons() {
             </ToolbarGroup>
 
             <ToolbarGroup>
-              <MarkToolbarButton tooltip='Bold (⌘+B)' nodeType={MARK_BOLD}>
+              <MarkToolbarButton nodeType={MARK_BOLD} tooltip='Bold (⌘+B)'>
                 <Icons.bold />
               </MarkToolbarButton>
-              <MarkToolbarButton tooltip='Italic (⌘+I)' nodeType={MARK_ITALIC}>
+              <MarkToolbarButton nodeType={MARK_ITALIC} tooltip='Italic (⌘+I)'>
                 <Icons.italic />
               </MarkToolbarButton>
-              <MarkToolbarButton tooltip='Underline (⌘+U)' nodeType={MARK_UNDERLINE}>
+              <MarkToolbarButton nodeType={MARK_UNDERLINE} tooltip='Underline (⌘+U)'>
                 <Icons.underline />
               </MarkToolbarButton>
 
-              <MarkToolbarButton tooltip='Strikethrough (⌘+⇧+M)' nodeType={MARK_STRIKETHROUGH}>
+              <MarkToolbarButton nodeType={MARK_STRIKETHROUGH} tooltip='Strikethrough (⌘+⇧+M)'>
                 <Icons.strikethrough />
               </MarkToolbarButton>
-              <MarkToolbarButton tooltip='Code (⌘+E)' nodeType={MARK_CODE}>
+              <MarkToolbarButton nodeType={MARK_CODE} tooltip='Code (⌘+E)'>
                 <Icons.code />
               </MarkToolbarButton>
             </ToolbarGroup>

@@ -4,7 +4,7 @@ import { cn } from '@/lib/utils'
 
 export type EmojiPickerNavigationProps = Pick<
   UseEmojiPickerType,
-  'i18n' | 'emojiLibrary' | 'icons' | 'focusedCategory'
+  'emojiLibrary' | 'focusedCategory' | 'i18n' | 'icons'
 > & {
   onClick: (id: EmojiCategoryList) => void
 }
@@ -21,31 +21,31 @@ const getBarProperty = (emojiLibrary: IEmojiFloatingLibrary, focusedCategory?: E
 }
 
 export function EmojiPickerNavigation({
-  i18n,
-  icons,
   emojiLibrary,
   focusedCategory,
+  i18n,
+  icons,
   onClick,
 }: EmojiPickerNavigationProps) {
-  const { width, position } = getBarProperty(emojiLibrary, focusedCategory)
+  const { position, width } = getBarProperty(emojiLibrary, focusedCategory)
 
   return (
-    <nav id='emoji-nav' className='mb-2.5 border-0 border-b border-solid border-b-gray-100 p-3'>
+    <nav className='mb-2.5 border-0 border-b border-solid border-b-gray-100 p-3' id='emoji-nav'>
       <div className='relative flex'>
         {emojiLibrary
           .getGrid()
           .sections()
           .map(({ id }) => (
             <button
-              key={id}
               aria-label={i18n.categories[id]}
-              title={i18n.categories[id]}
-              type='button'
               className={cn(
                 'flex grow cursor-pointer items-center justify-center border-none bg-transparent fill-current text-sm text-gray-500 hover:text-gray-800',
                 id === focusedCategory && 'pointer-events-none fill-current text-blue-600',
               )}
+              key={id}
               onClick={() => onClick(id)}
+              title={i18n.categories[id]}
+              type='button'
             >
               <span style={{ height: '20px', width: '20px' }}>{icons.categories[id].outline}</span>
             </button>

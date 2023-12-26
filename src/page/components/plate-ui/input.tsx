@@ -1,8 +1,8 @@
 import type { VariantProps } from 'class-variance-authority'
-import { cva } from 'class-variance-authority'
-import * as React from 'react'
 
 import { cn } from '@/lib/utils'
+import { cva } from 'class-variance-authority'
+import * as React from 'react'
 
 export const inputVariants = cva(
   'flex w-full rounded-md bg-transparent text-sm file:border-0 file:bg-background file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50',
@@ -29,8 +29,8 @@ export type InputProps = Record<string, unknown> &
   React.InputHTMLAttributes<HTMLInputElement> &
   VariantProps<typeof inputVariants>
 
-const Input = React.forwardRef<HTMLInputElement, InputProps>(({ className, variant, type, ...props }, ref) => {
-  return <input type={type} className={cn(inputVariants({ variant }), className)} ref={ref} {...props} />
+const Input = React.forwardRef<HTMLInputElement, InputProps>(({ className, type, variant, ...props }, ref) => {
+  return <input className={cn(inputVariants({ variant }), className)} ref={ref} type={type} {...props} />
 })
 Input.displayName = 'Input'
 

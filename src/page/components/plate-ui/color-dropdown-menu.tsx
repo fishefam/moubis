@@ -1,16 +1,16 @@
 import type { DropdownMenuProps } from '@radix-ui/react-dropdown-menu'
-import { useColorDropdownMenu, useColorDropdownMenuState } from '@udecode/plate-font'
 
 import { DropdownMenu, DropdownMenuContent, DropdownMenuTrigger } from '@/components/plate-ui/dropdown-menu'
 import { ToolbarButton } from '@/components/plate-ui/toolbar'
+import { useColorDropdownMenu, useColorDropdownMenuState } from '@udecode/plate-font'
 
 import { DEFAULT_COLORS, DEFAULT_CUSTOM_COLORS } from './color-constants'
 import { ColorPicker } from './color-picker'
 
 export type TColor = {
+  isBrightColor: boolean
   name: string
   value: string
-  isBrightColor: boolean
 }
 
 type ColorDropdownMenuProps = {
@@ -18,7 +18,7 @@ type ColorDropdownMenuProps = {
   tooltip?: string
 } & DropdownMenuProps
 
-export function ColorDropdownMenu({ nodeType, tooltip, children }: ColorDropdownMenuProps) {
+export function ColorDropdownMenu({ children, nodeType, tooltip }: ColorDropdownMenuProps) {
   const state = useColorDropdownMenuState({
     closeOnSelect: true,
     colors: DEFAULT_COLORS,
@@ -26,7 +26,7 @@ export function ColorDropdownMenu({ nodeType, tooltip, children }: ColorDropdown
     nodeType,
   })
 
-  const { menuProps, buttonProps } = useColorDropdownMenu(state)
+  const { buttonProps, menuProps } = useColorDropdownMenu(state)
 
   return (
     <DropdownMenu modal={false} {...menuProps}>
@@ -38,12 +38,12 @@ export function ColorDropdownMenu({ nodeType, tooltip, children }: ColorDropdown
 
       <DropdownMenuContent align='start'>
         <ColorPicker
+          clearColor={state.clearColor}
           color={state.selectedColor || state.color}
           colors={state.colors}
           customColors={state.customColors}
           updateColor={state.updateColorAndClose}
           updateCustomColor={state.updateColor}
-          clearColor={state.clearColor}
         />
       </DropdownMenuContent>
     </DropdownMenu>

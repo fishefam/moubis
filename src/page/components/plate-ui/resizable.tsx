@@ -1,10 +1,10 @@
-import { Resizable as ResizablePrimitive, ResizeHandle as ResizeHandlePrimitive } from '@udecode/plate-resizable'
 import type { VariantProps } from 'class-variance-authority'
-import { cva } from 'class-variance-authority'
 import type { ComponentProps } from 'react'
-import React from 'react'
 
 import { cn } from '@/lib/utils'
+import { Resizable as ResizablePrimitive, ResizeHandle as ResizeHandlePrimitive } from '@udecode/plate-resizable'
+import { cva } from 'class-variance-authority'
+import React from 'react'
 
 export const mediaResizeHandleVariants = cva(
   cn(
@@ -37,8 +37,8 @@ const ResizeHandle = React.forwardRef<
   ComponentProps<typeof ResizeHandlePrimitive> & Omit<VariantProps<typeof resizeHandleVariants>, 'direction'>
 >(({ className, ...props }, ref) => (
   <ResizeHandlePrimitive
-    ref={ref}
     className={cn(resizeHandleVariants({ direction: props.options?.direction }), className)}
+    ref={ref}
     {...props}
   />
 ))
@@ -57,8 +57,8 @@ const resizableVariants = cva('', {
 const Resizable = React.forwardRef<
   React.ElementRef<typeof ResizablePrimitive>,
   ComponentProps<typeof ResizablePrimitive> & VariantProps<typeof resizableVariants>
->(({ className, align, ...props }, ref) => (
-  <ResizablePrimitive ref={ref} className={cn(resizableVariants({ align }), className)} {...props} />
+>(({ align, className, ...props }, ref) => (
+  <ResizablePrimitive className={cn(resizableVariants({ align }), className)} ref={ref} {...props} />
 ))
 Resizable.displayName = 'Resizable'
 

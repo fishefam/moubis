@@ -1,9 +1,9 @@
 import type { PlateElementProps } from '@udecode/plate-common'
-import { PlateElement } from '@udecode/plate-common'
 import type { VariantProps } from 'class-variance-authority'
-import { cva } from 'class-variance-authority'
 
 import { cn } from '@/lib/utils'
+import { PlateElement } from '@udecode/plate-common'
+import { cva } from 'class-variance-authority'
 
 const listVariants = cva('m-0 ps-6', {
   variants: {
@@ -15,8 +15,8 @@ const listVariants = cva('m-0 ps-6', {
 })
 
 export function ListElement({
-  className,
   children,
+  className,
   variant = 'ul',
   ...props
 }: PlateElementProps & VariantProps<typeof listVariants>) {

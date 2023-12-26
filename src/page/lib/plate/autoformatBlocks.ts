@@ -1,4 +1,5 @@
 import type { AutoformatRule } from '@udecode/plate'
+
 import {
   ELEMENT_BLOCKQUOTE,
   ELEMENT_CODE_BLOCK,

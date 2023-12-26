@@ -1,8 +1,7 @@
-import { CommentNewSubmitButton, CommentNewTextarea, useCommentsSelectors } from '@udecode/plate-comments'
-
 import { buttonVariants } from '@/components/plate-ui/button'
 import { inputVariants } from '@/components/plate-ui/input'
 import { cn } from '@/lib/utils'
+import { CommentNewSubmitButton, CommentNewTextarea, useCommentsSelectors } from '@udecode/plate-comments'
 
 import { CommentAvatar } from './comment-avatar'
 

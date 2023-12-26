@@ -1,6 +1,9 @@
 import type { UseVirtualFloatingOptions } from '@udecode/plate-floating'
-import { flip, offset } from '@udecode/plate-floating'
 import type { LinkFloatingToolbarState } from '@udecode/plate-link'
+
+import { Icons } from '@/components/icons'
+import { cn } from '@/lib/utils'
+import { flip, offset } from '@udecode/plate-floating'
 import {
   FloatingLinkUrlInput,
   LinkOpenButton,
@@ -9,9 +12,6 @@ import {
   useFloatingLinkInsert,
   useFloatingLinkInsertState,
 } from '@udecode/plate-link'
-
-import { Icons } from '@/components/icons'
-import { cn } from '@/lib/utils'
 
 import { buttonVariants } from './button'
 import { inputVariants } from './input'
@@ -41,7 +41,7 @@ export function LinkFloatingToolbar({ state }: LinkFloatingToolbarProps) {
       ...state?.floatingOptions,
     },
   })
-  const { props: insertProps, ref: insertRef, hidden, textInputProps } = useFloatingLinkInsert(insertState)
+  const { hidden, props: insertProps, ref: insertRef, textInputProps } = useFloatingLinkInsert(insertState)
 
   const editState = useFloatingLinkEditState({
     ...state,
@@ -50,7 +50,7 @@ export function LinkFloatingToolbar({ state }: LinkFloatingToolbarProps) {
       ...state?.floatingOptions,
     },
   })
-  const { props: editProps, ref: editRef, editButtonProps, unlinkButtonProps } = useFloatingLinkEdit(editState)
+  const { editButtonProps, props: editProps, ref: editRef, unlinkButtonProps } = useFloatingLinkEdit(editState)
 
   if (hidden) return null
 
@@ -83,7 +83,7 @@ export function LinkFloatingToolbar({ state }: LinkFloatingToolbarProps) {
     input
   ) : (
     <div className='box-content flex h-9 items-center gap-1'>
-      <button type='button' className={buttonVariants({ size: 'sm', variant: 'ghost' })} {...editButtonProps}>
+      <button className={buttonVariants({ size: 'sm', variant: 'ghost' })} type='button' {...editButtonProps}>
         Edit link
       </button>
 
@@ -101,11 +101,11 @@ export function LinkFloatingToolbar({ state }: LinkFloatingToolbarProps) {
       <Separator orientation='vertical' />
 
       <button
-        type='button'
         className={buttonVariants({
           size: 'sms',
           variant: 'ghost',
         })}
+        type='button'
         {...unlinkButtonProps}
       >
         <Icons.unlink width={18} />
@@ -115,11 +115,11 @@ export function LinkFloatingToolbar({ state }: LinkFloatingToolbarProps) {
 
   return (
     <>
-      <div ref={insertRef} className={cn(popoverVariants(), 'w-auto p-1')} {...insertProps}>
+      <div className={cn(popoverVariants(), 'w-auto p-1')} ref={insertRef} {...insertProps}>
         {input}
       </div>
 
-      <div ref={editRef} className={cn(popoverVariants(), 'w-auto p-1')} {...editProps}>
+      <div className={cn(popoverVariants(), 'w-auto p-1')} ref={editRef} {...editProps}>
         {editContent}
       </div>
     </>

@@ -15,7 +15,7 @@
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
     "plugin:react/jsx-runtime",
-    "plugin:import/recommended",
+    "plugin:perfectionist/recommended-alphabetical",
     "prettier"
   ],
   "parser": "@typescript-eslint/parser",
@@ -23,7 +23,7 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "plugins": ["@typescript-eslint", "react", "sort-keys-fix", "simple-import-sort", "unused-imports"],
+  "plugins": ["@typescript-eslint", "react", "unused-imports"],
   "rules": {
     "import/no-unresolved": "off",
     "@typescript-eslint/consistent-type-imports": "warn",
@@ -31,9 +31,6 @@
     "linebreak-style": ["warn", "unix"],
     "quotes": ["warn", "single", { "avoidEscape": true }],
     "semi": ["warn", "never"],
-    "sort-keys-fix/sort-keys-fix": "warn",
-    "simple-import-sort/imports": "warn",
-    "simple-import-sort/exports": "warn",
     "@typescript-eslint/consistent-type-definitions": ["warn", "type"],
     "@typescript-eslint/no-unused-vars": "off",
     "unused-imports/no-unused-imports": "warn",

@@ -1,6 +1,7 @@
 import type { ComboboxProps, Data, NoData } from '@udecode/plate-combobox'
-import { getPluginOptions, useEditorRef } from '@udecode/plate-common'
 import type { MentionPlugin } from '@udecode/plate-mention'
+
+import { getPluginOptions, useEditorRef } from '@udecode/plate-common'
 import { ELEMENT_MENTION, getMentionOnSelectItem } from '@udecode/plate-mention'
 
 import { Combobox } from './combobox'
@@ -20,12 +21,12 @@ export function MentionCombobox<TData extends Data = NoData>({
 
   return (
     <Combobox
-      id={id}
-      trigger={trigger!}
       controlled
+      id={id}
       onSelectItem={getMentionOnSelectItem({
         key: pluginKey,
       })}
+      trigger={trigger!}
       {...props}
     />
   )

@@ -1,23 +1,23 @@
 import type { PlateElementProps, Value } from '@udecode/plate-common'
-import { getHandler, PlateElement } from '@udecode/plate-common'
 import type { TMentionElement } from '@udecode/plate-mention'
 import type React from 'react'
+
+import { cn } from '@/lib/utils'
+import { getHandler, PlateElement } from '@udecode/plate-common'
 import { forwardRef } from 'react'
 import { useFocused, useSelected } from 'slate-react'
 
-import { cn } from '@/lib/utils'
-
 export type MentionElementProps = {
+  onClick?: (mentionNode: unknown) => void
   /**
    * Prefix rendered before mention
    */
   prefix?: string
-  onClick?: (mentionNode: unknown) => void
   renderLabel?: (mentionable: TMentionElement) => string
 } & PlateElementProps<Value, TMentionElement>
 
 const MentionElement = forwardRef<React.ElementRef<typeof PlateElement>, MentionElementProps>(
-  ({ prefix, renderLabel, className, onClick, ...props }, ref) => {
+  ({ className, onClick, prefix, renderLabel, ...props }, ref) => {
     const { children, element } = props
 
     const selected = useSelected()
@@ -25,7 +25,6 @@ const MentionElement = forwardRef<React.ElementRef<typeof PlateElement>, Mention
 
     return (
       <PlateElement
-        ref={ref}
         className={cn(
           'inline-block cursor-pointer rounded-md bg-muted px-1.5 py-0.5 align-baseline text-sm font-medium',
           selected && focused && 'ring-2 ring-ring',
@@ -34,9 +33,10 @@ const MentionElement = forwardRef<React.ElementRef<typeof PlateElement>, Mention
           element.children[0].underline === true && 'underline',
           className,
         )}
-        data-slate-value={element.value}
         contentEditable={false}
+        data-slate-value={element.value}
         onClick={getHandler(onClick, element as unknown as React.MouseEvent<HTMLDivElement, MouseEvent>)}
+        ref={ref}
         {...props}
       >
         {prefix}

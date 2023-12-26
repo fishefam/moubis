@@ -1,12 +1,13 @@
 import type { ComboboxItemProps } from '@udecode/plate-combobox'
 import type { EmojiItemData, TEmojiCombobox } from '@udecode/plate-emoji'
+
 import { KEY_EMOJI, useEmojiComboboxState } from '@udecode/plate-emoji'
 
 import { Combobox } from './combobox'
 
 export function EmojiComboboxItem({ item }: ComboboxItemProps<EmojiItemData>) {
   const {
-    data: { id, emoji },
+    data: { emoji, id },
   } = item
 
   return (
@@ -21,15 +22,15 @@ export function EmojiCombobox<TData extends EmojiItemData = EmojiItemData>({
   id = pluginKey,
   ...props
 }: TEmojiCombobox<TData>) {
-  const { trigger, onSelectItem } = useEmojiComboboxState({ pluginKey })
+  const { onSelectItem, trigger } = useEmojiComboboxState({ pluginKey })
 
   return (
     <Combobox
-      id={id}
-      trigger={trigger}
       controlled
-      onSelectItem={onSelectItem}
+      id={id}
       onRenderItem={EmojiComboboxItem}
+      onSelectItem={onSelectItem}
+      trigger={trigger}
       {...props}
     />
   )

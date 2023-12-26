@@ -5,7 +5,7 @@ export const initialValue = [
   {
     children: [
       {
-        text: '🌳 Blocks',
+        text: '&nbsp;&nbsp;🌳&Blocks',
       },
     ],
     id: '1',

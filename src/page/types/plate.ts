@@ -1,7 +1,9 @@
+import type { CSSProperties } from 'react'
+
 import {
   type AutoformatRule,
-  createPlateEditor as createPlEditor,
   type CreatePlateEditorOptions,
+  createPlateEditor as createPlEditor,
   createPluginFactory,
   createPlugins,
   createTEditor,
@@ -75,7 +77,6 @@ import {
   usePlateStates as useSlateStates,
   type WithOverride,
 } from '@udecode/plate'
-import type { CSSProperties } from 'react'
 
 /**
  * Text
@@ -125,7 +126,7 @@ export type TPlateMentionElement = {
 } & TMentionElement
 
 export type TPlateInlineElement = TPlateLinkElement | TPlateMentionElement | TPlateMentionInputElement
-export type TPlateInlineDescendant = TPlateInlineElement | RichText
+export type TPlateInlineDescendant = RichText | TPlateInlineElement
 export type TPlateInlineChildren = TPlateInlineDescendant[]
 
 /**
@@ -273,22 +274,22 @@ export type TPlateBlock = Exclude<TPlateElement, TPlateInlineElement>
 export type TPlateBlockEntry = TNodeEntry<TPlateBlock>
 
 export type TPlateRootBlock =
-  | TPlateParagraphElement
+  | TPlateBlockquoteElement
+  | TPlateBulletedListElement
+  | TPlateCodeBlockElement
   | TPlateH1Element
   | TPlateH2Element
   | TPlateH3Element
   | TPlateH4Element
   | TPlateH5Element
   | TPlateH6Element
-  | TPlateBlockquoteElement
-  | TPlateCodeBlockElement
-  | TPlateTableElement
-  | TPlateBulletedListElement
-  | TPlateNumberedListElement
-  | TPlateTodoListElement
+  | TPlateHrElement
   | TPlateImageElement
   | TPlateMediaEmbedElement
-  | TPlateHrElement
+  | TPlateNumberedListElement
+  | TPlateParagraphElement
+  | TPlateTableElement
+  | TPlateTodoListElement
 
 export type TPlateValue = TPlateRootBlock[]
 

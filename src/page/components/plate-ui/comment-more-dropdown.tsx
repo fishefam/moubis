@@ -1,10 +1,3 @@
-import {
-  useCommentDeleteButton,
-  useCommentDeleteButtonState,
-  useCommentEditButton,
-  useCommentEditButtonState,
-} from '@udecode/plate-comments'
-
 import { Icons } from '@/components/icons'
 import { Button } from '@/components/plate-ui/button'
 import {
@@ -14,6 +7,12 @@ import {
   DropdownMenuTrigger,
 } from '@/components/plate-ui/dropdown-menu'
 import { cn } from '@/lib/utils'
+import {
+  useCommentDeleteButton,
+  useCommentDeleteButtonState,
+  useCommentEditButton,
+  useCommentEditButtonState,
+} from '@udecode/plate-comments'
 
 export function CommentMoreDropdown() {
   const editButtonState = useCommentEditButtonState()
@@ -24,7 +23,7 @@ export function CommentMoreDropdown() {
   return (
     <DropdownMenu modal={false}>
       <DropdownMenuTrigger asChild>
-        <Button variant='ghost' className={cn('h-6 p-1 text-muted-foreground')}>
+        <Button className={cn('h-6 p-1 text-muted-foreground')} variant='ghost'>
           <Icons.more className='h-4 w-4' />
         </Button>
       </DropdownMenuTrigger>

@@ -1,6 +1,5 @@
-import { ELEMENT_UL, useListToolbarButton, useListToolbarButtonState } from '@udecode/plate-list'
-
 import { Icons } from '@/components/icons'
+import { ELEMENT_UL, useListToolbarButton, useListToolbarButtonState } from '@udecode/plate-list'
 
 import { ToolbarButton } from './toolbar'
 

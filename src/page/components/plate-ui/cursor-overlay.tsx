@@ -1,20 +1,20 @@
-import { createStore } from '@udecode/plate-common'
 import type { CursorData, CursorOverlayProps, CursorProps } from '@udecode/plate-cursor'
-import { CursorOverlay as CursorOverlayPrimitive } from '@udecode/plate-cursor'
 
 import { cn } from '@/lib/utils'
+import { createStore } from '@udecode/plate-common'
+import { CursorOverlay as CursorOverlayPrimitive } from '@udecode/plate-cursor'
 
 export const cursorStore = createStore('cursor')({
   cursors: {},
 })
 
 export function Cursor({
-  data,
-  selectionRects,
   caretPosition,
+  classNames,
+  data,
   disableCaret,
   disableSelection,
-  classNames,
+  selectionRects,
 }: CursorProps<CursorData>) {
   if (!data) {
     return null
@@ -27,8 +27,8 @@ export function Cursor({
       {!disableSelection &&
         selectionRects.map((position, i) => (
           <div
-            key={i}
             className={cn('pointer-events-none absolute z-10 opacity-[0.3]', classNames?.selectionRect)}
+            key={i}
             style={{
               ...selectionStyle,
               ...position,

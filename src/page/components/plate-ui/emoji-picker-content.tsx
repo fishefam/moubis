@@ -1,44 +1,44 @@
 import type { Emoji, EmojiCategoryList, GridRow, UseEmojiPickerType } from '@udecode/plate-emoji'
+
+import { cn } from '@/lib/utils'
 import { EmojiSettings } from '@udecode/plate-emoji'
 import { memo, useCallback } from 'react'
 
-import { cn } from '@/lib/utils'
-
 export type EmojiPickerContentProps = Pick<
   UseEmojiPickerType,
+  | 'emojiLibrary'
   | 'i18n'
+  | 'isSearching'
   | 'onMouseOver'
   | 'onSelectEmoji'
-  | 'emojiLibrary'
-  | 'isSearching'
-  | 'searchResult'
-  | 'visibleCategories'
   | 'refs'
+  | 'searchResult'
   | 'settings'
+  | 'visibleCategories'
 >
 
 export type EmojiButtonProps = {
-  index: number
   emoji: Emoji
-  onSelect: (emoji: Emoji) => void
+  index: number
   onMouseOver: (emoji?: Emoji) => void
+  onSelect: (emoji: Emoji) => void
 }
 
-export type RowOfButtonsProps = Pick<UseEmojiPickerType, 'onMouseOver' | 'onSelectEmoji' | 'emojiLibrary'> & {
+export type RowOfButtonsProps = Pick<UseEmojiPickerType, 'emojiLibrary' | 'onMouseOver' | 'onSelectEmoji'> & {
   row: GridRow
 }
 
-const Button = memo(({ index, emoji, onSelect, onMouseOver }: EmojiButtonProps) => {
+const Button = memo(({ emoji, index, onMouseOver, onSelect }: EmojiButtonProps) => {
   return (
     <button
-      type='button'
       aria-label={emoji.skins[0].native}
-      tabIndex={-1}
+      className='group relative flex h-[36px] w-[36px] cursor-pointer items-center justify-center border-none bg-transparent text-2xl leading-none'
       data-index={index}
       onClick={() => onSelect(emoji)}
       onMouseEnter={() => onMouseOver(emoji)}
       onMouseLeave={() => onMouseOver()}
-      className='group relative flex h-[36px] w-[36px] cursor-pointer items-center justify-center border-none bg-transparent text-2xl leading-none'
+      tabIndex={-1}
+      type='button'
     >
       <div
         aria-hidden='true'
@@ -52,15 +52,15 @@ const Button = memo(({ index, emoji, onSelect, onMouseOver }: EmojiButtonProps) 
 })
 Button.displayName = 'Button'
 
-const RowOfButtons = memo(({ row, emojiLibrary, onSelectEmoji, onMouseOver }: RowOfButtonsProps) => (
-  <div key={row.id} data-index={row.id} className='flex'>
+const RowOfButtons = memo(({ emojiLibrary, onMouseOver, onSelectEmoji, row }: RowOfButtonsProps) => (
+  <div className='flex' data-index={row.id} key={row.id}>
     {row.elements.map((emojiId, index) => (
       <Button
-        key={emojiId}
-        index={index}
         emoji={emojiLibrary.getEmoji(emojiId)}
-        onSelect={onSelectEmoji}
+        index={index}
+        key={emojiId}
         onMouseOver={onMouseOver}
+        onSelect={onSelectEmoji}
       />
     ))}
   </div>
@@ -68,15 +68,15 @@ const RowOfButtons = memo(({ row, emojiLibrary, onSelectEmoji, onMouseOver }: Ro
 RowOfButtons.displayName = 'RowOfButtons'
 
 export function EmojiPickerContent({
-  i18n,
-  onSelectEmoji,
-  onMouseOver,
   emojiLibrary,
+  i18n,
   isSearching = false,
-  searchResult,
-  visibleCategories,
+  onMouseOver,
+  onSelectEmoji,
   refs,
+  searchResult,
   settings = EmojiSettings,
+  visibleCategories,
 }: EmojiPickerContentProps) {
   const getRowWidth = settings.perLine.value * settings.buttonSize.value
 
@@ -96,7 +96,7 @@ export function EmojiPickerContent({
         const { buttonSize } = settings
 
         return (
-          <div key={categoryId} data-id={categoryId} ref={section.root} style={{ width: getRowWidth }}>
+          <div data-id={categoryId} key={categoryId} ref={section.root} style={{ width: getRowWidth }}>
             <div className='sticky -top-px z-[1] bg-background/90 p-1 backdrop-blur-[4px]'>
               {i18n.categories[categoryId]}
             </div>
@@ -106,11 +106,11 @@ export function EmojiPickerContent({
                   .getRows()
                   .map((row: GridRow, index) => (
                     <RowOfButtons
-                      key={index}
                       emojiLibrary={emojiLibrary}
-                      row={row}
-                      onSelectEmoji={onSelectEmoji}
+                      key={index}
                       onMouseOver={onMouseOver}
+                      onSelectEmoji={onSelectEmoji}
+                      row={row}
                     />
                   ))}
             </div>
@@ -126,11 +126,11 @@ export function EmojiPickerContent({
         <div className='relative flex flex-wrap'>
           {searchResult.map((emoji: Emoji, index: number) => (
             <Button
-              key={emoji.id}
-              index={index}
               emoji={emojiLibrary.getEmoji(emoji.id)}
-              onSelect={onSelectEmoji}
+              index={index}
+              key={emoji.id}
               onMouseOver={onMouseOver}
+              onSelect={onSelectEmoji}
             />
           ))}
         </div>
@@ -151,7 +151,7 @@ export function EmojiPickerContent({
       data-id='scroll'
       ref={refs.current.contentRoot}
     >
-      <div ref={refs.current.content} className='h-full'>
+      <div className='h-full' ref={refs.current.content}>
         {isSearching ? SearchList() : EmojiList()}
       </div>
     </div>

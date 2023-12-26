@@ -1,8 +1,7 @@
+import { cn } from '@/lib/utils'
 import * as PopoverPrimitive from '@radix-ui/react-popover'
 import { cva } from 'class-variance-authority'
 import * as React from 'react'
-
-import { cn } from '@/lib/utils'
 
 const Popover = PopoverPrimitive.Root
 
@@ -16,13 +15,13 @@ export const popoverVariants = cva(
 const PopoverContent = React.forwardRef<
   React.ElementRef<typeof PopoverPrimitive.Content>,
   React.ComponentPropsWithoutRef<typeof PopoverPrimitive.Content>
->(({ className, style, align = 'center', sideOffset = 4, ...props }, ref) => (
+>(({ align = 'center', className, sideOffset = 4, style, ...props }, ref) => (
   <PopoverPrimitive.Portal>
     <PopoverPrimitive.Content
-      ref={ref}
       align={align}
-      sideOffset={sideOffset}
       className={cn(popoverVariants(), className)}
+      ref={ref}
+      sideOffset={sideOffset}
       style={{ zIndex: 1000, ...style }}
       {...props}
     />

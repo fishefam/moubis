@@ -1,4 +1,6 @@
 import type { DropdownMenuProps } from '@radix-ui/react-dropdown-menu'
+
+import { Icons, iconVariants } from '@/components/icons'
 import { focusEditor, someNode, useEditorState } from '@udecode/plate-common'
 import {
   deleteColumn,
@@ -9,8 +11,6 @@ import {
   insertTableColumn,
   insertTableRow,
 } from '@udecode/plate-table'
-
-import { Icons, iconVariants } from '@/components/icons'
 
 import {
   DropdownMenu,
@@ -36,7 +36,7 @@ export function TableDropdownMenu(props: DropdownMenuProps) {
   return (
     <DropdownMenu modal={false} {...openState} {...props}>
       <DropdownMenuTrigger asChild>
-        <ToolbarButton pressed={openState.open} tooltip='Table' isDropdown>
+        <ToolbarButton isDropdown pressed={openState.open} tooltip='Table'>
           <Icons.table />
         </ToolbarButton>
       </DropdownMenuTrigger>

@@ -1,13 +1,13 @@
 import type { PlateElementProps, Value } from '@udecode/plate-common'
-import { PlateElement } from '@udecode/plate-common'
 import type { TMediaEmbedElement } from '@udecode/plate-media'
+
+import { cn } from '@/lib/utils'
+import { PlateElement } from '@udecode/plate-common'
 import { ELEMENT_MEDIA_EMBED, parseTwitterUrl, parseVideoUrl, useMediaState } from '@udecode/plate-media'
 import { useResizableStore } from '@udecode/plate-resizable'
 import React from 'react'
 import LiteYouTubeEmbed from 'react-lite-youtube-embed'
 import { Tweet } from 'react-tweet'
-
-import { cn } from '@/lib/utils'
 
 import { Caption, CaptionTextarea } from './caption'
 import { MediaPopover } from './media-popover'
@@ -16,16 +16,16 @@ import { mediaResizeHandleVariants, Resizable, ResizeHandle } from './resizable'
 const MediaEmbedElement = React.forwardRef<
   React.ElementRef<typeof PlateElement>,
   PlateElementProps<Value, TMediaEmbedElement>
->(({ className, children, ...props }, ref) => {
+>(({ children, className, ...props }, ref) => {
   const {
     align = 'center',
-    focused,
-    readOnly,
-    selected,
     embed,
+    focused,
     isTweet,
     isVideo,
     isYoutube,
+    readOnly,
+    selected,
   } = useMediaState({
     urlParsers: [parseTwitterUrl, parseVideoUrl],
   })
@@ -34,7 +34,7 @@ const MediaEmbedElement = React.forwardRef<
 
   return (
     <MediaPopover pluginKey={ELEMENT_MEDIA_EMBED}>
-      <PlateElement ref={ref} className={cn('relative py-2.5', className)} {...props}>
+      <PlateElement className={cn('relative py-2.5', className)} ref={ref} {...props}>
         <figure className='group relative m-0 w-full' contentEditable={false}>
           <Resizable
             align={align}
@@ -45,8 +45,8 @@ const MediaEmbedElement = React.forwardRef<
             }}
           >
             <ResizeHandle
-              options={{ direction: 'left' }}
               className={mediaResizeHandleVariants({ direction: 'left' })}
+              options={{ direction: 'left' }}
             />
 
             {isVideo ? (
@@ -82,6 +82,7 @@ const MediaEmbedElement = React.forwardRef<
                   )}
                 >
                   <iframe
+                    allowFullScreen
                     className={cn(
                       'absolute left-0 top-0 h-full w-full rounded-sm',
                       isVideo && 'border-0',
@@ -89,7 +90,6 @@ const MediaEmbedElement = React.forwardRef<
                     )}
                     src={embed!.url}
                     title='embed'
-                    allowFullScreen
                   />
                 </div>
               )
@@ -109,8 +109,8 @@ const MediaEmbedElement = React.forwardRef<
             )}
 
             <ResizeHandle
-              options={{ direction: 'right' }}
               className={mediaResizeHandleVariants({ direction: 'right' })}
+              options={{ direction: 'right' }}
             />
           </Resizable>
 

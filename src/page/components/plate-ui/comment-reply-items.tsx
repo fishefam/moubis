@@ -8,7 +8,7 @@ export function CommentReplyItems() {
   return (
     <>
       {Object.keys(commentReplies).map((id) => (
-        <CommentItem key={id} commentId={id} />
+        <CommentItem commentId={id} key={id} />
       ))}
     </>
   )

@@ -1,13 +1,13 @@
 import type { PlaceholderProps } from '@udecode/plate-common'
+
+import { cn } from '@/lib/utils'
 import { createNodeHOC, createNodesHOC, usePlaceholderState } from '@udecode/plate-common'
 import { ELEMENT_H1 } from '@udecode/plate-heading'
 import { ELEMENT_PARAGRAPH } from '@udecode/plate-paragraph'
 import React from 'react'
 
-import { cn } from '@/lib/utils'
-
 export const Placeholder = (props: PlaceholderProps) => {
-  const { children, placeholder, nodeProps } = props
+  const { children, nodeProps, placeholder } = props
 
   const { enabled } = usePlaceholderState(props)
 

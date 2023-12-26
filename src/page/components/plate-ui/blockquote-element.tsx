@@ -1,13 +1,18 @@
 import type { PlateElementProps } from '@udecode/plate-common'
+
 import { PlateElement } from '@udecode/plate-common'
 import React from 'react'
 
-import { cn } from '@/lib/utils'
-
 const BlockquoteElement = React.forwardRef<React.ElementRef<typeof PlateElement>, PlateElementProps>(
-  ({ className, children, ...props }, ref) => {
+  ({ children, className, style = { lineHeight: 1.5 }, ...props }, ref) => {
     return (
-      <PlateElement asChild ref={ref} className={cn('my-1 border-l-2 pl-6 italic', className)} {...props}>
+      <PlateElement
+        asChild
+        className={className}
+        ref={ref}
+        style={{ borderLeftWidth: '2px', fontSize: '12px', margin: '0.25rem 0', paddingLeft: '1.5rem', ...style }}
+        {...props}
+      >
         <blockquote>{children}</blockquote>
       </PlateElement>
     )

@@ -1,9 +1,9 @@
 import type { PlateElementProps } from '@udecode/plate-common'
+
+import { cn } from '@/lib/utils'
 import { PlateElement } from '@udecode/plate-common'
 import React from 'react'
 import { useFocused, useSelected } from 'slate-react'
-
-import { cn } from '@/lib/utils'
 
 const HrElement = React.forwardRef<React.ElementRef<typeof PlateElement>, PlateElementProps>(
   ({ className, nodeProps, ...props }, ref) => {

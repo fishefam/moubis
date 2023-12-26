@@ -1,15 +1,15 @@
 import type * as DropdownMenuPrimitive from '@radix-ui/react-dropdown-menu'
 import type { PopoverContentProps } from '@radix-ui/react-popover'
-import { PopoverAnchor } from '@radix-ui/react-popover'
 import type { PlateElementProps } from '@udecode/plate-common'
-import { isCollapsed, PlateElement, useEditorState, useElement, useRemoveNodeButton } from '@udecode/plate-common'
 import type { TTableElement } from '@udecode/plate-table'
-import { useTableBordersDropdownMenuContentState, useTableElement, useTableElementState } from '@udecode/plate-table'
-import React, { forwardRef } from 'react'
-import { useReadOnly, useSelected } from 'slate-react'
 
 import { Icons, iconVariants } from '@/components/icons'
 import { cn } from '@/lib/utils'
+import { PopoverAnchor } from '@radix-ui/react-popover'
+import { isCollapsed, PlateElement, useEditorState, useElement, useRemoveNodeButton } from '@udecode/plate-common'
+import { useTableBordersDropdownMenuContentState, useTableElement, useTableElementState } from '@udecode/plate-table'
+import React, { forwardRef } from 'react'
+import { useReadOnly, useSelected } from 'slate-react'
 
 import { Button } from './button'
 import {
@@ -28,16 +28,16 @@ const TableBordersDropdownMenuContent = forwardRef<
 >((props, ref) => {
   const {
     getOnSelectTableBorder,
-    hasOuterBorders,
     hasBottomBorder,
     hasLeftBorder,
     hasNoBorders,
+    hasOuterBorders,
     hasRightBorder,
     hasTopBorder,
   } = useTableBordersDropdownMenuContentState()
 
   return (
-    <DropdownMenuContent ref={ref} className={cn('min-w-[220px]')} side='right' align='start' sideOffset={0} {...props}>
+    <DropdownMenuContent align='start' className={cn('min-w-[220px]')} ref={ref} side='right' sideOffset={0} {...props}>
       <DropdownMenuCheckboxItem checked={hasBottomBorder} onCheckedChange={getOnSelectTableBorder('bottom')}>
         <Icons.borderBottom className={iconVariants({ size: 'sm' })} />
         <div>Bottom Border</div>
@@ -81,17 +81,17 @@ const TableFloatingToolbar = React.forwardRef<React.ElementRef<typeof PopoverCon
     const open = !readOnly && selected && isCollapsed(editor.selection)
 
     return (
-      <Popover open={open} modal={false}>
+      <Popover modal={false} open={open}>
         <PopoverAnchor asChild>{children}</PopoverAnchor>
         <PopoverContent
-          ref={ref}
           className={cn(popoverVariants(), 'flex w-[220px] flex-col gap-1 p-1')}
           onOpenAutoFocus={(e) => e.preventDefault()}
+          ref={ref}
           {...props}
         >
           <DropdownMenu modal={false}>
             <DropdownMenuTrigger asChild>
-              <Button variant='ghost' isMenu>
+              <Button isMenu variant='ghost'>
                 <Icons.borderAll className='mr-2 h-4 w-4' />
                 Borders
               </Button>
@@ -102,7 +102,7 @@ const TableFloatingToolbar = React.forwardRef<React.ElementRef<typeof PopoverCon
             </DropdownMenuPortal>
           </DropdownMenu>
 
-          <Button contentEditable={false} variant='ghost' isMenu {...buttonProps}>
+          <Button contentEditable={false} isMenu variant='ghost' {...buttonProps}>
             <Icons.delete className='mr-2 h-4 w-4' />
             Delete
           </Button>
@@ -114,21 +114,21 @@ const TableFloatingToolbar = React.forwardRef<React.ElementRef<typeof PopoverCon
 TableFloatingToolbar.displayName = 'TableFloatingToolbar'
 
 const TableElement = React.forwardRef<React.ElementRef<typeof PlateElement>, PlateElementProps>(
-  ({ className, children, ...props }, ref) => {
-    const { colSizes, isSelectingCell, minColumnWidth, marginLeft } = useTableElementState()
-    const { props: tableProps, colGroupProps } = useTableElement()
+  ({ children, className, ...props }, ref) => {
+    const { colSizes, isSelectingCell, marginLeft, minColumnWidth } = useTableElementState()
+    const { colGroupProps, props: tableProps } = useTableElement()
 
     return (
       <TableFloatingToolbar>
         <div style={{ paddingLeft: marginLeft }}>
           <PlateElement
             asChild
-            ref={ref}
             className={cn(
               'my-4 ml-px mr-0 table h-px w-full table-fixed border-collapse',
               isSelectingCell && '[&_*::selection]:bg-none',
               className,
             )}
+            ref={ref}
             {...tableProps}
             {...props}
           >

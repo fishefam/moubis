@@ -1,9 +1,9 @@
 import type { PlateLeafProps } from '@udecode/plate-common'
-import { PlateLeaf } from '@udecode/plate-common'
 
 import { cn } from '@/lib/utils'
+import { PlateLeaf } from '@udecode/plate-common'
 
-export function KbdLeaf({ className, children, ...props }: PlateLeafProps) {
+export function KbdLeaf({ children, className, ...props }: PlateLeafProps) {
   return (
     <PlateLeaf
       asChild

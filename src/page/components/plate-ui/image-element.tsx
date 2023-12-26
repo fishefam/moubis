@@ -1,17 +1,17 @@
 import type { PlateElementProps, Value } from '@udecode/plate-common'
-import { PlateElement } from '@udecode/plate-common'
 import type { TImageElement } from '@udecode/plate-media'
-import { ELEMENT_IMAGE, Image, useMediaState } from '@udecode/plate-media'
-import { useResizableStore } from '@udecode/plate-resizable'
 
 import { cn } from '@/lib/utils'
+import { PlateElement } from '@udecode/plate-common'
+import { ELEMENT_IMAGE, Image, useMediaState } from '@udecode/plate-media'
+import { useResizableStore } from '@udecode/plate-resizable'
 
 import { Caption, CaptionTextarea } from './caption'
 import { MediaPopover } from './media-popover'
 import { mediaResizeHandleVariants, Resizable, ResizeHandle } from './resizable'
 
-export function ImageElement({ className, children, nodeProps, ...props }: PlateElementProps<Value, TImageElement>) {
-  const { readOnly, focused, selected, align = 'center' } = useMediaState()
+export function ImageElement({ children, className, nodeProps, ...props }: PlateElementProps<Value, TImageElement>) {
+  const { align = 'center', focused, readOnly, selected } = useMediaState()
   const width = useResizableStore().get.width()
 
   return (
@@ -26,21 +26,21 @@ export function ImageElement({ className, children, nodeProps, ...props }: Plate
             }}
           >
             <ResizeHandle
-              options={{ direction: 'left' }}
               className={mediaResizeHandleVariants({ direction: 'left' })}
+              options={{ direction: 'left' }}
             />
             <Image
+              alt=''
               className={cn(
                 'block w-full max-w-full cursor-pointer object-cover px-0',
                 'rounded-sm',
                 focused && selected && 'ring-2 ring-ring ring-offset-2',
               )}
-              alt=''
               {...nodeProps}
             />
             <ResizeHandle
-              options={{ direction: 'right' }}
               className={mediaResizeHandleVariants({ direction: 'right' })}
+              options={{ direction: 'right' }}
             />
           </Resizable>
 

@@ -1,16 +1,23 @@
 import type { PlateLeafProps } from '@udecode/plate-common'
+
 import { PlateLeaf } from '@udecode/plate-common'
 
-import { cn } from '@/lib/utils'
-
-export function CodeLeaf({ className, children, ...props }: PlateLeafProps) {
+export function CodeLeaf({ children, className, ...props }: PlateLeafProps) {
   return (
     <PlateLeaf
       asChild
-      className={cn('whitespace-pre-wrap', 'rounded-md bg-muted px-[0.3em] py-[0.2em] font-mono text-sm', className)}
+      className={className}
+      style={{
+        backgroundColor: 'hsl(210 40% 96.1%)',
+        borderRadius: 'calc(0.5rem - 2px)',
+        fontFamily:
+          'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace',
+        padding: '0.2rem 0.3rem',
+        whiteSpace: 'pre-wrap',
+      }}
       {...props}
     >
-      <code>{children}</code>
+      <div>{children}</div>
     </PlateLeaf>
   )
 }

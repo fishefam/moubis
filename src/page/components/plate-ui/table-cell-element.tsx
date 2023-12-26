@@ -1,6 +1,8 @@
 import type { PlateElementProps, Value } from '@udecode/plate-common'
-import { PlateElement } from '@udecode/plate-common'
 import type { TTableCellElement } from '@udecode/plate-table'
+
+import { cn } from '@/lib/utils'
+import { PlateElement } from '@udecode/plate-common'
 import {
   useTableCellElement,
   useTableCellElementResizable,
@@ -8,8 +10,6 @@ import {
   useTableCellElementState,
 } from '@udecode/plate-table'
 import React from 'react'
-
-import { cn } from '@/lib/utils'
 
 import { ResizeHandle } from './resizable'
 
@@ -19,24 +19,23 @@ export type TableCellElementProps = {
 } & PlateElementProps<Value, TTableCellElement>
 
 const TableCellElement = React.forwardRef<React.ElementRef<typeof PlateElement>, TableCellElementProps>(
-  ({ children, className, style, hideBorder, isHeader, ...props }, ref) => {
+  ({ children, className, hideBorder, isHeader, style, ...props }, ref) => {
     const { element } = props
 
-    const { colIndex, rowIndex, readOnly, selected, hovered, hoveredLeft, rowSize, borders, isSelectingCell } =
+    const { borders, colIndex, hovered, hoveredLeft, isSelectingCell, readOnly, rowIndex, rowSize, selected } =
       useTableCellElementState()
     const { props: cellProps } = useTableCellElement({ element: props.element })
     const resizableState = useTableCellElementResizableState({
       colIndex,
       rowIndex,
     })
-    const { rightProps, bottomProps, leftProps, hiddenLeft } = useTableCellElementResizable(resizableState)
+    const { bottomProps, hiddenLeft, leftProps, rightProps } = useTableCellElementResizable(resizableState)
 
     const Cell = isHeader ? 'th' : 'td'
 
     return (
       <PlateElement
         asChild
-        ref={ref}
         className={cn(
           'relative overflow-visible border-none bg-background p-0',
           hideBorder && 'before:border-none',
@@ -57,6 +56,7 @@ const TableCellElement = React.forwardRef<React.ElementRef<typeof PlateElement>,
             ),
           className,
         )}
+        ref={ref}
         {...cellProps}
         {...props}
         style={

@@ -1,11 +1,11 @@
 import type { DropdownMenuProps } from '@radix-ui/react-dropdown-menu'
+
+import { Icons } from '@/components/icons'
 import { ELEMENT_BLOCKQUOTE } from '@udecode/plate-block-quote'
 import { focusEditor, insertEmptyElement, useEditorState } from '@udecode/plate-common'
 import { ELEMENT_H1, ELEMENT_H2, ELEMENT_H3 } from '@udecode/plate-heading'
 import { ELEMENT_PARAGRAPH } from '@udecode/plate-paragraph'
 import React from 'react'
-
-import { Icons } from '@/components/icons'
 
 import {
   DropdownMenu,
@@ -127,7 +127,7 @@ export function InsertDropdownMenu(props: DropdownMenuProps) {
   return (
     <DropdownMenu modal={false} {...openState} {...props}>
       <DropdownMenuTrigger asChild>
-        <ToolbarButton pressed={openState.open} tooltip='Insert' isDropdown>
+        <ToolbarButton isDropdown pressed={openState.open} tooltip='Insert'>
           <Icons.add />
         </ToolbarButton>
       </DropdownMenuTrigger>
@@ -138,10 +138,10 @@ export function InsertDropdownMenu(props: DropdownMenuProps) {
             {index !== 0 && <DropdownMenuSeparator />}
 
             <DropdownMenuLabel>{label}</DropdownMenuLabel>
-            {nestedItems.map(({ value: type, label: itemLabel, icon: Icon }) => (
+            {nestedItems.map(({ icon: Icon, label: itemLabel, value: type }) => (
               <DropdownMenuItem
-                key={type}
                 className='min-w-[180px]'
+                key={type}
                 onSelect={async () => {
                   switch (type) {
                     // case ELEMENT_CODE_BLOCK: {

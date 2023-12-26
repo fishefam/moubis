@@ -1,11 +1,11 @@
 import type { ClassNames, PlateElementProps, TEditor } from '@udecode/plate-common'
 import type { DragItemNode } from '@udecode/plate-dnd'
-import { useDraggable, useDraggableState } from '@udecode/plate-dnd'
-import { forwardRef } from 'react'
 import type { DropTargetMonitor } from 'react-dnd'
 
 import { Icons } from '@/components/icons'
 import { cn } from '@/lib/utils'
+import { useDraggable, useDraggableState } from '@udecode/plate-dnd'
+import { forwardRef } from 'react'
 
 import { Tooltip, TooltipContent, TooltipTrigger } from './tooltip'
 
@@ -18,40 +18,34 @@ export type DraggableProps = {
   onDropHandler?: (
     editor: TEditor,
     props: {
-      monitor: DropTargetMonitor<DragItemNode, unknown>
       dragItem: DragItemNode
-      nodeRef: unknown
       id: string
+      monitor: DropTargetMonitor<DragItemNode, unknown>
+      nodeRef: unknown
     },
   ) => boolean
 } & PlateElementProps &
   ClassNames<{
-    /**
-     * Block and gutter.
-     */
-    blockAndGutter: string
-
     /**
      * Block.
      */
     block: string
 
     /**
-     * Gutter at the left side of the editor.
-     * It has the height of the block
+     * Block and gutter.
      */
-    gutterLeft: string
+    blockAndGutter: string
+
+    /**
+     * Block toolbar in the gutter.
+     */
+    blockToolbar: string
 
     /**
      * Block toolbar wrapper in the gutter left.
      * It has the height of a line of the block.
      */
     blockToolbarWrapper: string
-
-    /**
-     * Block toolbar in the gutter.
-     */
-    blockToolbar: string
 
     blockWrapper: string
 
@@ -69,6 +63,12 @@ export type DraggableProps = {
      * Show a dropline above or below the block when dragging a block.
      */
     dropLine: string
+
+    /**
+     * Gutter at the left side of the editor.
+     * It has the height of the block
+     */
+    gutterLeft: string
   }>
 
 const Draggable = forwardRef<HTMLDivElement, DraggableProps>(
@@ -77,16 +77,17 @@ const Draggable = forwardRef<HTMLDivElement, DraggableProps>(
 
     const state = useDraggableState({ element, onDropHandler })
     const { dropLine, isDragging } = state
-    const { droplineProps, gutterLeftProps, previewRef, handleRef } = useDraggable(state)
+    const { droplineProps, gutterLeftProps, handleRef, previewRef } = useDraggable(state)
 
     return (
       <div className={cn('relative', isDragging && 'opacity-50', 'group', className)} ref={ref}>
         <div
           className={cn(
-            'pointer-events-none absolute top-0 flex h-full -translate-x-full cursor-text opacity-0 group-hover:opacity-100',
+            'pointer-events-none absolute top-0 !flex h-full -translate-x-full cursor-text opacity-0 group-hover:opacity-100',
             classNames.gutterLeft,
           )}
           {...gutterLeftProps}
+          style={{ display: 'none' }}
         >
           <div className={cn('flex h-[1.5em]', classNames.blockToolbarWrapper)}>
             <div className={cn('pointer-events-auto mr-1 flex items-center', classNames.blockToolbar)}>

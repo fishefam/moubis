@@ -1,6 +1,5 @@
-import { useCommentAddButton } from '@udecode/plate-comments'
-
 import { Icons } from '@/components/icons'
+import { useCommentAddButton } from '@udecode/plate-comments'
 
 import { ToolbarButton } from './toolbar'
 

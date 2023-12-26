@@ -65,6 +65,9 @@ import type {
   TTodoListItemElement,
   WithOverride,
 } from '@udecode/plate'
+import type { ELEMENT_EXCALIDRAW, TExcalidrawElement } from '@udecode/plate-excalidraw'
+import type { CSSProperties } from 'react'
+
 import {
   createPlateEditor,
   createPluginFactory,
@@ -77,8 +80,6 @@ import {
   usePlateSelectors,
   usePlateStates,
 } from '@udecode/plate'
-import type { ELEMENT_EXCALIDRAW, TExcalidrawElement } from '@udecode/plate-excalidraw'
-import type { CSSProperties } from 'react'
 
 /**
  * Text
@@ -92,18 +93,18 @@ export type PlainText = {
 }
 
 export type RichText = {
-  bold?: boolean
-  italic?: boolean
-  underline?: boolean
-  strikethrough?: boolean
-  code?: boolean
-  kbd?: boolean
-  subscript?: boolean
   backgroundColor?: CSSProperties['backgroundColor']
-  fontFamily?: CSSProperties['fontFamily']
+  bold?: boolean
+  code?: boolean
   color?: CSSProperties['color']
+  fontFamily?: CSSProperties['fontFamily']
   fontSize?: CSSProperties['fontSize']
   fontWeight?: CSSProperties['fontWeight']
+  italic?: boolean
+  kbd?: boolean
+  strikethrough?: boolean
+  subscript?: boolean
+  underline?: boolean
 } & TText &
   TCommentText
 
@@ -112,18 +113,18 @@ export type RichText = {
  */
 
 export type MyLinkElement = {
-  type: typeof ELEMENT_LINK
   children: RichText[]
+  type: typeof ELEMENT_LINK
 } & TLinkElement
 
 export type MyMentionInputElement = {
-  type: typeof ELEMENT_MENTION_INPUT
   children: [PlainText]
+  type: typeof ELEMENT_MENTION_INPUT
 } & TMentionInputElement
 
 export type MyMentionElement = {
-  type: typeof ELEMENT_MENTION
   children: [EmptyText]
+  type: typeof ELEMENT_MENTION
 } & TMentionElement
 
 export type MyInlineElement = MyLinkElement | MyMentionElement | MyMentionInputElement
@@ -139,8 +140,8 @@ export type MyIndentProps = {
 }
 
 export type MyIndentListProps = {
-  listStart?: number
   listRestart?: number
+  listStart?: number
   listStyleType?: string
 } & MyIndentProps
 
@@ -163,115 +164,115 @@ export type MyBlockElement = {
  */
 
 export type MyParagraphElement = {
-  type: typeof ELEMENT_PARAGRAPH
   children: MyInlineChildren
+  type: typeof ELEMENT_PARAGRAPH
 } & MyBlockElement
 
 export type MyH1Element = {
-  type: typeof ELEMENT_H1
   children: MyInlineChildren
+  type: typeof ELEMENT_H1
 } & MyBlockElement
 
 export type MyH2Element = {
-  type: typeof ELEMENT_H2
   children: MyInlineChildren
+  type: typeof ELEMENT_H2
 } & MyBlockElement
 
 export type MyH3Element = {
-  type: typeof ELEMENT_H3
   children: MyInlineChildren
+  type: typeof ELEMENT_H3
 } & MyBlockElement
 
 export type MyH4Element = {
-  type: typeof ELEMENT_H4
   children: MyInlineChildren
+  type: typeof ELEMENT_H4
 } & MyBlockElement
 
 export type MyH5Element = {
-  type: typeof ELEMENT_H5
   children: MyInlineChildren
+  type: typeof ELEMENT_H5
 } & MyBlockElement
 
 export type MyH6Element = {
-  type: typeof ELEMENT_H6
   children: MyInlineChildren
+  type: typeof ELEMENT_H6
 } & MyBlockElement
 
 export type MyBlockquoteElement = {
-  type: typeof ELEMENT_BLOCKQUOTE
   children: MyInlineChildren
+  type: typeof ELEMENT_BLOCKQUOTE
 } & MyBlockElement
 
 export type MyCodeBlockElement = {
-  type: typeof ELEMENT_CODE_BLOCK
   children: MyCodeLineElement[]
+  type: typeof ELEMENT_CODE_BLOCK
 } & MyBlockElement
 
 export type MyCodeLineElement = {
-  type: typeof ELEMENT_CODE_LINE
   children: PlainText[]
+  type: typeof ELEMENT_CODE_LINE
 } & TElement
 
 export type MyTableElement = {
-  type: typeof ELEMENT_TABLE
   children: MyTableRowElement[]
+  type: typeof ELEMENT_TABLE
 } & TTableElement &
   MyBlockElement
 
 export type MyTableRowElement = {
-  type: typeof ELEMENT_TR
   children: MyTableCellElement[]
+  type: typeof ELEMENT_TR
 } & TElement
 
 export type MyTableCellElement = {
-  type: typeof ELEMENT_TD
   children: MyNestableBlock[]
+  type: typeof ELEMENT_TD
 } & TElement
 
 export type MyBulletedListElement = {
-  type: typeof ELEMENT_UL
   children: MyListItemElement[]
+  type: typeof ELEMENT_UL
 } & TElement &
   MyBlockElement
 
 export type MyNumberedListElement = {
-  type: typeof ELEMENT_OL
   children: MyListItemElement[]
+  type: typeof ELEMENT_OL
 } & TElement &
   MyBlockElement
 
 export type MyListItemElement = {
-  type: typeof ELEMENT_LI
   children: MyInlineChildren
+  type: typeof ELEMENT_LI
 } & TElement &
   MyBlockElement
 
 export type MyTodoListElement = {
-  type: typeof ELEMENT_TODO_LI
   children: MyInlineChildren
+  type: typeof ELEMENT_TODO_LI
 } & TTodoListItemElement &
   MyBlockElement
 
 export type MyImageElement = {
-  type: typeof ELEMENT_IMAGE
   children: [EmptyText]
+  type: typeof ELEMENT_IMAGE
 } & TImageElement &
   MyBlockElement
 
 export type MyMediaEmbedElement = {
-  type: typeof ELEMENT_MEDIA_EMBED
   children: [EmptyText]
+  type: typeof ELEMENT_MEDIA_EMBED
 } & TMediaEmbedElement &
   MyBlockElement
 
 export type MyHrElement = {
-  type: typeof ELEMENT_HR
   children: [EmptyText]
+  type: typeof ELEMENT_HR
 } & MyBlockElement
 
 export type MyExcalidrawElement = {
-  type: typeof ELEMENT_EXCALIDRAW
   children: [EmptyText]
+  type: typeof ELEMENT_EXCALIDRAW
 } & TExcalidrawElement &
   MyBlockElement
 
@@ -281,23 +282,23 @@ export type MyBlock = Exclude<MyElement, MyInlineElement>
 export type MyBlockEntry = TNodeEntry<MyBlock>
 
 export type MyRootBlock =
-  | MyParagraphElement
+  | MyBlockquoteElement
+  | MyBulletedListElement
+  | MyCodeBlockElement
+  | MyExcalidrawElement
   | MyH1Element
   | MyH2Element
   | MyH3Element
   | MyH4Element
   | MyH5Element
   | MyH6Element
-  | MyBlockquoteElement
-  | MyCodeBlockElement
-  | MyTableElement
-  | MyBulletedListElement
-  | MyNumberedListElement
-  | MyTodoListElement
+  | MyHrElement
   | MyImageElement
   | MyMediaEmbedElement
-  | MyHrElement
-  | MyExcalidrawElement
+  | MyNumberedListElement
+  | MyParagraphElement
+  | MyTableElement
+  | MyTodoListElement
 
 export type MyValue = MyRootBlock[]
 

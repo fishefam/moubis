@@ -1,10 +1,10 @@
 import type { PlateElementProps, Value } from '@udecode/plate-common'
-import { getHandler, PlateElement } from '@udecode/plate-common'
 import type { TMentionElement } from '@udecode/plate-mention'
-import React from 'react'
-import { useFocused, useSelected } from 'slate-react'
 
 import { cn } from '@/lib/utils'
+import { getHandler, PlateElement } from '@udecode/plate-common'
+import React from 'react'
+import { useFocused, useSelected } from 'slate-react'
 
 export type MentionInputElementProps = {
   onClick?: (mentionNode: () => unknown) => void
@@ -20,14 +20,14 @@ const MentionInputElement = React.forwardRef<React.ElementRef<typeof PlateElemen
     return (
       <PlateElement
         asChild
-        ref={ref}
-        data-slate-value={element.value}
         className={cn(
           'inline-block rounded-md bg-muted px-1.5 py-0.5 align-baseline text-sm',
           selected && focused && 'ring-2 ring-ring',
           className,
         )}
+        data-slate-value={element.value}
         onClick={getHandler(onClick, element as unknown as React.MouseEvent<HTMLDivElement, MouseEvent>)}
+        ref={ref}
         {...props}
       >
         <span>{children}</span>

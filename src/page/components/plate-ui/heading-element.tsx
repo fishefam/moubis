@@ -1,43 +1,48 @@
 import type { PlateElementProps } from '@udecode/plate-common'
-import { PlateElement } from '@udecode/plate-common'
-import type { VariantProps } from 'class-variance-authority'
-import { cva } from 'class-variance-authority'
 
-const headingVariants = cva('', {
-  variants: {
-    isFirstBlock: {
-      false: '',
-      true: 'mt-0',
-    },
-    variant: {
-      h1: 'mb-1 mt-[2em] font-heading text-4xl font-bold',
-      h2: 'mb-px mt-[1.4em] font-heading text-2xl font-semibold tracking-tight',
-      h3: 'mb-px mt-[1em] font-heading text-xl font-semibold tracking-tight',
-      h4: 'mt-[0.75em] font-heading text-lg font-semibold tracking-tight',
-      h5: 'mt-[0.75em] text-lg font-semibold tracking-tight',
-      h6: 'mt-[0.75em] text-base font-semibold tracking-tight',
-    },
+import { PlateElement } from '@udecode/plate-common'
+
+const headingVariants = {
+  h1: {
+    fontSize: '2rem',
+    fontWeight: '700',
   },
-})
+  h2: {
+    fontSize: '1.75rem',
+    fontWeight: '650',
+  },
+  h3: {
+    fontSize: '1.5rem',
+    fontWeight: '600',
+  },
+  h4: {
+    fontSize: '1.25rem',
+    fontWeight: '550',
+  },
+  h5: {
+    fontSize: '1.125rem',
+    fontWeight: '500',
+  },
+  h6: {
+    fontSize: '1rem',
+    fontWeight: '450',
+  },
+}
 
 export function HeadingElement({
-  className,
-  variant = 'h1',
   children,
+  className,
+  style = { lineHeight: 1.5 },
+  variant = 'h1',
   ...props
-}: PlateElementProps & VariantProps<typeof headingVariants>) {
-  const { element, editor } = props
-
+}: PlateElementProps & { variant: keyof typeof headingVariants }) {
   const Element = variant!
 
   return (
     <PlateElement
       asChild
-      className={headingVariants({
-        className,
-        isFirstBlock: element === editor.children[0],
-        variant,
-      })}
+      className={className}
+      style={{ ...headingVariants[variant], ...style, letterSpacing: '-0.025rem' }}
       {...props}
     >
       <Element>{children}</Element>

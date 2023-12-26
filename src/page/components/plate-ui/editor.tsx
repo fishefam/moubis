@@ -1,10 +1,10 @@
 import type { PlateContentProps } from '@udecode/plate-common'
-import { PlateContent } from '@udecode/plate-common'
 import type { VariantProps } from 'class-variance-authority'
-import { cva } from 'class-variance-authority'
-import React from 'react'
 
 import { cn } from '@/lib/utils'
+import { PlateContent } from '@udecode/plate-common'
+import { cva } from 'class-variance-authority'
+import React from 'react'
 
 const editorVariants = cva(
   cn(
@@ -24,12 +24,12 @@ const editorVariants = cva(
       disabled: {
         true: 'cursor-not-allowed opacity-50',
       },
+      focused: {
+        true: 'ring-2 ring-ring ring-offset-2',
+      },
       focusRing: {
         false: '',
         true: 'focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2',
-      },
-      focused: {
-        true: 'ring-2 ring-ring ring-offset-2',
       },
       size: {
         md: 'text-base',
@@ -48,13 +48,14 @@ export type EditorProps = PlateContentProps & VariantProps<typeof editorVariants
 const Editor = React.forwardRef<HTMLDivElement, EditorProps>(
   ({ className, disabled, focused, focusRing, readOnly, size, variant, ...props }, ref) => {
     return (
-      <div ref={ref} style={{ color: '#737373', position: 'relative', width: '100%' }}>
+      <div ref={ref}>
         <PlateContent
+          aria-disabled={disabled}
           className={cn(
             editorVariants({
               disabled,
-              focusRing,
               focused,
+              focusRing,
               size,
               variant,
             }),
@@ -62,7 +63,14 @@ const Editor = React.forwardRef<HTMLDivElement, EditorProps>(
           )}
           disableDefaultStyles
           readOnly={disabled ?? readOnly}
-          aria-disabled={disabled}
+          style={{
+            color: '#737373',
+            fontFamily: 'Arial, Helvetica, sans-serif',
+            fontSize: '12px',
+            lineHeight: '17.15px',
+            position: 'relative',
+            width: '100%',
+          }}
           {...props}
         />
       </div>
