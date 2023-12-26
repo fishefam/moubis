@@ -16,8 +16,7 @@ const toolbarVariants = cva('relative flex select-none items-stretch gap-1 bg-ba
 
 export const linkVariants = cva('font-medium underline underline-offset-4')
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const ToolbarToggleGroup = ToolbarPrimitive.ToggleGroup as any
+const ToolbarToggleGroup = ToolbarPrimitive.ToggleGroup
 
 export type ToolbarProps = Record<string, unknown> & React.ComponentPropsWithoutRef<typeof Toolbar>
 
@@ -75,8 +74,8 @@ const ToolbarButton = React.forwardRef<React.ElementRef<typeof ToolbarPrimitive.
               isDropdown && 'my-1 justify-between pr-1',
               className,
             )}
-            value='single'
             {...props}
+            value='single'
           >
             <div className='flex flex-1'>{children}</div>
             <div>{isDropdown && <Icons.arrowDown className='ml-0.5 h-4 w-4' data-icon />}</div>

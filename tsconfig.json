@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "esModuleInterop": true,
     "baseUrl": "src",
     "downlevelIteration": true,
     "alwaysStrict": true,
@@ -11,5 +12,6 @@
       "@/*": ["page/*"]
     }
   },
+  "include": ["src"],
   "exclude": ["node_modules", "dist"]
 }

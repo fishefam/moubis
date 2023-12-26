@@ -1,7 +1,6 @@
 import { createStore } from '@udecode/plate-common'
 import type { CursorData, CursorOverlayProps, CursorProps } from '@udecode/plate-cursor'
 import { CursorOverlay as CursorOverlayPrimitive } from '@udecode/plate-cursor'
-import { useEffect } from 'react'
 
 import { cn } from '@/lib/utils'
 
@@ -17,9 +16,6 @@ export function Cursor({
   disableSelection,
   classNames,
 }: CursorProps<CursorData>) {
-  useEffect(() => {
-    console.log(caretPosition)
-  }, [caretPosition])
   if (!data) {
     return null
   }

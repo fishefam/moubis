@@ -2,7 +2,7 @@ import type { PlateElementProps, Value } from '@udecode/plate-common'
 import { PlateElement } from '@udecode/plate-common'
 import type { TLinkElement } from '@udecode/plate-link'
 import { useLink } from '@udecode/plate-link'
-import * as React from 'react'
+import React from 'react'
 
 import { cn } from '@/lib/utils'
 

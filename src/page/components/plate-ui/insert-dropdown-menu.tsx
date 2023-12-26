@@ -195,6 +195,7 @@ export function InsertDropdownMenu(props: DropdownMenuProps) {
                       })
                     }
                   }
+
                   focusEditor(editor)
                 }}
               >

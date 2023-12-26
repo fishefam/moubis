@@ -78,6 +78,7 @@ import {
   usePlateStates,
 } from '@udecode/plate'
 import type { ELEMENT_EXCALIDRAW, TExcalidrawElement } from '@udecode/plate-excalidraw'
+import type { CSSProperties } from 'react'
 
 /**
  * Text
@@ -98,11 +99,11 @@ export type RichText = {
   code?: boolean
   kbd?: boolean
   subscript?: boolean
-  backgroundColor?: React.CSSProperties['backgroundColor']
-  fontFamily?: React.CSSProperties['fontFamily']
-  color?: React.CSSProperties['color']
-  fontSize?: React.CSSProperties['fontSize']
-  fontWeight?: React.CSSProperties['fontWeight']
+  backgroundColor?: CSSProperties['backgroundColor']
+  fontFamily?: CSSProperties['fontFamily']
+  color?: CSSProperties['color']
+  fontSize?: CSSProperties['fontSize']
+  fontWeight?: CSSProperties['fontWeight']
 } & TText &
   TCommentText
 
@@ -144,11 +145,11 @@ export type MyIndentListProps = {
 } & MyIndentProps
 
 export type MyLineHeightProps = {
-  lineHeight?: React.CSSProperties['lineHeight']
+  lineHeight?: CSSProperties['lineHeight']
 }
 
 export type MyAlignProps = {
-  align?: React.CSSProperties['textAlign']
+  align?: CSSProperties['textAlign']
 }
 
 export type MyBlockElement = {

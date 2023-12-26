@@ -1,13 +1,13 @@
 import type { PlateElementProps, Value } from '@udecode/plate-common'
 import { getHandler, PlateElement } from '@udecode/plate-common'
 import type { TMentionElement } from '@udecode/plate-mention'
-import * as React from 'react'
+import React from 'react'
 import { useFocused, useSelected } from 'slate-react'
 
 import { cn } from '@/lib/utils'
 
 export type MentionInputElementProps = {
-  onClick?: (mentionNode: unknown) => void
+  onClick?: (mentionNode: () => unknown) => void
 } & PlateElementProps<Value, TMentionElement>
 
 const MentionInputElement = React.forwardRef<React.ElementRef<typeof PlateElement>, MentionInputElementProps>(

@@ -75,6 +75,7 @@ import {
   usePlateStates as useSlateStates,
   type WithOverride,
 } from '@udecode/plate'
+import type { CSSProperties } from 'react'
 
 /**
  * Text
@@ -89,13 +90,13 @@ export type PlainText = {
 }
 
 export type RichText = {
-  backgroundColor?: React.CSSProperties['backgroundColor']
+  backgroundColor?: CSSProperties['backgroundColor']
   bold?: boolean
   code?: boolean
-  color?: React.CSSProperties['color']
-  fontFamily?: React.CSSProperties['fontFamily']
-  fontSize?: React.CSSProperties['fontSize']
-  fontWeight?: React.CSSProperties['fontWeight']
+  color?: CSSProperties['color']
+  fontFamily?: CSSProperties['fontFamily']
+  fontSize?: CSSProperties['fontSize']
+  fontWeight?: CSSProperties['fontWeight']
   italic?: boolean
   kbd?: boolean
   strikethrough?: boolean
@@ -142,11 +143,11 @@ export type TPlateIndentListProps = {
 } & TPlateIndentProps
 
 export type TPlateLineHeightProps = {
-  lineHeight?: React.CSSProperties['lineHeight']
+  lineHeight?: CSSProperties['lineHeight']
 }
 
 export type TPlateAlignProps = {
-  align?: React.CSSProperties['textAlign']
+  align?: CSSProperties['textAlign']
 }
 
 export type TPlateBlockElement = {

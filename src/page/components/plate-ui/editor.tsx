@@ -48,14 +48,7 @@ export type EditorProps = PlateContentProps & VariantProps<typeof editorVariants
 const Editor = React.forwardRef<HTMLDivElement, EditorProps>(
   ({ className, disabled, focused, focusRing, readOnly, size, variant, ...props }, ref) => {
     return (
-      <div
-        ref={ref}
-        style={{
-          color: '#737373',
-          position: 'relative',
-          width: '100%',
-        }}
-      >
+      <div ref={ref} className='relative w-full'>
         <PlateContent
           className={cn(
             editorVariants({

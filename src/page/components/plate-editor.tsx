@@ -4,17 +4,16 @@ import { useRef } from 'react'
 import { DndProvider } from 'react-dnd'
 import { HTML5Backend } from 'react-dnd-html5-backend'
 
-import {
-  CommentsPopover,
-  Editor,
-  FixedToolbar,
-  FixedToolbarButtons,
-  FloatingToolbar,
-  FloatingToolbarButtons,
-  MentionCombobox,
-  TooltipProvider,
-} from '@/components'
 import { cn, commentsUsers, initialValue, MENTIONABLES, myUserId, plugins } from '@/lib'
+
+import { CommentsPopover } from './plate-ui/comments-popover'
+import { Editor } from './plate-ui/editor'
+import { FixedToolbar } from './plate-ui/fixed-toolbar'
+import { FixedToolbarButtons } from './plate-ui/fixed-toolbar-buttons'
+import { FloatingToolbar } from './plate-ui/floating-toolbar'
+import { FloatingToolbarButtons } from './plate-ui/floating-toolbar-buttons'
+import { MentionCombobox } from './plate-ui/mention-combobox'
+import { TooltipProvider } from './plate-ui/tooltip'
 
 export function PlateEditor() {
   const containerRef = useRef(null)

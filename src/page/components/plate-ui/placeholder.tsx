@@ -2,7 +2,7 @@ import type { PlaceholderProps } from '@udecode/plate-common'
 import { createNodeHOC, createNodesHOC, usePlaceholderState } from '@udecode/plate-common'
 import { ELEMENT_H1 } from '@udecode/plate-heading'
 import { ELEMENT_PARAGRAPH } from '@udecode/plate-paragraph'
-import * as React from 'react'
+import React from 'react'
 
 import { cn } from '@/lib/utils'
 

@@ -1,7 +1,7 @@
 import type { PlateElementProps, Value } from '@udecode/plate-common'
 import { getHandler, PlateElement } from '@udecode/plate-common'
 import type { TMentionElement } from '@udecode/plate-mention'
-import type * as React from 'react'
+import type React from 'react'
 import { forwardRef } from 'react'
 import { useFocused, useSelected } from 'slate-react'
 
