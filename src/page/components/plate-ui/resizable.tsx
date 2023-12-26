@@ -1,10 +1,11 @@
+import type { PlateElementProps } from '@udecode/plate-common'
 import type { VariantProps } from 'class-variance-authority'
 import type { ComponentProps } from 'react'
 
 import { cn } from '@/lib/utils'
 import { Resizable as ResizablePrimitive, ResizeHandle as ResizeHandlePrimitive } from '@udecode/plate-resizable'
 import { cva } from 'class-variance-authority'
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 
 export const mediaResizeHandleVariants = cva(
   cn(
@@ -44,22 +45,24 @@ const ResizeHandle = React.forwardRef<
 ))
 ResizeHandle.displayName = 'ResizeHandle'
 
-const resizableVariants = cva('', {
-  variants: {
-    align: {
-      center: 'mx-auto',
-      left: 'mr-auto',
-      right: 'ml-auto',
-    },
-  },
-})
+const Resizable = ({
+  align,
+  className,
+  options,
+  ...props
+}: Partial<PlateElementProps> & { align: 'center' | 'left' | 'right'; options: Record<string, unknown> }) => {
+  const ref = useRef<HTMLDivElement>(null)
+  useEffect(() => {
+    const div = ref.current
+    if (div && align === 'center') {
+      div.style.marginLeft = 'auto'
+      div.style.marginRight = 'auto'
+    }
+    if (div && align === 'left') div.style.marginLeft = 'auto'
+    if (div && align === 'right') div.style.marginRight = 'auto'
+  }, [align, ref])
 
-const Resizable = React.forwardRef<
-  React.ElementRef<typeof ResizablePrimitive>,
-  ComponentProps<typeof ResizablePrimitive> & VariantProps<typeof resizableVariants>
->(({ align, className, ...props }, ref) => (
-  <ResizablePrimitive className={cn(resizableVariants({ align }), className)} ref={ref} {...props} />
-))
-Resizable.displayName = 'Resizable'
+  return <ResizablePrimitive className={className} options={options} ref={ref} {...props} />
+}
 
 export { Resizable, ResizeHandle }

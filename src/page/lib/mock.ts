@@ -879,16 +879,6 @@ export const initialValue = [
   {
     children: [
       {
-        text: '',
-      },
-    ],
-    id: '50',
-    type: 'media_embed',
-    url: 'https://twitter.com/zbeyens/status/1677214892212776960',
-  },
-  {
-    children: [
-      {
         text: '🏓 Table',
       },
     ],

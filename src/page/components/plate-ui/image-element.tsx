@@ -1,7 +1,6 @@
 import type { PlateElementProps, Value } from '@udecode/plate-common'
 import type { TImageElement } from '@udecode/plate-media'
 
-import { cn } from '@/lib/utils'
 import { PlateElement } from '@udecode/plate-common'
 import { ELEMENT_IMAGE, Image, useMediaState } from '@udecode/plate-media'
 import { useResizableStore } from '@udecode/plate-resizable'
@@ -16,8 +15,8 @@ export function ImageElement({ children, className, nodeProps, ...props }: Plate
 
   return (
     <MediaPopover pluginKey={ELEMENT_IMAGE}>
-      <PlateElement className={cn('py-2.5', className)} {...props}>
-        <figure className='group relative m-0' contentEditable={false}>
+      <PlateElement className={className} style={{ padding: '0.625rem 0' }} {...props}>
+        <figure className='group' contentEditable={false} style={{ margin: '0', position: 'relative' }}>
           <Resizable
             align={align}
             options={{
@@ -31,11 +30,16 @@ export function ImageElement({ children, className, nodeProps, ...props }: Plate
             />
             <Image
               alt=''
-              className={cn(
-                'block w-full max-w-full cursor-pointer object-cover px-0',
-                'rounded-sm',
-                focused && selected && 'ring-2 ring-ring ring-offset-2',
-              )}
+              className={focused && selected ? 'ring-2 ring-ring ring-offset-2' : ''}
+              style={{
+                borderRadius: 'calc(0.5rem - 4px)',
+                cursor: 'pointer',
+                display: 'block',
+                maxWidth: '100%',
+                objectFit: 'cover',
+                padding: 0,
+                width: '100%',
+              }}
               {...nodeProps}
             />
             <ResizeHandle
@@ -44,7 +48,17 @@ export function ImageElement({ children, className, nodeProps, ...props }: Plate
             />
           </Resizable>
 
-          <Caption align={align} style={{ width }}>
+          <Caption
+            style={{
+              textAlign: 'center',
+              width,
+              ...(align === 'center'
+                ? { marginLeft: 'auto', marginRight: 'auto' }
+                : align === 'left'
+                  ? { marginLeft: 'auto' }
+                  : { marginRight: 'auto' }),
+            }}
+          >
             <CaptionTextarea placeholder='Write a caption...' readOnly={readOnly} />
           </Caption>
         </figure>

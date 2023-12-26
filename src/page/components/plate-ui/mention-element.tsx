@@ -26,7 +26,6 @@ const MentionElement = forwardRef<React.ElementRef<typeof PlateElement>, Mention
     return (
       <PlateElement
         className={cn(
-          'inline-block cursor-pointer rounded-md bg-muted px-1.5 py-0.5 align-baseline text-sm font-medium',
           selected && focused && 'ring-2 ring-ring',
           element.children[0].bold === true && 'font-bold',
           element.children[0].italic === true && 'italic',
@@ -37,6 +36,15 @@ const MentionElement = forwardRef<React.ElementRef<typeof PlateElement>, Mention
         data-slate-value={element.value}
         onClick={getHandler(onClick, element as unknown as React.MouseEvent<HTMLDivElement, MouseEvent>)}
         ref={ref}
+        style={{
+          backgroundColor: 'rgb(241, 245, 249)',
+          borderRadius: 'calc(0.5rem - 2px)',
+          cursor: 'pointer',
+          display: 'inline-block',
+          fontWeight: 500,
+          padding: '0.125rem 0.375rem',
+          verticalAlign: 'baseline',
+        }}
         {...props}
       >
         {prefix}

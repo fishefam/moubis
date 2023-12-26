@@ -27,21 +27,29 @@ const Caption = React.forwardRef<
 ))
 Caption.displayName = 'Caption'
 
-const CaptionTextarea = React.forwardRef<
-  React.ElementRef<typeof CaptionTextareaPrimitive>,
-  ComponentProps<typeof CaptionTextareaPrimitive>
->(({ className, ...props }, ref) => (
-  <CaptionTextareaPrimitive
-    className={cn(
-      'mt-2 w-full resize-none border-none bg-inherit p-0 font-[inherit] text-inherit',
-      'focus:outline-none focus:[&::placeholder]:opacity-0',
-      'text-center print:placeholder:text-transparent',
-      className,
-    )}
-    ref={ref}
-    {...props}
-  />
-))
-CaptionTextarea.displayName = 'CaptionTextarea'
+const CaptionTextarea = ({
+  className,
+  ...props
+}: unknown & { className?: string; placeholder: string; readOnly: boolean }) => {
+  return (
+    <CaptionTextareaPrimitive
+      className={cn(className, '!pointer-events-auto')}
+      style={{
+        backgroundColor: 'inherit',
+        border: 'none',
+        color: 'inherit',
+        fontFamily: 'inherit',
+        marginTop: '0.5rem',
+        outline: 'none',
+        padding: 0,
+        pointerEvents: 'none',
+        resize: 'none',
+        textAlign: 'center',
+        width: '100%',
+      }}
+      {...props}
+    />
+  )
+}
 
 export { Caption, CaptionTextarea }

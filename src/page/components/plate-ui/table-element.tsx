@@ -123,14 +123,17 @@ const TableElement = React.forwardRef<React.ElementRef<typeof PlateElement>, Pla
         <div style={{ paddingLeft: marginLeft }}>
           <PlateElement
             asChild
-            className={cn(
-              'my-4 ml-px mr-0 table h-px w-full table-fixed border-collapse',
-              isSelectingCell && '[&_*::selection]:bg-none',
-              className,
-            )}
+            className={cn(isSelectingCell && '[&_*::selection]:bg-none', className)}
             ref={ref}
             {...tableProps}
             {...props}
+            style={{
+              borderCollapse: 'collapse',
+              display: 'table',
+              margin: '1rem 0',
+              tableLayout: 'fixed',
+              width: '100%',
+            }}
           >
             <table>
               <colgroup {...colGroupProps}>
@@ -145,7 +148,7 @@ const TableElement = React.forwardRef<React.ElementRef<typeof PlateElement>, Pla
                 ))}
               </colgroup>
 
-              <tbody className='min-w-full'>{children}</tbody>
+              <tbody style={{ minWidth: '100%' }}>{children}</tbody>
             </table>
           </PlateElement>
         </div>

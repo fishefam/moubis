@@ -36,41 +36,38 @@ const TableCellElement = React.forwardRef<React.ElementRef<typeof PlateElement>,
     return (
       <PlateElement
         asChild
-        className={cn(
-          'relative overflow-visible border-none bg-background p-0',
-          hideBorder && 'before:border-none',
-          element.background ? 'bg-[--cellBackground]' : 'bg-background',
-          !hideBorder &&
-            cn(
-              isHeader && 'text-left [&_>_*]:m-0',
-              'before:h-full before:w-full',
-              selected && 'before:z-10 before:bg-muted',
-              "before:absolute before:box-border before:select-none before:content-['']",
-              borders &&
-                cn(
-                  borders.bottom?.size && 'before:border-b before:border-b-border',
-                  borders.right?.size && 'before:border-r before:border-r-border',
-                  borders.left?.size && 'before:border-l before:border-l-border',
-                  borders.top?.size && 'before:border-t before:border-t-border',
-                ),
-            ),
-          className,
-        )}
+        className={className}
         ref={ref}
         {...cellProps}
         {...props}
         style={
           {
+            ...(isHeader ? { textAlign: 'left' } : {}),
             '--cellBackground': element.background,
+            'border': 'none',
+            'overflow': 'visible',
+            'padding': 0,
+            'position': 'relative',
             ...style,
           } as React.CSSProperties
         }
       >
         <Cell>
           <div
-            className='relative z-20 box-border h-full px-3 py-2'
             style={{
+              ...{
+                borderBottomWidth: borders.bottom?.size ?? 0,
+                borderLeftWidth: borders.left?.size ?? 0,
+                borderRightWidth: borders.right?.size ?? 0,
+                borderTopWidth: borders.top?.size ?? 0,
+              },
+              borderColor: 'gray',
+              borderStyle: 'solid',
+              boxSizing: 'border-box',
               minHeight: rowSize,
+              padding: '0.5rem 0.75rem',
+              position: 'relative',
+              zIndex: 20,
             }}
           >
             {children}
@@ -78,8 +75,9 @@ const TableCellElement = React.forwardRef<React.ElementRef<typeof PlateElement>,
 
           {!isSelectingCell && (
             <div
-              className='group absolute top-0 h-full w-full select-none'
+              className='group absolute top-0 h-full w-full select-none !block'
               contentEditable={false}
+              style={{ display: 'none' }}
               suppressContentEditableWarning={true}
             >
               {!readOnly && (
