@@ -6,7 +6,7 @@ import { DndProvider } from 'react-dnd'
 import { HTML5Backend } from 'react-dnd-html5-backend'
 
 import { cn, commentsUsers, MENTIONABLES, myUserId, plugins } from '@/lib'
-import { plateDefaultValue as initialValue } from '@/lib/mock'
+import { initialValue } from '@/lib/mock'
 
 import {
   CommentsPopover,
@@ -26,7 +26,7 @@ export default function PlateEditor() {
     <TooltipProvider>
       <DndProvider backend={HTML5Backend}>
         <CommentsProvider users={commentsUsers} myUserId={myUserId}>
-          <Plate plugins={plugins} initialValue={initialValue}>
+          <Plate onChange={(v) => console.log(JSON.stringify(v))} plugins={plugins} initialValue={initialValue}>
             <div
               ref={containerRef}
               className={cn(

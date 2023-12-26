@@ -2,7 +2,7 @@ import type { PlaceholderProps } from '@udecode/plate-common'
 import { createNodeHOC, createNodesHOC, usePlaceholderState } from '@udecode/plate-common'
 import { ELEMENT_H1 } from '@udecode/plate-heading'
 import { ELEMENT_PARAGRAPH } from '@udecode/plate-paragraph'
-import React from 'react'
+import * as React from 'react'
 
 import { cn } from '@/lib/utils'
 
@@ -28,7 +28,7 @@ export const Placeholder = (props: PlaceholderProps) => {
 export const withPlaceholder = createNodeHOC(Placeholder)
 export const withPlaceholdersPrimitive = createNodesHOC(Placeholder)
 
-export const withPlaceholders = (components: any) =>
+export const withPlaceholders = (components: Record<string, unknown>) =>
   withPlaceholdersPrimitive(components, [
     {
       hideOnBlur: true,

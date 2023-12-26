@@ -12,6 +12,7 @@ import {
   useOpenState,
 } from './dropdown-menu'
 import { ToolbarButton } from './toolbar'
+import React = require('react')
 
 export function ModeDropdownMenu(props: DropdownMenuProps) {
   const editor = useEditorState()
@@ -19,10 +20,10 @@ export function ModeDropdownMenu(props: DropdownMenuProps) {
   const readOnly = useEditorReadOnly()
   const openState = useOpenState()
 
-  let value = 'editing'
+  let value: keyof typeof item = 'editing'
   if (readOnly) value = 'viewing'
 
-  const item: any = {
+  const item: { [key in 'editing' | 'viewing']: React.JSX.Element } = {
     editing: (
       <>
         <Icons.editing className='mr-2 h-5 w-5' />

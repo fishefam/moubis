@@ -1,408 +1,72 @@
-import { ListStyleType } from '@udecode/plate'
-
 export const html =
   '<p>Y<span class="inline numeric" contenteditable="false" data-questiontext="%3Cinput%20type%3D%22text%22%20size%3D%2220%22%20value%3D%22Numeric%20with%20Units%22%20class%3D%22blankdisabled%20form-control%22%20readonly%3D%22readonly%22%3E" data-source="mode%3DNumeric%40negStyle%3Dminus%40grading%3Dexact_value%40name%3DresponseNaN%40answer.num%3D43%40numStyle%3Dthousands%20scientific%20%20arithmetic%40comment%3D%40weighting%3D1%40answer.units%3Dff%40showUnits%3Dtrue%40" id="sro_id_1" style="display:inline" title="Double-click the response area to edit">&zwnj;</span><span>&nbsp;</span>OOOOOOOOOOOOO IT WORKDS NOWWWWWWWWW</p><p>testing new one stuffwdraftedork great agin</p><div class="question-container"><div class="input-container"><div><label for="radius-range">Radius</label><input class="radius-range" id="radius-range" type="range"></div><fieldset><legend>Position</legend><div><label for="x-range">Left Right</label><input class="x-range" id="x-range" max="500" type="range"></div><div><label for="y-range">Up Down</label><input class="y-range" id="y-range" max="300" type="range"></div></fieldset><fieldset><legend>Color</legend><div><label for="red-range">Red</label><input class="red-range" defaultvalue="50" id="red-range" max="255" type="range"></div><div><label for="green-range">Green</label><input class="green-range" defaultvalue="50" id="green-range" max="255" type="range"></div><div><label for="blue-range">Blue</label><input class="blue-range" defaultvalue="50" id="blue-range" max="255" type="range"></div></fieldset></div><svg height="300" width="500"><circle class="circle" cx="250" cy="150" r="50" style="fill:#7b7b7b"></circle></svg>Now it should save again</div>'
 
-export const plateDefaultValue = [
+export const initialValue = [
   {
     children: [
       {
-        children: [
-          {
-            children: [
-              {
-                children: [{ bold: true, text: 'Plugin' }],
-                id: '5znef',
-                type: 'p',
-              },
-            ],
-            id: '2tcmy',
-            type: 'th',
-          },
-          {
-            children: [
-              {
-                children: [{ bold: true, text: 'Element' }],
-                id: 'zc5jx',
-                type: 'p',
-              },
-            ],
-            id: '4lejb',
-            type: 'th',
-          },
-          {
-            children: [
-              {
-                children: [{ bold: true, text: 'Inline' }],
-                id: '7z40r',
-                type: 'p',
-              },
-            ],
-            id: '5n2au',
-            type: 'th',
-          },
-          {
-            children: [
-              {
-                children: [{ bold: true, text: 'Void' }],
-                id: 'hxnm4',
-                type: 'p',
-              },
-            ],
-            id: '4sl6d',
-            type: 'th',
-          },
-        ],
-        id: '2ae77',
-        type: 'tr',
-      },
-      {
-        children: [
-          {
-            children: [
-              {
-                children: [{ bold: true, text: 'Plugin' }],
-                id: '5znef',
-                type: 'p',
-              },
-            ],
-            id: '2tcmy',
-            type: 'th',
-          },
-          {
-            children: [
-              {
-                children: [{ bold: true, text: 'Element' }],
-                id: 'zc5jx',
-                type: 'p',
-              },
-            ],
-            id: '4lejb',
-            type: 'th',
-          },
-          {
-            children: [
-              {
-                children: [{ bold: true, text: 'Inline' }],
-                id: '7z40r',
-                type: 'p',
-              },
-            ],
-            id: '5n2au',
-            type: 'th',
-          },
-          {
-            children: [
-              {
-                children: [{ bold: true, text: 'Void' }],
-                id: 'hxnm4',
-                type: 'p',
-              },
-            ],
-            id: '4sl6d',
-            type: 'th',
-          },
-        ],
-        id: '2ae77',
-        type: 'tr',
-      },
-      {
-        children: [
-          {
-            children: [
-              {
-                children: [{ bold: true, text: 'Heading' }],
-                id: 'nxfak',
-                type: 'p',
-              },
-            ],
-            id: 'wv5jz',
-            type: 'td',
-          },
-          {
-            children: [{ children: [{ text: 'Yes' }], id: 'tmzpq', type: 'p' }],
-            id: 'i60d5',
-            type: 'td',
-          },
-          {
-            children: [{ children: [{ text: 'No' }], id: 'xcpqu', type: 'p' }],
-            id: '88u3d',
-            type: 'td',
-          },
-          {
-            children: [{ children: [{ text: 'No' }], id: '3q5to', type: 'p' }],
-            id: 'cqfut',
-            type: 'td',
-          },
-        ],
-        id: 'vkqjv',
-        type: 'tr',
-      },
-      {
-        children: [
-          {
-            children: [
-              {
-                children: [{ bold: true, text: 'Image' }],
-                id: '5f98c',
-                type: 'p',
-              },
-            ],
-            id: 'bzncl',
-            type: 'td',
-          },
-          {
-            children: [{ children: [{ text: 'Yes' }], id: 'tk7xa', type: 'p' }],
-            id: 'n3shi',
-            type: 'td',
-          },
-          {
-            children: [{ children: [{ text: 'No' }], id: 'kuh96', type: 'p' }],
-            id: 'r7q34',
-            type: 'td',
-          },
-          {
-            children: [{ children: [{ text: 'Yes' }], id: 'yf6k0', type: 'p' }],
-            id: 'fpm2p',
-            type: 'td',
-          },
-        ],
-        id: 'a8nj8',
-        type: 'tr',
-      },
-      {
-        children: [
-          {
-            children: [
-              {
-                children: [{ bold: true, text: 'Mention' }],
-                id: 'rnmdv',
-                type: 'p',
-              },
-            ],
-            id: 'bx2wh',
-            type: 'td',
-          },
-          {
-            children: [{ children: [{ text: 'Yes' }], id: 'i430q', type: 'p' }],
-            id: 'yrne5',
-            type: 'td',
-          },
-          {
-            children: [{ children: [{ text: 'Yes' }], id: '1ckd2', type: 'p' }],
-            id: 'nvvzp',
-            type: 'td',
-          },
-          {
-            children: [{ align: 'right', children: [{ text: 'Yes' }], id: '5xfld', type: 'p' }],
-            id: 'jhq11',
-            type: 'td',
-          },
-        ],
-        id: 'wxo25',
-        type: 'tr',
+        text: '🌳 Blocks',
       },
     ],
-    colSizes: [100, 100, 100, 100],
-    id: '53sajgefkjha',
-    marginLeft: 20,
-    type: 'table',
+    id: '1',
+    type: 'h1',
   },
-  {
-    children: [
-      {
-        children: [
-          {
-            children: [
-              {
-                children: [{ bold: true, text: 'Plugin' }],
-                id: '5znef',
-                type: 'p',
-              },
-            ],
-            id: '2tcmy',
-            type: 'th',
-          },
-          {
-            children: [
-              {
-                children: [{ bold: true, text: 'Element' }],
-                id: 'zc5jx',
-                type: 'p',
-              },
-            ],
-            id: '4lejb',
-            type: 'th',
-          },
-          {
-            children: [
-              {
-                children: [{ bold: true, text: 'Inline' }],
-                id: '7z40r',
-                type: 'p',
-              },
-            ],
-            id: '5n2au',
-            type: 'th',
-          },
-          {
-            children: [
-              {
-                children: [{ bold: true, text: 'Void' }],
-                id: 'hxnm4',
-                type: 'p',
-              },
-            ],
-            id: '4sl6d',
-            type: 'th',
-          },
-        ],
-        id: '2ae77',
-        type: 'tr',
-      },
-      {
-        children: [
-          {
-            children: [
-              {
-                children: [{ bold: true, text: 'Heading' }],
-                id: 'nxfak',
-                type: 'p',
-              },
-            ],
-            id: 'wv5jz',
-            type: 'td',
-          },
-          {
-            children: [{ children: [{ text: 'Yes' }], id: 'tmzpq', type: 'p' }],
-            id: 'i60d5',
-            type: 'td',
-          },
-          {
-            children: [{ children: [{ text: 'No' }], id: 'xcpqu', type: 'p' }],
-            id: '88u3d',
-            type: 'td',
-          },
-          {
-            children: [{ children: [{ text: 'No' }], id: '3q5to', type: 'p' }],
-            id: 'cqfut',
-            type: 'td',
-          },
-        ],
-        id: 'vkqjv',
-        type: 'tr',
-      },
-      {
-        children: [
-          {
-            children: [
-              {
-                children: [{ bold: true, text: 'Image' }],
-                id: '5f98c',
-                type: 'p',
-              },
-            ],
-            id: 'bzncl',
-            type: 'td',
-          },
-          {
-            children: [{ children: [{ text: 'Yes' }], id: 'tk7xa', type: 'p' }],
-            id: 'n3shi',
-            type: 'td',
-          },
-          {
-            children: [{ children: [{ text: 'No' }], id: 'kuh96', type: 'p' }],
-            id: 'r7q34',
-            type: 'td',
-          },
-          {
-            children: [{ children: [{ text: 'Yes' }], id: 'yf6k0', type: 'p' }],
-            id: 'fpm2p',
-            type: 'td',
-          },
-        ],
-        id: 'a8nj8',
-        type: 'tr',
-      },
-      {
-        children: [
-          {
-            children: [
-              {
-                children: [{ bold: true, text: 'Mention' }],
-                id: 'rnmdv',
-                type: 'p',
-              },
-            ],
-            id: 'bx2wh',
-            type: 'td',
-          },
-          {
-            children: [{ children: [{ text: 'Yes' }], id: 'i430q', type: 'p' }],
-            id: 'yrne5',
-            type: 'td',
-          },
-          {
-            children: [{ children: [{ text: 'Yes' }], id: '1ckd2', type: 'p' }],
-            id: 'nvvzp',
-            type: 'td',
-          },
-          {
-            children: [{ align: 'right', children: [{ text: 'Yes' }], id: '5xfld', type: 'p' }],
-            id: 'jhq11',
-            type: 'td',
-          },
-        ],
-        id: 'wxo25',
-        type: 'tr',
-      },
-    ],
-    colSizes: [100, 100, 100, 100],
-    id: 'fasefa3sr3f5vsadf3',
-    marginLeft: 20,
-    type: 'table',
-  },
-  { children: [{ text: '🌳 Blocks' }], type: 'h1' },
   {
     children: [
       {
         text: 'Easily create headings of various levels, from H1 to H6, to structure your content and make it more organized.',
       },
     ],
+    id: '2',
     type: 'p',
+  },
+  {
+    children: [
+      {
+        text: 'Create blockquotes to emphasize important information or highlight quotes from external sources.',
+      },
+    ],
+    id: '3',
+    type: 'blockquote',
   },
   {
     children: [
       {
         children: [
           {
-            text: 'Easily create headings of various levels, from H1 to H6, to structure your content and make it more organized.',
+            text: '// Use code blocks to showcase code snippets',
           },
         ],
-        id: 'fasf',
-        type: 'p',
-      },
-    ],
-    type: 'blockquote',
-  },
-  {
-    children: [
-      {
-        children: [{ text: '// Use code blocks to showcase code snippets' }],
-        id: '3900d',
+        id: 'qqr2d',
         type: 'code_line',
       },
       {
-        children: [{ text: 'function greet() {' }],
-        id: 'bqvxu',
+        children: [
+          {
+            text: 'function greet() {',
+          },
+        ],
+        id: 's43cc',
         type: 'code_line',
       },
       {
-        children: [{ text: "  console.info('Hello World!');" }],
-        id: 'z9jbn',
+        children: [
+          {
+            text: "  console.info('Hello World!');",
+          },
+        ],
+        id: 'hr5cw',
         type: 'code_line',
       },
-      { children: [{ text: '}' }], id: '3pejp', type: 'code_line' },
+      {
+        children: [
+          {
+            text: '}',
+          },
+        ],
+        id: '0qdsi',
+        type: 'code_line',
+      },
     ],
     id: '4',
     lang: 'javascript',
@@ -419,28 +83,54 @@ export const plateDefaultValue = [
   },
   {
     checked: true,
-    children: [{ text: 'Create a "banana language" translation plugin' }],
+    children: [
+      {
+        text: 'Create a "banana language" translation plugin',
+      },
+    ],
     id: '6',
     type: 'action_item',
   },
   {
     checked: true,
-    children: [{ text: 'Create a "detect sarcasm" plugin (good luck with that)' }],
+    children: [
+      {
+        text: 'Create a "detect sarcasm" plugin (good luck with that)',
+      },
+    ],
     id: '7',
     type: 'action_item',
   },
   {
-    children: [{ text: 'Create an AI auto-complete plugin' }],
+    children: [
+      {
+        text: 'Create an AI auto-complete plugin',
+      },
+    ],
     id: '8',
     type: 'action_item',
   },
-  { children: [{ text: '🔗 Link' }], id: '9', type: 'h2' },
   {
     children: [
-      { text: 'Add ' },
       {
-        children: [{ text: 'hyperlinks' }],
-        id: '1vbdq',
+        text: '🔗 Link',
+      },
+    ],
+    id: '9',
+    type: 'h2',
+  },
+  {
+    children: [
+      {
+        text: 'Add ',
+      },
+      {
+        children: [
+          {
+            text: 'hyperlinks',
+          },
+        ],
+        id: 'st4tu',
         type: 'a',
         url: 'https://en.wikipedia.org/wiki/Hypertext',
       },
@@ -460,7 +150,15 @@ export const plateDefaultValue = [
     id: '11',
     type: 'p',
   },
-  { children: [{ text: '🌱 Marks' }], id: '12', type: 'h1' },
+  {
+    children: [
+      {
+        text: '🌱 Marks',
+      },
+    ],
+    id: '12',
+    type: 'h1',
+  },
   {
     children: [
       {
@@ -472,78 +170,187 @@ export const plateDefaultValue = [
   },
   {
     children: [
-      { text: 'Make text ' },
-      { bold: true, text: 'bold' },
-      { text: ', ' },
-      { italic: true, text: 'italic' },
-      { text: ', ' },
-      { text: 'underlined', underline: true },
-      { text: ', or apply a ' },
-      { bold: true, italic: true, text: 'combination', underline: true },
-      { text: ' of these styles for a visually striking effect.' },
+      {
+        text: 'Make text ',
+      },
+      {
+        bold: true,
+        text: 'bold',
+      },
+      {
+        text: ', ',
+      },
+      {
+        italic: true,
+        text: 'italic',
+      },
+      {
+        text: ', ',
+      },
+      {
+        text: 'underlined',
+        underline: true,
+      },
+      {
+        text: ', or apply a ',
+      },
+      {
+        bold: true,
+        italic: true,
+        text: 'combination',
+        underline: true,
+      },
+      {
+        text: ' of these styles for a visually striking effect.',
+      },
     ],
     id: '14',
     type: 'p',
   },
   {
     children: [
-      { text: 'Add ' },
-      { strikethrough: true, text: 'strikethrough' },
-      { text: ' to indicate deleted or outdated content.' },
+      {
+        text: 'Add ',
+      },
+      {
+        strikethrough: true,
+        text: 'strikethrough',
+      },
+      {
+        text: ' to indicate deleted or outdated content.',
+      },
     ],
     id: '15',
     type: 'p',
   },
   {
     children: [
-      { text: 'Write code snippets with inline ' },
-      { code: true, text: 'code' },
-      { text: ' formatting for easy readability.' },
+      {
+        text: 'Write code snippets with inline ',
+      },
+      {
+        code: true,
+        text: 'code',
+      },
+      {
+        text: ' formatting for easy readability.',
+      },
     ],
     id: '16',
     type: 'p',
   },
   {
     children: [
-      { text: 'Add ' },
-      { backgroundColor: '#df4538', color: 'white', text: 'm' },
-      { backgroundColor: '#e2533a', color: 'white', text: 'u' },
-      { backgroundColor: '#e6603d', color: 'white', text: 'l' },
-      { backgroundColor: '#e96f40', color: 'white', text: 't' },
-      { backgroundColor: '#ec7d43', color: 'white', text: 'i' },
-      { backgroundColor: '#ef8a45', color: 'white', text: 'p' },
-      { backgroundColor: '#f29948', color: 'white', text: 'l' },
-      { backgroundColor: '#f5a74b', color: 'white', text: 'e' },
-      { text: ' ' },
-      { color: 'rgb(252, 109, 38)', text: 'font' },
-      { text: ' and ' },
+      {
+        text: 'Add ',
+      },
+      {
+        backgroundColor: '#df4538',
+        color: 'white',
+        text: 'm',
+      },
+      {
+        backgroundColor: '#e2533a',
+        color: 'white',
+        text: 'u',
+      },
+      {
+        backgroundColor: '#e6603d',
+        color: 'white',
+        text: 'l',
+      },
+      {
+        backgroundColor: '#e96f40',
+        color: 'white',
+        text: 't',
+      },
+      {
+        backgroundColor: '#ec7d43',
+        color: 'white',
+        text: 'i',
+      },
+      {
+        backgroundColor: '#ef8a45',
+        color: 'white',
+        text: 'p',
+      },
+      {
+        backgroundColor: '#f29948',
+        color: 'white',
+        text: 'l',
+      },
+      {
+        backgroundColor: '#f5a74b',
+        color: 'white',
+        text: 'e',
+      },
+      {
+        text: ' ',
+      },
+      {
+        color: 'rgb(252, 109, 38)',
+        text: 'font',
+      },
+      {
+        text: ' and ',
+      },
       {
         backgroundColor: 'rgb(252, 109, 38)',
         color: 'white',
         text: 'background',
       },
-      { text: ' colors to create vibrant and eye-catching text.' },
+      {
+        text: ' colors to create vibrant and eye-catching text.',
+      },
     ],
     id: '17',
     type: 'p',
   },
   {
-    children: [{ highlight: true, text: 'Highlight' }, { text: ' important information for better clarity.' }],
+    children: [
+      {
+        highlight: true,
+        text: 'Highlight',
+      },
+      {
+        text: ' important information for better clarity.',
+      },
+    ],
     id: '18',
     type: 'p',
   },
   {
     children: [
-      { text: 'Press ' },
-      { kbd: true, text: '⌘ + B' },
-      { text: ' to apply bold mark or ' },
-      { kbd: true, text: '⌘ + I' },
-      { text: ' for italic mark.' },
+      {
+        text: 'Press ',
+      },
+      {
+        kbd: true,
+        text: '⌘ + B',
+      },
+      {
+        text: ' to apply bold mark or ',
+      },
+      {
+        kbd: true,
+        text: '⌘ + I',
+      },
+      {
+        text: ' for italic mark.',
+      },
     ],
     id: '19',
     type: 'p',
   },
-  { children: [{ text: '＠ Mention' }], id: '20', type: 'h2' },
+  {
+    children: [
+      {
+        text: '＠ Mention',
+      },
+    ],
+    id: '20',
+    type: 'h2',
+  },
   {
     children: [
       {
@@ -555,28 +362,54 @@ export const plateDefaultValue = [
   },
   {
     children: [
-      { text: 'Try mentioning ' },
       {
-        children: [{ text: '' }],
-        id: 'b0mb7',
+        text: 'Try mentioning ',
+      },
+      {
+        children: [
+          {
+            text: '',
+          },
+        ],
+        id: 'wuac8',
         type: 'mention',
         value: 'R2-D2',
       },
-      { text: ' or ' },
       {
-        children: [{ text: '' }],
-        id: 'ducgw',
+        text: ' or ',
+      },
+      {
+        children: [
+          {
+            text: '',
+          },
+        ],
+        id: 'g8apb',
         type: 'mention',
         value: 'Mace Windu',
       },
-      { text: '.' },
+      {
+        text: '.',
+      },
     ],
     id: '22',
     type: 'p',
   },
-  { children: [{ text: "🙂 Emoji's" }], id: '23', type: 'h2' },
   {
-    children: [{ text: 'Express yourself with a touch of fun 🎉 and emotion 😃.' }],
+    children: [
+      {
+        text: "🙂 Emoji's",
+      },
+    ],
+    id: '23',
+    type: 'h2',
+  },
+  {
+    children: [
+      {
+        text: 'Express yourself with a touch of fun 🎉 and emotion 😃.',
+      },
+    ],
     id: '24',
     type: 'p',
   },
@@ -589,7 +422,16 @@ export const plateDefaultValue = [
     id: '25',
     type: 'p',
   },
-  { align: 'right', children: [{ text: 'Alignment' }], id: '26', type: 'h2' },
+  {
+    align: 'right',
+    children: [
+      {
+        text: 'Alignment',
+      },
+    ],
+    id: '26',
+    type: 'h2',
+  },
   {
     align: 'right',
     children: [
@@ -600,7 +442,16 @@ export const plateDefaultValue = [
     id: '27',
     type: 'p',
   },
-  { align: 'center', children: [{ text: 'Center' }], id: '28', type: 'h3' },
+  {
+    align: 'center',
+    children: [
+      {
+        text: 'Center',
+      },
+    ],
+    id: '28',
+    type: 'h3',
+  },
   {
     align: 'justify',
     children: [
@@ -611,7 +462,15 @@ export const plateDefaultValue = [
     id: '29',
     type: 'p',
   },
-  { children: [{ text: 'Line Height' }], id: '30', type: 'h2' },
+  {
+    children: [
+      {
+        text: 'Line Height',
+      },
+    ],
+    id: '30',
+    type: 'h2',
+  },
   {
     children: [
       {
@@ -628,10 +487,18 @@ export const plateDefaultValue = [
       },
     ],
     id: '32',
-    lineHeight: 3,
+    lineHeight: 2,
     type: 'p',
   },
-  { children: [{ text: 'Indentation' }], id: '33', type: 'h2' },
+  {
+    children: [
+      {
+        text: 'Indentation',
+      },
+    ],
+    id: '33',
+    type: 'h2',
+  },
   {
     children: [
       {
@@ -652,7 +519,15 @@ export const plateDefaultValue = [
     indent: 2,
     type: 'p',
   },
-  { children: [{ text: 'Horizontal Rule' }], id: '36', type: 'h2' },
+  {
+    children: [
+      {
+        text: 'Horizontal Rule',
+      },
+    ],
+    id: '36',
+    type: 'h2',
+  },
   {
     children: [
       {
@@ -662,111 +537,210 @@ export const plateDefaultValue = [
     id: '37',
     type: 'p',
   },
-  { children: [{ text: '' }], id: '38', type: 'hr' },
-  { children: [{ text: '✍️ List' }], id: '39', type: 'h2' },
-  { children: [{ text: '' }], id: '40', type: 'p' },
+  {
+    children: [
+      {
+        text: '',
+      },
+    ],
+    id: '38',
+    type: 'hr',
+  },
+  {
+    children: [
+      {
+        text: '✍️ List',
+      },
+    ],
+    id: '39',
+    type: 'h2',
+  },
+  {
+    children: [
+      {
+        text: '',
+      },
+    ],
+    id: '40',
+    type: 'p',
+  },
   {
     children: [
       {
         children: [
-          { children: [{ children: [{ text: '🌳 Blocks' }], id: '1', type: 'h1' }], id: 'r1h7k', type: 'lic' },
+          {
+            children: [
+              {
+                text: 'Cats',
+              },
+            ],
+            id: 'vfpyl',
+            type: 'lic',
+          },
         ],
-        id: 'tup6i',
-        type: 'li',
-      },
-      {
-        children: [{ children: [{ text: 'Dogs' }], id: '8mwmp', type: 'lic' }],
-        id: 'x74b8',
+        id: '4marf',
         type: 'li',
       },
       {
         children: [
-          { children: [{ text: 'Birds' }], id: 'y5jju', type: 'lic' },
           {
             children: [
               {
-                children: [{ children: [{ text: 'Parrots' }], id: '0zgo2', type: 'lic' }],
-                id: 'zbk8n',
+                text: 'Dogs',
+              },
+            ],
+            id: 'gvzxs',
+            type: 'lic',
+          },
+        ],
+        id: 'ydaof',
+        type: 'li',
+      },
+      {
+        children: [
+          {
+            children: [
+              {
+                text: 'Birds',
+              },
+            ],
+            id: 'wayw8',
+            type: 'lic',
+          },
+          {
+            children: [
+              {
+                children: [
+                  {
+                    children: [
+                      {
+                        text: 'Parrots',
+                      },
+                    ],
+                    id: 'ytn6y',
+                    type: 'lic',
+                  },
+                ],
+                id: '34qab',
                 type: 'li',
               },
               {
                 children: [
-                  { children: [{ text: 'Owls' }], id: '7paqw', type: 'lic' },
+                  {
+                    children: [
+                      {
+                        text: 'Owls',
+                      },
+                    ],
+                    id: '9ubyh',
+                    type: 'lic',
+                  },
                   {
                     children: [
                       {
                         children: [
                           {
-                            children: [{ text: 'Barn Owls' }],
-                            id: 'b37eq',
+                            children: [
+                              {
+                                text: 'Barn Owls',
+                              },
+                            ],
+                            id: 'xmvx0',
                             type: 'lic',
                           },
                         ],
-                        id: 'vri33',
+                        id: '3781k',
                         type: 'li',
                       },
                       {
                         children: [
                           {
-                            children: [{ text: 'Snowy Owls' }],
-                            id: 'xv2ru',
+                            children: [
+                              {
+                                text: 'Snowy Owls',
+                              },
+                            ],
+                            id: 'b6b2i',
                             type: 'lic',
                           },
                         ],
-                        id: 'elh63',
+                        id: '38f1r',
                         type: 'li',
                       },
                     ],
-                    id: 'yq002',
-                    listSymbol: ListStyleType.LowerRoman,
+                    id: '3ovau',
                     type: 'ul',
                   },
                 ],
-                id: '4cnvt',
+                id: 'musfw',
                 type: 'li',
               },
             ],
-            id: 'wuuzm',
-            listSymbol: ListStyleType.Decimal,
+            id: 'mj7z3',
             type: 'ul',
           },
         ],
-        id: 'f0t7u',
+        id: '7nf3m',
         type: 'li',
       },
     ],
     id: '41',
-    listSymbol: ListStyleType.UpperRoman,
     type: 'ul',
   },
   {
     children: [
       {
-        children: [{ children: [{ text: 'Red' }], id: 'ubng2', type: 'lic' }],
-        id: '54qk2',
+        children: [
+          {
+            children: [
+              {
+                text: 'Red',
+              },
+            ],
+            id: 'hyny7',
+            type: 'lic',
+          },
+        ],
+        id: 'x0kuz',
         type: 'li',
       },
       {
         children: [
-          { children: [{ text: 'Blue' }], id: 'u2q2l', type: 'lic' },
+          {
+            children: [
+              {
+                text: 'Blue',
+              },
+            ],
+            id: '4qooa',
+            type: 'lic',
+          },
           {
             children: [
               {
                 children: [
                   {
-                    children: [{ text: 'Light blue' }],
-                    id: 'x5wwo',
+                    children: [
+                      {
+                        text: 'Light blue',
+                      },
+                    ],
+                    id: '792st',
                     type: 'lic',
                   },
                 ],
-                id: 'lmfr9',
+                id: 'p7b05',
                 type: 'li',
               },
               {
                 children: [
                   {
-                    children: [{ text: 'Dark blue' }],
-                    id: 'xi6xf',
+                    children: [
+                      {
+                        text: 'Dark blue',
+                      },
+                    ],
+                    id: 'm70e9',
                     type: 'lic',
                   },
                   {
@@ -774,41 +748,47 @@ export const plateDefaultValue = [
                       {
                         children: [
                           {
-                            children: [{ text: 'Navy blue' }],
-                            id: 'ga9ir',
+                            children: [
+                              {
+                                text: 'Navy blue',
+                              },
+                            ],
+                            id: 'hcljb',
                             type: 'lic',
                           },
                         ],
-                        id: '7zo1a',
+                        id: 'kky7e',
                         type: 'li',
                       },
                       {
                         children: [
                           {
-                            children: [{ text: 'Turquoise blue' }],
-                            id: '3pndp',
+                            children: [
+                              {
+                                text: 'Turquoise blue',
+                              },
+                            ],
+                            id: '506v5',
                             type: 'lic',
                           },
                         ],
-                        id: '8ce6q',
+                        id: 'cc9ja',
                         type: 'li',
                       },
                     ],
-                    id: 'qyatq',
-                    listSymbol: ListStyleType.LowerAlpha,
+                    id: 'kvjeg',
                     type: 'ol',
                   },
                 ],
-                id: 'a0gno',
+                id: 'x2437',
                 type: 'li',
               },
             ],
-            id: '5hsa7',
-            listSymbol: ListStyleType.KatakanaIroha,
+            id: 'uapbm',
             type: 'ul',
           },
         ],
-        id: 'tk5ub',
+        id: 'kl83b',
         type: 'li',
       },
       {
@@ -816,25 +796,29 @@ export const plateDefaultValue = [
           {
             children: [
               {
-                children: [{ text: '' }],
-                id: '49',
-                type: 'media_embed',
-                url: 'https://www.youtube.com/watch?v=MyiBAziEWUA',
+                text: 'Green',
               },
             ],
-            id: 's5u46',
+            id: 'g7ebx',
             type: 'lic',
           },
         ],
-        id: 'l7n0g',
+        id: '9oa96',
         type: 'li',
       },
     ],
     id: '42',
-    listSymbol: ListStyleType.DecimalLeadingZero,
     type: 'ol',
   },
-  { children: [{ text: '📸 Image' }], id: '43', type: 'h2' },
+  {
+    children: [
+      {
+        text: '📸 Image',
+      },
+    ],
+    id: '43',
+    type: 'h2',
+  },
   {
     children: [
       {
@@ -845,36 +829,72 @@ export const plateDefaultValue = [
     type: 'p',
   },
   {
-    children: [{ text: '' }],
+    children: [
+      {
+        text: '',
+      },
+    ],
     id: '45',
     type: 'img',
     url: 'https://source.unsplash.com/kFrdX5IeQzI',
     width: '75%',
   },
   {
-    children: [{ text: 'Customize image captions and resize images.' }],
+    children: [
+      {
+        text: 'Customize image captions and resize images.',
+      },
+    ],
     id: '46',
     type: 'p',
   },
-  { children: [{ text: '📺 Embed' }], id: '47', type: 'h2' },
   {
-    children: [{ text: 'Embed various types of content, such as videos and tweets:' }],
+    children: [
+      {
+        text: '📺 Embed',
+      },
+    ],
+    id: '47',
+    type: 'h2',
+  },
+  {
+    children: [
+      {
+        text: 'Embed various types of content, such as videos and tweets:',
+      },
+    ],
     id: '48',
     type: 'p',
   },
   {
-    children: [{ text: '' }],
+    children: [
+      {
+        text: '',
+      },
+    ],
     id: '49',
     type: 'media_embed',
     url: 'https://www.youtube.com/watch?v=MyiBAziEWUA',
   },
   {
-    children: [{ text: '' }],
+    children: [
+      {
+        text: '',
+      },
+    ],
     id: '50',
     type: 'media_embed',
     url: 'https://twitter.com/zbeyens/status/1677214892212776960',
   },
-  { children: [{ text: '🏓 Table' }], id: '51', type: 'h2' },
+  {
+    children: [
+      {
+        text: '🏓 Table',
+      },
+    ],
+    id: '51',
+    type: 'h2',
+  },
   {
     children: [
       {
@@ -891,49 +911,69 @@ export const plateDefaultValue = [
           {
             children: [
               {
-                children: [{ bold: true, text: 'Plugin' }],
-                id: '5znef',
+                children: [
+                  {
+                    bold: true,
+                    text: 'Plugin',
+                  },
+                ],
+                id: 'scxev',
                 type: 'p',
               },
             ],
-            id: '2tcmy',
+            id: 'cdiik',
             type: 'th',
           },
           {
             children: [
               {
-                children: [{ bold: true, text: 'Element' }],
-                id: 'zc5jx',
+                children: [
+                  {
+                    bold: true,
+                    text: 'Element',
+                  },
+                ],
+                id: 'dr2d3',
                 type: 'p',
               },
             ],
-            id: '4lejb',
+            id: 'ekxnz',
             type: 'th',
           },
           {
             children: [
               {
-                children: [{ bold: true, text: 'Inline' }],
-                id: '7z40r',
+                children: [
+                  {
+                    bold: true,
+                    text: 'Inline',
+                  },
+                ],
+                id: 'fi7kv',
                 type: 'p',
               },
             ],
-            id: '5n2au',
+            id: 'el50o',
             type: 'th',
           },
           {
             children: [
               {
-                children: [{ bold: true, text: 'Void' }],
-                id: 'hxnm4',
+                children: [
+                  {
+                    bold: true,
+                    text: 'Void',
+                  },
+                ],
+                id: 'mlaw3',
                 type: 'p',
               },
             ],
-            id: '4sl6d',
+            id: 'ep3q3',
             type: 'th',
           },
         ],
-        id: '2ae77',
+        id: 'c7ari',
         type: 'tr',
       },
       {
@@ -941,31 +981,66 @@ export const plateDefaultValue = [
           {
             children: [
               {
-                children: [{ bold: true, text: 'Heading' }],
-                id: 'nxfak',
+                children: [
+                  {
+                    bold: true,
+                    text: 'Heading',
+                  },
+                ],
+                id: 'piopx',
                 type: 'p',
               },
             ],
-            id: 'wv5jz',
+            id: 'qq4wl',
             type: 'td',
           },
           {
-            children: [{ children: [{ text: 'Yes' }], id: 'tmzpq', type: 'p' }],
-            id: 'i60d5',
+            children: [
+              {
+                children: [
+                  {
+                    text: 'Yes',
+                  },
+                ],
+                id: 'x50y4',
+                type: 'p',
+              },
+            ],
+            id: 'tt4av',
             type: 'td',
           },
           {
-            children: [{ children: [{ text: 'No' }], id: 'xcpqu', type: 'p' }],
-            id: '88u3d',
+            children: [
+              {
+                children: [
+                  {
+                    text: 'No',
+                  },
+                ],
+                id: '5evzz',
+                type: 'p',
+              },
+            ],
+            id: 'stfoa',
             type: 'td',
           },
           {
-            children: [{ children: [{ text: 'No' }], id: '3q5to', type: 'p' }],
-            id: 'cqfut',
+            children: [
+              {
+                children: [
+                  {
+                    text: 'No',
+                  },
+                ],
+                id: 'gy468',
+                type: 'p',
+              },
+            ],
+            id: '4kduc',
             type: 'td',
           },
         ],
-        id: 'vkqjv',
+        id: 'q5lpq',
         type: 'tr',
       },
       {
@@ -973,31 +1048,66 @@ export const plateDefaultValue = [
           {
             children: [
               {
-                children: [{ bold: true, text: 'Image' }],
-                id: '5f98c',
+                children: [
+                  {
+                    bold: true,
+                    text: 'Image',
+                  },
+                ],
+                id: 'gj96u',
                 type: 'p',
               },
             ],
-            id: 'bzncl',
+            id: 'l2rv5',
             type: 'td',
           },
           {
-            children: [{ children: [{ text: 'Yes' }], id: 'tk7xa', type: 'p' }],
-            id: 'n3shi',
+            children: [
+              {
+                children: [
+                  {
+                    text: 'Yes',
+                  },
+                ],
+                id: 'sqktj',
+                type: 'p',
+              },
+            ],
+            id: '14rj0',
             type: 'td',
           },
           {
-            children: [{ children: [{ text: 'No' }], id: 'kuh96', type: 'p' }],
-            id: 'r7q34',
+            children: [
+              {
+                children: [
+                  {
+                    text: 'No',
+                  },
+                ],
+                id: 'usnrg',
+                type: 'p',
+              },
+            ],
+            id: 'ya4g7',
             type: 'td',
           },
           {
-            children: [{ children: [{ text: 'Yes' }], id: 'yf6k0', type: 'p' }],
-            id: 'fpm2p',
+            children: [
+              {
+                children: [
+                  {
+                    text: 'Yes',
+                  },
+                ],
+                id: '9i9yo',
+                type: 'p',
+              },
+            ],
+            id: 'n50tq',
             type: 'td',
           },
         ],
-        id: 'a8nj8',
+        id: '26ggp',
         type: 'tr',
       },
       {
@@ -1005,31 +1115,66 @@ export const plateDefaultValue = [
           {
             children: [
               {
-                children: [{ bold: true, text: 'Mention' }],
-                id: 'rnmdv',
+                children: [
+                  {
+                    bold: true,
+                    text: 'Mention',
+                  },
+                ],
+                id: 'hqly5',
                 type: 'p',
               },
             ],
-            id: 'bx2wh',
+            id: 'funem',
             type: 'td',
           },
           {
-            children: [{ children: [{ text: 'Yes' }], id: 'i430q', type: 'p' }],
-            id: 'yrne5',
+            children: [
+              {
+                children: [
+                  {
+                    text: 'Yes',
+                  },
+                ],
+                id: 'i95n4',
+                type: 'p',
+              },
+            ],
+            id: 'lmy15',
             type: 'td',
           },
           {
-            children: [{ children: [{ text: 'Yes' }], id: '1ckd2', type: 'p' }],
-            id: 'nvvzp',
+            children: [
+              {
+                children: [
+                  {
+                    text: 'Yes',
+                  },
+                ],
+                id: 'r0va9',
+                type: 'p',
+              },
+            ],
+            id: '4jpan',
             type: 'td',
           },
           {
-            children: [{ align: 'right', children: [{ text: 'Yes' }], id: '5xfld', type: 'p' }],
-            id: 'jhq11',
+            children: [
+              {
+                children: [
+                  {
+                    text: 'Yes',
+                  },
+                ],
+                id: '1c365',
+                type: 'p',
+              },
+            ],
+            id: 'bfmpr',
             type: 'td',
           },
         ],
-        id: 'wxo25',
+        id: 'u92dx',
         type: 'tr',
       },
     ],
@@ -1038,7 +1183,15 @@ export const plateDefaultValue = [
     marginLeft: 20,
     type: 'table',
   },
-  { children: [{ text: '🏃‍♀️ Autoformat' }], id: '54', type: 'h2' },
+  {
+    children: [
+      {
+        text: '🏃‍♀️ Autoformat',
+      },
+    ],
+    id: '54',
+    type: 'h2',
+  },
   {
     children: [
       {
@@ -1049,7 +1202,11 @@ export const plateDefaultValue = [
     type: 'p',
   },
   {
-    children: [{ text: 'While typing, try these mark rules:' }],
+    children: [
+      {
+        text: 'While typing, try these mark rules:',
+      },
+    ],
     id: '56',
     type: 'p',
   },
@@ -1059,68 +1216,102 @@ export const plateDefaultValue = [
         children: [
           {
             children: [
-              { text: 'Type ' },
-              { code: true, text: '**' },
-              { text: ' or ' },
-              { code: true, text: '__' },
-              { text: ' on either side of your text to add **bold* mark.' },
+              {
+                text: 'Type ',
+              },
+              {
+                code: true,
+                text: '**',
+              },
+              {
+                text: ' or ',
+              },
+              {
+                code: true,
+                text: '__',
+              },
+              {
+                text: ' on either side of your text to add **bold* mark.',
+              },
             ],
-            id: 'xr68i',
+            id: '8b75t',
             type: 'lic',
           },
         ],
-        id: 'aoe5b',
+        id: 'bkmrv',
         type: 'li',
       },
       {
         children: [
           {
             children: [
-              { text: 'Type ' },
-              { code: true, text: '*' },
-              { text: ' or ' },
-              { code: true, text: '_' },
-              { text: ' on either side of your text to add *italic mark.' },
+              {
+                text: 'Type ',
+              },
+              {
+                code: true,
+                text: '*',
+              },
+              {
+                text: ' or ',
+              },
+              {
+                code: true,
+                text: '_',
+              },
+              {
+                text: ' on either side of your text to add *italic mark.',
+              },
             ],
-            id: 'f98jj',
+            id: 'thkuz',
             type: 'lic',
           },
         ],
-        id: 'lzl6c',
+        id: 'h3n3t',
         type: 'li',
       },
       {
         children: [
           {
             children: [
-              { text: 'Type ' },
-              { code: true, text: '`' },
+              {
+                text: 'Type ',
+              },
+              {
+                code: true,
+                text: '`',
+              },
               {
                 text: ' on either side of your text to add `inline code mark.',
               },
             ],
-            id: 'dyq1b',
+            id: 'vp54e',
             type: 'lic',
           },
         ],
-        id: '4pdh0',
+        id: 'z1aap',
         type: 'li',
       },
       {
         children: [
           {
             children: [
-              { text: 'Type ' },
-              { code: true, text: '~~' },
+              {
+                text: 'Type ',
+              },
+              {
+                code: true,
+                text: '~~',
+              },
               {
                 text: ' on either side of your text to add ~~strikethrough~ mark.',
               },
             ],
-            id: 'kghfz',
+            id: 'cwbdt',
             type: 'lic',
           },
         ],
-        id: 'ijgsv',
+        id: 'np965',
         type: 'li',
       },
       {
@@ -1131,26 +1322,33 @@ export const plateDefaultValue = [
                 text: 'Note that nothing happens when there is a character before, try on:*bold',
               },
             ],
-            id: 'vlseo',
+            id: 'dtx28',
             type: 'lic',
           },
         ],
-        id: '8s0e5',
+        id: '900ws',
         type: 'li',
       },
       {
         children: [
           {
             children: [
-              { text: 'We even support smart quotes, try typing ' },
-              { code: true, text: '"hello" \'world\'' },
-              { text: '.' },
+              {
+                text: 'We even support smart quotes, try typing ',
+              },
+              {
+                code: true,
+                text: '"hello" \'world\'',
+              },
+              {
+                text: '.',
+              },
             ],
-            id: 'p4nqf',
+            id: 'ffkcb',
             type: 'lic',
           },
         ],
-        id: 'qc6iz',
+        id: 'vnofb',
         type: 'li',
       },
     ],
@@ -1172,188 +1370,341 @@ export const plateDefaultValue = [
         children: [
           {
             children: [
-              { text: 'Type ' },
-              { code: true, text: '*' },
-              { text: ', ' },
-              { code: true, text: '-' },
-              { text: ' or ' },
-              { code: true, text: '+' },
-              { text: 'followed by ' },
-              { code: true, text: 'space' },
-              { text: ' to create a bulleted list.' },
+              {
+                text: 'Type ',
+              },
+              {
+                code: true,
+                text: '*',
+              },
+              {
+                text: ', ',
+              },
+              {
+                code: true,
+                text: '-',
+              },
+              {
+                text: ' or ',
+              },
+              {
+                code: true,
+                text: '+',
+              },
+              {
+                text: 'followed by ',
+              },
+              {
+                code: true,
+                text: 'space',
+              },
+              {
+                text: ' to create a bulleted list.',
+              },
             ],
-            id: 'cad5g',
+            id: '87en8',
             type: 'lic',
           },
         ],
-        id: 'llflz',
+        id: 'c76dw',
         type: 'li',
       },
       {
         children: [
           {
             children: [
-              { text: 'Type ' },
-              { code: true, text: '1.' },
-              { text: ' or ' },
-              { code: true, text: '1)' },
-              { text: ' followed by ' },
-              { code: true, text: 'space' },
-              { text: 'to create a numbered list.' },
+              {
+                text: 'Type ',
+              },
+              {
+                code: true,
+                text: '1.',
+              },
+              {
+                text: ' or ',
+              },
+              {
+                code: true,
+                text: '1)',
+              },
+              {
+                text: ' followed by ',
+              },
+              {
+                code: true,
+                text: 'space',
+              },
+              {
+                text: 'to create a numbered list.',
+              },
             ],
-            id: 'emtic',
+            id: 'vg141',
             type: 'lic',
           },
         ],
-        id: 'm0ei5',
+        id: 'nxtam',
         type: 'li',
       },
       {
         children: [
           {
             children: [
-              { text: 'Type ' },
-              { code: true, text: '>' },
-              { text: ' followed by ' },
-              { code: true, text: 'space' },
-              { text: ' to create a block quote.' },
+              {
+                text: 'Type ',
+              },
+              {
+                code: true,
+                text: '>',
+              },
+              {
+                text: ' followed by ',
+              },
+              {
+                code: true,
+                text: 'space',
+              },
+              {
+                text: ' to create a block quote.',
+              },
             ],
-            id: 'of91z',
+            id: '09lap',
             type: 'lic',
           },
         ],
-        id: '56k86',
-        type: 'li',
-      },
-      {
-        children: [
-          {
-            children: [{ text: 'Type ' }, { code: true, text: '```' }, { text: ' to create a code block.' }],
-            id: 'gp1sd',
-            type: 'lic',
-          },
-        ],
-        id: 'e2ow1',
-        type: 'li',
-      },
-      {
-        children: [
-          {
-            children: [{ text: 'Type ' }, { code: true, text: '---' }, { text: ' to create a horizontal rule.' }],
-            id: 'qmn2g',
-            type: 'lic',
-          },
-        ],
-        id: '6h8vg',
+        id: 'ppf1f',
         type: 'li',
       },
       {
         children: [
           {
             children: [
-              { text: 'Type ' },
-              { code: true, text: '#' },
-              { text: ' followed by ' },
-              { code: true, text: 'space' },
-              { text: ' to create an H1 heading.' },
+              {
+                text: 'Type ',
+              },
+              {
+                code: true,
+                text: '```',
+              },
+              {
+                text: ' to create a code block.',
+              },
             ],
-            id: 'kkbqg',
+            id: 'b3j0r',
             type: 'lic',
           },
         ],
-        id: '4d576',
+        id: 'pfgzp',
         type: 'li',
       },
       {
         children: [
           {
             children: [
-              { text: 'Type ' },
-              { code: true, text: '##' },
-              { text: ' followed by ' },
-              { code: true, text: 'space' },
-              { text: ' to create an H2 sub-heading.' },
+              {
+                text: 'Type ',
+              },
+              {
+                code: true,
+                text: '---',
+              },
+              {
+                text: ' to create a horizontal rule.',
+              },
             ],
-            id: '1skm7',
+            id: 'p569q',
             type: 'lic',
           },
         ],
-        id: '33se7',
+        id: '99o31',
         type: 'li',
       },
       {
         children: [
           {
             children: [
-              { text: 'Type ' },
-              { code: true, text: '###' },
-              { text: ' followed by ' },
-              { code: true, text: 'space' },
-              { text: ' to create an H3 sub-heading.' },
+              {
+                text: 'Type ',
+              },
+              {
+                code: true,
+                text: '#',
+              },
+              {
+                text: ' followed by ',
+              },
+              {
+                code: true,
+                text: 'space',
+              },
+              {
+                text: ' to create an H1 heading.',
+              },
             ],
-            id: 'dqm8v',
+            id: '5xe81',
             type: 'lic',
           },
         ],
-        id: 'uogdo',
+        id: '0591l',
         type: 'li',
       },
       {
         children: [
           {
             children: [
-              { text: 'Type ' },
-              { code: true, text: '####' },
-              { text: ' followed by ' },
-              { code: true, text: 'space' },
-              { text: ' to create an H4 sub-heading.' },
+              {
+                text: 'Type ',
+              },
+              {
+                code: true,
+                text: '##',
+              },
+              {
+                text: ' followed by ',
+              },
+              {
+                code: true,
+                text: 'space',
+              },
+              {
+                text: ' to create an H2 sub-heading.',
+              },
             ],
-            id: 'snirr',
+            id: 'uyz3w',
             type: 'lic',
           },
         ],
-        id: 'trqts',
+        id: 'dr20c',
         type: 'li',
       },
       {
         children: [
           {
             children: [
-              { text: 'Type ' },
-              { code: true, text: '#####' },
-              { text: ' followed by ' },
-              { code: true, text: 'space' },
-              { text: ' to create an H5 sub-heading.' },
+              {
+                text: 'Type ',
+              },
+              {
+                code: true,
+                text: '###',
+              },
+              {
+                text: ' followed by ',
+              },
+              {
+                code: true,
+                text: 'space',
+              },
+              {
+                text: ' to create an H3 sub-heading.',
+              },
             ],
-            id: 'ey0hb',
+            id: 'sknst',
             type: 'lic',
           },
         ],
-        id: 'yto8i',
+        id: '5rnaz',
         type: 'li',
       },
       {
         children: [
           {
             children: [
-              { text: 'Type ' },
-              { code: true, text: '######' },
-              { text: ' followed by ' },
-              { code: true, text: 'space' },
-              { text: ' to create an H6 sub-heading.' },
+              {
+                text: 'Type ',
+              },
+              {
+                code: true,
+                text: '####',
+              },
+              {
+                text: ' followed by ',
+              },
+              {
+                code: true,
+                text: 'space',
+              },
+              {
+                text: ' to create an H4 sub-heading.',
+              },
             ],
-            id: 'djzd9',
+            id: '3t5wa',
             type: 'lic',
           },
         ],
-        id: 'cahbv',
+        id: 'w28sp',
+        type: 'li',
+      },
+      {
+        children: [
+          {
+            children: [
+              {
+                text: 'Type ',
+              },
+              {
+                code: true,
+                text: '#####',
+              },
+              {
+                text: ' followed by ',
+              },
+              {
+                code: true,
+                text: 'space',
+              },
+              {
+                text: ' to create an H5 sub-heading.',
+              },
+            ],
+            id: 'qg4zw',
+            type: 'lic',
+          },
+        ],
+        id: 'uwyt6',
+        type: 'li',
+      },
+      {
+        children: [
+          {
+            children: [
+              {
+                text: 'Type ',
+              },
+              {
+                code: true,
+                text: '######',
+              },
+              {
+                text: ' followed by ',
+              },
+              {
+                code: true,
+                text: 'space',
+              },
+              {
+                text: ' to create an H6 sub-heading.',
+              },
+            ],
+            id: 'ww61j',
+            type: 'lic',
+          },
+        ],
+        id: 'a4zay',
         type: 'li',
       },
     ],
     id: '59',
     type: 'ul',
   },
-  { children: [{ text: 'Soft Break ⇧⏎' }], id: '60', type: 'h2' },
+  {
+    children: [
+      {
+        text: 'Soft Break ⇧⏎',
+      },
+    ],
+    id: '60',
+    type: 'h2',
+  },
   {
     children: [
       {
@@ -1373,11 +1724,11 @@ export const plateDefaultValue = [
                 text: 'hotkey – Use hotkeys like ⇧⏎ to insert a soft break anywhere within a paragraph.',
               },
             ],
-            id: '6wdjw',
+            id: 'dct5f',
             type: 'lic',
           },
         ],
-        id: '3kv0n',
+        id: 'dv9oo',
         type: 'li',
       },
       {
@@ -1388,30 +1739,50 @@ export const plateDefaultValue = [
                 text: 'query – Define custom rules to limit soft breaks to specific block types.',
               },
             ],
-            id: 'o1iz9',
+            id: 'z1aeg',
             type: 'lic',
           },
         ],
-        id: 'knc9h',
+        id: 'ie17v',
         type: 'li',
       },
     ],
     id: '62',
     type: 'ul',
   },
-  { children: [{ text: 'Try here ⏎' }], id: '63', type: 'blockquote' },
   {
     children: [
       {
-        children: [{ text: 'And here ⏎ as well.' }],
-        id: 'zp8qf',
+        text: 'Try here ⏎',
+      },
+    ],
+    id: '63',
+    type: 'blockquote',
+  },
+  {
+    children: [
+      {
+        children: [
+          {
+            text: 'And here ⏎ as well.',
+          },
+        ],
+        id: 'txjya',
         type: 'code_line',
       },
     ],
     id: '64',
     type: 'code_block',
   },
-  { children: [{ text: 'Exit Break ⏎' }], id: '65', type: 'h2' },
+  {
+    children: [
+      {
+        text: 'Exit Break ⏎',
+      },
+    ],
+    id: '65',
+    type: 'h2',
+  },
   {
     children: [
       {
@@ -1431,11 +1802,11 @@ export const plateDefaultValue = [
                 text: 'hotkey – Use hotkeys like ⌘⏎ to move the cursor to the next block',
               },
             ],
-            id: 'yc4kw',
+            id: '0scv1',
             type: 'lic',
           },
         ],
-        id: 'fgczb',
+        id: '8l60p',
         type: 'li',
       },
       {
@@ -1446,11 +1817,11 @@ export const plateDefaultValue = [
                 text: 'query – Specify block types where exit breaks are allowed.',
               },
             ],
-            id: 'psbl6',
+            id: 'r6vdk',
             type: 'lic',
           },
         ],
-        id: 'ay906',
+        id: 'ui4bd',
         type: 'li',
       },
       {
@@ -1461,23 +1832,35 @@ export const plateDefaultValue = [
                 text: 'before – Choose whether the cursor exits to the next or previous block',
               },
             ],
-            id: 'h65aa',
+            id: '90gv2',
             type: 'lic',
           },
         ],
-        id: 'v3zqv',
+        id: 'c3ewm',
         type: 'li',
       },
     ],
     id: '67',
     type: 'ul',
   },
-  { children: [{ text: 'Try here ⌘⏎' }], id: '68', type: 'blockquote' },
   {
     children: [
       {
-        children: [{ text: 'And in the middle ⌘⏎ of a block.' }],
-        id: 'ob40e',
+        text: 'Try here ⌘⏎',
+      },
+    ],
+    id: '68',
+    type: 'blockquote',
+  },
+  {
+    children: [
+      {
+        children: [
+          {
+            text: 'And in the middle ⌘⏎ of a block.',
+          },
+        ],
+        id: 'nqagl',
         type: 'code_line',
       },
     ],
@@ -1485,7 +1868,11 @@ export const plateDefaultValue = [
     type: 'code_block',
   },
   {
-    children: [{ text: 'Exit breaks also work within nested blocks:' }],
+    children: [
+      {
+        text: 'Exit breaks also work within nested blocks:',
+      },
+    ],
     id: '70',
     type: 'p',
   },
@@ -1496,49 +1883,69 @@ export const plateDefaultValue = [
           {
             children: [
               {
-                children: [{ bold: true, text: 'Plugin' }],
-                id: '3m5ie',
+                children: [
+                  {
+                    bold: true,
+                    text: 'Plugin',
+                  },
+                ],
+                id: '89yd0',
                 type: 'p',
               },
             ],
-            id: 'dev7n',
+            id: 'l1a9a',
             type: 'th',
           },
           {
             children: [
               {
-                children: [{ bold: true, text: 'Element' }],
-                id: 'f0oyh',
+                children: [
+                  {
+                    bold: true,
+                    text: 'Element',
+                  },
+                ],
+                id: '0zek7',
                 type: 'p',
               },
             ],
-            id: 'ucb6a',
+            id: 'c4ct7',
             type: 'th',
           },
           {
             children: [
               {
-                children: [{ bold: true, text: 'Inline' }],
-                id: 'dxh3d',
+                children: [
+                  {
+                    bold: true,
+                    text: 'Inline',
+                  },
+                ],
+                id: '9bnqp',
                 type: 'p',
               },
             ],
-            id: 'i56bn',
+            id: 'xkfx9',
             type: 'th',
           },
           {
             children: [
               {
-                children: [{ bold: true, text: 'Void' }],
-                id: 'm1t7h',
+                children: [
+                  {
+                    bold: true,
+                    text: 'Void',
+                  },
+                ],
+                id: 'glfao',
                 type: 'p',
               },
             ],
-            id: '6sl69',
+            id: '1vab8',
             type: 'th',
           },
         ],
-        id: 'kzzxp',
+        id: 'xuqho',
         type: 'tr',
       },
       {
@@ -1546,31 +1953,66 @@ export const plateDefaultValue = [
           {
             children: [
               {
-                children: [{ bold: true, text: 'Heading' }],
-                id: 'zryl0',
+                children: [
+                  {
+                    bold: true,
+                    text: 'Heading',
+                  },
+                ],
+                id: 'amlvb',
                 type: 'p',
               },
             ],
-            id: 'ch8bl',
+            id: 'cep94',
             type: 'td',
           },
           {
-            children: [{ children: [{ text: 'Yes' }], id: '8bk96', type: 'p' }],
-            id: 'ydrbw',
+            children: [
+              {
+                children: [
+                  {
+                    text: 'Yes',
+                  },
+                ],
+                id: '69cgk',
+                type: 'p',
+              },
+            ],
+            id: 'oelt7',
             type: 'td',
           },
           {
-            children: [{ children: [{ text: 'No' }], id: 'agc1v', type: 'p' }],
-            id: '22aos',
+            children: [
+              {
+                children: [
+                  {
+                    text: 'No',
+                  },
+                ],
+                id: 'zam3r',
+                type: 'p',
+              },
+            ],
+            id: '6zjb2',
             type: 'td',
           },
           {
-            children: [{ children: [{ text: 'No' }], id: 'jo3cq', type: 'p' }],
-            id: '8vsu7',
+            children: [
+              {
+                children: [
+                  {
+                    text: 'No',
+                  },
+                ],
+                id: 'ph3ha',
+                type: 'p',
+              },
+            ],
+            id: 'tss1e',
             type: 'td',
           },
         ],
-        id: '6mwtn',
+        id: 'rydxt',
         type: 'tr',
       },
       {
@@ -1578,31 +2020,66 @@ export const plateDefaultValue = [
           {
             children: [
               {
-                children: [{ bold: true, text: 'Image' }],
-                id: '8n4eh',
+                children: [
+                  {
+                    bold: true,
+                    text: 'Image',
+                  },
+                ],
+                id: '0rsay',
                 type: 'p',
               },
             ],
-            id: 'ftl84',
+            id: 'cj8eo',
             type: 'td',
           },
           {
-            children: [{ children: [{ text: 'Yes' }], id: 'u1c5v', type: 'p' }],
-            id: 'j09zs',
+            children: [
+              {
+                children: [
+                  {
+                    text: 'Yes',
+                  },
+                ],
+                id: 's69lp',
+                type: 'p',
+              },
+            ],
+            id: '5axk4',
             type: 'td',
           },
           {
-            children: [{ children: [{ text: 'No' }], id: 'zkwd6', type: 'p' }],
-            id: 'f8iox',
+            children: [
+              {
+                children: [
+                  {
+                    text: 'No',
+                  },
+                ],
+                id: 'e35zs',
+                type: 'p',
+              },
+            ],
+            id: 'r1xy5',
             type: 'td',
           },
           {
-            children: [{ children: [{ text: 'Yes' }], id: 'pnjhw', type: 'p' }],
-            id: 'wrcms',
+            children: [
+              {
+                children: [
+                  {
+                    text: 'Yes',
+                  },
+                ],
+                id: 'krltb',
+                type: 'p',
+              },
+            ],
+            id: '3tkrr',
             type: 'td',
           },
         ],
-        id: 'gbj05',
+        id: 'd03c9',
         type: 'tr',
       },
       {
@@ -1610,31 +2087,66 @@ export const plateDefaultValue = [
           {
             children: [
               {
-                children: [{ bold: true, text: 'Mention' }],
-                id: 'znqsh',
+                children: [
+                  {
+                    bold: true,
+                    text: 'Mention',
+                  },
+                ],
+                id: '2m5mh',
                 type: 'p',
               },
             ],
-            id: '1kizc',
+            id: 'udv8e',
             type: 'td',
           },
           {
-            children: [{ children: [{ text: 'Yes' }], id: 'dqrai', type: 'p' }],
-            id: 'bbs4i',
+            children: [
+              {
+                children: [
+                  {
+                    text: 'Yes',
+                  },
+                ],
+                id: 'tsfkl',
+                type: 'p',
+              },
+            ],
+            id: '508yk',
             type: 'td',
           },
           {
-            children: [{ children: [{ text: 'Yes' }], id: 't6log', type: 'p' }],
-            id: 'cqpu7',
+            children: [
+              {
+                children: [
+                  {
+                    text: 'Yes',
+                  },
+                ],
+                id: 'bao8p',
+                type: 'p',
+              },
+            ],
+            id: '67w0a',
             type: 'td',
           },
           {
-            children: [{ children: [{ text: 'Yes' }], id: 'o1434', type: 'p' }],
-            id: '5vnl7',
+            children: [
+              {
+                children: [
+                  {
+                    text: 'Yes',
+                  },
+                ],
+                id: 'hioi1',
+                type: 'p',
+              },
+            ],
+            id: '10kpz',
             type: 'td',
           },
         ],
-        id: 'clhct',
+        id: '18yer',
         type: 'tr',
       },
     ],
@@ -1643,7 +2155,15 @@ export const plateDefaultValue = [
     marginLeft: 20,
     type: 'table',
   },
-  { children: [{ text: 'Cursor Overlay' }], id: '72', type: 'h2' },
+  {
+    children: [
+      {
+        text: 'Cursor Overlay',
+      },
+    ],
+    id: '72',
+    type: 'h2',
+  },
   {
     children: [
       {
@@ -1653,7 +2173,15 @@ export const plateDefaultValue = [
     id: '73',
     type: 'p',
   },
-  { children: [{ text: 'Tabbable' }], id: '74', type: 'h2' },
+  {
+    children: [
+      {
+        text: 'Tabbable',
+      },
+    ],
+    id: '74',
+    type: 'h2',
+  },
   {
     children: [
       {
@@ -1672,28 +2200,78 @@ export const plateDefaultValue = [
     id: '76',
     type: 'p',
   },
-  { children: [{ text: '' }], id: '77', type: 'tabbable_element' },
-  { children: [{ text: '' }], id: '78', type: 'tabbable_element' },
   {
-    children: [{ text: 'Place your cursor here and try pressing tab or shift+tab.' }],
+    children: [
+      {
+        text: '',
+      },
+    ],
+    id: '77',
+    type: 'tabbable_element',
+  },
+  {
+    children: [
+      {
+        text: '',
+      },
+    ],
+    id: '78',
+    type: 'tabbable_element',
+  },
+  {
+    children: [
+      {
+        text: 'Place your cursor here and try pressing tab or shift+tab.',
+      },
+    ],
     id: '79',
     type: 'p',
   },
   {
     children: [
       {
-        children: [{ children: [{ text: 'List item 1' }], id: 'rga5l', type: 'lic' }],
-        id: 'cobcj',
+        children: [
+          {
+            children: [
+              {
+                text: 'List item 1',
+              },
+            ],
+            id: 'xk3ml',
+            type: 'lic',
+          },
+        ],
+        id: 'dks7j',
         type: 'li',
       },
       {
-        children: [{ children: [{ text: 'List item 2' }], id: 'harr6', type: 'lic' }],
-        id: '8pych',
+        children: [
+          {
+            children: [
+              {
+                text: 'List item 2',
+              },
+            ],
+            id: 'fjbpw',
+            type: 'lic',
+          },
+        ],
+        id: 'xl1vd',
         type: 'li',
       },
       {
-        children: [{ children: [{ text: 'List item 3' }], id: 'o7ayt', type: 'lic' }],
-        id: 'e0hgp',
+        children: [
+          {
+            children: [
+              {
+                text: 'List item 3',
+              },
+            ],
+            id: 'chzg6',
+            type: 'lic',
+          },
+        ],
+        id: '7gu4i',
         type: 'li',
       },
     ],
@@ -1702,13 +2280,33 @@ export const plateDefaultValue = [
   },
   {
     children: [
-      { children: [{ text: 'if (true) {' }], id: '0jof6', type: 'code_line' },
       {
-        children: [{ text: '// <- Place cursor at start of line and press tab' }],
-        id: 'zzxzk',
+        children: [
+          {
+            text: 'if (true) {',
+          },
+        ],
+        id: 'n8lam',
         type: 'code_line',
       },
-      { children: [{ text: '}' }], id: 'y7nei', type: 'code_line' },
+      {
+        children: [
+          {
+            text: '// <- Place cursor at start of line and press tab',
+          },
+        ],
+        id: 'rwse1',
+        type: 'code_line',
+      },
+      {
+        children: [
+          {
+            text: '}',
+          },
+        ],
+        id: 'we1i0',
+        type: 'code_line',
+      },
     ],
     id: '81',
     lang: 'javascript',
@@ -1719,13 +2317,26 @@ export const plateDefaultValue = [
       {
         text: 'In this example, the plugin is disabled when the cursor is inside a list or a code block. You can customise this using the ',
       },
-      { code: true, text: 'query' },
-      { text: ' option.' },
+      {
+        code: true,
+        text: 'query',
+      },
+      {
+        text: ' option.',
+      },
     ],
     id: '82',
     type: 'p',
   },
-  { children: [{ text: '' }], id: '83', type: 'tabbable_element' },
+  {
+    children: [
+      {
+        text: '',
+      },
+    ],
+    id: '83',
+    type: 'tabbable_element',
+  },
   {
     children: [
       {
@@ -1735,30 +2346,68 @@ export const plateDefaultValue = [
     id: '84',
     type: 'p',
   },
-  { children: [{ text: '💬 Comments' }], id: '85', type: 'h2' },
   {
     children: [
-      { text: 'Add ' },
-      { comment: true, comment_1: true, text: 'comments to your content' },
-      { text: ' to provide additional context, insights, or ' },
-      { comment: true, comment_2: true, text: 'collaborate' },
-      { text: '  with others' },
+      {
+        text: '💬 Comments',
+      },
+    ],
+    id: '85',
+    type: 'h2',
+  },
+  {
+    children: [
+      {
+        text: 'Add ',
+      },
+      {
+        comment: true,
+        comment_1: true,
+        text: 'comments to your content',
+      },
+      {
+        text: ' to provide additional context, insights, or ',
+      },
+      {
+        comment: true,
+        comment_2: true,
+        text: 'collaborate',
+      },
+      {
+        text: '  with others',
+      },
     ],
     id: '86',
     type: 'p',
   },
-  { children: [{ text: 'Deserialize HTML' }], id: '87', type: 'h2' },
+  {
+    children: [
+      {
+        text: 'Deserialize HTML',
+      },
+    ],
+    id: '87',
+    type: 'h2',
+  },
   {
     children: [
       {
         text: "By default, when you paste content into the Slate editor, it will utilize the clipboard's ",
       },
-      { code: true, text: "'text/plain'" },
+      {
+        code: true,
+        text: "'text/plain'",
+      },
       {
         text: 'data. While this is suitable for certain scenarios, there are times when you want users to be able to paste content while preserving its formatting. To achieve this, your editor should be capable of handling ',
       },
-      { code: true, text: "'text/html'" },
-      { text: 'data.' },
+      {
+        code: true,
+        text: "'text/html'",
+      },
+      {
+        text: 'data.',
+      },
     ],
     id: '88',
     type: 'p',
@@ -1772,24 +2421,46 @@ export const plateDefaultValue = [
     id: '89',
     type: 'p',
   },
-  { children: [{ text: 'Deserialize Markdown' }], id: '90', type: 'h2' },
+  {
+    children: [
+      {
+        text: 'Deserialize Markdown',
+      },
+    ],
+    id: '90',
+    type: 'h2',
+  },
   {
     children: [
       {
         text: 'Copy and paste Markdown content from popular Markdown editors like ',
       },
       {
-        children: [{ text: 'markdown-it.github.io/' }],
-        id: '6vq0j',
+        children: [
+          {
+            text: 'markdown-it.github.io/',
+          },
+        ],
+        id: 'izqc9',
         type: 'a',
         url: 'https://markdown-it.github.io/',
       },
-      { text: ' into the editor for easy conversion and editing.' },
+      {
+        text: ' into the editor for easy conversion and editing.',
+      },
     ],
     id: '91',
     type: 'p',
   },
-  { children: [{ text: 'Deserialize Docx' }], id: '92', type: 'h2' },
+  {
+    children: [
+      {
+        text: 'Deserialize Docx',
+      },
+    ],
+    id: '92',
+    type: 'h2',
+  },
   {
     children: [
       {
@@ -1799,19 +2470,51 @@ export const plateDefaultValue = [
     id: '93',
     type: 'p',
   },
-  { children: [{ text: 'Deserialize CSV' }], id: '94', type: 'h2' },
   {
-    children: [{ text: 'Copy and paste CSV content into a table.' }],
+    children: [
+      {
+        text: 'Deserialize CSV',
+      },
+    ],
+    id: '94',
+    type: 'h2',
+  },
+  {
+    children: [
+      {
+        text: 'Copy and paste CSV content into a table.',
+      },
+    ],
     id: '95',
     type: 'p',
   },
-  { children: [{ text: 'Trailing Block' }], id: '96', type: 'h2' },
   {
-    children: [{ text: 'Always have a trailing paragraph at the end of your editor.' }],
+    children: [
+      {
+        text: 'Trailing Block',
+      },
+    ],
+    id: '96',
+    type: 'h2',
+  },
+  {
+    children: [
+      {
+        text: 'Always have a trailing paragraph at the end of your editor.',
+      },
+    ],
     id: '97',
     type: 'p',
   },
-  { children: [{ text: 'Excalidraw' }], id: '98', type: 'h2' },
+  {
+    children: [
+      {
+        text: 'Excalidraw',
+      },
+    ],
+    id: '98',
+    type: 'h2',
+  },
   {
     children: [
       {
@@ -1822,7 +2525,11 @@ export const plateDefaultValue = [
     type: 'p',
   },
   {
-    children: [{ text: '' }],
+    children: [
+      {
+        text: '',
+      },
+    ],
     data: {
       elements: [
         {
@@ -1868,10 +2575,21 @@ export const plateDefaultValue = [
           y: 190.69140625,
         },
       ],
-      state: { currentItemFontFamily: 1, viewBackgroundColor: '#AFEEEE' },
+      state: {
+        currentItemFontFamily: 1,
+        viewBackgroundColor: '#AFEEEE',
+      },
     },
     id: '100',
     type: 'excalidraw',
   },
-  { children: [{ text: '' }], id: '4r365', type: 'p' },
+  {
+    children: [
+      {
+        text: '',
+      },
+    ],
+    id: 'qkzld',
+    type: 'p',
+  },
 ]

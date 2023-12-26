@@ -25,7 +25,9 @@ export const inputVariants = cva(
   },
 )
 
-export type InputProps = {} & React.InputHTMLAttributes<HTMLInputElement> & VariantProps<typeof inputVariants>
+export type InputProps = Record<string, unknown> &
+  React.InputHTMLAttributes<HTMLInputElement> &
+  VariantProps<typeof inputVariants>
 
 const Input = React.forwardRef<HTMLInputElement, InputProps>(({ className, variant, type, ...props }, ref) => {
   return <input type={type} className={cn(inputVariants({ variant }), className)} ref={ref} {...props} />

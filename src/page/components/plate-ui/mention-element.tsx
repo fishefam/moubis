@@ -1,7 +1,7 @@
 import type { PlateElementProps, Value } from '@udecode/plate-common'
 import { getHandler, PlateElement } from '@udecode/plate-common'
 import type { TMentionElement } from '@udecode/plate-mention'
-import type React from 'react'
+import type * as React from 'react'
 import { forwardRef } from 'react'
 import { useFocused, useSelected } from 'slate-react'
 
@@ -12,7 +12,7 @@ export type MentionElementProps = {
    * Prefix rendered before mention
    */
   prefix?: string
-  onClick?: (mentionNode: any) => void
+  onClick?: (mentionNode: unknown) => void
   renderLabel?: (mentionable: TMentionElement) => string
 } & PlateElementProps<Value, TMentionElement>
 
@@ -36,7 +36,7 @@ const MentionElement = forwardRef<React.ElementRef<typeof PlateElement>, Mention
         )}
         data-slate-value={element.value}
         contentEditable={false}
-        onClick={getHandler(onClick, element)}
+        onClick={getHandler(onClick, element as unknown as React.MouseEvent<HTMLDivElement, MouseEvent>)}
         {...props}
       >
         {prefix}

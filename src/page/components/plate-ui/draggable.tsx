@@ -22,7 +22,7 @@ export type DraggableProps = {
     props: {
       monitor: DropTargetMonitor<DragItemNode, unknown>
       dragItem: DragItemNode
-      nodeRef: any
+      nodeRef: unknown
       id: string
     },
   ) => boolean

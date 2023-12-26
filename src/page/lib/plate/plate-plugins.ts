@@ -57,12 +57,19 @@ import {
 import { createHighlightPlugin, MARK_HIGHLIGHT } from '@udecode/plate-highlight'
 import { createHorizontalRulePlugin, ELEMENT_HR } from '@udecode/plate-horizontal-rule'
 import { createIndentPlugin } from '@udecode/plate-indent'
-import { createIndentListPlugin, KEY_LIST_STYLE_TYPE } from '@udecode/plate-indent-list'
+import { KEY_LIST_STYLE_TYPE } from '@udecode/plate-indent-list'
 import { createJuicePlugin } from '@udecode/plate-juice'
 import { createKbdPlugin, MARK_KBD } from '@udecode/plate-kbd'
 import { createLineHeightPlugin } from '@udecode/plate-line-height'
 import { createLinkPlugin, ELEMENT_LINK } from '@udecode/plate-link'
-import { createTodoListPlugin, ELEMENT_LI, ELEMENT_OL, ELEMENT_TODO_LI, ELEMENT_UL } from '@udecode/plate-list'
+import {
+  createListPlugin,
+  createTodoListPlugin,
+  ELEMENT_LI,
+  ELEMENT_OL,
+  ELEMENT_TODO_LI,
+  ELEMENT_UL,
+} from '@udecode/plate-list'
 import { createImagePlugin, createMediaEmbedPlugin, ELEMENT_IMAGE, ELEMENT_MEDIA_EMBED } from '@udecode/plate-media'
 import { createMentionPlugin, ELEMENT_MENTION, ELEMENT_MENTION_INPUT } from '@udecode/plate-mention'
 import { createNodeIdPlugin } from '@udecode/plate-node-id'
@@ -156,21 +163,41 @@ export const plugins = createPlugins(
     createAlignPlugin({
       inject: {
         props: {
-          validTypes: [ELEMENT_PARAGRAPH, ELEMENT_H1, ELEMENT_H2, ELEMENT_H3],
+          validTypes: [ELEMENT_PARAGRAPH, ELEMENT_H1, ELEMENT_H2, ELEMENT_H3, ELEMENT_H4, ELEMENT_H5, ELEMENT_H6],
         },
       },
     }),
     createIndentPlugin({
       inject: {
         props: {
-          validTypes: [ELEMENT_PARAGRAPH, ELEMENT_H1, ELEMENT_H2, ELEMENT_H3, ELEMENT_BLOCKQUOTE, ELEMENT_CODE_BLOCK],
+          validTypes: [
+            ELEMENT_PARAGRAPH,
+            ELEMENT_H1,
+            ELEMENT_H2,
+            ELEMENT_H3,
+            ELEMENT_H4,
+            ELEMENT_H5,
+            ELEMENT_H6,
+            ELEMENT_BLOCKQUOTE,
+            ELEMENT_CODE_BLOCK,
+          ],
         },
       },
     }),
-    createIndentListPlugin({
+    createListPlugin({
       inject: {
         props: {
-          validTypes: [ELEMENT_PARAGRAPH, ELEMENT_H1, ELEMENT_H2, ELEMENT_H3, ELEMENT_BLOCKQUOTE, ELEMENT_CODE_BLOCK],
+          validTypes: [
+            ELEMENT_PARAGRAPH,
+            ELEMENT_H1,
+            ELEMENT_H2,
+            ELEMENT_H3,
+            ELEMENT_H4,
+            ELEMENT_H5,
+            ELEMENT_H6,
+            ELEMENT_BLOCKQUOTE,
+            ELEMENT_CODE_BLOCK,
+          ],
         },
       },
     }),
@@ -179,7 +206,7 @@ export const plugins = createPlugins(
         props: {
           defaultNodeValue: 1.5,
           validNodeValues: [1, 1.2, 1.5, 2, 3],
-          validTypes: [ELEMENT_PARAGRAPH, ELEMENT_H1, ELEMENT_H2, ELEMENT_H3],
+          validTypes: [ELEMENT_PARAGRAPH, ELEMENT_H1, ELEMENT_H2, ELEMENT_H3, ELEMENT_H4, ELEMENT_H5, ELEMENT_H6],
         },
       },
     }),

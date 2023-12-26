@@ -31,8 +31,8 @@ export function CommentMoreDropdown() {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent>
-        <DropdownMenuItem {...(editProps as any)}>Edit comment</DropdownMenuItem>
-        <DropdownMenuItem {...(deleteProps as any)}>Delete comment</DropdownMenuItem>
+        <DropdownMenuItem {...editProps}>Edit comment</DropdownMenuItem>
+        <DropdownMenuItem {...deleteProps}>Delete comment</DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
   )

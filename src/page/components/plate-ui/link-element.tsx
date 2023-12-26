@@ -2,7 +2,7 @@ import type { PlateElementProps, Value } from '@udecode/plate-common'
 import { PlateElement } from '@udecode/plate-common'
 import type { TLinkElement } from '@udecode/plate-link'
 import { useLink } from '@udecode/plate-link'
-import React from 'react'
+import * as React from 'react'
 
 import { cn } from '@/lib/utils'
 
@@ -16,7 +16,7 @@ const LinkElement = React.forwardRef<React.ElementRef<typeof PlateElement>, Plat
         ref={ref}
         className={cn('font-medium text-primary underline decoration-primary underline-offset-4', className)}
         {...linkProps}
-        {...(props as any)}
+        {...props}
       >
         <a>{children}</a>
       </PlateElement>

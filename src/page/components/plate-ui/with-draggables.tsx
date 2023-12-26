@@ -14,11 +14,11 @@ import { Draggable } from './draggable'
 export const withDraggable = (
   Component: FC,
   options?: WithDraggableOptions<Partial<Omit<DraggableProps, 'editor' | 'element' | 'children'>>>,
-) => withDraggablePrimitive<DraggableProps>(Draggable, Component, options as any)
+) => withDraggablePrimitive<DraggableProps>(Draggable, Component, options as WithDraggableOptions<DraggableProps>)
 
 export const withDraggablesPrimitive = createNodesWithHOC(withDraggable)
 
-export const withDraggables = (components: any) => {
+export const withDraggables = (components: Record<string, unknown>) => {
   return withDraggablesPrimitive(components, [
     {
       keys: [ELEMENT_PARAGRAPH, ELEMENT_UL, ELEMENT_OL],

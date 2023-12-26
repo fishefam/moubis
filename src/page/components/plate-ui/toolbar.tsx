@@ -18,9 +18,10 @@ const toolbarVariants = cva('relative flex select-none items-stretch gap-1 bg-ba
 
 export const linkVariants = cva('font-medium underline underline-offset-4')
 
-const ToolbarToggleGroup = ToolbarPrimitive.ToggleGroup
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const ToolbarToggleGroup = ToolbarPrimitive.ToggleGroup as any
 
-export type ToolbarProps = {} & React.ComponentPropsWithoutRef<typeof Toolbar>
+export type ToolbarProps = Record<string, unknown> & React.ComponentPropsWithoutRef<typeof Toolbar>
 
 const Toolbar = React.forwardRef<
   React.ElementRef<typeof ToolbarPrimitive.Root>,
@@ -56,7 +57,7 @@ export type ToolbarButtonProps = {
   Omit<ToggleProps, 'type'>
 
 const ToolbarButton = React.forwardRef<React.ElementRef<typeof ToolbarPrimitive.Button>, ToolbarButtonProps>(
-  ({ className, variant, size = 'sm', isDropdown, children, pressed, value, tooltip, ...props }, ref) => {
+  ({ className, variant, size = 'sm', isDropdown, children, pressed, tooltip, ...props }, ref) => {
     const [isLoaded, setIsLoaded] = React.useState(false)
 
     React.useEffect(() => {
@@ -102,7 +103,7 @@ const ToolbarButton = React.forwardRef<React.ElementRef<typeof ToolbarPrimitive.
 
     return isLoaded && tooltip ? (
       <Tooltip>
-        <TooltipTrigger>{content}</TooltipTrigger>
+        <TooltipTrigger asChild>{content}</TooltipTrigger>
 
         <TooltipPortal>
           <TooltipContent>{tooltip}</TooltipContent>
