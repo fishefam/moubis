@@ -19,10 +19,10 @@ export type TableCellElementProps = {
 } & PlateElementProps<Value, TTableCellElement>
 
 const TableCellElement = React.forwardRef<React.ElementRef<typeof PlateElement>, TableCellElementProps>(
-  ({ children, className, hideBorder, isHeader, style, ...props }, ref) => {
+  ({ children, className, isHeader, style, ...props }, ref) => {
     const { element } = props
 
-    const { borders, colIndex, hovered, hoveredLeft, isSelectingCell, readOnly, rowIndex, rowSize, selected } =
+    const { borders, colIndex, hovered, hoveredLeft, isSelectingCell, readOnly, rowIndex, rowSize } =
       useTableCellElementState()
     const { props: cellProps } = useTableCellElement({ element: props.element })
     const resizableState = useTableCellElementResizableState({

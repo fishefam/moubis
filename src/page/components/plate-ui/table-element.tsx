@@ -8,7 +8,7 @@ import { cn } from '@/lib/utils'
 import { PopoverAnchor } from '@radix-ui/react-popover'
 import { isCollapsed, PlateElement, useEditorState, useElement, useRemoveNodeButton } from '@udecode/plate-common'
 import { useTableBordersDropdownMenuContentState, useTableElement, useTableElementState } from '@udecode/plate-table'
-import React, { forwardRef } from 'react'
+import React, { forwardRef, useEffect, useRef } from 'react'
 import { useReadOnly, useSelected } from 'slate-react'
 
 import { Button } from './button'
@@ -113,49 +113,65 @@ const TableFloatingToolbar = React.forwardRef<React.ElementRef<typeof PopoverCon
 )
 TableFloatingToolbar.displayName = 'TableFloatingToolbar'
 
-const TableElement = React.forwardRef<React.ElementRef<typeof PlateElement>, PlateElementProps>(
-  ({ children, className, ...props }, ref) => {
-    const { colSizes, isSelectingCell, marginLeft, minColumnWidth } = useTableElementState()
-    const { colGroupProps, props: tableProps } = useTableElement()
+const TableElement = ({ children, className, ...props }: PlateElementProps) => {
+  const { colSizes, isSelectingCell, marginLeft, minColumnWidth } = useTableElementState()
+  const { colGroupProps, props: tableProps } = useTableElement()
 
-    return (
-      <TableFloatingToolbar>
-        <div style={{ paddingLeft: marginLeft }}>
-          <PlateElement
-            asChild
-            className={cn(isSelectingCell && '[&_*::selection]:bg-none', className)}
-            ref={ref}
-            {...tableProps}
-            {...props}
-            style={{
-              borderCollapse: 'collapse',
-              display: 'table',
-              margin: '1rem 0',
-              tableLayout: 'fixed',
-              width: '100%',
-            }}
-          >
-            <table>
-              <colgroup {...colGroupProps}>
-                {colSizes.map((width, index) => (
-                  <col
-                    key={index}
-                    style={{
-                      minWidth: minColumnWidth,
-                      width: width || undefined,
-                    }}
-                  />
-                ))}
-              </colgroup>
+  const ref = useRef<HTMLTableSectionElement>(null)
+  useEffect(() => {
+    const elem = ref.current
+    if (elem) {
+      const rows = elem.children
+      const firstRow = rows[0].children
+      const lastRow = rows[rows.length - 1].children
+      const topLeftCell = firstRow[0].children[0] as HTMLDivElement
+      const topRightCell = firstRow[firstRow.length - 1].children[0] as HTMLDivElement
+      const bottomLeftCell = lastRow[0].children[0] as HTMLDivElement
+      const bottomRightCell = lastRow[lastRow.length - 1].children[0] as HTMLDivElement
+      topLeftCell.style.borderTopLeftRadius = '5px'
+      topRightCell.style.borderTopRightRadius = '5px'
+      bottomLeftCell.style.borderBottomLeftRadius = '5px'
+      bottomRightCell.style.borderBottomRightRadius = '5px'
+    }
+  }, [])
 
-              <tbody style={{ minWidth: '100%' }}>{children}</tbody>
-            </table>
-          </PlateElement>
-        </div>
-      </TableFloatingToolbar>
-    )
-  },
-)
-TableElement.displayName = 'TableElement'
+  return (
+    <TableFloatingToolbar>
+      <div style={{ paddingLeft: marginLeft }}>
+        <PlateElement
+          asChild
+          className={cn(isSelectingCell && '[&_*::selection]:bg-none', className)}
+          {...tableProps}
+          {...props}
+          style={{
+            borderCollapse: 'collapse',
+            display: 'table',
+            margin: '1rem 0',
+            tableLayout: 'fixed',
+            width: '100%',
+          }}
+        >
+          <table>
+            <colgroup {...colGroupProps}>
+              {colSizes.map((width, index) => (
+                <col
+                  key={index}
+                  style={{
+                    minWidth: minColumnWidth,
+                    width: width || undefined,
+                  }}
+                />
+              ))}
+            </colgroup>
+
+            <tbody ref={ref} style={{ minWidth: '100%' }}>
+              {children}
+            </tbody>
+          </table>
+        </PlateElement>
+      </div>
+    </TableFloatingToolbar>
+  )
+}
 
 export { TableBordersDropdownMenuContent, TableElement, TableFloatingToolbar }

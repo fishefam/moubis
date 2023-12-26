@@ -12,9 +12,16 @@ export function ExcalidrawElement({ nodeProps, ...props }: PlateElementProps<Val
   })
 
   return (
-    <PlateElement {...props}>
+    <PlateElement
+      {...props}
+      style={{
+        imageRendering: 'pixelated',
+        touchAction: 'none',
+        zIndex: 50,
+      }}
+    >
       <div contentEditable={false}>
-        <div className='h-[600px]'>{Excalidraw && <Excalidraw {...nodeProps} {...excalidrawProps} />}</div>
+        <div style={{ height: '600px' }}>{Excalidraw && <Excalidraw {...nodeProps} {...excalidrawProps} />}</div>
       </div>
       {children}
     </PlateElement>
