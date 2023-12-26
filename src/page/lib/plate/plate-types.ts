@@ -1,8 +1,5 @@
-import type { AutoformatRule } from '@udecode/plate-autoformat'
-import type { ELEMENT_BLOCKQUOTE } from '@udecode/plate-block-quote'
-import type { ELEMENT_CODE_BLOCK, ELEMENT_CODE_LINE } from '@udecode/plate-code-block'
-import type { TCommentText } from '@udecode/plate-comments'
 import type {
+  AutoformatRule,
   CreatePlateEditorOptions,
   Decorate,
   DecorateEntry,
@@ -11,6 +8,29 @@ import type {
   EElement,
   EElementEntry,
   EElementOrText,
+  ELEMENT_BLOCKQUOTE,
+  ELEMENT_CODE_BLOCK,
+  ELEMENT_CODE_LINE,
+  ELEMENT_H1,
+  ELEMENT_H2,
+  ELEMENT_H3,
+  ELEMENT_H4,
+  ELEMENT_H5,
+  ELEMENT_H6,
+  ELEMENT_HR,
+  ELEMENT_IMAGE,
+  ELEMENT_LI,
+  ELEMENT_LINK,
+  ELEMENT_MEDIA_EMBED,
+  ELEMENT_MENTION,
+  ELEMENT_MENTION_INPUT,
+  ELEMENT_OL,
+  ELEMENT_PARAGRAPH,
+  ELEMENT_TABLE,
+  ELEMENT_TD,
+  ELEMENT_TODO_LI,
+  ELEMENT_TR,
+  ELEMENT_UL,
   EMarks,
   ENode,
   ENodeEntry,
@@ -31,12 +51,20 @@ import type {
   PlateProps,
   PluginOptions,
   SerializeHtml,
+  TCommentText,
   TElement,
+  TImageElement,
+  TLinkElement,
+  TMediaEmbedElement,
+  TMentionElement,
+  TMentionInputElement,
   TNodeEntry,
   TReactEditor,
+  TTableElement,
   TText,
+  TTodoListItemElement,
   WithOverride,
-} from '@udecode/plate-common'
+} from '@udecode/plate'
 import {
   createPlateEditor,
   createPluginFactory,
@@ -48,27 +76,12 @@ import {
   usePlateActions,
   usePlateSelectors,
   usePlateStates,
-} from '@udecode/plate-common'
+} from '@udecode/plate'
 import type { ELEMENT_EXCALIDRAW, TExcalidrawElement } from '@udecode/plate-excalidraw'
-import type { ELEMENT_H1, ELEMENT_H2, ELEMENT_H3, ELEMENT_H4, ELEMENT_H5, ELEMENT_H6 } from '@udecode/plate-heading'
-import type { ELEMENT_HR } from '@udecode/plate-horizontal-rule'
-import type { ELEMENT_LINK, TLinkElement } from '@udecode/plate-link'
-import type { ELEMENT_LI, ELEMENT_OL, ELEMENT_TODO_LI, ELEMENT_UL, TTodoListItemElement } from '@udecode/plate-list'
-import type { ELEMENT_IMAGE, ELEMENT_MEDIA_EMBED, TImageElement, TMediaEmbedElement } from '@udecode/plate-media'
-import type {
-  ELEMENT_MENTION,
-  ELEMENT_MENTION_INPUT,
-  TMentionElement,
-  TMentionInputElement,
-} from '@udecode/plate-mention'
-import type { ELEMENT_PARAGRAPH } from '@udecode/plate-paragraph'
-import type { ELEMENT_TABLE, ELEMENT_TD, ELEMENT_TR, TTableElement } from '@udecode/plate-table'
-import type React from 'react'
 
 /**
  * Text
  */
-
 export type EmptyText = {
   text: ''
 }

@@ -1,7 +1,6 @@
-import type { AutoformatPlugin, AutoformatRule } from '@udecode/plate-autoformat'
-import type { PlatePlugin } from '@udecode/plate-common'
+import type { AutoformatPlugin, AutoformatRule, PlatePlugin } from '@udecode/plate'
 
-import { autoformatRules } from '@/lib/plate/autoformatRules'
+import { autoformatRules } from './autoformatRules'
 
 export const autoformatPlugin: Partial<PlatePlugin<AutoformatPlugin>> = {
   options: {

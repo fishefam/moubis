@@ -1,9 +1,7 @@
-import type { AutoformatRule } from '@udecode/plate-autoformat'
-import { isBlock, setNodes } from '@udecode/plate-common'
-import type { TTodoListItemElement } from '@udecode/plate-list'
-import { ELEMENT_LI, ELEMENT_OL, ELEMENT_TODO_LI, ELEMENT_UL } from '@udecode/plate-list'
+import type { AutoformatRule, TTodoListItemElement } from '@udecode/plate'
+import { ELEMENT_LI, ELEMENT_OL, ELEMENT_TODO_LI, ELEMENT_UL, isBlock, setNodes } from '@udecode/plate'
 
-import { formatList, preFormat } from '@/lib/plate/autoformatUtils'
+import { formatList, preFormat } from './autoformatUtils'
 
 export const autoformatLists: AutoformatRule[] = [
   {
