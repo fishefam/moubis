@@ -1,18 +1,20 @@
-import type { ToolbarProps } from '@radix-ui/react-toolbar'
-import { Toolbar } from '@radix-ui/react-toolbar'
-import { PortalBody, useComposedRef } from '@udecode/plate'
+'use client'
+
+import { PortalBody, useComposedRef } from '@udecode/plate-common'
 import type { FloatingToolbarState } from '@udecode/plate-floating'
 import { flip, offset, useFloatingToolbar, useFloatingToolbarState } from '@udecode/plate-floating'
-import type { ElementRef } from 'react'
-import { forwardRef } from 'react'
+import React from 'react'
 
 import { cn } from '@/lib/utils'
+
+import type { ToolbarProps } from './toolbar'
+import { Toolbar } from './toolbar'
 
 export type FloatingToolbarProps = {
   state?: FloatingToolbarState
 } & ToolbarProps
 
-const FloatingToolbar = forwardRef<ElementRef<typeof Toolbar>, FloatingToolbarProps>(
+const FloatingToolbar = React.forwardRef<React.ElementRef<typeof Toolbar>, FloatingToolbarProps>(
   ({ state, children, ...props }, componentRef) => {
     const floatingToolbarState = useFloatingToolbarState({
       ...state,
@@ -39,9 +41,7 @@ const FloatingToolbar = forwardRef<ElementRef<typeof Toolbar>, FloatingToolbarPr
       <PortalBody>
         <Toolbar
           ref={ref}
-          className={cn(
-            'absolute z-50 whitespace-nowrap border bg-white px-1 opacity-100 shadow-md print:hidden flex items-center rounded-sm',
-          )}
+          className={cn('absolute z-50 whitespace-nowrap border bg-popover px-1 opacity-100 shadow-md print:hidden')}
           {...rootProps}
           {...props}
         >

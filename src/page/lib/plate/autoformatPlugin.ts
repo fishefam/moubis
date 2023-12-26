@@ -1,11 +1,11 @@
-import { type AutoformatPlugin, type PlatePlugin } from '@udecode/plate'
+import type { AutoformatPlugin } from '@udecode/plate-autoformat'
+import type { PlatePlugin } from '@udecode/plate-common'
 
-import { autoformatRules } from './autoformatRules'
+import { autoformatRules } from '@/lib/plate/autoformatRules'
 
 export const autoformatPlugin: Partial<PlatePlugin<AutoformatPlugin>> = {
   options: {
     enableUndoOnDelete: true,
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     rules: autoformatRules as any,
   },
 }

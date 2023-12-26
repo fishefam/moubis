@@ -1,5 +1,7 @@
-import { PlateElement, type PlateElementProps, type Value } from '@udecode/plate'
-import { type TTodoListItemElement, useTodoListElement, useTodoListElementState } from '@udecode/plate-list'
+import type { PlateElementProps, Value } from '@udecode/plate-common'
+import { PlateElement } from '@udecode/plate-common'
+import type { TTodoListItemElement } from '@udecode/plate-list'
+import { useTodoListElement, useTodoListElementState } from '@udecode/plate-list'
 
 import { cn } from '@/lib/utils'
 
@@ -13,32 +15,17 @@ export function TodoListElement({ className, children, ...props }: TodoListEleme
   const { checkboxProps } = useTodoListElement(state)
 
   return (
-    <PlateElement className={cn(className)} {...props}>
-      <div style={{ display: 'flex', flexDirection: 'row', padding: '0.25rem 0' }}>
-        <div
-          contentEditable={false}
-          style={{
-            alignItems: 'center',
-            display: 'flex',
-            justifyContent: 'center',
-            marginRight: '0.375rem',
-            userSelect: 'none',
-          }}
-        >
-          <Checkbox {...checkboxProps} />
-        </div>
-        <span
-          contentEditable={!state.readOnly}
-          suppressContentEditableWarning
-          style={
-            state.checked
-              ? { color: 'rgb(100 116 139)', flex: '1 1 0%', textDecorationLine: 'line-through' }
-              : { flex: '1 1 0%' }
-          }
-        >
-          {children}
-        </span>
+    <PlateElement className={cn('flex flex-row py-1', className)} {...props}>
+      <div className='mr-1.5 flex select-none items-center justify-center' contentEditable={false}>
+        <Checkbox {...checkboxProps} />
       </div>
+      <span
+        className={cn('flex-1 focus:outline-none', state.checked && 'text-muted-foreground line-through')}
+        contentEditable={!state.readOnly}
+        suppressContentEditableWarning
+      >
+        {children}
+      </span>
     </PlateElement>
   )
 }

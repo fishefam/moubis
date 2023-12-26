@@ -1,6 +1,7 @@
-import { useColorInput } from '@udecode/plate'
-import type { InputHTMLAttributes, ReactElement } from 'react'
-import { Children, cloneElement } from 'react'
+'use client'
+
+import { useColorInput } from '@udecode/plate-font'
+import React from 'react'
 
 import { cn } from '@/lib/utils'
 
@@ -10,15 +11,15 @@ export function ColorInput({
   children,
   className,
   ...props
-}: InputHTMLAttributes<HTMLInputElement>) {
+}: React.InputHTMLAttributes<HTMLInputElement>) {
   const { inputRef, childProps } = useColorInput()
 
   return (
     <div className={cn('flex flex-col items-center', className)} {...props}>
-      {Children.map(children, (child) => {
+      {React.Children.map(children, (child) => {
         if (!child) return child
 
-        return cloneElement(child as ReactElement, childProps)
+        return React.cloneElement(child as React.ReactElement, childProps)
       })}
 
       <input

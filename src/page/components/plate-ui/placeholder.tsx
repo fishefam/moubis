@@ -1,13 +1,8 @@
-import type {
-  PlaceholderProps} from '@udecode/plate'
-import {
-  createNodeHOC,
-  createNodesHOC,
-  ELEMENT_H1,
-  ELEMENT_PARAGRAPH,
-  usePlaceholderState,
-} from '@udecode/plate'
-import { Children, cloneElement } from 'react'
+import type { PlaceholderProps } from '@udecode/plate-common'
+import { createNodeHOC, createNodesHOC, usePlaceholderState } from '@udecode/plate-common'
+import { ELEMENT_H1 } from '@udecode/plate-heading'
+import { ELEMENT_PARAGRAPH } from '@udecode/plate-paragraph'
+import React from 'react'
 
 import { cn } from '@/lib/utils'
 
@@ -16,8 +11,8 @@ export const Placeholder = (props: PlaceholderProps) => {
 
   const { enabled } = usePlaceholderState(props)
 
-  return Children.map(children, (child) => {
-    return cloneElement(child, {
+  return React.Children.map(children, (child) => {
+    return React.cloneElement(child, {
       className: child.props.className,
       nodeProps: {
         ...nodeProps,
@@ -33,7 +28,7 @@ export const Placeholder = (props: PlaceholderProps) => {
 export const withPlaceholder = createNodeHOC(Placeholder)
 export const withPlaceholdersPrimitive = createNodesHOC(Placeholder)
 
-export const withPlaceholders = (components: Record<string, unknown>) =>
+export const withPlaceholders = (components: any) =>
   withPlaceholdersPrimitive(components, [
     {
       hideOnBlur: true,

@@ -1,4 +1,4 @@
-import { ListStyleType, useIndentListToolbarButton, useIndentListToolbarButtonState } from '@udecode/plate'
+import { ListStyleType, useIndentListToolbarButton, useIndentListToolbarButtonState } from '@udecode/plate-indent-list'
 
 import { Icons } from '@/components/icons'
 
@@ -13,7 +13,7 @@ export function IndentListToolbarButton({
 
   return (
     <ToolbarButton tooltip={nodeType === ListStyleType.Disc ? 'Bulleted List' : 'Numbered List'} {...props}>
-      {nodeType === ListStyleType.Disc ? <Icons.ul className='h-5 w-5' /> : <Icons.ol className='h-5 w-5' />}
+      {nodeType === ListStyleType.Disc ? <Icons.ul /> : <Icons.ol />}
     </ToolbarButton>
   )
 }

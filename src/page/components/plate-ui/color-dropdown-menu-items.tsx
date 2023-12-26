@@ -1,12 +1,15 @@
+'use client'
+
 import type { DropdownMenuItemProps } from '@radix-ui/react-dropdown-menu'
-import { DropdownMenuItem } from '@radix-ui/react-dropdown-menu'
+import type React from 'react'
 
-import { cn, toTitleCase } from '@/lib/utils'
+import { Icons } from '@/components/icons'
+import { buttonVariants } from '@/components/plate-ui/button'
+import { DropdownMenuItem } from '@/components/plate-ui/dropdown-menu'
+import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/plate-ui/tooltip'
+import { cn } from '@/lib/utils'
 
-import { Icons } from '../icons'
-import { buttonVariants } from './button'
 import type { TColor } from './color-dropdown-menu'
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from './tooltip'
 
 type ColorDropdownMenuItemProps = {
   value: string
@@ -48,12 +51,10 @@ export function ColorDropdownMenuItem({
   )
 
   return name ? (
-    <TooltipProvider>
-      <Tooltip>
-        <TooltipTrigger>{content}</TooltipTrigger>
-        <TooltipContent className='bg-white text-slate-600'>{toTitleCase(name)}</TooltipContent>
-      </Tooltip>
-    </TooltipProvider>
+    <Tooltip>
+      <TooltipTrigger>{content}</TooltipTrigger>
+      <TooltipContent>{name}</TooltipContent>
+    </Tooltip>
   ) : (
     content
   )

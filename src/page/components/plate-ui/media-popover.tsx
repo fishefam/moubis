@@ -1,9 +1,10 @@
-import { isCollapsed, useEditorState, useElement, useRemoveNodeButton } from '@udecode/plate'
+import { isCollapsed, useEditorState, useElement, useRemoveNodeButton } from '@udecode/plate-common'
 import {
   FloatingMedia as FloatingMediaPrimitive,
   floatingMediaActions,
   useFloatingMediaSelectors,
 } from '@udecode/plate-media'
+import type React from 'react'
 import { useEffect } from 'react'
 import { useReadOnly, useSelected } from 'slate-react'
 
@@ -15,8 +16,8 @@ import { Popover, PopoverAnchor, PopoverContent } from './popover'
 import { Separator } from './separator'
 
 export type MediaPopoverProps = {
-  children: React.ReactNode
   pluginKey?: string
+  children: React.ReactNode
 }
 
 export function MediaPopover({ pluginKey, children }: MediaPopoverProps) {
@@ -47,7 +48,7 @@ export function MediaPopover({ pluginKey, children }: MediaPopoverProps) {
         {isEditing ? (
           <div className='flex w-[330px] flex-col'>
             <div className='flex items-center'>
-              <div className='flex items-center pl-3 text-slate-500 dark:text-slate-400'>
+              <div className='flex items-center pl-3 text-muted-foreground'>
                 <Icons.link className='h-4 w-4' />
               </div>
 

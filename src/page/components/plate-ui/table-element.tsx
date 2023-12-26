@@ -1,23 +1,11 @@
 import type * as DropdownMenuPrimitive from '@radix-ui/react-dropdown-menu'
-import { PopoverAnchor, type PopoverContentProps } from '@radix-ui/react-popover'
-import {
-  isCollapsed,
-  PlateElement,
-  type PlateElementProps,
-  useEditorState,
-  useElement,
-  useRemoveNodeButton,
-} from '@udecode/plate'
+import type { PopoverContentProps } from '@radix-ui/react-popover'
+import { PopoverAnchor } from '@radix-ui/react-popover'
+import type { PlateElementProps } from '@udecode/plate-common'
+import { isCollapsed, PlateElement, useEditorState, useElement, useRemoveNodeButton } from '@udecode/plate-common'
 import type { TTableElement } from '@udecode/plate-table'
-import {
-  mergeTableCells,
-  unmergeTableCells,
-  useTableBordersDropdownMenuContentState,
-  useTableElement,
-  useTableElementState,
-  useTableMergeState,
-} from '@udecode/plate-table'
-import { type ComponentPropsWithoutRef, type ElementRef, forwardRef } from 'react'
+import { useTableBordersDropdownMenuContentState, useTableElement, useTableElementState } from '@udecode/plate-table'
+import React, { forwardRef } from 'react'
 import { useReadOnly, useSelected } from 'slate-react'
 
 import { Icons, iconVariants } from '@/components/icons'
@@ -35,8 +23,8 @@ import { Popover, PopoverContent, popoverVariants } from './popover'
 import { Separator } from './separator'
 
 const TableBordersDropdownMenuContent = forwardRef<
-  ElementRef<typeof DropdownMenuPrimitive.Content>,
-  ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.Content>
+  React.ElementRef<typeof DropdownMenuPrimitive.Content>,
+  React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.Content>
 >((props, ref) => {
   const {
     getOnSelectTableBorder,
@@ -82,7 +70,7 @@ const TableBordersDropdownMenuContent = forwardRef<
 })
 TableBordersDropdownMenuContent.displayName = 'TableBordersDropdownMenuContent'
 
-const TableFloatingToolbar = forwardRef<ElementRef<typeof PopoverContent>, PopoverContentProps>(
+const TableFloatingToolbar = React.forwardRef<React.ElementRef<typeof PopoverContent>, PopoverContentProps>(
   ({ children, ...props }, ref) => {
     const element = useElement<TTableElement>()
     const { props: buttonProps } = useRemoveNodeButton({ element })
@@ -90,91 +78,77 @@ const TableFloatingToolbar = forwardRef<ElementRef<typeof PopoverContent>, Popov
     const readOnly = useReadOnly()
     const selected = useSelected()
     const editor = useEditorState()
-
-    const collapsed = !readOnly && selected && isCollapsed(editor.selection)
-    const open = !readOnly && selected
-
-    const { canMerge, canUnmerge } = useTableMergeState()
-
-    const mergeContent = canMerge && (
-      <Button contentEditable={false} variant='ghost' isMenu onClick={() => mergeTableCells(editor)}>
-        <Icons.add className='mr-2 h-4 w-4' />
-        Merge
-      </Button>
-    )
-
-    const unmergeButton = canUnmerge && (
-      <Button contentEditable={false} variant='ghost' isMenu onClick={() => unmergeTableCells(editor)}>
-        <Icons.minus className='mr-2 h-4 w-4' />
-        Unmerge
-      </Button>
-    )
-
-    const bordersContent = collapsed && (
-      <>
-        <DropdownMenu modal={false}>
-          <DropdownMenuTrigger asChild>
-            <Button variant='ghost' isMenu>
-              <Icons.borderAll className='mr-2 h-4 w-4' />
-              Borders
-            </Button>
-          </DropdownMenuTrigger>
-
-          <DropdownMenuPortal>
-            <TableBordersDropdownMenuContent />
-          </DropdownMenuPortal>
-        </DropdownMenu>
-
-        <Button contentEditable={false} variant='ghost' isMenu {...buttonProps}>
-          <Icons.delete className='mr-2 h-4 w-4' />
-          Delete
-        </Button>
-      </>
-    )
+    const open = !readOnly && selected && isCollapsed(editor.selection)
 
     return (
       <Popover open={open} modal={false}>
         <PopoverAnchor asChild>{children}</PopoverAnchor>
-        {(canMerge || canUnmerge || collapsed) && (
-          <PopoverContent
-            ref={ref}
-            className={cn(popoverVariants(), 'flex w-[220px] flex-col gap-1 p-1')}
-            onOpenAutoFocus={(e) => e.preventDefault()}
-            {...props}
-          >
-            {unmergeButton}
-            {mergeContent}
-            {bordersContent}
-          </PopoverContent>
-        )}
+        <PopoverContent
+          ref={ref}
+          className={cn(popoverVariants(), 'flex w-[220px] flex-col gap-1 p-1')}
+          onOpenAutoFocus={(e) => e.preventDefault()}
+          {...props}
+        >
+          <DropdownMenu modal={false}>
+            <DropdownMenuTrigger asChild>
+              <Button variant='ghost' isMenu>
+                <Icons.borderAll className='mr-2 h-4 w-4' />
+                Borders
+              </Button>
+            </DropdownMenuTrigger>
+
+            <DropdownMenuPortal>
+              <TableBordersDropdownMenuContent />
+            </DropdownMenuPortal>
+          </DropdownMenu>
+
+          <Button contentEditable={false} variant='ghost' isMenu {...buttonProps}>
+            <Icons.delete className='mr-2 h-4 w-4' />
+            Delete
+          </Button>
+        </PopoverContent>
       </Popover>
     )
   },
 )
 TableFloatingToolbar.displayName = 'TableFloatingToolbar'
 
-const TableElement = forwardRef<ElementRef<typeof PlateElement>, PlateElementProps>(
+const TableElement = React.forwardRef<React.ElementRef<typeof PlateElement>, PlateElementProps>(
   ({ className, children, ...props }, ref) => {
-    const { isSelectingCell } = useTableElementState()
-    const { props: tableProps } = useTableElement()
+    const { colSizes, isSelectingCell, minColumnWidth, marginLeft } = useTableElementState()
+    const { props: tableProps, colGroupProps } = useTableElement()
 
     return (
       <TableFloatingToolbar>
-        <PlateElement
-          asChild
-          ref={ref}
-          className={cn(
-            'my-4 ml-px mr-0 table h-px w-full table-fixed border-collapse',
-            isSelectingCell && '[&_*::selection]:bg-none',
-            className,
-          )}
-          {...tableProps}
-          {...props}
-        >
-          <table style={{ borderRadius: '0.25rem', borderSpacing: '0' }}>
-            <tbody className='min-w-full'>{children}</tbody>
-          </table>
-        </PlateElement>
+        <div style={{ paddingLeft: marginLeft }}>
+          <PlateElement
+            asChild
+            ref={ref}
+            className={cn(
+              'my-4 ml-px mr-0 table h-px w-full table-fixed border-collapse',
+              isSelectingCell && '[&_*::selection]:bg-none',
+              className,
+            )}
+            {...tableProps}
+            {...props}
+          >
+            <table>
+              <colgroup {...colGroupProps}>
+                {colSizes.map((width, index) => (
+                  <col
+                    key={index}
+                    style={{
+                      minWidth: minColumnWidth,
+                      width: width || undefined,
+                    }}
+                  />
+                ))}
+              </colgroup>
+
+              <tbody className='min-w-full'>{children}</tbody>
+            </table>
+          </PlateElement>
+        </div>
       </TableFloatingToolbar>
     )
   },

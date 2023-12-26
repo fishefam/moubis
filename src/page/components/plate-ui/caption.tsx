@@ -1,6 +1,8 @@
 import { Caption as CaptionPrimitive, CaptionTextarea as CaptionTextareaPrimitive } from '@udecode/plate-caption'
-import { cva, type VariantProps } from 'class-variance-authority'
-import { type ComponentProps, type ElementRef, forwardRef } from 'react'
+import type { VariantProps } from 'class-variance-authority'
+import { cva } from 'class-variance-authority'
+import type { ComponentProps } from 'react'
+import React from 'react'
 
 import { cn } from '@/lib/utils'
 
@@ -17,16 +19,16 @@ const captionVariants = cva('max-w-full', {
   },
 })
 
-const Caption = forwardRef<
-  ElementRef<typeof CaptionPrimitive>,
+const Caption = React.forwardRef<
+  React.ElementRef<typeof CaptionPrimitive>,
   ComponentProps<typeof CaptionPrimitive> & VariantProps<typeof captionVariants>
 >(({ className, align, ...props }, ref) => (
   <CaptionPrimitive ref={ref} className={cn(captionVariants({ align }), className)} {...props} />
 ))
 Caption.displayName = 'Caption'
 
-const CaptionTextarea = forwardRef<
-  ElementRef<typeof CaptionTextareaPrimitive>,
+const CaptionTextarea = React.forwardRef<
+  React.ElementRef<typeof CaptionTextareaPrimitive>,
   ComponentProps<typeof CaptionTextareaPrimitive>
 >(({ className, ...props }, ref) => (
   <CaptionTextareaPrimitive

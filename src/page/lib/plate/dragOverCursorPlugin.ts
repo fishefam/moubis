@@ -1,5 +1,5 @@
-import type { PlatePlugin } from '@udecode/plate'
-import { findEventRange } from '@udecode/plate'
+import type { PlatePlugin } from '@udecode/plate-common'
+import { findEventRange } from '@udecode/plate-common'
 
 import { cursorStore } from '@/components/plate-ui/cursor-overlay'
 
@@ -24,7 +24,7 @@ export const dragOverCursorPlugin: PlatePlugin = {
           data: {
             style: {
               backgroundColor: 'hsl(222.2 47.4% 11.2%)',
-              width: 5,
+              width: 3,
             },
           },
           key: 'drag',

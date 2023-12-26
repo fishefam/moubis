@@ -1,16 +1,16 @@
-import type { PlateContentProps } from '@udecode/plate'
-import { PlateContent } from '@udecode/plate'
+import type { PlateContentProps } from '@udecode/plate-common'
+import { PlateContent } from '@udecode/plate-common'
 import type { VariantProps } from 'class-variance-authority'
 import { cva } from 'class-variance-authority'
-import { forwardRef } from 'react'
+import React from 'react'
 
 import { cn } from '@/lib/utils'
 
 const editorVariants = cva(
   cn(
     'relative overflow-x-auto whitespace-pre-wrap break-words',
-    'min-h-[80px] w-full rounded-b-md bg-white px-3 py-2 text-sm ring-offset-white placeholder:text-slate-500 focus-visible:outline-none dark:bg-slate-950 dark:ring-offset-slate-950 dark:placeholder:text-slate-400',
-    '[&_[data-slate-placeholder]]:text-slate-500 [&_[data-slate-placeholder]]:!opacity-100 dark:[&_[data-slate-placeholder]]:text-slate-400',
+    'min-h-[80px] w-full rounded-md bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none',
+    '[&_[data-slate-placeholder]]:text-muted-foreground [&_[data-slate-placeholder]]:!opacity-100',
     '[&_[data-slate-placeholder]]:top-[auto_!important]',
     '[&_strong]:font-bold',
   ),
@@ -26,10 +26,10 @@ const editorVariants = cva(
       },
       focusRing: {
         false: '',
-        // true: 'focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2 dark:focus-visible:ring-slate-300',
+        true: 'focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2',
       },
       focused: {
-        // true: 'ring-2 ring-slate-950 ring-offset-2 dark:ring-slate-300',
+        true: 'ring-2 ring-ring ring-offset-2',
       },
       size: {
         md: 'text-base',
@@ -37,7 +37,7 @@ const editorVariants = cva(
       },
       variant: {
         ghost: '',
-        outline: 'border border-slate-200 dark:border-slate-800 border-t-0',
+        outline: 'border border-input',
       },
     },
   },
@@ -45,10 +45,17 @@ const editorVariants = cva(
 
 export type EditorProps = PlateContentProps & VariantProps<typeof editorVariants>
 
-const Editor = forwardRef<HTMLDivElement, EditorProps>(
+const Editor = React.forwardRef<HTMLDivElement, EditorProps>(
   ({ className, disabled, focused, focusRing, readOnly, size, variant, ...props }, ref) => {
     return (
-      <div ref={ref} className='relative w-full'>
+      <div
+        ref={ref}
+        style={{
+          color: '#737373',
+          position: 'relative',
+          width: '100%',
+        }}
+      >
         <PlateContent
           className={cn(
             editorVariants({

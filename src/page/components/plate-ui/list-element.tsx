@@ -1,26 +1,30 @@
-import { ListStyleType } from '@udecode/plate'
-import { PlateElement, type PlateElementProps } from '@udecode/plate'
+import type { PlateElementProps } from '@udecode/plate-common'
+import { PlateElement } from '@udecode/plate-common'
+import type { VariantProps } from 'class-variance-authority'
+import { cva } from 'class-variance-authority'
+
+import { cn } from '@/lib/utils'
+
+const listVariants = cva('m-0 ps-6', {
+  variants: {
+    variant: {
+      ol: 'list-decimal',
+      ul: 'list-disc [&_ul]:list-[circle] [&_ul_ul]:list-[square]',
+    },
+  },
+})
 
 export function ListElement({
   className,
   children,
   variant = 'ul',
-  element: { listSymbol },
   ...props
-}: PlateElementProps & { variant: 'ol' | 'ul' }) {
+}: PlateElementProps & VariantProps<typeof listVariants>) {
   const Element = variant!
 
   return (
-    <PlateElement asChild className={className} {...props}>
-      <Element
-        style={{
-          listStyleType: (listSymbol as ListStyleType) ?? ListStyleType.Disc,
-          margin: '0',
-          paddingInlineStart: '1.5rem',
-        }}
-      >
-        {children}
-      </Element>
+    <PlateElement asChild className={cn(listVariants({ variant }), className)} {...props}>
+      <Element>{children}</Element>
     </PlateElement>
   )
 }

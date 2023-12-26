@@ -1,9 +1,12 @@
-import { DropdownMenuItem, Separator } from '@radix-ui/react-dropdown-menu'
-import { memo } from 'react'
+'use client'
 
+import React from 'react'
+
+import { buttonVariants } from '@/components/plate-ui/button'
+import { DropdownMenuItem } from '@/components/plate-ui/dropdown-menu'
+import { Separator } from '@/components/plate-ui/separator'
 import { cn } from '@/lib/utils'
 
-import { buttonVariants } from './button'
 import type { TColor } from './color-dropdown-menu'
 import { ColorDropdownMenuItems } from './color-dropdown-menu-items'
 import { ColorsCustom } from './colors-custom'
@@ -55,7 +58,7 @@ export function ColorPickerContent({
   )
 }
 
-export const ColorPicker = memo(
+export const ColorPicker = React.memo(
   ColorPickerContent,
   (prev, next) => prev.color === next.color && prev.colors === next.colors && prev.customColors === next.customColors,
 )

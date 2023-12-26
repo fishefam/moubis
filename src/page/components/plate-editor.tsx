@@ -1,35 +1,58 @@
-import { Plate } from '@udecode/plate'
+import { CommentsProvider } from '@udecode/plate-comments'
+import { Plate } from '@udecode/plate-common'
 import { CursorOverlay } from '@udecode/plate-cursor'
 import { useRef } from 'react'
 import { DndProvider } from 'react-dnd'
 import { HTML5Backend } from 'react-dnd-html5-backend'
 
-import { plateDefaultValue, plugins } from '@/lib'
+import { cn, commentsUsers, MENTIONABLES, myUserId, plugins } from '@/lib'
+import { plateDefaultValue as initialValue } from '@/lib/mock'
 
-import { Editor, FixedToolbar, FixedToolbarButtons, FloatingToolbar, FloatingToolbarButtons } from './plate-ui'
+import {
+  CommentsPopover,
+  Editor,
+  FixedToolbar,
+  FixedToolbarButtons,
+  FloatingToolbar,
+  FloatingToolbarButtons,
+  MentionCombobox,
+  TooltipProvider,
+} from './plate-ui'
 
 export default function PlateEditor() {
   const containerRef = useRef(null)
+
   return (
-    <DndProvider backend={HTML5Backend}>
-      <Plate
-        plugins={plugins}
-        initialValue={plateDefaultValue}
-        // onChange={(val) => {
-        //   console.log(val)
-        // }}
-      >
-        <div ref={containerRef} className='relative'>
-          <FixedToolbar className='overflow-visible'>
-            <FixedToolbarButtons />
-          </FixedToolbar>
-          <Editor className='px-16 py-10 h-[45rem] overflow-y-scroll' />
-          <FloatingToolbar>
-            <FloatingToolbarButtons />
-          </FloatingToolbar>
-          <CursorOverlay containerRef={containerRef} />
-        </div>
-      </Plate>
-    </DndProvider>
+    <TooltipProvider>
+      <DndProvider backend={HTML5Backend}>
+        <CommentsProvider users={commentsUsers} myUserId={myUserId}>
+          <Plate plugins={plugins} initialValue={initialValue}>
+            <div
+              ref={containerRef}
+              className={cn(
+                // Block selection
+                '[&_.slate-start-area-left]:!w-[64px] [&_.slate-start-area-right]:!w-[64px] [&_.slate-start-area-top]:!h-4',
+              )}
+            >
+              <FixedToolbar>
+                <FixedToolbarButtons />
+              </FixedToolbar>
+
+              <Editor className='px-[96px] py-16' autoFocus focusRing={false} variant='ghost' size='md' />
+
+              <FloatingToolbar>
+                <FloatingToolbarButtons />
+              </FloatingToolbar>
+
+              <MentionCombobox items={MENTIONABLES} />
+
+              <CommentsPopover />
+
+              <CursorOverlay containerRef={containerRef} />
+            </div>
+          </Plate>
+        </CommentsProvider>
+      </DndProvider>
+    </TooltipProvider>
   )
 }

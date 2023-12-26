@@ -1,14 +1,15 @@
-import { Tooltip, TooltipContent, TooltipTrigger } from '@radix-ui/react-tooltip'
-import type { ClassNames, PlateElementProps, TEditor } from '@udecode/plate'
+'use client'
+
+import type { ClassNames, PlateElementProps, TEditor } from '@udecode/plate-common'
 import type { DragItemNode } from '@udecode/plate-dnd'
 import { useDraggable, useDraggableState } from '@udecode/plate-dnd'
 import { forwardRef } from 'react'
 import type { DropTargetMonitor } from 'react-dnd'
 
+import { Icons } from '@/components/icons'
 import { cn } from '@/lib/utils'
 
-import { Icons } from '../icons'
-import { TooltipProvider } from './tooltip'
+import { Tooltip, TooltipContent, TooltipTrigger } from './tooltip'
 
 export type DraggableProps = {
   /**
@@ -21,7 +22,7 @@ export type DraggableProps = {
     props: {
       monitor: DropTargetMonitor<DragItemNode, unknown>
       dragItem: DragItemNode
-      nodeRef: unknown
+      nodeRef: any
       id: string
     },
   ) => boolean
@@ -72,29 +73,16 @@ export type DraggableProps = {
     dropLine: string
   }>
 
-const dragHandle = (
-  <TooltipProvider>
-    <Tooltip>
-      <TooltipTrigger>
-        <Icons.dragHandle className='h-4 w-4 text-slate-500 dark:text-slate-400' />
-      </TooltipTrigger>
-      <TooltipContent className='text-xs z-[1000] shadow border px-3 py-1 rounded-md bg-white text-slate-500'>
-        Drag to move
-      </TooltipContent>
-    </Tooltip>
-  </TooltipProvider>
-)
-
 const Draggable = forwardRef<HTMLDivElement, DraggableProps>(
   ({ className, classNames = {}, onDropHandler, ...props }, ref) => {
     const { children, element } = props
 
     const state = useDraggableState({ element, onDropHandler })
-    const { dropLine, isDragging, isHovered } = state
-    const { groupProps, droplineProps, gutterLeftProps, previewRef, handleRef } = useDraggable(state)
+    const { dropLine, isDragging } = state
+    const { droplineProps, gutterLeftProps, previewRef, handleRef } = useDraggable(state)
 
     return (
-      <div className={cn('relative', isDragging && 'opacity-50', 'group', className)} ref={ref} {...groupProps}>
+      <div className={cn('relative', isDragging && 'opacity-50', 'group', className)} ref={ref}>
         <div
           className={cn(
             'pointer-events-none absolute top-0 flex h-full -translate-x-full cursor-text opacity-0 group-hover:opacity-100',
@@ -104,9 +92,12 @@ const Draggable = forwardRef<HTMLDivElement, DraggableProps>(
         >
           <div className={cn('flex h-[1.5em]', classNames.blockToolbarWrapper)}>
             <div className={cn('pointer-events-auto mr-1 flex items-center', classNames.blockToolbar)}>
-              <div ref={handleRef} className='h-4 w-4'>
-                {isHovered && dragHandle}
-              </div>
+              <Tooltip>
+                <TooltipTrigger ref={handleRef}>
+                  <Icons.dragHandle className='h-4 w-4 text-muted-foreground' />
+                </TooltipTrigger>
+                <TooltipContent>Drag to move</TooltipContent>
+              </Tooltip>
             </div>
           </div>
         </div>
@@ -118,7 +109,7 @@ const Draggable = forwardRef<HTMLDivElement, DraggableProps>(
             <div
               className={cn(
                 'absolute inset-x-0 h-0.5 opacity-100',
-                'bg-slate-950 dark:bg-slate-300',
+                'bg-ring',
                 dropLine === 'top' && '-top-px',
                 dropLine === 'bottom' && '-bottom-px',
                 classNames.dropLine,

@@ -4,23 +4,385 @@ export const html =
   '<p>Y<span class="inline numeric" contenteditable="false" data-questiontext="%3Cinput%20type%3D%22text%22%20size%3D%2220%22%20value%3D%22Numeric%20with%20Units%22%20class%3D%22blankdisabled%20form-control%22%20readonly%3D%22readonly%22%3E" data-source="mode%3DNumeric%40negStyle%3Dminus%40grading%3Dexact_value%40name%3DresponseNaN%40answer.num%3D43%40numStyle%3Dthousands%20scientific%20%20arithmetic%40comment%3D%40weighting%3D1%40answer.units%3Dff%40showUnits%3Dtrue%40" id="sro_id_1" style="display:inline" title="Double-click the response area to edit">&zwnj;</span><span>&nbsp;</span>OOOOOOOOOOOOO IT WORKDS NOWWWWWWWWW</p><p>testing new one stuffwdraftedork great agin</p><div class="question-container"><div class="input-container"><div><label for="radius-range">Radius</label><input class="radius-range" id="radius-range" type="range"></div><fieldset><legend>Position</legend><div><label for="x-range">Left Right</label><input class="x-range" id="x-range" max="500" type="range"></div><div><label for="y-range">Up Down</label><input class="y-range" id="y-range" max="300" type="range"></div></fieldset><fieldset><legend>Color</legend><div><label for="red-range">Red</label><input class="red-range" defaultvalue="50" id="red-range" max="255" type="range"></div><div><label for="green-range">Green</label><input class="green-range" defaultvalue="50" id="green-range" max="255" type="range"></div><div><label for="blue-range">Blue</label><input class="blue-range" defaultvalue="50" id="blue-range" max="255" type="range"></div></fieldset></div><svg height="300" width="500"><circle class="circle" cx="250" cy="150" r="50" style="fill:#7b7b7b"></circle></svg>Now it should save again</div>'
 
 export const plateDefaultValue = [
-  { children: [{ text: '🌳 Blocks' }], id: '1', type: 'h1' },
+  {
+    children: [
+      {
+        children: [
+          {
+            children: [
+              {
+                children: [{ bold: true, text: 'Plugin' }],
+                id: '5znef',
+                type: 'p',
+              },
+            ],
+            id: '2tcmy',
+            type: 'th',
+          },
+          {
+            children: [
+              {
+                children: [{ bold: true, text: 'Element' }],
+                id: 'zc5jx',
+                type: 'p',
+              },
+            ],
+            id: '4lejb',
+            type: 'th',
+          },
+          {
+            children: [
+              {
+                children: [{ bold: true, text: 'Inline' }],
+                id: '7z40r',
+                type: 'p',
+              },
+            ],
+            id: '5n2au',
+            type: 'th',
+          },
+          {
+            children: [
+              {
+                children: [{ bold: true, text: 'Void' }],
+                id: 'hxnm4',
+                type: 'p',
+              },
+            ],
+            id: '4sl6d',
+            type: 'th',
+          },
+        ],
+        id: '2ae77',
+        type: 'tr',
+      },
+      {
+        children: [
+          {
+            children: [
+              {
+                children: [{ bold: true, text: 'Plugin' }],
+                id: '5znef',
+                type: 'p',
+              },
+            ],
+            id: '2tcmy',
+            type: 'th',
+          },
+          {
+            children: [
+              {
+                children: [{ bold: true, text: 'Element' }],
+                id: 'zc5jx',
+                type: 'p',
+              },
+            ],
+            id: '4lejb',
+            type: 'th',
+          },
+          {
+            children: [
+              {
+                children: [{ bold: true, text: 'Inline' }],
+                id: '7z40r',
+                type: 'p',
+              },
+            ],
+            id: '5n2au',
+            type: 'th',
+          },
+          {
+            children: [
+              {
+                children: [{ bold: true, text: 'Void' }],
+                id: 'hxnm4',
+                type: 'p',
+              },
+            ],
+            id: '4sl6d',
+            type: 'th',
+          },
+        ],
+        id: '2ae77',
+        type: 'tr',
+      },
+      {
+        children: [
+          {
+            children: [
+              {
+                children: [{ bold: true, text: 'Heading' }],
+                id: 'nxfak',
+                type: 'p',
+              },
+            ],
+            id: 'wv5jz',
+            type: 'td',
+          },
+          {
+            children: [{ children: [{ text: 'Yes' }], id: 'tmzpq', type: 'p' }],
+            id: 'i60d5',
+            type: 'td',
+          },
+          {
+            children: [{ children: [{ text: 'No' }], id: 'xcpqu', type: 'p' }],
+            id: '88u3d',
+            type: 'td',
+          },
+          {
+            children: [{ children: [{ text: 'No' }], id: '3q5to', type: 'p' }],
+            id: 'cqfut',
+            type: 'td',
+          },
+        ],
+        id: 'vkqjv',
+        type: 'tr',
+      },
+      {
+        children: [
+          {
+            children: [
+              {
+                children: [{ bold: true, text: 'Image' }],
+                id: '5f98c',
+                type: 'p',
+              },
+            ],
+            id: 'bzncl',
+            type: 'td',
+          },
+          {
+            children: [{ children: [{ text: 'Yes' }], id: 'tk7xa', type: 'p' }],
+            id: 'n3shi',
+            type: 'td',
+          },
+          {
+            children: [{ children: [{ text: 'No' }], id: 'kuh96', type: 'p' }],
+            id: 'r7q34',
+            type: 'td',
+          },
+          {
+            children: [{ children: [{ text: 'Yes' }], id: 'yf6k0', type: 'p' }],
+            id: 'fpm2p',
+            type: 'td',
+          },
+        ],
+        id: 'a8nj8',
+        type: 'tr',
+      },
+      {
+        children: [
+          {
+            children: [
+              {
+                children: [{ bold: true, text: 'Mention' }],
+                id: 'rnmdv',
+                type: 'p',
+              },
+            ],
+            id: 'bx2wh',
+            type: 'td',
+          },
+          {
+            children: [{ children: [{ text: 'Yes' }], id: 'i430q', type: 'p' }],
+            id: 'yrne5',
+            type: 'td',
+          },
+          {
+            children: [{ children: [{ text: 'Yes' }], id: '1ckd2', type: 'p' }],
+            id: 'nvvzp',
+            type: 'td',
+          },
+          {
+            children: [{ align: 'right', children: [{ text: 'Yes' }], id: '5xfld', type: 'p' }],
+            id: 'jhq11',
+            type: 'td',
+          },
+        ],
+        id: 'wxo25',
+        type: 'tr',
+      },
+    ],
+    colSizes: [100, 100, 100, 100],
+    id: '53sajgefkjha',
+    marginLeft: 20,
+    type: 'table',
+  },
+  {
+    children: [
+      {
+        children: [
+          {
+            children: [
+              {
+                children: [{ bold: true, text: 'Plugin' }],
+                id: '5znef',
+                type: 'p',
+              },
+            ],
+            id: '2tcmy',
+            type: 'th',
+          },
+          {
+            children: [
+              {
+                children: [{ bold: true, text: 'Element' }],
+                id: 'zc5jx',
+                type: 'p',
+              },
+            ],
+            id: '4lejb',
+            type: 'th',
+          },
+          {
+            children: [
+              {
+                children: [{ bold: true, text: 'Inline' }],
+                id: '7z40r',
+                type: 'p',
+              },
+            ],
+            id: '5n2au',
+            type: 'th',
+          },
+          {
+            children: [
+              {
+                children: [{ bold: true, text: 'Void' }],
+                id: 'hxnm4',
+                type: 'p',
+              },
+            ],
+            id: '4sl6d',
+            type: 'th',
+          },
+        ],
+        id: '2ae77',
+        type: 'tr',
+      },
+      {
+        children: [
+          {
+            children: [
+              {
+                children: [{ bold: true, text: 'Heading' }],
+                id: 'nxfak',
+                type: 'p',
+              },
+            ],
+            id: 'wv5jz',
+            type: 'td',
+          },
+          {
+            children: [{ children: [{ text: 'Yes' }], id: 'tmzpq', type: 'p' }],
+            id: 'i60d5',
+            type: 'td',
+          },
+          {
+            children: [{ children: [{ text: 'No' }], id: 'xcpqu', type: 'p' }],
+            id: '88u3d',
+            type: 'td',
+          },
+          {
+            children: [{ children: [{ text: 'No' }], id: '3q5to', type: 'p' }],
+            id: 'cqfut',
+            type: 'td',
+          },
+        ],
+        id: 'vkqjv',
+        type: 'tr',
+      },
+      {
+        children: [
+          {
+            children: [
+              {
+                children: [{ bold: true, text: 'Image' }],
+                id: '5f98c',
+                type: 'p',
+              },
+            ],
+            id: 'bzncl',
+            type: 'td',
+          },
+          {
+            children: [{ children: [{ text: 'Yes' }], id: 'tk7xa', type: 'p' }],
+            id: 'n3shi',
+            type: 'td',
+          },
+          {
+            children: [{ children: [{ text: 'No' }], id: 'kuh96', type: 'p' }],
+            id: 'r7q34',
+            type: 'td',
+          },
+          {
+            children: [{ children: [{ text: 'Yes' }], id: 'yf6k0', type: 'p' }],
+            id: 'fpm2p',
+            type: 'td',
+          },
+        ],
+        id: 'a8nj8',
+        type: 'tr',
+      },
+      {
+        children: [
+          {
+            children: [
+              {
+                children: [{ bold: true, text: 'Mention' }],
+                id: 'rnmdv',
+                type: 'p',
+              },
+            ],
+            id: 'bx2wh',
+            type: 'td',
+          },
+          {
+            children: [{ children: [{ text: 'Yes' }], id: 'i430q', type: 'p' }],
+            id: 'yrne5',
+            type: 'td',
+          },
+          {
+            children: [{ children: [{ text: 'Yes' }], id: '1ckd2', type: 'p' }],
+            id: 'nvvzp',
+            type: 'td',
+          },
+          {
+            children: [{ align: 'right', children: [{ text: 'Yes' }], id: '5xfld', type: 'p' }],
+            id: 'jhq11',
+            type: 'td',
+          },
+        ],
+        id: 'wxo25',
+        type: 'tr',
+      },
+    ],
+    colSizes: [100, 100, 100, 100],
+    id: 'fasefa3sr3f5vsadf3',
+    marginLeft: 20,
+    type: 'table',
+  },
+  { children: [{ text: '🌳 Blocks' }], type: 'h1' },
   {
     children: [
       {
         text: 'Easily create headings of various levels, from H1 to H6, to structure your content and make it more organized.',
       },
     ],
-    id: '2',
     type: 'p',
   },
   {
     children: [
       {
-        text: 'Create blockquotes to emphasize important information or highlight quotes from external sources.',
+        children: [
+          {
+            text: 'Easily create headings of various levels, from H1 to H6, to structure your content and make it more organized.',
+          },
+        ],
+        id: 'fasf',
+        type: 'p',
       },
     ],
-    id: '3',
     type: 'blockquote',
   },
   {
@@ -306,7 +668,9 @@ export const plateDefaultValue = [
   {
     children: [
       {
-        children: [{ children: [{ text: 'Cats' }], id: 'r1h7k', type: 'lic' }],
+        children: [
+          { children: [{ children: [{ text: '🌳 Blocks' }], id: '1', type: 'h1' }], id: 'r1h7k', type: 'lic' },
+        ],
         id: 'tup6i',
         type: 'li',
       },
@@ -448,7 +812,20 @@ export const plateDefaultValue = [
         type: 'li',
       },
       {
-        children: [{ children: [{ text: 'Green' }], id: 's5u46', type: 'lic' }],
+        children: [
+          {
+            children: [
+              {
+                children: [{ text: '' }],
+                id: '49',
+                type: 'media_embed',
+                url: 'https://www.youtube.com/watch?v=MyiBAziEWUA',
+              },
+            ],
+            id: 's5u46',
+            type: 'lic',
+          },
+        ],
         id: 'l7n0g',
         type: 'li',
       },

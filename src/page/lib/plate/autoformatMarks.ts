@@ -1,17 +1,17 @@
 import {
   MARK_BOLD,
   MARK_CODE,
-  MARK_HIGHLIGHT,
   MARK_ITALIC,
   MARK_STRIKETHROUGH,
   MARK_SUBSCRIPT,
   MARK_SUPERSCRIPT,
   MARK_UNDERLINE,
-} from '@udecode/plate'
+} from '@udecode/plate-basic-marks'
+import { MARK_HIGHLIGHT } from '@udecode/plate-highlight'
 
-import { type TPlateAutoformatRule } from '@/types/plate'
+import type { MyAutoformatRule } from '@/lib/plate/plate-types'
 
-export const autoformatMarks: TPlateAutoformatRule[] = [
+export const autoformatMarks: MyAutoformatRule[] = [
   {
     match: '***',
     mode: 'mark',

@@ -1,5 +1,9 @@
+'use client'
+
 import type { DropdownMenuProps } from '@radix-ui/react-dropdown-menu'
-import { useAlignDropdownMenu, useAlignDropdownMenuState } from '@udecode/plate'
+import { useAlignDropdownMenu, useAlignDropdownMenuState } from '@udecode/plate-alignment'
+
+import { Icons, iconVariants } from '@/components/icons'
 
 import {
   DropdownMenu,
@@ -7,11 +11,8 @@ import {
   DropdownMenuRadioGroup,
   DropdownMenuRadioItem,
   DropdownMenuTrigger,
-} from '@/components'
-import { cn } from '@/lib'
-
-import { Icons, iconVariants } from '../icons'
-import { useOpenState } from './dropdown-menu'
+  useOpenState,
+} from './dropdown-menu'
 import { ToolbarButton } from './toolbar'
 
 const items = [
@@ -33,9 +34,9 @@ const items = [
   },
 ]
 
-export type AlignDropdownMenuProps = object & DropdownMenuProps
+export type AlignDropdownMenuProps = {} & DropdownMenuProps
 
-export function AlignDropdownMenu({ ...props }: AlignDropdownMenuProps) {
+export function AlignDropdownMenu({ children, ...props }: AlignDropdownMenuProps) {
   const state = useAlignDropdownMenuState()
   const { radioGroupProps } = useAlignDropdownMenu(state)
 
@@ -53,14 +54,7 @@ export function AlignDropdownMenu({ ...props }: AlignDropdownMenuProps) {
       <DropdownMenuContent align='start' className='min-w-0'>
         <DropdownMenuRadioGroup className='flex flex-col gap-0.5' {...radioGroupProps}>
           {items.map(({ value: itemValue, icon: Icon }) => (
-            <DropdownMenuRadioItem
-              key={itemValue}
-              value={itemValue}
-              className={cn(
-                'hover:bg-slate-100 relative flex select-none items-center rounded-sm text-sm outline-none transition-colors duration-75 focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50 h-9 cursor-pointer px-2 data-[state=checked]:bg-accent data-[state=checked]:text-accent-foreground w-16',
-                itemValue === radioGroupProps.value ? 'bg-slate-100' : '',
-              )}
-            >
+            <DropdownMenuRadioItem key={itemValue} value={itemValue} hideIcon>
               <Icon className={iconVariants({ variant: 'toolbar' })} />
             </DropdownMenuRadioItem>
           ))}

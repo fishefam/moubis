@@ -1,19 +1,13 @@
-import {
-  ListStyleType,
-  MARK_BG_COLOR,
-  MARK_BOLD,
-  MARK_CODE,
-  MARK_COLOR,
-  MARK_ITALIC,
-  MARK_STRIKETHROUGH,
-  MARK_UNDERLINE,
-  useEditorReadOnly,
-} from '@udecode/plate'
+import { MARK_BOLD, MARK_CODE, MARK_ITALIC, MARK_STRIKETHROUGH, MARK_UNDERLINE } from '@udecode/plate-basic-marks'
+import { useEditorReadOnly } from '@udecode/plate-common'
+import { MARK_BG_COLOR, MARK_COLOR } from '@udecode/plate-font'
+import { ListStyleType } from '@udecode/plate-indent-list'
 import { ELEMENT_IMAGE } from '@udecode/plate-media'
 
 import { Icons, iconVariants } from '@/components/icons'
 import { AlignDropdownMenu } from '@/components/plate-ui/align-dropdown-menu'
 import { ColorDropdownMenu } from '@/components/plate-ui/color-dropdown-menu'
+import { CommentToolbarButton } from '@/components/plate-ui/comment-toolbar-button'
 import { EmojiDropdownMenu } from '@/components/plate-ui/emoji-dropdown-menu'
 import { IndentListToolbarButton } from '@/components/plate-ui/indent-list-toolbar-button'
 import { IndentToolbarButton } from '@/components/plate-ui/indent-toolbar-button'
@@ -34,7 +28,7 @@ export function FixedToolbarButtons() {
   const readOnly = useEditorReadOnly()
 
   return (
-    <div className='w-full'>
+    <div className='w-full overflow-hidden'>
       <div
         className='flex flex-wrap'
         style={{
@@ -50,20 +44,20 @@ export function FixedToolbarButtons() {
 
             <ToolbarGroup>
               <MarkToolbarButton tooltip='Bold (⌘+B)' nodeType={MARK_BOLD}>
-                <Icons.bold className='h-5 w-5' />
+                <Icons.bold />
               </MarkToolbarButton>
               <MarkToolbarButton tooltip='Italic (⌘+I)' nodeType={MARK_ITALIC}>
-                <Icons.italic className='h-5 w-5' />
+                <Icons.italic />
               </MarkToolbarButton>
               <MarkToolbarButton tooltip='Underline (⌘+U)' nodeType={MARK_UNDERLINE}>
-                <Icons.underline className='h-5 w-5' />
+                <Icons.underline />
               </MarkToolbarButton>
 
               <MarkToolbarButton tooltip='Strikethrough (⌘+⇧+M)' nodeType={MARK_STRIKETHROUGH}>
-                <Icons.strikethrough className='h-5 w-5' />
+                <Icons.strikethrough />
               </MarkToolbarButton>
               <MarkToolbarButton tooltip='Code (⌘+E)' nodeType={MARK_CODE}>
-                <Icons.code className='h-5 w-5' />
+                <Icons.code />
               </MarkToolbarButton>
             </ToolbarGroup>
 
@@ -105,6 +99,7 @@ export function FixedToolbarButtons() {
         <div className='grow' />
 
         <ToolbarGroup noSeparator>
+          <CommentToolbarButton />
           <ModeDropdownMenu />
         </ToolbarGroup>
       </div>

@@ -1,4 +1,4 @@
-import { useIndentButton } from '@udecode/plate'
+import { useIndentButton } from '@udecode/plate-indent'
 
 import { Icons } from '@/components/icons'
 
@@ -9,7 +9,7 @@ export function IndentToolbarButton() {
 
   return (
     <ToolbarButton tooltip='Indent' {...props}>
-      <Icons.indent className='h-5 w-5' />
+      <Icons.indent />
     </ToolbarButton>
   )
 }

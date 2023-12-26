@@ -1,7 +1,11 @@
+'use client'
+
 import './code-block-element.css'
 
-import { PlateElement, type PlateElementProps, type Value } from '@udecode/plate'
-import { type TCodeBlockElement, useCodeBlockElementState } from '@udecode/plate-code-block'
+import type { TCodeBlockElement } from '@udecode/plate-code-block'
+import { useCodeBlockElementState } from '@udecode/plate-code-block'
+import type { PlateElementProps, Value } from '@udecode/plate-common'
+import { PlateElement } from '@udecode/plate-common'
 import { forwardRef } from 'react'
 
 import { cn } from '@/lib/utils'
@@ -16,7 +20,7 @@ const CodeBlockElement = forwardRef<HTMLDivElement, PlateElementProps<Value, TCo
 
     return (
       <PlateElement ref={ref} className={cn('relative py-1', state.className, className)} {...props}>
-        <pre className='overflow-x-auto rounded-md bg-slate-100 px-6 py-8 font-mono text-sm leading-[normal] [tab-size:2] dark:bg-slate-800'>
+        <pre className='overflow-x-auto rounded-md bg-muted px-6 py-8 font-mono text-sm leading-[normal] [tab-size:2]'>
           <code>{children}</code>
         </pre>
 

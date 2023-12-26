@@ -1,12 +1,13 @@
-import type { EmojiDropdownMenuOptions} from '@udecode/plate-emoji'
+import type { EmojiDropdownMenuOptions } from '@udecode/plate-emoji'
 import { useEmojiDropdownMenuState } from '@udecode/plate-emoji'
 
-import { Icons } from '../icons'
+import { Icons } from '@/components/icons'
+import { EmojiToolbarDropdown } from '@/components/plate-ui/emoji-toolbar-dropdown'
+import type { ToolbarButtonProps } from '@/components/plate-ui/toolbar'
+import { ToolbarButton } from '@/components/plate-ui/toolbar'
+
 import { emojiCategoryIcons, emojiSearchIcons } from './emoji-icons'
 import { EmojiPicker } from './emoji-picker'
-import { EmojiToolbarDropdown } from './emoji-toolbar-dropdown'
-import type { ToolbarButtonProps } from './toolbar'
-import { ToolbarButton } from './toolbar'
 
 type EmojiDropdownMenuProps = {
   options?: EmojiDropdownMenuOptions

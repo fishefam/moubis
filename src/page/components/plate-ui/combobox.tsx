@@ -1,13 +1,16 @@
+'use client'
+
 import * as Popover from '@radix-ui/react-popover'
-import { useEditorState, useEventEditorSelectors } from '@udecode/plate'
+import type {
+  ComboboxContentItemProps,
+  ComboboxContentProps,
+  ComboboxProps,
+  Data,
+  NoData,
+  TComboboxItem,
+} from '@udecode/plate-combobox'
 import {
   comboboxActions,
-  type ComboboxContentItemProps,
-  type ComboboxContentProps,
-  type ComboboxProps,
-  type Data,
-  type NoData,
-  type TComboboxItem,
   useActiveComboboxStore,
   useComboboxContent,
   useComboboxContentState,
@@ -15,6 +18,7 @@ import {
   useComboboxItem,
   useComboboxSelectors,
 } from '@udecode/plate-combobox'
+import { useEditorState, useEventEditorSelectors } from '@udecode/plate-common'
 import { createVirtualRef } from '@udecode/plate-floating'
 import { useEffect } from 'react'
 
@@ -44,7 +48,7 @@ export function ComboboxContent<TData extends Data = NoData>(props: ComboboxCont
 
   const editor = useEditorState()
 
-  const filteredItems = useComboboxSelectors.filteredItems() as Array<TComboboxItem<TData>>
+  const filteredItems = useComboboxSelectors.filteredItems() as TComboboxItem<TData>[]
   const activeComboboxStore = useActiveComboboxStore()!
 
   const state = useComboboxContentState({ combobox, items })

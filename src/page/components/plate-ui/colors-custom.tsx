@@ -1,7 +1,10 @@
-import { DropdownMenuItem } from '@radix-ui/react-dropdown-menu'
-import { useColorsCustom, useColorsCustomState } from '@udecode/plate'
+'use client'
 
-import { buttonVariants } from './button'
+import { useColorsCustom, useColorsCustomState } from '@udecode/plate-font'
+
+import { buttonVariants } from '@/components/plate-ui/button'
+import { DropdownMenuItem } from '@/components/plate-ui/dropdown-menu'
+
 import type { TColor } from './color-dropdown-menu'
 import { ColorDropdownMenuItems } from './color-dropdown-menu-items'
 import { ColorInput } from './color-input'

@@ -5,22 +5,21 @@ import {
   autoformatMath,
   autoformatPunctuation,
   autoformatSmartQuotes,
-} from '@udecode/plate'
+} from '@udecode/plate-autoformat'
 
-import { type TPlateAutoformatRule } from '@/types/plate'
-
-import { autoformatBlocks } from './autoformatBlocks'
-import { autoformatIndentLists } from './autoformatIndentLists'
-import { autoformatMarks } from './autoformatMarks'
+import { autoformatBlocks } from '@/lib/plate/autoformatBlocks'
+import { autoformatIndentLists } from '@/lib/plate/autoformatIndentLists'
+import { autoformatMarks } from '@/lib/plate/autoformatMarks'
+import type { MyAutoformatRule } from '@/lib/plate/plate-types'
 
 export const autoformatRules = [
   ...autoformatBlocks,
   ...autoformatIndentLists,
   ...autoformatMarks,
-  ...(autoformatSmartQuotes as TPlateAutoformatRule[]),
-  ...(autoformatPunctuation as TPlateAutoformatRule[]),
-  ...(autoformatLegal as TPlateAutoformatRule[]),
-  ...(autoformatLegalHtml as TPlateAutoformatRule[]),
-  ...(autoformatArrow as TPlateAutoformatRule[]),
-  ...(autoformatMath as TPlateAutoformatRule[]),
+  ...(autoformatSmartQuotes as MyAutoformatRule[]),
+  ...(autoformatPunctuation as MyAutoformatRule[]),
+  ...(autoformatLegal as MyAutoformatRule[]),
+  ...(autoformatLegalHtml as MyAutoformatRule[]),
+  ...(autoformatArrow as MyAutoformatRule[]),
+  ...(autoformatMath as MyAutoformatRule[]),
 ]

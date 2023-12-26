@@ -1,14 +1,11 @@
-import { PlateLeaf, type PlateLeafProps } from '@udecode/plate'
+import type { PlateLeafProps } from '@udecode/plate-common'
+import { PlateLeaf } from '@udecode/plate-common'
 
 import { cn } from '@/lib/utils'
 
 export function HighlightLeaf({ className, children, ...props }: PlateLeafProps) {
   return (
-    <PlateLeaf
-      asChild
-      className={cn('bg-slate-900/20 text-inherit dark:bg-slate-50/20 dark:dark:bg-slate-50/40', className)}
-      {...props}
-    >
+    <PlateLeaf asChild className={cn('bg-primary/20 text-inherit dark:bg-primary/40', className)} {...props}>
       <mark>{children}</mark>
     </PlateLeaf>
   )

@@ -1,4 +1,4 @@
-import { useOutdentButton } from '@udecode/plate'
+import { useOutdentButton } from '@udecode/plate-indent'
 
 import { Icons } from '@/components/icons'
 
@@ -9,7 +9,7 @@ export function OutdentToolbarButton() {
 
   return (
     <ToolbarButton tooltip='Outdent' {...props}>
-      <Icons.outdent className='h-5 w-5' />
+      <Icons.outdent />
     </ToolbarButton>
   )
 }

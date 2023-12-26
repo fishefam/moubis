@@ -1,5 +1,6 @@
-import { type ComboboxItemProps } from '@udecode/plate-combobox'
-import { type EmojiItemData, KEY_EMOJI, type TEmojiCombobox, useEmojiComboboxState } from '@udecode/plate-emoji'
+import type { ComboboxItemProps } from '@udecode/plate-combobox'
+import type { EmojiItemData, TEmojiCombobox } from '@udecode/plate-emoji'
+import { KEY_EMOJI, useEmojiComboboxState } from '@udecode/plate-emoji'
 
 import { Combobox } from './combobox'
 

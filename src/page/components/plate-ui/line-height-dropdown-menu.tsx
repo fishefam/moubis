@@ -1,5 +1,7 @@
 import type { DropdownMenuProps } from '@radix-ui/react-dropdown-menu'
-import { useLineHeightDropdownMenu, useLineHeightDropdownMenuState } from '@udecode/plate'
+import { useLineHeightDropdownMenu, useLineHeightDropdownMenuState } from '@udecode/plate-line-height'
+
+import { Icons } from '@/components/icons'
 
 import {
   DropdownMenu,
@@ -7,10 +9,8 @@ import {
   DropdownMenuRadioGroup,
   DropdownMenuRadioItem,
   DropdownMenuTrigger,
-} from '@/components'
-
-import { Icons } from '../icons'
-import { useOpenState } from './dropdown-menu'
+  useOpenState,
+} from './dropdown-menu'
 import { ToolbarButton } from './toolbar'
 
 export function LineHeightDropdownMenu({ ...props }: DropdownMenuProps) {
@@ -26,10 +26,10 @@ export function LineHeightDropdownMenu({ ...props }: DropdownMenuProps) {
         </ToolbarButton>
       </DropdownMenuTrigger>
 
-      <DropdownMenuContent align='start' className='min-w-[auto] w-16'>
+      <DropdownMenuContent align='start' className='min-w-0'>
         <DropdownMenuRadioGroup className='flex flex-col gap-0.5' {...radioGroupProps}>
           {state.values.map((_value) => (
-            <DropdownMenuRadioItem key={_value} value={_value} className='w-14'>
+            <DropdownMenuRadioItem key={_value} value={_value} className='min-w-[180px]'>
               {_value}
             </DropdownMenuRadioItem>
           ))}

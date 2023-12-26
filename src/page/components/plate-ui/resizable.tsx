@@ -1,13 +1,17 @@
+'use client'
+
 import { Resizable as ResizablePrimitive, ResizeHandle as ResizeHandlePrimitive } from '@udecode/plate-resizable'
-import { cva, type VariantProps } from 'class-variance-authority'
-import { type ComponentProps, type ElementRef, forwardRef } from 'react'
+import type { VariantProps } from 'class-variance-authority'
+import { cva } from 'class-variance-authority'
+import type { ComponentProps } from 'react'
+import React from 'react'
 
 import { cn } from '@/lib/utils'
 
 export const mediaResizeHandleVariants = cva(
   cn(
     'top-0 flex w-6 select-none flex-col justify-center',
-    'after:flex after:h-16 after:w-[3px] after:rounded-[6px] after:bg-slate-950 after:opacity-0 after:content-[_] group-hover:after:opacity-100 dark:after:bg-slate-300',
+    "after:flex after:h-16 after:w-[3px] after:rounded-[6px] after:bg-ring after:opacity-0 after:content-['_'] group-hover:after:opacity-100",
   ),
   {
     variants: {
@@ -30,8 +34,8 @@ const resizeHandleVariants = cva(cn('absolute z-40'), {
   },
 })
 
-const ResizeHandle = forwardRef<
-  ElementRef<typeof ResizeHandlePrimitive>,
+const ResizeHandle = React.forwardRef<
+  React.ElementRef<typeof ResizeHandlePrimitive>,
   ComponentProps<typeof ResizeHandlePrimitive> & Omit<VariantProps<typeof resizeHandleVariants>, 'direction'>
 >(({ className, ...props }, ref) => (
   <ResizeHandlePrimitive
@@ -52,12 +56,12 @@ const resizableVariants = cva('', {
   },
 })
 
-const Resizable = forwardRef<
-  ElementRef<typeof ResizablePrimitive>,
+const Resizable = React.forwardRef<
+  React.ElementRef<typeof ResizablePrimitive>,
   ComponentProps<typeof ResizablePrimitive> & VariantProps<typeof resizableVariants>
->(({ className, align, ...props }, ref) => {
-  return <ResizablePrimitive ref={ref} className={cn(resizableVariants({ align }), className)} {...props} />
-})
+>(({ className, align, ...props }, ref) => (
+  <ResizablePrimitive ref={ref} className={cn(resizableVariants({ align }), className)} {...props} />
+))
 Resizable.displayName = 'Resizable'
 
 export { Resizable, ResizeHandle }

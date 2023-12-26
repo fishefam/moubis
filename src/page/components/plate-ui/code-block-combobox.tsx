@@ -1,9 +1,11 @@
+'use client'
+
 import {
   CODE_BLOCK_LANGUAGES,
   CODE_BLOCK_LANGUAGES_POPULAR,
   useCodeBlockCombobox,
   useCodeBlockComboboxState,
-} from '@udecode/plate'
+} from '@udecode/plate-code-block'
 import { useState } from 'react'
 
 import { Icons } from '@/components/icons'
@@ -13,13 +15,13 @@ import { Button } from './button'
 import { Command, CommandEmpty, CommandInput, CommandItem, CommandList } from './command'
 import { Popover, PopoverContent, PopoverTrigger } from './popover'
 
-const languages: Array<{ label: string; value: string }> = [
+const languages: { value: string; label: string }[] = [
   { label: 'Plain Text', value: 'text' },
   ...Object.entries({
     ...CODE_BLOCK_LANGUAGES_POPULAR,
     ...CODE_BLOCK_LANGUAGES,
   }).map(([key, val]) => ({
-    label: val,
+    label: val as string,
     value: key,
   })),
 ]
@@ -57,7 +59,7 @@ export function CodeBlockCombobox() {
                 key={language.value}
                 value={language.value}
                 className='cursor-pointer'
-                onSelect={(_value: string) => {
+                onSelect={(_value) => {
                   commandItemProps.onSelect(_value)
                   setOpen(false)
                 }}

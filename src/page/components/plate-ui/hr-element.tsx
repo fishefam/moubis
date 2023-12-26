@@ -1,10 +1,11 @@
-import { PlateElement, type PlateElementProps } from '@udecode/plate'
-import { type ElementRef, forwardRef } from 'react'
+import type { PlateElementProps } from '@udecode/plate-common'
+import { PlateElement } from '@udecode/plate-common'
+import React from 'react'
 import { useFocused, useSelected } from 'slate-react'
 
 import { cn } from '@/lib/utils'
 
-const HrElement = forwardRef<ElementRef<typeof PlateElement>, PlateElementProps>(
+const HrElement = React.forwardRef<React.ElementRef<typeof PlateElement>, PlateElementProps>(
   ({ className, nodeProps, ...props }, ref) => {
     const { children } = props
 
@@ -17,8 +18,8 @@ const HrElement = forwardRef<ElementRef<typeof PlateElement>, PlateElementProps>
           <hr
             {...nodeProps}
             className={cn(
-              'h-0.5 cursor-pointer rounded-sm border-none bg-slate-100 bg-clip-content dark:bg-slate-800',
-              selected && focused && 'ring-2 ring-slate-950 ring-offset-2 dark:ring-slate-300',
+              'h-0.5 cursor-pointer rounded-sm border-none bg-muted bg-clip-content',
+              selected && focused && 'ring-2 ring-ring ring-offset-2',
               className,
             )}
           />

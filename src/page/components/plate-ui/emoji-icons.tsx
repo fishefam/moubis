@@ -1,4 +1,5 @@
 import type { EmojiCategoryList } from '@udecode/plate-emoji'
+import type React from 'react'
 
 export const emojiCategoryIcons: Record<EmojiCategoryList, { outline: React.ReactElement; solid: React.ReactElement }> =
   {

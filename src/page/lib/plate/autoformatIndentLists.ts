@@ -1,4 +1,5 @@
-import { type AutoformatRule, ListStyleType, toggleIndentList } from '@udecode/plate'
+import type { AutoformatRule } from '@udecode/plate-autoformat'
+import { ListStyleType, toggleIndentList } from '@udecode/plate-indent-list'
 
 export const autoformatIndentLists: AutoformatRule[] = [
   {
