@@ -19,7 +19,7 @@ import {
   TooltipProvider,
 } from './plate-ui'
 
-export default function PlateEditor() {
+export function PlateEditor() {
   const containerRef = useRef(null)
 
   return (
