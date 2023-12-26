@@ -1,5 +1,3 @@
-'use client'
-
 import { PortalBody, useComposedRef } from '@udecode/plate-common'
 import type { FloatingToolbarState } from '@udecode/plate-floating'
 import { flip, offset, useFloatingToolbar, useFloatingToolbarState } from '@udecode/plate-floating'

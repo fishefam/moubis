@@ -1,5 +1,3 @@
-'use client'
-
 import { useCodeSyntaxLeaf } from '@udecode/plate-code-block'
 import type { PlateLeafProps } from '@udecode/plate-common'
 import { PlateLeaf } from '@udecode/plate-common'

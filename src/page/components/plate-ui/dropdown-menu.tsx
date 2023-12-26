@@ -1,5 +1,3 @@
-'use client'
-
 import * as DropdownMenuPrimitive from '@radix-ui/react-dropdown-menu'
 import type { VariantProps } from 'class-variance-authority'
 import { cva } from 'class-variance-authority'

@@ -1,5 +1,3 @@
-'use client'
-
 import { Resizable as ResizablePrimitive, ResizeHandle as ResizeHandlePrimitive } from '@udecode/plate-resizable'
 import type { VariantProps } from 'class-variance-authority'
 import { cva } from 'class-variance-authority'

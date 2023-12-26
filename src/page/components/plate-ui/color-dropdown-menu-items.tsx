@@ -1,5 +1,3 @@
-'use client'
-
 import type { DropdownMenuItemProps } from '@radix-ui/react-dropdown-menu'
 import type React from 'react'
 

@@ -1,5 +1,3 @@
-'use client'
-
 import type { UseVirtualFloatingOptions } from '@udecode/plate-floating'
 import { flip, offset } from '@udecode/plate-floating'
 import type { LinkFloatingToolbarState } from '@udecode/plate-link'

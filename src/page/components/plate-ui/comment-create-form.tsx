@@ -1,5 +1,3 @@
-'use client'
-
 import { CommentNewSubmitButton, CommentNewTextarea, useCommentsSelectors } from '@udecode/plate-comments'
 
 import { buttonVariants } from '@/components/plate-ui/button'

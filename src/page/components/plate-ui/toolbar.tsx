@@ -1,5 +1,3 @@
-'use client'
-
 import * as ToolbarPrimitive from '@radix-ui/react-toolbar'
 import type { VariantProps } from 'class-variance-authority'
 import { cva } from 'class-variance-authority'

@@ -1,5 +1,3 @@
-'use client'
-
 import { CommentResolveButton as CommentResolveButtonPrimitive, useComment } from '@udecode/plate-comments'
 
 import { Icons } from '@/components/icons'

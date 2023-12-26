@@ -1,5 +1,3 @@
-'use client'
-
 import type { ClassNames, PlateElementProps, TEditor } from '@udecode/plate-common'
 import type { DragItemNode } from '@udecode/plate-dnd'
 import { useDraggable, useDraggableState } from '@udecode/plate-dnd'

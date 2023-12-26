@@ -1,5 +1,3 @@
-'use client'
-
 import type { DropdownMenuProps } from '@radix-ui/react-dropdown-menu'
 import { ELEMENT_BLOCKQUOTE } from '@udecode/plate-block-quote'
 import { focusEditor, insertEmptyElement, useEditorState } from '@udecode/plate-common'

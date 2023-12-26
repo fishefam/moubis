@@ -1,5 +1,3 @@
-'use client'
-
 import { CommentProvider, useCommentById, useCommentItemContentState } from '@udecode/plate-comments'
 import { formatDistance } from 'date-fns'
 

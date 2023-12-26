@@ -1,5 +1,3 @@
-'use client'
-
 import { useColorsCustom, useColorsCustomState } from '@udecode/plate-font'
 
 import { buttonVariants } from '@/components/plate-ui/button'
