@@ -1,12 +1,8 @@
-import { CommentsProvider } from '@udecode/plate-comments'
-import { Plate } from '@udecode/plate-common'
+import { CommentsProvider, Plate } from '@udecode/plate'
 import { CursorOverlay } from '@udecode/plate-cursor'
 import { useRef } from 'react'
 import { DndProvider } from 'react-dnd'
 import { HTML5Backend } from 'react-dnd-html5-backend'
-
-import { cn, commentsUsers, MENTIONABLES, myUserId, plugins } from '@/lib'
-import { initialValue } from '@/lib/mock'
 
 import {
   CommentsPopover,
@@ -17,7 +13,8 @@ import {
   FloatingToolbarButtons,
   MentionCombobox,
   TooltipProvider,
-} from './plate-ui'
+} from '@/components'
+import { cn, commentsUsers, initialValue, MENTIONABLES, myUserId, plugins } from '@/lib'
 
 export function PlateEditor() {
   const containerRef = useRef(null)
