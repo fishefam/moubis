@@ -1,9 +1,4 @@
 {
-  "settings": {
-    "react": {
-      "version": "detect"
-    }
-  },
   "env": {
     "browser": true,
     "es2021": true,
@@ -12,10 +7,10 @@
   "extends": [
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
-    "plugin:react/recommended",
+    "plugin:perfectionist/recommended-alphabetical",
     "plugin:react-hooks/recommended",
     "plugin:react/jsx-runtime",
-    "plugin:perfectionist/recommended-alphabetical",
+    "plugin:react/recommended",
     "prettier"
   ],
   "parser": "@typescript-eslint/parser",
@@ -25,18 +20,34 @@
   },
   "plugins": ["@typescript-eslint", "react", "unused-imports"],
   "rules": {
-    "import/no-unresolved": "off",
-    "@typescript-eslint/consistent-type-imports": "warn",
-    "react/prop-types": "off",
-    "linebreak-style": ["warn", "unix"],
-    "quotes": ["warn", "single", { "avoidEscape": true }],
-    "semi": ["warn", "never"],
     "@typescript-eslint/consistent-type-definitions": ["warn", "type"],
+    "@typescript-eslint/consistent-type-imports": "warn",
     "@typescript-eslint/no-unused-vars": "off",
+    "import/no-unresolved": "off",
+    "linebreak-style": ["warn", "unix"],
+    "quotes": [
+      "warn",
+      "single",
+      {
+        "avoidEscape": true
+      }
+    ],
+    "react/prop-types": "off",
+    "semi": ["warn", "never"],
     "unused-imports/no-unused-imports": "warn",
     "unused-imports/no-unused-vars": [
       "warn",
-      { "vars": "all", "varsIgnorePattern": "^_", "args": "after-used", "argsIgnorePattern": "^_" }
+      {
+        "args": "after-used",
+        "argsIgnorePattern": "^_",
+        "vars": "all",
+        "varsIgnorePattern": "^_"
+      }
     ]
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
   }
 }
