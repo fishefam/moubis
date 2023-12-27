@@ -22,3 +22,7 @@ export function toTitleCase(str: string) {
     .map((v) => v.charAt(0).toUpperCase() + v.slice(1))
     .join(' ')
 }
+
+export function getExtensionBaseUrl() {
+  return localStorage.getItem('extension-base-url')
+}

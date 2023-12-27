@@ -3,6 +3,12 @@
   "manifest_version": 2,
   "version": "1.0.0",
   "name": "mobius",
-  "content_scripts": [{ "run_at": "document_start", "js": ["index.js"], "matches": ["<all_urls>"] }],
+  "content_scripts": [
+    {
+      "run_at": "document_start",
+      "js": ["index.js"],
+      "matches": ["https://*.mobius.cloud/qbeditor/*", "https://www.blank.org/"]
+    }
+  ],
   "web_accessible_resources": ["*"]
 }
