@@ -11,6 +11,7 @@
     "type-check": "tsc"
   },
   "dependencies": {
+    "@radix-ui/colors": "^3.0.0",
     "@radix-ui/react-avatar": "1.0.4",
     "@radix-ui/react-checkbox": "^1.0.4",
     "@radix-ui/react-dialog": "^1.0.5",
@@ -73,6 +74,7 @@
     "@udecode/plate-table": "^24.5.2",
     "@udecode/plate-trailing-block": "^24.5.2",
     "autoprefixer": "^10.4.16",
+    "better-react-mathjax": "^2.0.3",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
     "cmdk": "^0.2.0",

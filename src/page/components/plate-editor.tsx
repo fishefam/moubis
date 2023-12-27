@@ -1,6 +1,7 @@
 import { cn, commentsUsers, initialValue, MENTIONABLES, myUserId, plugins } from '@/lib'
 import { CommentsProvider, Plate } from '@udecode/plate'
 import { CursorOverlay } from '@udecode/plate-cursor'
+import { MathJaxContext } from 'better-react-mathjax'
 import { useRef } from 'react'
 import { DndProvider } from 'react-dnd'
 import { HTML5Backend } from 'react-dnd-html5-backend'
@@ -18,36 +19,38 @@ export function PlateEditor() {
   const containerRef = useRef(null)
 
   return (
-    <TooltipProvider>
-      <DndProvider backend={HTML5Backend}>
-        <CommentsProvider myUserId={myUserId} users={commentsUsers}>
-          <Plate initialValue={initialValue} plugins={plugins}>
-            <div
-              className={cn(
-                // Block selection
-                '[&_.slate-start-area-left]:!w-[64px] [&_.slate-start-area-right]:!w-[64px] [&_.slate-start-area-top]:!h-4',
-              )}
-              ref={containerRef}
-            >
-              <FixedToolbar>
-                <FixedToolbarButtons />
-              </FixedToolbar>
+    <MathJaxContext config={{ startup: { typeset: false } }} hideUntilTypeset='first'>
+      <TooltipProvider>
+        <DndProvider backend={HTML5Backend}>
+          <CommentsProvider myUserId={myUserId} users={commentsUsers}>
+            <Plate initialValue={initialValue} onChange={(v) => console.log(v)} plugins={plugins}>
+              <div
+                className={cn(
+                  // Block selection
+                  '[&_.slate-start-area-left]:!w-[64px] [&_.slate-start-area-right]:!w-[64px] [&_.slate-start-area-top]:!h-4',
+                )}
+                ref={containerRef}
+              >
+                <FixedToolbar>
+                  <FixedToolbarButtons />
+                </FixedToolbar>
 
-              <Editor autoFocus className='px-[96px] py-16' focusRing={false} size='md' variant='ghost' />
+                <Editor autoFocus className='px-[96px] py-16' focusRing={false} size='md' variant='ghost' />
 
-              <FloatingToolbar>
-                <FloatingToolbarButtons />
-              </FloatingToolbar>
+                <FloatingToolbar>
+                  <FloatingToolbarButtons />
+                </FloatingToolbar>
 
-              <MentionCombobox items={MENTIONABLES} />
+                <MentionCombobox items={MENTIONABLES} />
 
-              <CommentsPopover />
+                <CommentsPopover />
 
-              <CursorOverlay containerRef={containerRef} />
-            </div>
-          </Plate>
-        </CommentsProvider>
-      </DndProvider>
-    </TooltipProvider>
+                <CursorOverlay containerRef={containerRef} />
+              </div>
+            </Plate>
+          </CommentsProvider>
+        </DndProvider>
+      </TooltipProvider>
+    </MathJaxContext>
   )
 }

@@ -16,6 +16,7 @@ import { KbdLeaf } from '@/components/plate-ui/kbd-leaf'
 import { LinkElement } from '@/components/plate-ui/link-element'
 import { LinkFloatingToolbar } from '@/components/plate-ui/link-floating-toolbar'
 import { ListElement } from '@/components/plate-ui/list-element'
+import { MathJaxElement } from '@/components/plate-ui/mathjax-element'
 import { MediaEmbedElement } from '@/components/plate-ui/media-embed-element'
 import { MentionElement } from '@/components/plate-ui/mention-element'
 import { MentionInputElement } from '@/components/plate-ui/mention-input-element'
@@ -124,6 +125,7 @@ import { createBlockSelectionPlugin } from '@udecode/plate-selection'
 
 import { autoformatPlugin } from './autoformatPlugin'
 import { dragOverCursorPlugin } from './dragOverCursorPlugin'
+import { createLatexPlugin, ELEMENT_LATEX } from './latex/createLatexPlugin'
 
 const resetBlockTypesCommonRule = {
   defaultType: ELEMENT_PARAGRAPH,
@@ -156,6 +158,7 @@ export const plugins = createPlugins(
     createTablePlugin(),
     createTodoListPlugin(),
     createExcalidrawPlugin(),
+    createLatexPlugin(),
 
     // Marks
     createBoldPlugin(),
@@ -364,6 +367,7 @@ export const plugins = createPlugins(
         [ELEMENT_H6]: withProps(HeadingElement, { variant: 'h6' }),
         [ELEMENT_HR]: HrElement,
         [ELEMENT_IMAGE]: ImageElement,
+        [ELEMENT_LATEX]: MathJaxElement,
         [ELEMENT_LI]: withProps(PlateElement, { as: 'li' }),
         [ELEMENT_LINK]: LinkElement,
         [ELEMENT_MEDIA_EMBED]: MediaEmbedElement,
