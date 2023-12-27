@@ -5,7 +5,7 @@ export const initialValue = [
   {
     children: [
       {
-        text: '&nbsp;&nbsp;🌳&Blocks',
+        text: '🌳&Blocks',
       },
     ],
     id: '1',
@@ -13,10 +13,31 @@ export const initialValue = [
   },
   {
     children: [
+      {
+        attributes: {
+          type: 'range',
+        },
+        children: [{ text: '' }],
+        type: 'input',
+      },
+      {
+        attributes: {
+          type: 'text',
+        },
+        children: [{ text: '' }],
+        type: 'input',
+      },
+      {
+        attributes: {
+          type: 'checkbox',
+        },
+        children: [{ text: '' }],
+        type: 'input',
+      },
       { text: 'Before the mathjax element' },
       {
-        latex:true,
-        text: '\\(\\frac{3}{1234}\\)'
+        latex: true,
+        text: '\\(\\frac{3}{1234}\\)',
       },
       {
         text: 'Easily create headings of various levels, from H1 to H6, to structure your content and make it more organized.',

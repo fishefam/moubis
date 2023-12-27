@@ -1,8 +1,10 @@
-import { createPluginFactory, onKeyDownToggleMark } from '@udecode/plate-common'
+import type { PlatePlugin } from '@udecode/plate-common'
+
+import { onKeyDownToggleMark } from '@udecode/plate-common'
 
 export const ELEMENT_LATEX = 'latex'
 
-export const createLatexPlugin = createPluginFactory({
+export const latexPlugin: PlatePlugin = {
   handlers: {
     onKeyDown: onKeyDownToggleMark,
   },
@@ -13,4 +15,4 @@ export const createLatexPlugin = createPluginFactory({
   options: {
     hotkey: 'mod+alt+l',
   },
-})
+}

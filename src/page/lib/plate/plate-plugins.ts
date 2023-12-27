@@ -12,6 +12,7 @@ import { HeadingElement } from '@/components/plate-ui/heading-element'
 import { HighlightLeaf } from '@/components/plate-ui/highlight-leaf'
 import { HrElement } from '@/components/plate-ui/hr-element'
 import { ImageElement } from '@/components/plate-ui/image-element'
+import { InputElement } from '@/components/plate-ui/input-element'
 import { KbdLeaf } from '@/components/plate-ui/kbd-leaf'
 import { LinkElement } from '@/components/plate-ui/link-element'
 import { LinkFloatingToolbar } from '@/components/plate-ui/link-floating-toolbar'
@@ -125,7 +126,8 @@ import { createBlockSelectionPlugin } from '@udecode/plate-selection'
 
 import { autoformatPlugin } from './autoformatPlugin'
 import { dragOverCursorPlugin } from './dragOverCursorPlugin'
-import { createLatexPlugin, ELEMENT_LATEX } from './latex/createLatexPlugin'
+import { ELEMENT_INPUT, inputPlugin } from './inputPlugin'
+import { ELEMENT_LATEX, latexPlugin } from './latexPlugin'
 
 const resetBlockTypesCommonRule = {
   defaultType: ELEMENT_PARAGRAPH,
@@ -158,7 +160,6 @@ export const plugins = createPlugins(
     createTablePlugin(),
     createTodoListPlugin(),
     createExcalidrawPlugin(),
-    createLatexPlugin(),
 
     // Marks
     createBoldPlugin(),
@@ -173,6 +174,8 @@ export const plugins = createPlugins(
     createFontSizePlugin(),
     createHighlightPlugin(),
     createKbdPlugin(),
+    latexPlugin,
+    inputPlugin,
 
     // Block Style
     createAlignPlugin({
@@ -367,6 +370,7 @@ export const plugins = createPlugins(
         [ELEMENT_H6]: withProps(HeadingElement, { variant: 'h6' }),
         [ELEMENT_HR]: HrElement,
         [ELEMENT_IMAGE]: ImageElement,
+        [ELEMENT_INPUT]: InputElement,
         [ELEMENT_LATEX]: MathJaxElement,
         [ELEMENT_LI]: withProps(PlateElement, { as: 'li' }),
         [ELEMENT_LINK]: LinkElement,
