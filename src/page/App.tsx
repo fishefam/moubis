@@ -10,7 +10,7 @@ export default function App() {
     <AppContext.Provider value={{}}>
       <MathJaxContext
         config={{ startup: { typeset: false } }}
-        hideUntilTypeset='first'
+        hideUntilTypeset='every'
         src={`${getExtensionBaseUrl()}assets/tex-mml-chtml.js`}
       >
         <div className='p-10'>
