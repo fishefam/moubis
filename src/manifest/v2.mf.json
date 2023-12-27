@@ -7,7 +7,7 @@
     {
       "run_at": "document_start",
       "js": ["index.js"],
-      "matches": ["https://*.mobius.cloud/qbeditor/*", "https://www.blank.org/"]
+      "matches": ["https://*.mobius.cloud/qbeditor/*", "https://*.blank.org/"]
     }
   ],
   "web_accessible_resources": ["*"]

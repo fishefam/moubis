@@ -1,3 +1,4 @@
+import type { TDocument } from '@/types/plate'
 import type { ClassValue } from 'clsx'
 
 import { clsx } from 'clsx'
@@ -25,4 +26,8 @@ export function toTitleCase(str: string) {
 
 export function getExtensionBaseUrl() {
   return localStorage.getItem('extension-base-url')
+}
+
+export function populatePlateElementId(doc: TDocument): TDocument {
+  return doc.map((elem) => ({ ...elem, id: elem.id ?? nanoid() }))
 }

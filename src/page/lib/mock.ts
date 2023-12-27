@@ -1,50 +1,30 @@
+import type { TDocument } from '@/types/plate'
+
+import { EAlign, ECommonElement, EHeadingElement } from '@/types/plate'
+
 export const html =
   '<p>Y<span class="inline numeric" contenteditable="false" data-questiontext="%3Cinput%20type%3D%22text%22%20size%3D%2220%22%20value%3D%22Numeric%20with%20Units%22%20class%3D%22blankdisabled%20form-control%22%20readonly%3D%22readonly%22%3E" data-source="mode%3DNumeric%40negStyle%3Dminus%40grading%3Dexact_value%40name%3DresponseNaN%40answer.num%3D43%40numStyle%3Dthousands%20scientific%20%20arithmetic%40comment%3D%40weighting%3D1%40answer.units%3Dff%40showUnits%3Dtrue%40" id="sro_id_1" style="display:inline" title="Double-click the response area to edit">&zwnj;</span><span>&nbsp;</span>OOOOOOOOOOOOO IT WORKDS NOWWWWWWWWW</p><p>testing new one stuffwdraftedork great agin</p><div class="question-container"><div class="input-container"><div><label for="radius-range">Radius</label><input class="radius-range" id="radius-range" type="range"></div><fieldset><legend>Position</legend><div><label for="x-range">Left Right</label><input class="x-range" id="x-range" max="500" type="range"></div><div><label for="y-range">Up Down</label><input class="y-range" id="y-range" max="300" type="range"></div></fieldset><fieldset><legend>Color</legend><div><label for="red-range">Red</label><input class="red-range" defaultvalue="50" id="red-range" max="255" type="range"></div><div><label for="green-range">Green</label><input class="green-range" defaultvalue="50" id="green-range" max="255" type="range"></div><div><label for="blue-range">Blue</label><input class="blue-range" defaultvalue="50" id="blue-range" max="255" type="range"></div></fieldset></div><svg height="300" width="500"><circle class="circle" cx="250" cy="150" r="50" style="fill:#7b7b7b"></circle></svg>Now it should save again</div>'
 
-export const initialValue = [
+export const initialValue: TDocument = [
   {
     children: [
       {
-        text: '🌳&Blocks',
+        text: '🌳Blocks',
       },
     ],
-    id: '1',
-    type: 'h1',
+    type: EHeadingElement.H1,
   },
   {
     children: [
-      {
-        attributes: {
-          type: 'range',
-        },
-        children: [{ text: '' }],
-        type: 'input',
-      },
-      {
-        attributes: {
-          type: 'text',
-        },
-        children: [{ text: '' }],
-        type: 'input',
-      },
-      {
-        attributes: {
-          type: 'checkbox',
-        },
-        children: [{ text: '' }],
-        type: 'input',
-      },
       { text: 'Before the mathjax element' },
       {
-        latex: true,
         text: '\\(\\frac{3}{1234}\\)',
       },
       {
         text: 'Easily create headings of various levels, from H1 to H6, to structure your content and make it more organized.',
       },
     ],
-    id: '2',
-    type: 'p',
+    type: ECommonElement.PARAGRAPH,
   },
   {
     children: [
@@ -52,8 +32,7 @@ export const initialValue = [
         text: 'Create blockquotes to emphasize important information or highlight quotes from external sources.',
       },
     ],
-    id: '3',
-    type: 'blockquote',
+    type: ECommonElement.BLOCK_QUOTE,
   },
   {
     children: [
@@ -63,8 +42,7 @@ export const initialValue = [
             text: '// Use code blocks to showcase code snippets',
           },
         ],
-        id: 'qqr2d',
-        type: 'code_line',
+        type: ECommonElement.CODE_LINE,
       },
       {
         children: [
@@ -72,8 +50,7 @@ export const initialValue = [
             text: 'function greet() {',
           },
         ],
-        id: 's43cc',
-        type: 'code_line',
+        type: ECommonElement.CODE_LINE,
       },
       {
         children: [
@@ -81,8 +58,7 @@ export const initialValue = [
             text: "  console.info('Hello World!');",
           },
         ],
-        id: 'hr5cw',
-        type: 'code_line',
+        type: ECommonElement.CODE_LINE,
       },
       {
         children: [
@@ -90,13 +66,11 @@ export const initialValue = [
             text: '}',
           },
         ],
-        id: '0qdsi',
-        type: 'code_line',
+        type: ECommonElement.CODE_LINE,
       },
     ],
-    id: '4',
-    lang: 'javascript',
-    type: 'code_block',
+    codeLang: 'javascript',
+    type: ECommonElement.CODE_BLOCK,
   },
   {
     children: [
@@ -104,8 +78,7 @@ export const initialValue = [
         text: 'Each block is a React component in which you can manage the state:',
       },
     ],
-    id: '5',
-    type: 'p',
+    type: ECommonElement.PARAGRAPH,
   },
   {
     checked: true,
@@ -114,8 +87,7 @@ export const initialValue = [
         text: 'Create a "banana language" translation plugin',
       },
     ],
-    id: '6',
-    type: 'action_item',
+    type: ECommonElement.TODO,
   },
   {
     checked: true,
@@ -124,8 +96,7 @@ export const initialValue = [
         text: 'Create a "detect sarcasm" plugin (good luck with that)',
       },
     ],
-    id: '7',
-    type: 'action_item',
+    type: ECommonElement.TODO,
   },
   {
     children: [
@@ -133,8 +104,7 @@ export const initialValue = [
         text: 'Create an AI auto-complete plugin',
       },
     ],
-    id: '8',
-    type: 'action_item',
+    type: ECommonElement.TODO,
   },
   {
     children: [
@@ -142,8 +112,7 @@ export const initialValue = [
         text: '🔗 Link',
       },
     ],
-    id: '9',
-    type: 'h2',
+    type: EHeadingElement.H2,
   },
   {
     children: [
@@ -156,16 +125,14 @@ export const initialValue = [
             text: 'hyperlinks',
           },
         ],
-        id: 'st4tu',
-        type: 'a',
+        type: ECommonElement.LINK,
         url: 'https://en.wikipedia.org/wiki/Hypertext',
       },
       {
         text: ' within your text to reference external sources or provide additional information using the Link plugin.',
       },
     ],
-    id: '10',
-    type: 'p',
+    type: ECommonElement.PARAGRAPH,
   },
   {
     children: [
@@ -173,8 +140,7 @@ export const initialValue = [
         text: 'Effortlessly create hyperlinks using the toolbar or by pasting a URL while selecting the desired text.',
       },
     ],
-    id: '11',
-    type: 'p',
+    type: ECommonElement.PARAGRAPH,
   },
   {
     children: [
@@ -182,8 +148,7 @@ export const initialValue = [
         text: '🌱 Marks',
       },
     ],
-    id: '12',
-    type: 'h1',
+    type: EHeadingElement.H1,
   },
   {
     children: [
@@ -191,8 +156,7 @@ export const initialValue = [
         text: 'Add style and emphasis to your text using the mark plugins, which offers a variety of formatting options.',
       },
     ],
-    id: '13',
-    type: 'p',
+    type: ECommonElement.PARAGRAPH,
   },
   {
     children: [
@@ -230,8 +194,7 @@ export const initialValue = [
         text: ' of these styles for a visually striking effect.',
       },
     ],
-    id: '14',
-    type: 'p',
+    type: ECommonElement.PARAGRAPH,
   },
   {
     children: [
@@ -246,8 +209,7 @@ export const initialValue = [
         text: ' to indicate deleted or outdated content.',
       },
     ],
-    id: '15',
-    type: 'p',
+    type: ECommonElement.PARAGRAPH,
   },
   {
     children: [
@@ -262,8 +224,7 @@ export const initialValue = [
         text: ' formatting for easy readability.',
       },
     ],
-    id: '16',
-    type: 'p',
+    type: ECommonElement.PARAGRAPH,
   },
   {
     children: [
@@ -271,43 +232,43 @@ export const initialValue = [
         text: 'Add ',
       },
       {
-        backgroundColor: '#df4538',
         color: 'white',
+        highlight: '#df4538',
         text: 'm',
       },
       {
-        backgroundColor: '#e2533a',
         color: 'white',
+        highlight: '#e2533a',
         text: 'u',
       },
       {
-        backgroundColor: '#e6603d',
         color: 'white',
+        highlight: '#e6603d',
         text: 'l',
       },
       {
-        backgroundColor: '#e96f40',
         color: 'white',
+        highlight: '#e96f40',
         text: 't',
       },
       {
-        backgroundColor: '#ec7d43',
         color: 'white',
+        highlight: '#ec7d43',
         text: 'i',
       },
       {
-        backgroundColor: '#ef8a45',
         color: 'white',
+        highlight: '#ef8a45',
         text: 'p',
       },
       {
-        backgroundColor: '#f29948',
         color: 'white',
+        highlight: '#f29948',
         text: 'l',
       },
       {
-        backgroundColor: '#f5a74b',
         color: 'white',
+        highlight: '#f5a74b',
         text: 'e',
       },
       {
@@ -321,16 +282,15 @@ export const initialValue = [
         text: ' and ',
       },
       {
-        backgroundColor: 'rgb(252, 109, 38)',
         color: 'white',
+        highlight: 'rgb(252, 109, 38)',
         text: 'background',
       },
       {
         text: ' colors to create vibrant and eye-catching text.',
       },
     ],
-    id: '17',
-    type: 'p',
+    type: ECommonElement.PARAGRAPH,
   },
   {
     children: [
@@ -342,8 +302,7 @@ export const initialValue = [
         text: ' important information for better clarity.',
       },
     ],
-    id: '18',
-    type: 'p',
+    type: ECommonElement.PARAGRAPH,
   },
   {
     children: [
@@ -351,22 +310,21 @@ export const initialValue = [
         text: 'Press ',
       },
       {
-        kbd: true,
+        highlight: '#637647',
         text: '⌘ + B',
       },
       {
         text: ' to apply bold mark or ',
       },
       {
-        kbd: true,
+        highlight: '#637647',
         text: '⌘ + I',
       },
       {
         text: ' for italic mark.',
       },
     ],
-    id: '19',
-    type: 'p',
+    type: ECommonElement.PARAGRAPH,
   },
   {
     children: [
@@ -374,8 +332,7 @@ export const initialValue = [
         text: '＠ Mention',
       },
     ],
-    id: '20',
-    type: 'h2',
+    type: EHeadingElement.H2,
   },
   {
     children: [
@@ -383,8 +340,7 @@ export const initialValue = [
         text: 'Mention and reference other users or entities within your text using @-mentions.',
       },
     ],
-    id: '21',
-    type: 'p',
+    type: ECommonElement.PARAGRAPH,
   },
   {
     children: [
@@ -397,8 +353,7 @@ export const initialValue = [
             text: '',
           },
         ],
-        id: 'wuac8',
-        type: 'mention',
+        type: ECommonElement.MENTION,
         value: 'R2-D2',
       },
       {
@@ -410,16 +365,14 @@ export const initialValue = [
             text: '',
           },
         ],
-        id: 'g8apb',
-        type: 'mention',
+        type: ECommonElement.MENTION,
         value: 'Mace Windu',
       },
       {
         text: '.',
       },
     ],
-    id: '22',
-    type: 'p',
+    type: ECommonElement.PARAGRAPH,
   },
   {
     children: [
@@ -427,8 +380,7 @@ export const initialValue = [
         text: "🙂 Emoji's",
       },
     ],
-    id: '23',
-    type: 'h2',
+    type: EHeadingElement.H2,
   },
   {
     children: [
@@ -436,8 +388,7 @@ export const initialValue = [
         text: 'Express yourself with a touch of fun 🎉 and emotion 😃.',
       },
     ],
-    id: '24',
-    type: 'p',
+    type: ECommonElement.PARAGRAPH,
   },
   {
     children: [
@@ -445,48 +396,43 @@ export const initialValue = [
         text: 'Pick from the toolbar or write after the colon to open the combobox :',
       },
     ],
-    id: '25',
-    type: 'p',
+    type: ECommonElement.PARAGRAPH,
   },
   {
-    align: 'right',
+    align: EAlign.RIGHT,
     children: [
       {
         text: 'Alignment',
       },
     ],
-    id: '26',
-    type: 'h2',
+    type: EHeadingElement.H2,
   },
   {
-    align: 'right',
+    align: EAlign.RIGHT,
     children: [
       {
         text: 'Align text within blocks to create visually appealing and balanced layouts.',
       },
     ],
-    id: '27',
-    type: 'p',
+    type: ECommonElement.PARAGRAPH,
   },
   {
-    align: 'center',
+    align: EAlign.CENTER,
     children: [
       {
         text: 'Center',
       },
     ],
-    id: '28',
-    type: 'h3',
+    type: EHeadingElement.H3,
   },
   {
-    align: 'justify',
+    align: EAlign.JUSTIFY,
     children: [
       {
         text: 'Create clean and balanced layouts by justifying block text, providing a professional and polished look.',
       },
     ],
-    id: '29',
-    type: 'p',
+    type: ECommonElement.PARAGRAPH,
   },
   {
     children: [
@@ -494,8 +440,7 @@ export const initialValue = [
         text: 'Line Height',
       },
     ],
-    id: '30',
-    type: 'h2',
+    type: EHeadingElement.H2,
   },
   {
     children: [
@@ -503,8 +448,7 @@ export const initialValue = [
         text: 'Control the line height of your text to improve readability and adjust the spacing between lines.',
       },
     ],
-    id: '31',
-    type: 'p',
+    type: ECommonElement.PARAGRAPH,
   },
   {
     children: [
@@ -512,9 +456,8 @@ export const initialValue = [
         text: 'Choose the ideal line height to ensure comfortable reading and an aesthetically pleasing document.',
       },
     ],
-    id: '32',
     lineHeight: 2,
-    type: 'p',
+    type: ECommonElement.PARAGRAPH,
   },
   {
     children: [
@@ -522,8 +465,7 @@ export const initialValue = [
         text: 'Indentation',
       },
     ],
-    id: '33',
-    type: 'h2',
+    type: EHeadingElement.H2,
   },
   {
     children: [
@@ -531,9 +473,8 @@ export const initialValue = [
         text: 'Easily control the indentation of specific blocks to highlight important information and improve visual structure.',
       },
     ],
-    id: '34',
     indent: 1,
-    type: 'p',
+    type: ECommonElement.PARAGRAPH,
   },
   {
     children: [
@@ -541,9 +482,8 @@ export const initialValue = [
         text: 'For instance, this paragraph looks like it belongs to the previous one.',
       },
     ],
-    id: '35',
     indent: 2,
-    type: 'p',
+    type: ECommonElement.PARAGRAPH,
   },
   {
     children: [
@@ -551,8 +491,7 @@ export const initialValue = [
         text: 'Horizontal Rule',
       },
     ],
-    id: '36',
-    type: 'h2',
+    type: EHeadingElement.H2,
   },
   {
     children: [
@@ -560,8 +499,7 @@ export const initialValue = [
         text: 'Add horizontal rules to visually separate sections and content within your document.',
       },
     ],
-    id: '37',
-    type: 'p',
+    type: ECommonElement.PARAGRAPH,
   },
   {
     children: [
@@ -569,8 +507,7 @@ export const initialValue = [
         text: '',
       },
     ],
-    id: '38',
-    type: 'hr',
+    type: ECommonElement.DIVIDER,
   },
   {
     children: [
@@ -578,8 +515,7 @@ export const initialValue = [
         text: '✍️ List',
       },
     ],
-    id: '39',
-    type: 'h2',
+    type: EHeadingElement.H2,
   },
   {
     children: [
@@ -587,8 +523,7 @@ export const initialValue = [
         text: '',
       },
     ],
-    id: '40',
-    type: 'p',
+    type: ECommonElement.PARAGRAPH,
   },
   {
     children: [
@@ -600,12 +535,10 @@ export const initialValue = [
                 text: 'Cats',
               },
             ],
-            id: 'vfpyl',
-            type: 'lic',
+            type: ECommonElement.LIST_CONTENT,
           },
         ],
-        id: '4marf',
-        type: 'li',
+        type: ECommonElement.LIST_ITEM,
       },
       {
         children: [
@@ -615,12 +548,10 @@ export const initialValue = [
                 text: 'Dogs',
               },
             ],
-            id: 'gvzxs',
-            type: 'lic',
+            type: ECommonElement.LIST_CONTENT,
           },
         ],
-        id: 'ydaof',
-        type: 'li',
+        type: ECommonElement.LIST_ITEM,
       },
       {
         children: [
@@ -630,8 +561,7 @@ export const initialValue = [
                 text: 'Birds',
               },
             ],
-            id: 'wayw8',
-            type: 'lic',
+            type: ECommonElement.LIST_CONTENT,
           },
           {
             children: [
@@ -643,12 +573,10 @@ export const initialValue = [
                         text: 'Parrots',
                       },
                     ],
-                    id: 'ytn6y',
-                    type: 'lic',
+                    type: ECommonElement.LIST_CONTENT,
                   },
                 ],
-                id: '34qab',
-                type: 'li',
+                type: ECommonElement.LIST_ITEM,
               },
               {
                 children: [
@@ -658,8 +586,7 @@ export const initialValue = [
                         text: 'Owls',
                       },
                     ],
-                    id: '9ubyh',
-                    type: 'lic',
+                    type: ECommonElement.LIST_CONTENT,
                   },
                   {
                     children: [
@@ -671,12 +598,10 @@ export const initialValue = [
                                 text: 'Barn Owls',
                               },
                             ],
-                            id: 'xmvx0',
-                            type: 'lic',
+                            type: ECommonElement.LIST_CONTENT,
                           },
                         ],
-                        id: '3781k',
-                        type: 'li',
+                        type: ECommonElement.LIST_ITEM,
                       },
                       {
                         children: [
@@ -686,32 +611,25 @@ export const initialValue = [
                                 text: 'Snowy Owls',
                               },
                             ],
-                            id: 'b6b2i',
-                            type: 'lic',
+                            type: ECommonElement.LIST_CONTENT,
                           },
                         ],
-                        id: '38f1r',
-                        type: 'li',
+                        type: ECommonElement.LIST_ITEM,
                       },
                     ],
-                    id: '3ovau',
-                    type: 'ul',
+                    type: ECommonElement.UNORDERED_LIST,
                   },
                 ],
-                id: 'musfw',
-                type: 'li',
+                type: ECommonElement.LIST_ITEM,
               },
             ],
-            id: 'mj7z3',
-            type: 'ul',
+            type: ECommonElement.UNORDERED_LIST,
           },
         ],
-        id: '7nf3m',
-        type: 'li',
+        type: ECommonElement.LIST_ITEM,
       },
     ],
-    id: '41',
-    type: 'ul',
+    type: ECommonElement.UNORDERED_LIST,
   },
   {
     children: [
@@ -723,12 +641,10 @@ export const initialValue = [
                 text: 'Red',
               },
             ],
-            id: 'hyny7',
-            type: 'lic',
+            type: ECommonElement.LIST_CONTENT,
           },
         ],
-        id: 'x0kuz',
-        type: 'li',
+        type: ECommonElement.LIST_ITEM,
       },
       {
         children: [
@@ -738,8 +654,7 @@ export const initialValue = [
                 text: 'Blue',
               },
             ],
-            id: '4qooa',
-            type: 'lic',
+            type: ECommonElement.LIST_CONTENT,
           },
           {
             children: [
@@ -751,12 +666,10 @@ export const initialValue = [
                         text: 'Light blue',
                       },
                     ],
-                    id: '792st',
-                    type: 'lic',
+                    type: ECommonElement.LIST_CONTENT,
                   },
                 ],
-                id: 'p7b05',
-                type: 'li',
+                type: ECommonElement.LIST_ITEM,
               },
               {
                 children: [
@@ -766,8 +679,7 @@ export const initialValue = [
                         text: 'Dark blue',
                       },
                     ],
-                    id: 'm70e9',
-                    type: 'lic',
+                    type: ECommonElement.LIST_CONTENT,
                   },
                   {
                     children: [
@@ -779,12 +691,10 @@ export const initialValue = [
                                 text: 'Navy blue',
                               },
                             ],
-                            id: 'hcljb',
-                            type: 'lic',
+                            type: ECommonElement.LIST_CONTENT,
                           },
                         ],
-                        id: 'kky7e',
-                        type: 'li',
+                        type: ECommonElement.LIST_ITEM,
                       },
                       {
                         children: [
@@ -794,28 +704,22 @@ export const initialValue = [
                                 text: 'Turquoise blue',
                               },
                             ],
-                            id: '506v5',
-                            type: 'lic',
+                            type: ECommonElement.LIST_CONTENT,
                           },
                         ],
-                        id: 'cc9ja',
-                        type: 'li',
+                        type: ECommonElement.LIST_ITEM,
                       },
                     ],
-                    id: 'kvjeg',
-                    type: 'ol',
+                    type: ECommonElement.ORDERED_LIST,
                   },
                 ],
-                id: 'x2437',
-                type: 'li',
+                type: ECommonElement.LIST_ITEM,
               },
             ],
-            id: 'uapbm',
-            type: 'ul',
+            type: ECommonElement.UNORDERED_LIST,
           },
         ],
-        id: 'kl83b',
-        type: 'li',
+        type: ECommonElement.LIST_ITEM,
       },
       {
         children: [
@@ -825,16 +729,13 @@ export const initialValue = [
                 text: 'Green',
               },
             ],
-            id: 'g7ebx',
-            type: 'lic',
+            type: ECommonElement.LIST_CONTENT,
           },
         ],
-        id: '9oa96',
-        type: 'li',
+        type: ECommonElement.LIST_ITEM,
       },
     ],
-    id: '42',
-    type: 'ol',
+    type: ECommonElement.ORDERED_LIST,
   },
   {
     children: [
@@ -842,8 +743,7 @@ export const initialValue = [
         text: '📸 Image',
       },
     ],
-    id: '43',
-    type: 'h2',
+    type: EHeadingElement.H2,
   },
   {
     children: [
@@ -851,8 +751,7 @@ export const initialValue = [
         text: 'Add images by either uploading them or providing the image URL:',
       },
     ],
-    id: '44',
-    type: 'p',
+    type: ECommonElement.PARAGRAPH,
   },
   {
     children: [
@@ -860,8 +759,7 @@ export const initialValue = [
         text: '',
       },
     ],
-    id: '45',
-    type: 'img',
+    type: ECommonElement.IMAGE,
     url: 'https://source.unsplash.com/kFrdX5IeQzI',
     width: '75%',
   },
@@ -871,8 +769,7 @@ export const initialValue = [
         text: 'Customize image captions and resize images.',
       },
     ],
-    id: '46',
-    type: 'p',
+    type: ECommonElement.PARAGRAPH,
   },
   {
     children: [
@@ -880,8 +777,7 @@ export const initialValue = [
         text: '📺 Embed',
       },
     ],
-    id: '47',
-    type: 'h2',
+    type: EHeadingElement.H2,
   },
   {
     children: [
@@ -889,8 +785,7 @@ export const initialValue = [
         text: 'Embed various types of content, such as videos and tweets:',
       },
     ],
-    id: '48',
-    type: 'p',
+    type: ECommonElement.PARAGRAPH,
   },
   {
     children: [
@@ -898,8 +793,7 @@ export const initialValue = [
         text: '',
       },
     ],
-    id: '49',
-    type: 'media_embed',
+    type: ECommonElement.VIDEO,
     url: 'https://www.youtube.com/watch?v=MyiBAziEWUA',
   },
   {
@@ -908,8 +802,7 @@ export const initialValue = [
         text: '🏓 Table',
       },
     ],
-    id: '51',
-    type: 'h2',
+    type: EHeadingElement.H2,
   },
   {
     children: [
@@ -917,8 +810,7 @@ export const initialValue = [
         text: 'Create customizable tables with resizable columns and rows, allowing you to design structured layouts.',
       },
     ],
-    id: '52',
-    type: 'p',
+    type: ECommonElement.PARAGRAPH,
   },
   {
     children: [
@@ -933,12 +825,10 @@ export const initialValue = [
                     text: 'Plugin',
                   },
                 ],
-                id: 'scxev',
-                type: 'p',
+                type: ECommonElement.PARAGRAPH,
               },
             ],
-            id: 'cdiik',
-            type: 'th',
+            type: ECommonElement.TABLE_HEADER,
           },
           {
             children: [
@@ -949,12 +839,10 @@ export const initialValue = [
                     text: 'Element',
                   },
                 ],
-                id: 'dr2d3',
-                type: 'p',
+                type: ECommonElement.PARAGRAPH,
               },
             ],
-            id: 'ekxnz',
-            type: 'th',
+            type: ECommonElement.TABLE_HEADER,
           },
           {
             children: [
@@ -965,12 +853,10 @@ export const initialValue = [
                     text: 'Inline',
                   },
                 ],
-                id: 'fi7kv',
-                type: 'p',
+                type: ECommonElement.PARAGRAPH,
               },
             ],
-            id: 'el50o',
-            type: 'th',
+            type: ECommonElement.TABLE_HEADER,
           },
           {
             children: [
@@ -981,16 +867,13 @@ export const initialValue = [
                     text: 'Void',
                   },
                 ],
-                id: 'mlaw3',
-                type: 'p',
+                type: ECommonElement.PARAGRAPH,
               },
             ],
-            id: 'ep3q3',
-            type: 'th',
+            type: ECommonElement.TABLE_HEADER,
           },
         ],
-        id: 'c7ari',
-        type: 'tr',
+        type: ECommonElement.TABLE_ROW,
       },
       {
         children: [
@@ -1003,12 +886,10 @@ export const initialValue = [
                     text: 'Heading',
                   },
                 ],
-                id: 'piopx',
-                type: 'p',
+                type: ECommonElement.PARAGRAPH,
               },
             ],
-            id: 'qq4wl',
-            type: 'td',
+            type: ECommonElement.TABLE_CELL,
           },
           {
             children: [
@@ -1018,12 +899,10 @@ export const initialValue = [
                     text: 'Yes',
                   },
                 ],
-                id: 'x50y4',
-                type: 'p',
+                type: ECommonElement.PARAGRAPH,
               },
             ],
-            id: 'tt4av',
-            type: 'td',
+            type: ECommonElement.TABLE_CELL,
           },
           {
             children: [
@@ -1033,12 +912,10 @@ export const initialValue = [
                     text: 'No',
                   },
                 ],
-                id: '5evzz',
-                type: 'p',
+                type: ECommonElement.PARAGRAPH,
               },
             ],
-            id: 'stfoa',
-            type: 'td',
+            type: ECommonElement.TABLE_CELL,
           },
           {
             children: [
@@ -1048,16 +925,13 @@ export const initialValue = [
                     text: 'No',
                   },
                 ],
-                id: 'gy468',
-                type: 'p',
+                type: ECommonElement.PARAGRAPH,
               },
             ],
-            id: '4kduc',
-            type: 'td',
+            type: ECommonElement.TABLE_CELL,
           },
         ],
-        id: 'q5lpq',
-        type: 'tr',
+        type: ECommonElement.TABLE_ROW,
       },
       {
         children: [
@@ -1070,12 +944,10 @@ export const initialValue = [
                     text: 'Image',
                   },
                 ],
-                id: 'gj96u',
-                type: 'p',
+                type: ECommonElement.PARAGRAPH,
               },
             ],
-            id: 'l2rv5',
-            type: 'td',
+            type: ECommonElement.TABLE_CELL,
           },
           {
             children: [
@@ -1085,12 +957,10 @@ export const initialValue = [
                     text: 'Yes',
                   },
                 ],
-                id: 'sqktj',
-                type: 'p',
+                type: ECommonElement.PARAGRAPH,
               },
             ],
-            id: '14rj0',
-            type: 'td',
+            type: ECommonElement.TABLE_CELL,
           },
           {
             children: [
@@ -1100,12 +970,10 @@ export const initialValue = [
                     text: 'No',
                   },
                 ],
-                id: 'usnrg',
-                type: 'p',
+                type: ECommonElement.PARAGRAPH,
               },
             ],
-            id: 'ya4g7',
-            type: 'td',
+            type: ECommonElement.TABLE_CELL,
           },
           {
             children: [
@@ -1115,16 +983,13 @@ export const initialValue = [
                     text: 'Yes',
                   },
                 ],
-                id: '9i9yo',
-                type: 'p',
+                type: ECommonElement.PARAGRAPH,
               },
             ],
-            id: 'n50tq',
-            type: 'td',
+            type: ECommonElement.TABLE_CELL,
           },
         ],
-        id: '26ggp',
-        type: 'tr',
+        type: ECommonElement.TABLE_ROW,
       },
       {
         children: [
@@ -1137,12 +1002,10 @@ export const initialValue = [
                     text: 'Mention',
                   },
                 ],
-                id: 'hqly5',
-                type: 'p',
+                type: ECommonElement.PARAGRAPH,
               },
             ],
-            id: 'funem',
-            type: 'td',
+            type: ECommonElement.TABLE_CELL,
           },
           {
             children: [
@@ -1152,12 +1015,10 @@ export const initialValue = [
                     text: 'Yes',
                   },
                 ],
-                id: 'i95n4',
-                type: 'p',
+                type: ECommonElement.PARAGRAPH,
               },
             ],
-            id: 'lmy15',
-            type: 'td',
+            type: ECommonElement.TABLE_CELL,
           },
           {
             children: [
@@ -1167,12 +1028,10 @@ export const initialValue = [
                     text: 'Yes',
                   },
                 ],
-                id: 'r0va9',
-                type: 'p',
+                type: ECommonElement.PARAGRAPH,
               },
             ],
-            id: '4jpan',
-            type: 'td',
+            type: ECommonElement.TABLE_CELL,
           },
           {
             children: [
@@ -1182,22 +1041,18 @@ export const initialValue = [
                     text: 'Yes',
                   },
                 ],
-                id: '1c365',
-                type: 'p',
+                type: ECommonElement.PARAGRAPH,
               },
             ],
-            id: 'bfmpr',
-            type: 'td',
+            type: ECommonElement.TABLE_CELL,
           },
         ],
-        id: 'u92dx',
-        type: 'tr',
+        type: ECommonElement.TABLE_ROW,
       },
     ],
     colSizes: [100, 100, 100, 100],
-    id: '53',
     marginLeft: 20,
-    type: 'table',
+    type: ECommonElement.TABLE,
   },
   {
     children: [
@@ -1205,8 +1060,7 @@ export const initialValue = [
         text: '🏃‍♀️ Autoformat',
       },
     ],
-    id: '54',
-    type: 'h2',
+    type: EHeadingElement.H2,
   },
   {
     children: [
@@ -1214,8 +1068,7 @@ export const initialValue = [
         text: 'Empower your writing experience by enabling autoformatting features. Add Markdown-like shortcuts that automatically apply formatting as you type.',
       },
     ],
-    id: '55',
-    type: 'p',
+    type: ECommonElement.PARAGRAPH,
   },
   {
     children: [
@@ -1223,8 +1076,7 @@ export const initialValue = [
         text: 'While typing, try these mark rules:',
       },
     ],
-    id: '56',
-    type: 'p',
+    type: ECommonElement.PARAGRAPH,
   },
   {
     children: [
@@ -1250,12 +1102,10 @@ export const initialValue = [
                 text: ' on either side of your text to add **bold* mark.',
               },
             ],
-            id: '8b75t',
-            type: 'lic',
+            type: ECommonElement.LIST_CONTENT,
           },
         ],
-        id: 'bkmrv',
-        type: 'li',
+        type: ECommonElement.LIST_ITEM,
       },
       {
         children: [
@@ -1279,12 +1129,10 @@ export const initialValue = [
                 text: ' on either side of your text to add *italic mark.',
               },
             ],
-            id: 'thkuz',
-            type: 'lic',
+            type: ECommonElement.LIST_CONTENT,
           },
         ],
-        id: 'h3n3t',
-        type: 'li',
+        type: ECommonElement.LIST_ITEM,
       },
       {
         children: [
@@ -1301,12 +1149,10 @@ export const initialValue = [
                 text: ' on either side of your text to add `inline code mark.',
               },
             ],
-            id: 'vp54e',
-            type: 'lic',
+            type: ECommonElement.LIST_CONTENT,
           },
         ],
-        id: 'z1aap',
-        type: 'li',
+        type: ECommonElement.LIST_ITEM,
       },
       {
         children: [
@@ -1323,12 +1169,10 @@ export const initialValue = [
                 text: ' on either side of your text to add ~~strikethrough~ mark.',
               },
             ],
-            id: 'cwbdt',
-            type: 'lic',
+            type: ECommonElement.LIST_CONTENT,
           },
         ],
-        id: 'np965',
-        type: 'li',
+        type: ECommonElement.LIST_ITEM,
       },
       {
         children: [
@@ -1338,12 +1182,10 @@ export const initialValue = [
                 text: 'Note that nothing happens when there is a character before, try on:*bold',
               },
             ],
-            id: 'dtx28',
-            type: 'lic',
+            type: ECommonElement.LIST_CONTENT,
           },
         ],
-        id: '900ws',
-        type: 'li',
+        type: ECommonElement.LIST_ITEM,
       },
       {
         children: [
@@ -1360,16 +1202,13 @@ export const initialValue = [
                 text: '.',
               },
             ],
-            id: 'ffkcb',
-            type: 'lic',
+            type: ECommonElement.LIST_CONTENT,
           },
         ],
-        id: 'vnofb',
-        type: 'li',
+        type: ECommonElement.LIST_ITEM,
       },
     ],
-    id: '57',
-    type: 'ul',
+    type: ECommonElement.UNORDERED_LIST,
   },
   {
     children: [
@@ -1377,8 +1216,7 @@ export const initialValue = [
         text: 'At the beginning of any new block or existing block, try these (block rules):',
       },
     ],
-    id: '58',
-    type: 'p',
+    type: ECommonElement.PARAGRAPH,
   },
   {
     children: [
@@ -1418,12 +1256,10 @@ export const initialValue = [
                 text: ' to create a bulleted list.',
               },
             ],
-            id: '87en8',
-            type: 'lic',
+            type: ECommonElement.LIST_CONTENT,
           },
         ],
-        id: 'c76dw',
-        type: 'li',
+        type: ECommonElement.LIST_ITEM,
       },
       {
         children: [
@@ -1454,12 +1290,10 @@ export const initialValue = [
                 text: 'to create a numbered list.',
               },
             ],
-            id: 'vg141',
-            type: 'lic',
+            type: ECommonElement.LIST_CONTENT,
           },
         ],
-        id: 'nxtam',
-        type: 'li',
+        type: ECommonElement.LIST_ITEM,
       },
       {
         children: [
@@ -1483,12 +1317,10 @@ export const initialValue = [
                 text: ' to create a block quote.',
               },
             ],
-            id: '09lap',
-            type: 'lic',
+            type: ECommonElement.LIST_CONTENT,
           },
         ],
-        id: 'ppf1f',
-        type: 'li',
+        type: ECommonElement.LIST_ITEM,
       },
       {
         children: [
@@ -1505,12 +1337,10 @@ export const initialValue = [
                 text: ' to create a code block.',
               },
             ],
-            id: 'b3j0r',
-            type: 'lic',
+            type: ECommonElement.LIST_CONTENT,
           },
         ],
-        id: 'pfgzp',
-        type: 'li',
+        type: ECommonElement.LIST_ITEM,
       },
       {
         children: [
@@ -1527,12 +1357,10 @@ export const initialValue = [
                 text: ' to create a horizontal rule.',
               },
             ],
-            id: 'p569q',
-            type: 'lic',
+            type: ECommonElement.LIST_CONTENT,
           },
         ],
-        id: '99o31',
-        type: 'li',
+        type: ECommonElement.LIST_ITEM,
       },
       {
         children: [
@@ -1556,12 +1384,10 @@ export const initialValue = [
                 text: ' to create an H1 heading.',
               },
             ],
-            id: '5xe81',
-            type: 'lic',
+            type: ECommonElement.LIST_CONTENT,
           },
         ],
-        id: '0591l',
-        type: 'li',
+        type: ECommonElement.LIST_ITEM,
       },
       {
         children: [
@@ -1585,12 +1411,10 @@ export const initialValue = [
                 text: ' to create an H2 sub-heading.',
               },
             ],
-            id: 'uyz3w',
-            type: 'lic',
+            type: ECommonElement.LIST_CONTENT,
           },
         ],
-        id: 'dr20c',
-        type: 'li',
+        type: ECommonElement.LIST_ITEM,
       },
       {
         children: [
@@ -1614,12 +1438,10 @@ export const initialValue = [
                 text: ' to create an H3 sub-heading.',
               },
             ],
-            id: 'sknst',
-            type: 'lic',
+            type: ECommonElement.LIST_CONTENT,
           },
         ],
-        id: '5rnaz',
-        type: 'li',
+        type: ECommonElement.LIST_ITEM,
       },
       {
         children: [
@@ -1643,12 +1465,10 @@ export const initialValue = [
                 text: ' to create an H4 sub-heading.',
               },
             ],
-            id: '3t5wa',
-            type: 'lic',
+            type: ECommonElement.LIST_CONTENT,
           },
         ],
-        id: 'w28sp',
-        type: 'li',
+        type: ECommonElement.LIST_ITEM,
       },
       {
         children: [
@@ -1672,12 +1492,10 @@ export const initialValue = [
                 text: ' to create an H5 sub-heading.',
               },
             ],
-            id: 'qg4zw',
-            type: 'lic',
+            type: ECommonElement.LIST_CONTENT,
           },
         ],
-        id: 'uwyt6',
-        type: 'li',
+        type: ECommonElement.LIST_ITEM,
       },
       {
         children: [
@@ -1701,16 +1519,13 @@ export const initialValue = [
                 text: ' to create an H6 sub-heading.',
               },
             ],
-            id: 'ww61j',
-            type: 'lic',
+            type: ECommonElement.LIST_CONTENT,
           },
         ],
-        id: 'a4zay',
-        type: 'li',
+        type: ECommonElement.LIST_ITEM,
       },
     ],
-    id: '59',
-    type: 'ul',
+    type: ECommonElement.UNORDERED_LIST,
   },
   {
     children: [
@@ -1718,8 +1533,7 @@ export const initialValue = [
         text: 'Soft Break ⇧⏎',
       },
     ],
-    id: '60',
-    type: 'h2',
+    type: EHeadingElement.H2,
   },
   {
     children: [
@@ -1727,8 +1541,7 @@ export const initialValue = [
         text: 'Customize how soft breaks (line breaks within a paragraph) are handled using configurable rules',
       },
     ],
-    id: '61',
-    type: 'p',
+    type: ECommonElement.PARAGRAPH,
   },
   {
     children: [
@@ -1740,12 +1553,10 @@ export const initialValue = [
                 text: 'hotkey – Use hotkeys like ⇧⏎ to insert a soft break anywhere within a paragraph.',
               },
             ],
-            id: 'dct5f',
-            type: 'lic',
+            type: ECommonElement.LIST_CONTENT,
           },
         ],
-        id: 'dv9oo',
-        type: 'li',
+        type: ECommonElement.LIST_ITEM,
       },
       {
         children: [
@@ -1755,16 +1566,13 @@ export const initialValue = [
                 text: 'query – Define custom rules to limit soft breaks to specific block types.',
               },
             ],
-            id: 'z1aeg',
-            type: 'lic',
+            type: ECommonElement.LIST_CONTENT,
           },
         ],
-        id: 'ie17v',
-        type: 'li',
+        type: ECommonElement.LIST_ITEM,
       },
     ],
-    id: '62',
-    type: 'ul',
+    type: ECommonElement.UNORDERED_LIST,
   },
   {
     children: [
@@ -1772,8 +1580,7 @@ export const initialValue = [
         text: 'Try here ⏎',
       },
     ],
-    id: '63',
-    type: 'blockquote',
+    type: ECommonElement.BLOCK_QUOTE,
   },
   {
     children: [
@@ -1783,12 +1590,10 @@ export const initialValue = [
             text: 'And here ⏎ as well.',
           },
         ],
-        id: 'txjya',
-        type: 'code_line',
+        type: ECommonElement.CODE_LINE,
       },
     ],
-    id: '64',
-    type: 'code_block',
+    type: ECommonElement.CODE_BLOCK,
   },
   {
     children: [
@@ -1796,8 +1601,7 @@ export const initialValue = [
         text: 'Exit Break ⏎',
       },
     ],
-    id: '65',
-    type: 'h2',
+    type: EHeadingElement.H2,
   },
   {
     children: [
@@ -1805,8 +1609,7 @@ export const initialValue = [
         text: 'Configure how exit breaks (line breaks between blocks) behave using simple rules:',
       },
     ],
-    id: '66',
-    type: 'p',
+    type: ECommonElement.PARAGRAPH,
   },
   {
     children: [
@@ -1818,12 +1621,10 @@ export const initialValue = [
                 text: 'hotkey – Use hotkeys like ⌘⏎ to move the cursor to the next block',
               },
             ],
-            id: '0scv1',
-            type: 'lic',
+            type: ECommonElement.LIST_CONTENT,
           },
         ],
-        id: '8l60p',
-        type: 'li',
+        type: ECommonElement.LIST_ITEM,
       },
       {
         children: [
@@ -1833,12 +1634,10 @@ export const initialValue = [
                 text: 'query – Specify block types where exit breaks are allowed.',
               },
             ],
-            id: 'r6vdk',
-            type: 'lic',
+            type: ECommonElement.LIST_CONTENT,
           },
         ],
-        id: 'ui4bd',
-        type: 'li',
+        type: ECommonElement.LIST_ITEM,
       },
       {
         children: [
@@ -1848,16 +1647,13 @@ export const initialValue = [
                 text: 'before – Choose whether the cursor exits to the next or previous block',
               },
             ],
-            id: '90gv2',
-            type: 'lic',
+            type: ECommonElement.LIST_CONTENT,
           },
         ],
-        id: 'c3ewm',
-        type: 'li',
+        type: ECommonElement.LIST_ITEM,
       },
     ],
-    id: '67',
-    type: 'ul',
+    type: ECommonElement.UNORDERED_LIST,
   },
   {
     children: [
@@ -1865,8 +1661,7 @@ export const initialValue = [
         text: 'Try here ⌘⏎',
       },
     ],
-    id: '68',
-    type: 'blockquote',
+    type: ECommonElement.BLOCK_QUOTE,
   },
   {
     children: [
@@ -1876,12 +1671,10 @@ export const initialValue = [
             text: 'And in the middle ⌘⏎ of a block.',
           },
         ],
-        id: 'nqagl',
-        type: 'code_line',
+        type: ECommonElement.CODE_LINE,
       },
     ],
-    id: '69',
-    type: 'code_block',
+    type: ECommonElement.CODE_BLOCK,
   },
   {
     children: [
@@ -1889,8 +1682,7 @@ export const initialValue = [
         text: 'Exit breaks also work within nested blocks:',
       },
     ],
-    id: '70',
-    type: 'p',
+    type: ECommonElement.PARAGRAPH,
   },
   {
     children: [
@@ -1905,12 +1697,10 @@ export const initialValue = [
                     text: 'Plugin',
                   },
                 ],
-                id: '89yd0',
-                type: 'p',
+                type: ECommonElement.PARAGRAPH,
               },
             ],
-            id: 'l1a9a',
-            type: 'th',
+            type: ECommonElement.TABLE_HEADER,
           },
           {
             children: [
@@ -1921,12 +1711,10 @@ export const initialValue = [
                     text: 'Element',
                   },
                 ],
-                id: '0zek7',
-                type: 'p',
+                type: ECommonElement.PARAGRAPH,
               },
             ],
-            id: 'c4ct7',
-            type: 'th',
+            type: ECommonElement.TABLE_HEADER,
           },
           {
             children: [
@@ -1937,12 +1725,10 @@ export const initialValue = [
                     text: 'Inline',
                   },
                 ],
-                id: '9bnqp',
-                type: 'p',
+                type: ECommonElement.PARAGRAPH,
               },
             ],
-            id: 'xkfx9',
-            type: 'th',
+            type: ECommonElement.TABLE_HEADER,
           },
           {
             children: [
@@ -1953,16 +1739,13 @@ export const initialValue = [
                     text: 'Void',
                   },
                 ],
-                id: 'glfao',
-                type: 'p',
+                type: ECommonElement.PARAGRAPH,
               },
             ],
-            id: '1vab8',
-            type: 'th',
+            type: ECommonElement.TABLE_HEADER,
           },
         ],
-        id: 'xuqho',
-        type: 'tr',
+        type: ECommonElement.TABLE_ROW,
       },
       {
         children: [
@@ -1975,12 +1758,10 @@ export const initialValue = [
                     text: 'Heading',
                   },
                 ],
-                id: 'amlvb',
-                type: 'p',
+                type: ECommonElement.PARAGRAPH,
               },
             ],
-            id: 'cep94',
-            type: 'td',
+            type: ECommonElement.TABLE_CELL,
           },
           {
             children: [
@@ -1990,12 +1771,10 @@ export const initialValue = [
                     text: 'Yes',
                   },
                 ],
-                id: '69cgk',
-                type: 'p',
+                type: ECommonElement.PARAGRAPH,
               },
             ],
-            id: 'oelt7',
-            type: 'td',
+            type: ECommonElement.TABLE_CELL,
           },
           {
             children: [
@@ -2005,12 +1784,10 @@ export const initialValue = [
                     text: 'No',
                   },
                 ],
-                id: 'zam3r',
-                type: 'p',
+                type: ECommonElement.PARAGRAPH,
               },
             ],
-            id: '6zjb2',
-            type: 'td',
+            type: ECommonElement.TABLE_CELL,
           },
           {
             children: [
@@ -2020,16 +1797,13 @@ export const initialValue = [
                     text: 'No',
                   },
                 ],
-                id: 'ph3ha',
-                type: 'p',
+                type: ECommonElement.PARAGRAPH,
               },
             ],
-            id: 'tss1e',
-            type: 'td',
+            type: ECommonElement.TABLE_CELL,
           },
         ],
-        id: 'rydxt',
-        type: 'tr',
+        type: ECommonElement.TABLE_ROW,
       },
       {
         children: [
@@ -2042,12 +1816,10 @@ export const initialValue = [
                     text: 'Image',
                   },
                 ],
-                id: '0rsay',
-                type: 'p',
+                type: ECommonElement.PARAGRAPH,
               },
             ],
-            id: 'cj8eo',
-            type: 'td',
+            type: ECommonElement.TABLE_CELL,
           },
           {
             children: [
@@ -2057,12 +1829,10 @@ export const initialValue = [
                     text: 'Yes',
                   },
                 ],
-                id: 's69lp',
-                type: 'p',
+                type: ECommonElement.PARAGRAPH,
               },
             ],
-            id: '5axk4',
-            type: 'td',
+            type: ECommonElement.TABLE_CELL,
           },
           {
             children: [
@@ -2072,12 +1842,10 @@ export const initialValue = [
                     text: 'No',
                   },
                 ],
-                id: 'e35zs',
-                type: 'p',
+                type: ECommonElement.PARAGRAPH,
               },
             ],
-            id: 'r1xy5',
-            type: 'td',
+            type: ECommonElement.TABLE_CELL,
           },
           {
             children: [
@@ -2087,16 +1855,13 @@ export const initialValue = [
                     text: 'Yes',
                   },
                 ],
-                id: 'krltb',
-                type: 'p',
+                type: ECommonElement.PARAGRAPH,
               },
             ],
-            id: '3tkrr',
-            type: 'td',
+            type: ECommonElement.TABLE_CELL,
           },
         ],
-        id: 'd03c9',
-        type: 'tr',
+        type: ECommonElement.TABLE_ROW,
       },
       {
         children: [
@@ -2109,12 +1874,10 @@ export const initialValue = [
                     text: 'Mention',
                   },
                 ],
-                id: '2m5mh',
-                type: 'p',
+                type: ECommonElement.PARAGRAPH,
               },
             ],
-            id: 'udv8e',
-            type: 'td',
+            type: ECommonElement.TABLE_CELL,
           },
           {
             children: [
@@ -2124,12 +1887,10 @@ export const initialValue = [
                     text: 'Yes',
                   },
                 ],
-                id: 'tsfkl',
-                type: 'p',
+                type: ECommonElement.PARAGRAPH,
               },
             ],
-            id: '508yk',
-            type: 'td',
+            type: ECommonElement.TABLE_CELL,
           },
           {
             children: [
@@ -2139,12 +1900,10 @@ export const initialValue = [
                     text: 'Yes',
                   },
                 ],
-                id: 'bao8p',
-                type: 'p',
+                type: ECommonElement.PARAGRAPH,
               },
             ],
-            id: '67w0a',
-            type: 'td',
+            type: ECommonElement.TABLE_CELL,
           },
           {
             children: [
@@ -2154,22 +1913,18 @@ export const initialValue = [
                     text: 'Yes',
                   },
                 ],
-                id: 'hioi1',
-                type: 'p',
+                type: ECommonElement.PARAGRAPH,
               },
             ],
-            id: '10kpz',
-            type: 'td',
+            type: ECommonElement.TABLE_CELL,
           },
         ],
-        id: '18yer',
-        type: 'tr',
+        type: ECommonElement.TABLE_ROW,
       },
     ],
     colSizes: [100, 100, 100, 100],
-    id: '71',
     marginLeft: 20,
-    type: 'table',
+    type: ECommonElement.TABLE,
   },
   {
     children: [
@@ -2177,8 +1932,7 @@ export const initialValue = [
         text: 'Cursor Overlay',
       },
     ],
-    id: '72',
-    type: 'h2',
+    type: EHeadingElement.H2,
   },
   {
     children: [
@@ -2186,8 +1940,7 @@ export const initialValue = [
         text: 'Try to drag over text: you will see a black cursor on the drop target: color and other styles are customizable!',
       },
     ],
-    id: '73',
-    type: 'p',
+    type: ECommonElement.PARAGRAPH,
   },
   {
     children: [
@@ -2195,8 +1948,7 @@ export const initialValue = [
         text: 'Tabbable',
       },
     ],
-    id: '74',
-    type: 'h2',
+    type: EHeadingElement.H2,
   },
   {
     children: [
@@ -2204,8 +1956,7 @@ export const initialValue = [
         text: 'Ensure a smooth tab navigation experience within your editor with the Tabbable plugin.',
       },
     ],
-    id: '75',
-    type: 'p',
+    type: ECommonElement.PARAGRAPH,
   },
   {
     children: [
@@ -2213,8 +1964,7 @@ export const initialValue = [
         text: 'Properly handle tab orders for void nodes, allowing for seamless navigation and interaction. Without this plugin, DOM elements inside void nodes come after the editor in the tab order.',
       },
     ],
-    id: '76',
-    type: 'p',
+    type: ECommonElement.PARAGRAPH,
   },
   {
     children: [
@@ -2222,8 +1972,7 @@ export const initialValue = [
         text: '',
       },
     ],
-    id: '77',
-    type: 'tabbable_element',
+    type: ECommonElement.TABBABLE,
   },
   {
     children: [
@@ -2231,8 +1980,7 @@ export const initialValue = [
         text: '',
       },
     ],
-    id: '78',
-    type: 'tabbable_element',
+    type: ECommonElement.TABBABLE,
   },
   {
     children: [
@@ -2240,8 +1988,7 @@ export const initialValue = [
         text: 'Place your cursor here and try pressing tab or shift+tab.',
       },
     ],
-    id: '79',
-    type: 'p',
+    type: ECommonElement.PARAGRAPH,
   },
   {
     children: [
@@ -2253,12 +2000,10 @@ export const initialValue = [
                 text: 'List item 1',
               },
             ],
-            id: 'xk3ml',
-            type: 'lic',
+            type: ECommonElement.LIST_CONTENT,
           },
         ],
-        id: 'dks7j',
-        type: 'li',
+        type: ECommonElement.LIST_ITEM,
       },
       {
         children: [
@@ -2268,12 +2013,10 @@ export const initialValue = [
                 text: 'List item 2',
               },
             ],
-            id: 'fjbpw',
-            type: 'lic',
+            type: ECommonElement.LIST_CONTENT,
           },
         ],
-        id: 'xl1vd',
-        type: 'li',
+        type: ECommonElement.LIST_ITEM,
       },
       {
         children: [
@@ -2283,16 +2026,13 @@ export const initialValue = [
                 text: 'List item 3',
               },
             ],
-            id: 'chzg6',
-            type: 'lic',
+            type: ECommonElement.LIST_CONTENT,
           },
         ],
-        id: '7gu4i',
-        type: 'li',
+        type: ECommonElement.LIST_ITEM,
       },
     ],
-    id: '80',
-    type: 'ul',
+    type: ECommonElement.UNORDERED_LIST,
   },
   {
     children: [
@@ -2302,8 +2042,7 @@ export const initialValue = [
             text: 'if (true) {',
           },
         ],
-        id: 'n8lam',
-        type: 'code_line',
+        type: ECommonElement.CODE_LINE,
       },
       {
         children: [
@@ -2311,8 +2050,7 @@ export const initialValue = [
             text: '// <- Place cursor at start of line and press tab',
           },
         ],
-        id: 'rwse1',
-        type: 'code_line',
+        type: ECommonElement.CODE_LINE,
       },
       {
         children: [
@@ -2320,13 +2058,11 @@ export const initialValue = [
             text: '}',
           },
         ],
-        id: 'we1i0',
-        type: 'code_line',
+        type: ECommonElement.CODE_LINE,
       },
     ],
-    id: '81',
-    lang: 'javascript',
-    type: 'code_block',
+    codeLang: 'javascript',
+    type: ECommonElement.CODE_BLOCK,
   },
   {
     children: [
@@ -2341,8 +2077,7 @@ export const initialValue = [
         text: ' option.',
       },
     ],
-    id: '82',
-    type: 'p',
+    type: ECommonElement.PARAGRAPH,
   },
   {
     children: [
@@ -2350,8 +2085,7 @@ export const initialValue = [
         text: '',
       },
     ],
-    id: '83',
-    type: 'tabbable_element',
+    type: ECommonElement.TABBABLE,
   },
   {
     children: [
@@ -2359,8 +2093,7 @@ export const initialValue = [
         text: 'When you press tab at the end of the editor, the focus should go to the button below.',
       },
     ],
-    id: '84',
-    type: 'p',
+    type: ECommonElement.PARAGRAPH,
   },
   {
     children: [
@@ -2368,8 +2101,7 @@ export const initialValue = [
         text: '💬 Comments',
       },
     ],
-    id: '85',
-    type: 'h2',
+    type: EHeadingElement.H2,
   },
   {
     children: [
@@ -2377,24 +2109,19 @@ export const initialValue = [
         text: 'Add ',
       },
       {
-        comment: true,
-        comment_1: true,
         text: 'comments to your content',
       },
       {
         text: ' to provide additional context, insights, or ',
       },
       {
-        comment: true,
-        comment_2: true,
         text: 'collaborate',
       },
       {
         text: '  with others',
       },
     ],
-    id: '86',
-    type: 'p',
+    type: ECommonElement.PARAGRAPH,
   },
   {
     children: [
@@ -2402,8 +2129,7 @@ export const initialValue = [
         text: 'Deserialize HTML',
       },
     ],
-    id: '87',
-    type: 'h2',
+    type: EHeadingElement.H2,
   },
   {
     children: [
@@ -2425,8 +2151,7 @@ export const initialValue = [
         text: 'data.',
       },
     ],
-    id: '88',
-    type: 'p',
+    type: ECommonElement.PARAGRAPH,
   },
   {
     children: [
@@ -2434,8 +2159,7 @@ export const initialValue = [
         text: "To experience the seamless preservation of formatting, simply copy and paste rendered HTML rich text content (not the source code) from another website into this editor. You'll notice that the formatting of the pasted content is maintained.",
       },
     ],
-    id: '89',
-    type: 'p',
+    type: ECommonElement.PARAGRAPH,
   },
   {
     children: [
@@ -2443,8 +2167,7 @@ export const initialValue = [
         text: 'Deserialize Markdown',
       },
     ],
-    id: '90',
-    type: 'h2',
+    type: EHeadingElement.H2,
   },
   {
     children: [
@@ -2457,16 +2180,14 @@ export const initialValue = [
             text: 'markdown-it.github.io/',
           },
         ],
-        id: 'izqc9',
-        type: 'a',
+        type: ECommonElement.LINK,
         url: 'https://markdown-it.github.io/',
       },
       {
         text: ' into the editor for easy conversion and editing.',
       },
     ],
-    id: '91',
-    type: 'p',
+    type: ECommonElement.PARAGRAPH,
   },
   {
     children: [
@@ -2474,8 +2195,7 @@ export const initialValue = [
         text: 'Deserialize Docx',
       },
     ],
-    id: '92',
-    type: 'h2',
+    type: EHeadingElement.H2,
   },
   {
     children: [
@@ -2483,8 +2203,7 @@ export const initialValue = [
         text: 'Easily import content from Microsoft Word documents by simply copying and pasting the Docx content into the editor.',
       },
     ],
-    id: '93',
-    type: 'p',
+    type: ECommonElement.PARAGRAPH,
   },
   {
     children: [
@@ -2492,8 +2211,7 @@ export const initialValue = [
         text: 'Deserialize CSV',
       },
     ],
-    id: '94',
-    type: 'h2',
+    type: EHeadingElement.H2,
   },
   {
     children: [
@@ -2501,8 +2219,7 @@ export const initialValue = [
         text: 'Copy and paste CSV content into a table.',
       },
     ],
-    id: '95',
-    type: 'p',
+    type: ECommonElement.PARAGRAPH,
   },
   {
     children: [
@@ -2510,8 +2227,7 @@ export const initialValue = [
         text: 'Trailing Block',
       },
     ],
-    id: '96',
-    type: 'h2',
+    type: EHeadingElement.H2,
   },
   {
     children: [
@@ -2519,8 +2235,7 @@ export const initialValue = [
         text: 'Always have a trailing paragraph at the end of your editor.',
       },
     ],
-    id: '97',
-    type: 'p',
+    type: ECommonElement.PARAGRAPH,
   },
   {
     children: [
@@ -2528,8 +2243,7 @@ export const initialValue = [
         text: 'Excalidraw',
       },
     ],
-    id: '98',
-    type: 'h2',
+    type: EHeadingElement.H2,
   },
   {
     children: [
@@ -2537,8 +2251,7 @@ export const initialValue = [
         text: 'Unleash your creativity with the Excalidraw plugin, which enables you to embed and draw diagrams directly within your editor.',
       },
     ],
-    id: '99',
-    type: 'p',
+    type: ECommonElement.PARAGRAPH,
   },
   {
     children: [
@@ -2546,15 +2259,14 @@ export const initialValue = [
         text: '',
       },
     ],
-    data: {
+    excalidrawData: {
       elements: [
         {
           angle: 0,
-          backgroundColor: 'transparent',
           fillStyle: 'hachure',
           groupIds: [],
           height: 141.9765625,
-          id: 'oDVXy8D6rom3H1-LLH2-f',
+          highlight: 'transparent',
           isDeleted: false,
           opacity: 100,
           roughness: 1,
@@ -2571,11 +2283,10 @@ export const initialValue = [
         },
         {
           angle: 0,
-          backgroundColor: 'transparent',
           fillStyle: 'hachure',
           groupIds: [],
           height: 129.51171875,
-          id: '-xMIs_0jIFqvpx-R9UnaG',
+          highlight: 'transparent',
           isDeleted: false,
           opacity: 100,
           roughness: 1,
@@ -2593,11 +2304,10 @@ export const initialValue = [
       ],
       state: {
         currentItemFontFamily: 1,
-        viewBackgroundColor: '#AFEEEE',
+        viewhighlight: '#AFEEEE',
       },
     },
-    id: '100',
-    type: 'excalidraw',
+    type: ECommonElement.EXCALIDRAW,
   },
   {
     children: [
@@ -2605,7 +2315,6 @@ export const initialValue = [
         text: '',
       },
     ],
-    id: 'qkzld',
-    type: 'p',
+    type: ECommonElement.PARAGRAPH,
   },
 ]
