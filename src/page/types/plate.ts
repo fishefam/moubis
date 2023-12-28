@@ -7,12 +7,12 @@ export enum EElement {
   CODE_LINE = 'codeLine',
   DIVIDER = 'divider',
   EXCALIDRAW = 'excalidraw',
-  H1 = 'h1',
-  H2 = 'h2',
-  H3 = 'h3',
-  H4 = 'h4',
-  H5 = 'h5',
-  H6 = 'h6',
+  HEADING_1 = 'h1',
+  HEADING_2 = 'h2',
+  HEADING_3 = 'h3',
+  HEADING_4 = 'h4',
+  HEADING_5 = 'h5',
+  HEADING_6 = 'h6',
   IMAGE = 'image',
   LATEX = 'latex',
   LINK = 'link',
@@ -68,8 +68,6 @@ export type TElement = {
   excalidrawData?: TExcalidrawData
   id?: string
   indent?: number
-  isInline?: true
-  isVoid?: true
   lineHeight?: number
   listItemType?: ListStyleType
   marginBottom?: number

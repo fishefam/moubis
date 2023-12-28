@@ -14,7 +14,7 @@ export const initialValue: TDocument = [
         text: '🌳Blocks',
       },
     ],
-    type: EElement.H1,
+    type: EElement.HEADING_1,
   },
   {
     children: [
@@ -114,7 +114,7 @@ export const initialValue: TDocument = [
         text: '🔗 Link',
       },
     ],
-    type: EElement.H2,
+    type: EElement.HEADING_2,
   },
   {
     children: [
@@ -150,7 +150,7 @@ export const initialValue: TDocument = [
         text: '🌱 Marks',
       },
     ],
-    type: EElement.H1,
+    type: EElement.HEADING_1,
   },
   {
     children: [
@@ -334,7 +334,7 @@ export const initialValue: TDocument = [
         text: '＠ Mention',
       },
     ],
-    type: EElement.H2,
+    type: EElement.HEADING_2,
   },
   {
     children: [
@@ -382,7 +382,7 @@ export const initialValue: TDocument = [
         text: "🙂 Emoji's",
       },
     ],
-    type: EElement.H2,
+    type: EElement.HEADING_2,
   },
   {
     children: [
@@ -407,7 +407,7 @@ export const initialValue: TDocument = [
         text: 'Alignment',
       },
     ],
-    type: EElement.H2,
+    type: EElement.HEADING_2,
   },
   {
     align: EAlign.RIGHT,
@@ -425,7 +425,7 @@ export const initialValue: TDocument = [
         text: 'Center',
       },
     ],
-    type: EElement.H3,
+    type: EElement.HEADING_3,
   },
   {
     align: EAlign.JUSTIFY,
@@ -442,7 +442,7 @@ export const initialValue: TDocument = [
         text: 'Line Height',
       },
     ],
-    type: EElement.H2,
+    type: EElement.HEADING_2,
   },
   {
     children: [
@@ -467,7 +467,7 @@ export const initialValue: TDocument = [
         text: 'Indentation',
       },
     ],
-    type: EElement.H2,
+    type: EElement.HEADING_2,
   },
   {
     children: [
@@ -493,12 +493,12 @@ export const initialValue: TDocument = [
         text: 'Horizontal Rule',
       },
     ],
-    type: EElement.H2,
+    type: EElement.HEADING_2,
   },
   {
     children: [
       {
-        text: 'Add horizontal rules to visually separate sections and content within your document.',
+        text: 'Add mhorizontal rules to visually separate sections and content within your document.',
       },
     ],
     type: EElement.PARAGRAPH,
@@ -517,7 +517,7 @@ export const initialValue: TDocument = [
         text: '✍️ List',
       },
     ],
-    type: EElement.H2,
+    type: EElement.HEADING_2,
   },
   {
     children: [
@@ -745,7 +745,7 @@ export const initialValue: TDocument = [
         text: '📸 Image',
       },
     ],
-    type: EElement.H2,
+    type: EElement.HEADING_2,
   },
   {
     children: [
@@ -779,7 +779,7 @@ export const initialValue: TDocument = [
         text: '📺 Embed',
       },
     ],
-    type: EElement.H2,
+    type: EElement.HEADING_2,
   },
   {
     children: [
@@ -804,7 +804,7 @@ export const initialValue: TDocument = [
         text: '🏓 Table',
       },
     ],
-    type: EElement.H2,
+    type: EElement.HEADING_2,
   },
   {
     children: [
@@ -1062,7 +1062,7 @@ export const initialValue: TDocument = [
         text: '🏃‍♀️ Autoformat',
       },
     ],
-    type: EElement.H2,
+    type: EElement.HEADING_2,
   },
   {
     children: [
@@ -1535,7 +1535,7 @@ export const initialValue: TDocument = [
         text: 'Soft Break ⇧⏎',
       },
     ],
-    type: EElement.H2,
+    type: EElement.HEADING_2,
   },
   {
     children: [
@@ -1603,7 +1603,7 @@ export const initialValue: TDocument = [
         text: 'Exit Break ⏎',
       },
     ],
-    type: EElement.H2,
+    type: EElement.HEADING_2,
   },
   {
     children: [
@@ -1934,7 +1934,7 @@ export const initialValue: TDocument = [
         text: 'Cursor Overlay',
       },
     ],
-    type: EElement.H2,
+    type: EElement.HEADING_2,
   },
   {
     children: [
@@ -1950,7 +1950,7 @@ export const initialValue: TDocument = [
         text: 'Tabbable',
       },
     ],
-    type: EElement.H2,
+    type: EElement.HEADING_2,
   },
   {
     children: [
@@ -2103,7 +2103,7 @@ export const initialValue: TDocument = [
         text: '💬 Comments',
       },
     ],
-    type: EElement.H2,
+    type: EElement.HEADING_2,
   },
   {
     children: [
@@ -2131,7 +2131,7 @@ export const initialValue: TDocument = [
         text: 'Deserialize HTML',
       },
     ],
-    type: EElement.H2,
+    type: EElement.HEADING_2,
   },
   {
     children: [
@@ -2169,7 +2169,7 @@ export const initialValue: TDocument = [
         text: 'Deserialize Markdown',
       },
     ],
-    type: EElement.H2,
+    type: EElement.HEADING_2,
   },
   {
     children: [
@@ -2197,7 +2197,7 @@ export const initialValue: TDocument = [
         text: 'Deserialize Docx',
       },
     ],
-    type: EElement.H2,
+    type: EElement.HEADING_2,
   },
   {
     children: [
@@ -2213,7 +2213,7 @@ export const initialValue: TDocument = [
         text: 'Deserialize CSV',
       },
     ],
-    type: EElement.H2,
+    type: EElement.HEADING_2,
   },
   {
     children: [
@@ -2229,7 +2229,7 @@ export const initialValue: TDocument = [
         text: 'Trailing Block',
       },
     ],
-    type: EElement.H2,
+    type: EElement.HEADING_2,
   },
   {
     children: [
@@ -2245,7 +2245,7 @@ export const initialValue: TDocument = [
         text: 'Excalidraw',
       },
     ],
-    type: EElement.H2,
+    type: EElement.HEADING_2,
   },
   {
     children: [

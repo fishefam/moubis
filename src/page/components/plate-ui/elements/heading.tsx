@@ -5,28 +5,25 @@ import { EElement } from '@/types/plate'
 import { PlateElement } from '@udecode/plate'
 
 export function ElementHeading({ children, ...props }: TPlateElementProps) {
-  const tag = getHeadingTag(props.element.type)
-  const headingStyle = getHeadingStyle(tag)
+  const Tag = getHeadingTag(props.element.type)
+  const headingStyle = getHeadingStyle(Tag)
 
   return (
     <PlateElement
-      as={tag}
-      className='text-lg font-bold'
       data-node-id={props.element.id}
-      style={{ ...headingStyle, textAlign: props.element.align ?? 'left', width: '100%' }}
       {...props}
     >
-      {children}
+      <Tag style={{ ...headingStyle, textAlign: props.element.align ?? 'left', width: '100%' }}>{children}</Tag>
     </PlateElement>
   )
 }
 
 function getHeadingTag(type: EElement) {
-  if (type === EElement.H1) return 'h1'
-  if (type === EElement.H2) return 'h2'
-  if (type === EElement.H3) return 'h3'
-  if (type === EElement.H4) return 'h4'
-  if (type === EElement.H5) return 'h5'
+  if (type === EElement.HEADING_1) return 'h1'
+  if (type === EElement.HEADING_2) return 'h2'
+  if (type === EElement.HEADING_3) return 'h3'
+  if (type === EElement.HEADING_4) return 'h4'
+  if (type === EElement.HEADING_5) return 'h5'
   return 'h6'
 }
 

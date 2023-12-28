@@ -1,5 +1,6 @@
 import { ElementDivider } from '@/components/plate-ui/elements/divider'
 import { ElementHeading } from '@/components/plate-ui/elements/heading'
+import { ElementImage } from '@/components/plate-ui/elements/image'
 import { ElementParagraph } from '@/components/plate-ui/elements/paragraph'
 import { LeafBold } from '@/components/plate-ui/leafs/bold'
 import { LeafHighlight } from '@/components/plate-ui/leafs/highlight'
@@ -14,6 +15,7 @@ import {
   createHeadingPlugin,
   createHighlightPlugin,
   createHorizontalRulePlugin,
+  createImagePlugin,
   createItalicPlugin,
   createNodeIdPlugin,
   createParagraphPlugin,
@@ -25,27 +27,34 @@ import {
 
 export const plugins = createPlugins(
   [
-    createBoldPlugin({ key: EMark.BOLD }),
-    createItalicPlugin({ key: EMark.ITALIC }),
-    createUnderlinePlugin({ key: EMark.UNDERLINE }),
-    createStrikethroughPlugin({ key: EMark.STRIKETHROUGH }),
-    createHighlightPlugin({ key: EMark.HIGHLIGHT }),
-    createParagraphPlugin({ key: EElement.PARAGRAPH }),
+    /* Elements */
     createHeadingPlugin(),
+    createHorizontalRulePlugin({ isVoid: true, key: EElement.DIVIDER }),
+    createImagePlugin({ key: EElement.IMAGE }),
+    createParagraphPlugin({ key: EElement.PARAGRAPH }),
+
+    /* Marks */
+    createBoldPlugin({ key: EMark.BOLD }),
+    createHighlightPlugin({ key: EMark.HIGHLIGHT }),
+    createItalicPlugin({ key: EMark.ITALIC }),
+    createStrikethroughPlugin({ key: EMark.STRIKETHROUGH }),
     createSubscriptPlugin({ key: EMark.SUBSCRIPT }),
     createSubscriptPlugin({ key: EMark.SUPERSCRIPT }),
-    createHorizontalRulePlugin({ isVoid: true, key: EElement.DIVIDER }),
+    createUnderlinePlugin({ key: EMark.UNDERLINE }),
+
+    /* Functionalities */
     createNodeIdPlugin({ options: { idCreator: nanoid } }),
   ],
   {
     components: {
       [EElement.DIVIDER]: ElementDivider,
-      [EElement.H1]: ElementHeading,
-      [EElement.H2]: ElementHeading,
-      [EElement.H3]: ElementHeading,
-      [EElement.H4]: ElementHeading,
-      [EElement.H5]: ElementHeading,
-      [EElement.H6]: ElementHeading,
+      [EElement.HEADING_1]: ElementHeading,
+      [EElement.HEADING_2]: ElementHeading,
+      [EElement.HEADING_3]: ElementHeading,
+      [EElement.HEADING_4]: ElementHeading,
+      [EElement.HEADING_5]: ElementHeading,
+      [EElement.HEADING_6]: ElementHeading,
+      [EElement.IMAGE]: ElementImage,
       [EElement.PARAGRAPH]: ElementParagraph,
       [EMark.BOLD]: LeafBold,
       [EMark.HIGHLIGHT]: LeafHighlight,
