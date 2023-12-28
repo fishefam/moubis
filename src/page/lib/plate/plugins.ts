@@ -1,14 +1,12 @@
-import { ElementDivider } from '@/components/plate-ui/elements/divider'
 import { ElementHeading } from '@/components/plate-ui/elements/heading'
-import { ElementImage } from '@/components/plate-ui/elements/image'
 import { ElementParagraph } from '@/components/plate-ui/elements/paragraph'
 import { LeafBold } from '@/components/plate-ui/leafs/bold'
 import { LeafHighlight } from '@/components/plate-ui/leafs/highlight'
 import { LeafItalic } from '@/components/plate-ui/leafs/italic'
 import { LeafStrikethrough } from '@/components/plate-ui/leafs/strikethrough'
 import { LeafSubSuperscript } from '@/components/plate-ui/leafs/subscript'
-import { LeafUnderline } from '@/components/plate-ui/leafs/underline'
-import { nanoid } from '@/lib/util'
+import { ElementDivider } from '@/components/plate-ui/voids/divider'
+import { ElementImage } from '@/components/plate-ui/voids/image'
 import { EElement, EMark } from '@/types/plate'
 import {
   createBoldPlugin,
@@ -24,6 +22,9 @@ import {
   createSubscriptPlugin,
   createUnderlinePlugin,
 } from '@udecode/plate'
+import { nanoid } from 'nanoid'
+
+import { LeafUnderline } from './underline'
 
 export const plugins = createPlugins(
   [
