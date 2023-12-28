@@ -2,7 +2,7 @@ import type { PlateEditor } from '@udecode/plate'
 
 import { TextEditor } from '@/components/text-editor'
 import { plugins } from '@/lib/plate/plugins'
-import { getExtensionBaseUrl, nanoid } from '@/lib/utils'
+import { getExtensionBaseUrl, nanoid } from '@/lib/util'
 import { createPlateEditor } from '@udecode/plate'
 import { MathJaxContext } from 'better-react-mathjax'
 import { createContext } from 'react'

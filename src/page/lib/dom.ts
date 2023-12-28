@@ -1,4 +1,4 @@
-import { toArray } from './utils'
+import { toArray } from './util'
 
 type CreateElementOptions<T> = {
   attributes?: Array<[string, string]>

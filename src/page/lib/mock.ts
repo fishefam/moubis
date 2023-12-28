@@ -1,6 +1,6 @@
 import type { TDocument } from '@/types/plate'
 
-import { EAlign, ECommonElement, EHeadingElement } from '@/types/plate'
+import { EAlign, EElement } from '@/types/plate'
 
 export const html =
   '<p>Y<span class="inline numeric" contenteditable="false" data-questiontext="%3Cinput%20type%3D%22text%22%20size%3D%2220%22%20value%3D%22Numeric%20with%20Units%22%20class%3D%22blankdisabled%20form-control%22%20readonly%3D%22readonly%22%3E" data-source="mode%3DNumeric%40negStyle%3Dminus%40grading%3Dexact_value%40name%3DresponseNaN%40answer.num%3D43%40numStyle%3Dthousands%20scientific%20%20arithmetic%40comment%3D%40weighting%3D1%40answer.units%3Dff%40showUnits%3Dtrue%40" id="sro_id_1" style="display:inline" title="Double-click the response area to edit">&zwnj;</span><span>&nbsp;</span>OOOOOOOOOOOOO IT WORKDS NOWWWWWWWWW</p><p>testing new one stuffwdraftedork great agin</p><div class="question-container"><div class="input-container"><div><label for="radius-range">Radius</label><input class="radius-range" id="radius-range" type="range"></div><fieldset><legend>Position</legend><div><label for="x-range">Left Right</label><input class="x-range" id="x-range" max="500" type="range"></div><div><label for="y-range">Up Down</label><input class="y-range" id="y-range" max="300" type="range"></div></fieldset><fieldset><legend>Color</legend><div><label for="red-range">Red</label><input class="red-range" defaultvalue="50" id="red-range" max="255" type="range"></div><div><label for="green-range">Green</label><input class="green-range" defaultvalue="50" id="green-range" max="255" type="range"></div><div><label for="blue-range">Blue</label><input class="blue-range" defaultvalue="50" id="blue-range" max="255" type="range"></div></fieldset></div><svg height="300" width="500"><circle class="circle" cx="250" cy="150" r="50" style="fill:#7b7b7b"></circle></svg>Now it should save again</div>'
@@ -8,11 +8,13 @@ export const html =
 export const initialValue: TDocument = [
   {
     children: [
+      { text: 'beforescript' },
       {
+        superscript: true,
         text: '🌳Blocks',
       },
     ],
-    type: EHeadingElement.H1,
+    type: EElement.H1,
   },
   {
     children: [
@@ -24,7 +26,7 @@ export const initialValue: TDocument = [
         text: 'Easily create headings of various levels, from H1 to H6, to structure your content and make it more organized.',
       },
     ],
-    type: ECommonElement.PARAGRAPH,
+    type: EElement.PARAGRAPH,
   },
   {
     children: [
@@ -32,7 +34,7 @@ export const initialValue: TDocument = [
         text: 'Create blockquotes to emphasize important information or highlight quotes from external sources.',
       },
     ],
-    type: ECommonElement.BLOCK_QUOTE,
+    type: EElement.BLOCK_QUOTE,
   },
   {
     children: [
@@ -42,7 +44,7 @@ export const initialValue: TDocument = [
             text: '// Use code blocks to showcase code snippets',
           },
         ],
-        type: ECommonElement.CODE_LINE,
+        type: EElement.CODE_LINE,
       },
       {
         children: [
@@ -50,7 +52,7 @@ export const initialValue: TDocument = [
             text: 'function greet() {',
           },
         ],
-        type: ECommonElement.CODE_LINE,
+        type: EElement.CODE_LINE,
       },
       {
         children: [
@@ -58,7 +60,7 @@ export const initialValue: TDocument = [
             text: "  console.info('Hello World!');",
           },
         ],
-        type: ECommonElement.CODE_LINE,
+        type: EElement.CODE_LINE,
       },
       {
         children: [
@@ -66,11 +68,11 @@ export const initialValue: TDocument = [
             text: '}',
           },
         ],
-        type: ECommonElement.CODE_LINE,
+        type: EElement.CODE_LINE,
       },
     ],
     codeLang: 'javascript',
-    type: ECommonElement.CODE_BLOCK,
+    type: EElement.CODE_BLOCK,
   },
   {
     children: [
@@ -78,7 +80,7 @@ export const initialValue: TDocument = [
         text: 'Each block is a React component in which you can manage the state:',
       },
     ],
-    type: ECommonElement.PARAGRAPH,
+    type: EElement.PARAGRAPH,
   },
   {
     checked: true,
@@ -87,7 +89,7 @@ export const initialValue: TDocument = [
         text: 'Create a "banana language" translation plugin',
       },
     ],
-    type: ECommonElement.TODO,
+    type: EElement.TODO,
   },
   {
     checked: true,
@@ -96,7 +98,7 @@ export const initialValue: TDocument = [
         text: 'Create a "detect sarcasm" plugin (good luck with that)',
       },
     ],
-    type: ECommonElement.TODO,
+    type: EElement.TODO,
   },
   {
     children: [
@@ -104,7 +106,7 @@ export const initialValue: TDocument = [
         text: 'Create an AI auto-complete plugin',
       },
     ],
-    type: ECommonElement.TODO,
+    type: EElement.TODO,
   },
   {
     children: [
@@ -112,7 +114,7 @@ export const initialValue: TDocument = [
         text: '🔗 Link',
       },
     ],
-    type: EHeadingElement.H2,
+    type: EElement.H2,
   },
   {
     children: [
@@ -125,14 +127,14 @@ export const initialValue: TDocument = [
             text: 'hyperlinks',
           },
         ],
-        type: ECommonElement.LINK,
+        type: EElement.LINK,
         url: 'https://en.wikipedia.org/wiki/Hypertext',
       },
       {
         text: ' within your text to reference external sources or provide additional information using the Link plugin.',
       },
     ],
-    type: ECommonElement.PARAGRAPH,
+    type: EElement.PARAGRAPH,
   },
   {
     children: [
@@ -140,7 +142,7 @@ export const initialValue: TDocument = [
         text: 'Effortlessly create hyperlinks using the toolbar or by pasting a URL while selecting the desired text.',
       },
     ],
-    type: ECommonElement.PARAGRAPH,
+    type: EElement.PARAGRAPH,
   },
   {
     children: [
@@ -148,7 +150,7 @@ export const initialValue: TDocument = [
         text: '🌱 Marks',
       },
     ],
-    type: EHeadingElement.H1,
+    type: EElement.H1,
   },
   {
     children: [
@@ -156,7 +158,7 @@ export const initialValue: TDocument = [
         text: 'Add style and emphasis to your text using the mark plugins, which offers a variety of formatting options.',
       },
     ],
-    type: ECommonElement.PARAGRAPH,
+    type: EElement.PARAGRAPH,
   },
   {
     children: [
@@ -194,7 +196,7 @@ export const initialValue: TDocument = [
         text: ' of these styles for a visually striking effect.',
       },
     ],
-    type: ECommonElement.PARAGRAPH,
+    type: EElement.PARAGRAPH,
   },
   {
     children: [
@@ -209,7 +211,7 @@ export const initialValue: TDocument = [
         text: ' to indicate deleted or outdated content.',
       },
     ],
-    type: ECommonElement.PARAGRAPH,
+    type: EElement.PARAGRAPH,
   },
   {
     children: [
@@ -224,7 +226,7 @@ export const initialValue: TDocument = [
         text: ' formatting for easy readability.',
       },
     ],
-    type: ECommonElement.PARAGRAPH,
+    type: EElement.PARAGRAPH,
   },
   {
     children: [
@@ -290,7 +292,7 @@ export const initialValue: TDocument = [
         text: ' colors to create vibrant and eye-catching text.',
       },
     ],
-    type: ECommonElement.PARAGRAPH,
+    type: EElement.PARAGRAPH,
   },
   {
     children: [
@@ -302,7 +304,7 @@ export const initialValue: TDocument = [
         text: ' important information for better clarity.',
       },
     ],
-    type: ECommonElement.PARAGRAPH,
+    type: EElement.PARAGRAPH,
   },
   {
     children: [
@@ -324,7 +326,7 @@ export const initialValue: TDocument = [
         text: ' for italic mark.',
       },
     ],
-    type: ECommonElement.PARAGRAPH,
+    type: EElement.PARAGRAPH,
   },
   {
     children: [
@@ -332,7 +334,7 @@ export const initialValue: TDocument = [
         text: '＠ Mention',
       },
     ],
-    type: EHeadingElement.H2,
+    type: EElement.H2,
   },
   {
     children: [
@@ -340,7 +342,7 @@ export const initialValue: TDocument = [
         text: 'Mention and reference other users or entities within your text using @-mentions.',
       },
     ],
-    type: ECommonElement.PARAGRAPH,
+    type: EElement.PARAGRAPH,
   },
   {
     children: [
@@ -353,7 +355,7 @@ export const initialValue: TDocument = [
             text: '',
           },
         ],
-        type: ECommonElement.MENTION,
+        type: EElement.MENTION,
         value: 'R2-D2',
       },
       {
@@ -365,14 +367,14 @@ export const initialValue: TDocument = [
             text: '',
           },
         ],
-        type: ECommonElement.MENTION,
+        type: EElement.MENTION,
         value: 'Mace Windu',
       },
       {
         text: '.',
       },
     ],
-    type: ECommonElement.PARAGRAPH,
+    type: EElement.PARAGRAPH,
   },
   {
     children: [
@@ -380,7 +382,7 @@ export const initialValue: TDocument = [
         text: "🙂 Emoji's",
       },
     ],
-    type: EHeadingElement.H2,
+    type: EElement.H2,
   },
   {
     children: [
@@ -388,7 +390,7 @@ export const initialValue: TDocument = [
         text: 'Express yourself with a touch of fun 🎉 and emotion 😃.',
       },
     ],
-    type: ECommonElement.PARAGRAPH,
+    type: EElement.PARAGRAPH,
   },
   {
     children: [
@@ -396,7 +398,7 @@ export const initialValue: TDocument = [
         text: 'Pick from the toolbar or write after the colon to open the combobox :',
       },
     ],
-    type: ECommonElement.PARAGRAPH,
+    type: EElement.PARAGRAPH,
   },
   {
     align: EAlign.RIGHT,
@@ -405,7 +407,7 @@ export const initialValue: TDocument = [
         text: 'Alignment',
       },
     ],
-    type: EHeadingElement.H2,
+    type: EElement.H2,
   },
   {
     align: EAlign.RIGHT,
@@ -414,7 +416,7 @@ export const initialValue: TDocument = [
         text: 'Align text within blocks to create visually appealing and balanced layouts.',
       },
     ],
-    type: ECommonElement.PARAGRAPH,
+    type: EElement.PARAGRAPH,
   },
   {
     align: EAlign.CENTER,
@@ -423,7 +425,7 @@ export const initialValue: TDocument = [
         text: 'Center',
       },
     ],
-    type: EHeadingElement.H3,
+    type: EElement.H3,
   },
   {
     align: EAlign.JUSTIFY,
@@ -432,7 +434,7 @@ export const initialValue: TDocument = [
         text: 'Create clean and balanced layouts by justifying block text, providing a professional and polished look.',
       },
     ],
-    type: ECommonElement.PARAGRAPH,
+    type: EElement.PARAGRAPH,
   },
   {
     children: [
@@ -440,7 +442,7 @@ export const initialValue: TDocument = [
         text: 'Line Height',
       },
     ],
-    type: EHeadingElement.H2,
+    type: EElement.H2,
   },
   {
     children: [
@@ -448,7 +450,7 @@ export const initialValue: TDocument = [
         text: 'Control the line height of your text to improve readability and adjust the spacing between lines.',
       },
     ],
-    type: ECommonElement.PARAGRAPH,
+    type: EElement.PARAGRAPH,
   },
   {
     children: [
@@ -457,7 +459,7 @@ export const initialValue: TDocument = [
       },
     ],
     lineHeight: 2,
-    type: ECommonElement.PARAGRAPH,
+    type: EElement.PARAGRAPH,
   },
   {
     children: [
@@ -465,7 +467,7 @@ export const initialValue: TDocument = [
         text: 'Indentation',
       },
     ],
-    type: EHeadingElement.H2,
+    type: EElement.H2,
   },
   {
     children: [
@@ -474,7 +476,7 @@ export const initialValue: TDocument = [
       },
     ],
     indent: 1,
-    type: ECommonElement.PARAGRAPH,
+    type: EElement.PARAGRAPH,
   },
   {
     children: [
@@ -483,7 +485,7 @@ export const initialValue: TDocument = [
       },
     ],
     indent: 2,
-    type: ECommonElement.PARAGRAPH,
+    type: EElement.PARAGRAPH,
   },
   {
     children: [
@@ -491,7 +493,7 @@ export const initialValue: TDocument = [
         text: 'Horizontal Rule',
       },
     ],
-    type: EHeadingElement.H2,
+    type: EElement.H2,
   },
   {
     children: [
@@ -499,7 +501,7 @@ export const initialValue: TDocument = [
         text: 'Add horizontal rules to visually separate sections and content within your document.',
       },
     ],
-    type: ECommonElement.PARAGRAPH,
+    type: EElement.PARAGRAPH,
   },
   {
     children: [
@@ -507,7 +509,7 @@ export const initialValue: TDocument = [
         text: '',
       },
     ],
-    type: ECommonElement.DIVIDER,
+    type: EElement.DIVIDER,
   },
   {
     children: [
@@ -515,7 +517,7 @@ export const initialValue: TDocument = [
         text: '✍️ List',
       },
     ],
-    type: EHeadingElement.H2,
+    type: EElement.H2,
   },
   {
     children: [
@@ -523,7 +525,7 @@ export const initialValue: TDocument = [
         text: '',
       },
     ],
-    type: ECommonElement.PARAGRAPH,
+    type: EElement.PARAGRAPH,
   },
   {
     children: [
@@ -535,10 +537,10 @@ export const initialValue: TDocument = [
                 text: 'Cats',
               },
             ],
-            type: ECommonElement.LIST_CONTENT,
+            type: EElement.LIST_CONTENT,
           },
         ],
-        type: ECommonElement.LIST_ITEM,
+        type: EElement.LIST_ITEM,
       },
       {
         children: [
@@ -548,10 +550,10 @@ export const initialValue: TDocument = [
                 text: 'Dogs',
               },
             ],
-            type: ECommonElement.LIST_CONTENT,
+            type: EElement.LIST_CONTENT,
           },
         ],
-        type: ECommonElement.LIST_ITEM,
+        type: EElement.LIST_ITEM,
       },
       {
         children: [
@@ -561,7 +563,7 @@ export const initialValue: TDocument = [
                 text: 'Birds',
               },
             ],
-            type: ECommonElement.LIST_CONTENT,
+            type: EElement.LIST_CONTENT,
           },
           {
             children: [
@@ -573,10 +575,10 @@ export const initialValue: TDocument = [
                         text: 'Parrots',
                       },
                     ],
-                    type: ECommonElement.LIST_CONTENT,
+                    type: EElement.LIST_CONTENT,
                   },
                 ],
-                type: ECommonElement.LIST_ITEM,
+                type: EElement.LIST_ITEM,
               },
               {
                 children: [
@@ -586,7 +588,7 @@ export const initialValue: TDocument = [
                         text: 'Owls',
                       },
                     ],
-                    type: ECommonElement.LIST_CONTENT,
+                    type: EElement.LIST_CONTENT,
                   },
                   {
                     children: [
@@ -598,10 +600,10 @@ export const initialValue: TDocument = [
                                 text: 'Barn Owls',
                               },
                             ],
-                            type: ECommonElement.LIST_CONTENT,
+                            type: EElement.LIST_CONTENT,
                           },
                         ],
-                        type: ECommonElement.LIST_ITEM,
+                        type: EElement.LIST_ITEM,
                       },
                       {
                         children: [
@@ -611,25 +613,25 @@ export const initialValue: TDocument = [
                                 text: 'Snowy Owls',
                               },
                             ],
-                            type: ECommonElement.LIST_CONTENT,
+                            type: EElement.LIST_CONTENT,
                           },
                         ],
-                        type: ECommonElement.LIST_ITEM,
+                        type: EElement.LIST_ITEM,
                       },
                     ],
-                    type: ECommonElement.UNORDERED_LIST,
+                    type: EElement.UNORDERED_LIST,
                   },
                 ],
-                type: ECommonElement.LIST_ITEM,
+                type: EElement.LIST_ITEM,
               },
             ],
-            type: ECommonElement.UNORDERED_LIST,
+            type: EElement.UNORDERED_LIST,
           },
         ],
-        type: ECommonElement.LIST_ITEM,
+        type: EElement.LIST_ITEM,
       },
     ],
-    type: ECommonElement.UNORDERED_LIST,
+    type: EElement.UNORDERED_LIST,
   },
   {
     children: [
@@ -641,10 +643,10 @@ export const initialValue: TDocument = [
                 text: 'Red',
               },
             ],
-            type: ECommonElement.LIST_CONTENT,
+            type: EElement.LIST_CONTENT,
           },
         ],
-        type: ECommonElement.LIST_ITEM,
+        type: EElement.LIST_ITEM,
       },
       {
         children: [
@@ -654,7 +656,7 @@ export const initialValue: TDocument = [
                 text: 'Blue',
               },
             ],
-            type: ECommonElement.LIST_CONTENT,
+            type: EElement.LIST_CONTENT,
           },
           {
             children: [
@@ -666,10 +668,10 @@ export const initialValue: TDocument = [
                         text: 'Light blue',
                       },
                     ],
-                    type: ECommonElement.LIST_CONTENT,
+                    type: EElement.LIST_CONTENT,
                   },
                 ],
-                type: ECommonElement.LIST_ITEM,
+                type: EElement.LIST_ITEM,
               },
               {
                 children: [
@@ -679,7 +681,7 @@ export const initialValue: TDocument = [
                         text: 'Dark blue',
                       },
                     ],
-                    type: ECommonElement.LIST_CONTENT,
+                    type: EElement.LIST_CONTENT,
                   },
                   {
                     children: [
@@ -691,10 +693,10 @@ export const initialValue: TDocument = [
                                 text: 'Navy blue',
                               },
                             ],
-                            type: ECommonElement.LIST_CONTENT,
+                            type: EElement.LIST_CONTENT,
                           },
                         ],
-                        type: ECommonElement.LIST_ITEM,
+                        type: EElement.LIST_ITEM,
                       },
                       {
                         children: [
@@ -704,22 +706,22 @@ export const initialValue: TDocument = [
                                 text: 'Turquoise blue',
                               },
                             ],
-                            type: ECommonElement.LIST_CONTENT,
+                            type: EElement.LIST_CONTENT,
                           },
                         ],
-                        type: ECommonElement.LIST_ITEM,
+                        type: EElement.LIST_ITEM,
                       },
                     ],
-                    type: ECommonElement.ORDERED_LIST,
+                    type: EElement.ORDERED_LIST,
                   },
                 ],
-                type: ECommonElement.LIST_ITEM,
+                type: EElement.LIST_ITEM,
               },
             ],
-            type: ECommonElement.UNORDERED_LIST,
+            type: EElement.UNORDERED_LIST,
           },
         ],
-        type: ECommonElement.LIST_ITEM,
+        type: EElement.LIST_ITEM,
       },
       {
         children: [
@@ -729,13 +731,13 @@ export const initialValue: TDocument = [
                 text: 'Green',
               },
             ],
-            type: ECommonElement.LIST_CONTENT,
+            type: EElement.LIST_CONTENT,
           },
         ],
-        type: ECommonElement.LIST_ITEM,
+        type: EElement.LIST_ITEM,
       },
     ],
-    type: ECommonElement.ORDERED_LIST,
+    type: EElement.ORDERED_LIST,
   },
   {
     children: [
@@ -743,7 +745,7 @@ export const initialValue: TDocument = [
         text: '📸 Image',
       },
     ],
-    type: EHeadingElement.H2,
+    type: EElement.H2,
   },
   {
     children: [
@@ -751,7 +753,7 @@ export const initialValue: TDocument = [
         text: 'Add images by either uploading them or providing the image URL:',
       },
     ],
-    type: ECommonElement.PARAGRAPH,
+    type: EElement.PARAGRAPH,
   },
   {
     children: [
@@ -759,7 +761,7 @@ export const initialValue: TDocument = [
         text: '',
       },
     ],
-    type: ECommonElement.IMAGE,
+    type: EElement.IMAGE,
     url: 'https://source.unsplash.com/kFrdX5IeQzI',
     width: '75%',
   },
@@ -769,7 +771,7 @@ export const initialValue: TDocument = [
         text: 'Customize image captions and resize images.',
       },
     ],
-    type: ECommonElement.PARAGRAPH,
+    type: EElement.PARAGRAPH,
   },
   {
     children: [
@@ -777,7 +779,7 @@ export const initialValue: TDocument = [
         text: '📺 Embed',
       },
     ],
-    type: EHeadingElement.H2,
+    type: EElement.H2,
   },
   {
     children: [
@@ -785,7 +787,7 @@ export const initialValue: TDocument = [
         text: 'Embed various types of content, such as videos and tweets:',
       },
     ],
-    type: ECommonElement.PARAGRAPH,
+    type: EElement.PARAGRAPH,
   },
   {
     children: [
@@ -793,7 +795,7 @@ export const initialValue: TDocument = [
         text: '',
       },
     ],
-    type: ECommonElement.VIDEO,
+    type: EElement.VIDEO,
     url: 'https://www.youtube.com/watch?v=MyiBAziEWUA',
   },
   {
@@ -802,7 +804,7 @@ export const initialValue: TDocument = [
         text: '🏓 Table',
       },
     ],
-    type: EHeadingElement.H2,
+    type: EElement.H2,
   },
   {
     children: [
@@ -810,7 +812,7 @@ export const initialValue: TDocument = [
         text: 'Create customizable tables with resizable columns and rows, allowing you to design structured layouts.',
       },
     ],
-    type: ECommonElement.PARAGRAPH,
+    type: EElement.PARAGRAPH,
   },
   {
     children: [
@@ -825,10 +827,10 @@ export const initialValue: TDocument = [
                     text: 'Plugin',
                   },
                 ],
-                type: ECommonElement.PARAGRAPH,
+                type: EElement.PARAGRAPH,
               },
             ],
-            type: ECommonElement.TABLE_HEADER,
+            type: EElement.TABLE_HEADER,
           },
           {
             children: [
@@ -839,10 +841,10 @@ export const initialValue: TDocument = [
                     text: 'Element',
                   },
                 ],
-                type: ECommonElement.PARAGRAPH,
+                type: EElement.PARAGRAPH,
               },
             ],
-            type: ECommonElement.TABLE_HEADER,
+            type: EElement.TABLE_HEADER,
           },
           {
             children: [
@@ -853,10 +855,10 @@ export const initialValue: TDocument = [
                     text: 'Inline',
                   },
                 ],
-                type: ECommonElement.PARAGRAPH,
+                type: EElement.PARAGRAPH,
               },
             ],
-            type: ECommonElement.TABLE_HEADER,
+            type: EElement.TABLE_HEADER,
           },
           {
             children: [
@@ -867,13 +869,13 @@ export const initialValue: TDocument = [
                     text: 'Void',
                   },
                 ],
-                type: ECommonElement.PARAGRAPH,
+                type: EElement.PARAGRAPH,
               },
             ],
-            type: ECommonElement.TABLE_HEADER,
+            type: EElement.TABLE_HEADER,
           },
         ],
-        type: ECommonElement.TABLE_ROW,
+        type: EElement.TABLE_ROW,
       },
       {
         children: [
@@ -886,10 +888,10 @@ export const initialValue: TDocument = [
                     text: 'Heading',
                   },
                 ],
-                type: ECommonElement.PARAGRAPH,
+                type: EElement.PARAGRAPH,
               },
             ],
-            type: ECommonElement.TABLE_CELL,
+            type: EElement.TABLE_CELL,
           },
           {
             children: [
@@ -899,10 +901,10 @@ export const initialValue: TDocument = [
                     text: 'Yes',
                   },
                 ],
-                type: ECommonElement.PARAGRAPH,
+                type: EElement.PARAGRAPH,
               },
             ],
-            type: ECommonElement.TABLE_CELL,
+            type: EElement.TABLE_CELL,
           },
           {
             children: [
@@ -912,10 +914,10 @@ export const initialValue: TDocument = [
                     text: 'No',
                   },
                 ],
-                type: ECommonElement.PARAGRAPH,
+                type: EElement.PARAGRAPH,
               },
             ],
-            type: ECommonElement.TABLE_CELL,
+            type: EElement.TABLE_CELL,
           },
           {
             children: [
@@ -925,13 +927,13 @@ export const initialValue: TDocument = [
                     text: 'No',
                   },
                 ],
-                type: ECommonElement.PARAGRAPH,
+                type: EElement.PARAGRAPH,
               },
             ],
-            type: ECommonElement.TABLE_CELL,
+            type: EElement.TABLE_CELL,
           },
         ],
-        type: ECommonElement.TABLE_ROW,
+        type: EElement.TABLE_ROW,
       },
       {
         children: [
@@ -944,10 +946,10 @@ export const initialValue: TDocument = [
                     text: 'Image',
                   },
                 ],
-                type: ECommonElement.PARAGRAPH,
+                type: EElement.PARAGRAPH,
               },
             ],
-            type: ECommonElement.TABLE_CELL,
+            type: EElement.TABLE_CELL,
           },
           {
             children: [
@@ -957,10 +959,10 @@ export const initialValue: TDocument = [
                     text: 'Yes',
                   },
                 ],
-                type: ECommonElement.PARAGRAPH,
+                type: EElement.PARAGRAPH,
               },
             ],
-            type: ECommonElement.TABLE_CELL,
+            type: EElement.TABLE_CELL,
           },
           {
             children: [
@@ -970,10 +972,10 @@ export const initialValue: TDocument = [
                     text: 'No',
                   },
                 ],
-                type: ECommonElement.PARAGRAPH,
+                type: EElement.PARAGRAPH,
               },
             ],
-            type: ECommonElement.TABLE_CELL,
+            type: EElement.TABLE_CELL,
           },
           {
             children: [
@@ -983,13 +985,13 @@ export const initialValue: TDocument = [
                     text: 'Yes',
                   },
                 ],
-                type: ECommonElement.PARAGRAPH,
+                type: EElement.PARAGRAPH,
               },
             ],
-            type: ECommonElement.TABLE_CELL,
+            type: EElement.TABLE_CELL,
           },
         ],
-        type: ECommonElement.TABLE_ROW,
+        type: EElement.TABLE_ROW,
       },
       {
         children: [
@@ -1002,10 +1004,10 @@ export const initialValue: TDocument = [
                     text: 'Mention',
                   },
                 ],
-                type: ECommonElement.PARAGRAPH,
+                type: EElement.PARAGRAPH,
               },
             ],
-            type: ECommonElement.TABLE_CELL,
+            type: EElement.TABLE_CELL,
           },
           {
             children: [
@@ -1015,10 +1017,10 @@ export const initialValue: TDocument = [
                     text: 'Yes',
                   },
                 ],
-                type: ECommonElement.PARAGRAPH,
+                type: EElement.PARAGRAPH,
               },
             ],
-            type: ECommonElement.TABLE_CELL,
+            type: EElement.TABLE_CELL,
           },
           {
             children: [
@@ -1028,10 +1030,10 @@ export const initialValue: TDocument = [
                     text: 'Yes',
                   },
                 ],
-                type: ECommonElement.PARAGRAPH,
+                type: EElement.PARAGRAPH,
               },
             ],
-            type: ECommonElement.TABLE_CELL,
+            type: EElement.TABLE_CELL,
           },
           {
             children: [
@@ -1041,18 +1043,18 @@ export const initialValue: TDocument = [
                     text: 'Yes',
                   },
                 ],
-                type: ECommonElement.PARAGRAPH,
+                type: EElement.PARAGRAPH,
               },
             ],
-            type: ECommonElement.TABLE_CELL,
+            type: EElement.TABLE_CELL,
           },
         ],
-        type: ECommonElement.TABLE_ROW,
+        type: EElement.TABLE_ROW,
       },
     ],
     colSizes: [100, 100, 100, 100],
     marginLeft: 20,
-    type: ECommonElement.TABLE,
+    type: EElement.TABLE,
   },
   {
     children: [
@@ -1060,7 +1062,7 @@ export const initialValue: TDocument = [
         text: '🏃‍♀️ Autoformat',
       },
     ],
-    type: EHeadingElement.H2,
+    type: EElement.H2,
   },
   {
     children: [
@@ -1068,7 +1070,7 @@ export const initialValue: TDocument = [
         text: 'Empower your writing experience by enabling autoformatting features. Add Markdown-like shortcuts that automatically apply formatting as you type.',
       },
     ],
-    type: ECommonElement.PARAGRAPH,
+    type: EElement.PARAGRAPH,
   },
   {
     children: [
@@ -1076,7 +1078,7 @@ export const initialValue: TDocument = [
         text: 'While typing, try these mark rules:',
       },
     ],
-    type: ECommonElement.PARAGRAPH,
+    type: EElement.PARAGRAPH,
   },
   {
     children: [
@@ -1102,10 +1104,10 @@ export const initialValue: TDocument = [
                 text: ' on either side of your text to add **bold* mark.',
               },
             ],
-            type: ECommonElement.LIST_CONTENT,
+            type: EElement.LIST_CONTENT,
           },
         ],
-        type: ECommonElement.LIST_ITEM,
+        type: EElement.LIST_ITEM,
       },
       {
         children: [
@@ -1129,10 +1131,10 @@ export const initialValue: TDocument = [
                 text: ' on either side of your text to add *italic mark.',
               },
             ],
-            type: ECommonElement.LIST_CONTENT,
+            type: EElement.LIST_CONTENT,
           },
         ],
-        type: ECommonElement.LIST_ITEM,
+        type: EElement.LIST_ITEM,
       },
       {
         children: [
@@ -1149,10 +1151,10 @@ export const initialValue: TDocument = [
                 text: ' on either side of your text to add `inline code mark.',
               },
             ],
-            type: ECommonElement.LIST_CONTENT,
+            type: EElement.LIST_CONTENT,
           },
         ],
-        type: ECommonElement.LIST_ITEM,
+        type: EElement.LIST_ITEM,
       },
       {
         children: [
@@ -1169,10 +1171,10 @@ export const initialValue: TDocument = [
                 text: ' on either side of your text to add ~~strikethrough~ mark.',
               },
             ],
-            type: ECommonElement.LIST_CONTENT,
+            type: EElement.LIST_CONTENT,
           },
         ],
-        type: ECommonElement.LIST_ITEM,
+        type: EElement.LIST_ITEM,
       },
       {
         children: [
@@ -1182,10 +1184,10 @@ export const initialValue: TDocument = [
                 text: 'Note that nothing happens when there is a character before, try on:*bold',
               },
             ],
-            type: ECommonElement.LIST_CONTENT,
+            type: EElement.LIST_CONTENT,
           },
         ],
-        type: ECommonElement.LIST_ITEM,
+        type: EElement.LIST_ITEM,
       },
       {
         children: [
@@ -1202,13 +1204,13 @@ export const initialValue: TDocument = [
                 text: '.',
               },
             ],
-            type: ECommonElement.LIST_CONTENT,
+            type: EElement.LIST_CONTENT,
           },
         ],
-        type: ECommonElement.LIST_ITEM,
+        type: EElement.LIST_ITEM,
       },
     ],
-    type: ECommonElement.UNORDERED_LIST,
+    type: EElement.UNORDERED_LIST,
   },
   {
     children: [
@@ -1216,7 +1218,7 @@ export const initialValue: TDocument = [
         text: 'At the beginning of any new block or existing block, try these (block rules):',
       },
     ],
-    type: ECommonElement.PARAGRAPH,
+    type: EElement.PARAGRAPH,
   },
   {
     children: [
@@ -1256,10 +1258,10 @@ export const initialValue: TDocument = [
                 text: ' to create a bulleted list.',
               },
             ],
-            type: ECommonElement.LIST_CONTENT,
+            type: EElement.LIST_CONTENT,
           },
         ],
-        type: ECommonElement.LIST_ITEM,
+        type: EElement.LIST_ITEM,
       },
       {
         children: [
@@ -1290,10 +1292,10 @@ export const initialValue: TDocument = [
                 text: 'to create a numbered list.',
               },
             ],
-            type: ECommonElement.LIST_CONTENT,
+            type: EElement.LIST_CONTENT,
           },
         ],
-        type: ECommonElement.LIST_ITEM,
+        type: EElement.LIST_ITEM,
       },
       {
         children: [
@@ -1317,10 +1319,10 @@ export const initialValue: TDocument = [
                 text: ' to create a block quote.',
               },
             ],
-            type: ECommonElement.LIST_CONTENT,
+            type: EElement.LIST_CONTENT,
           },
         ],
-        type: ECommonElement.LIST_ITEM,
+        type: EElement.LIST_ITEM,
       },
       {
         children: [
@@ -1337,10 +1339,10 @@ export const initialValue: TDocument = [
                 text: ' to create a code block.',
               },
             ],
-            type: ECommonElement.LIST_CONTENT,
+            type: EElement.LIST_CONTENT,
           },
         ],
-        type: ECommonElement.LIST_ITEM,
+        type: EElement.LIST_ITEM,
       },
       {
         children: [
@@ -1357,10 +1359,10 @@ export const initialValue: TDocument = [
                 text: ' to create a horizontal rule.',
               },
             ],
-            type: ECommonElement.LIST_CONTENT,
+            type: EElement.LIST_CONTENT,
           },
         ],
-        type: ECommonElement.LIST_ITEM,
+        type: EElement.LIST_ITEM,
       },
       {
         children: [
@@ -1384,10 +1386,10 @@ export const initialValue: TDocument = [
                 text: ' to create an H1 heading.',
               },
             ],
-            type: ECommonElement.LIST_CONTENT,
+            type: EElement.LIST_CONTENT,
           },
         ],
-        type: ECommonElement.LIST_ITEM,
+        type: EElement.LIST_ITEM,
       },
       {
         children: [
@@ -1411,10 +1413,10 @@ export const initialValue: TDocument = [
                 text: ' to create an H2 sub-heading.',
               },
             ],
-            type: ECommonElement.LIST_CONTENT,
+            type: EElement.LIST_CONTENT,
           },
         ],
-        type: ECommonElement.LIST_ITEM,
+        type: EElement.LIST_ITEM,
       },
       {
         children: [
@@ -1438,10 +1440,10 @@ export const initialValue: TDocument = [
                 text: ' to create an H3 sub-heading.',
               },
             ],
-            type: ECommonElement.LIST_CONTENT,
+            type: EElement.LIST_CONTENT,
           },
         ],
-        type: ECommonElement.LIST_ITEM,
+        type: EElement.LIST_ITEM,
       },
       {
         children: [
@@ -1465,10 +1467,10 @@ export const initialValue: TDocument = [
                 text: ' to create an H4 sub-heading.',
               },
             ],
-            type: ECommonElement.LIST_CONTENT,
+            type: EElement.LIST_CONTENT,
           },
         ],
-        type: ECommonElement.LIST_ITEM,
+        type: EElement.LIST_ITEM,
       },
       {
         children: [
@@ -1492,10 +1494,10 @@ export const initialValue: TDocument = [
                 text: ' to create an H5 sub-heading.',
               },
             ],
-            type: ECommonElement.LIST_CONTENT,
+            type: EElement.LIST_CONTENT,
           },
         ],
-        type: ECommonElement.LIST_ITEM,
+        type: EElement.LIST_ITEM,
       },
       {
         children: [
@@ -1519,13 +1521,13 @@ export const initialValue: TDocument = [
                 text: ' to create an H6 sub-heading.',
               },
             ],
-            type: ECommonElement.LIST_CONTENT,
+            type: EElement.LIST_CONTENT,
           },
         ],
-        type: ECommonElement.LIST_ITEM,
+        type: EElement.LIST_ITEM,
       },
     ],
-    type: ECommonElement.UNORDERED_LIST,
+    type: EElement.UNORDERED_LIST,
   },
   {
     children: [
@@ -1533,7 +1535,7 @@ export const initialValue: TDocument = [
         text: 'Soft Break ⇧⏎',
       },
     ],
-    type: EHeadingElement.H2,
+    type: EElement.H2,
   },
   {
     children: [
@@ -1541,7 +1543,7 @@ export const initialValue: TDocument = [
         text: 'Customize how soft breaks (line breaks within a paragraph) are handled using configurable rules',
       },
     ],
-    type: ECommonElement.PARAGRAPH,
+    type: EElement.PARAGRAPH,
   },
   {
     children: [
@@ -1553,10 +1555,10 @@ export const initialValue: TDocument = [
                 text: 'hotkey – Use hotkeys like ⇧⏎ to insert a soft break anywhere within a paragraph.',
               },
             ],
-            type: ECommonElement.LIST_CONTENT,
+            type: EElement.LIST_CONTENT,
           },
         ],
-        type: ECommonElement.LIST_ITEM,
+        type: EElement.LIST_ITEM,
       },
       {
         children: [
@@ -1566,13 +1568,13 @@ export const initialValue: TDocument = [
                 text: 'query – Define custom rules to limit soft breaks to specific block types.',
               },
             ],
-            type: ECommonElement.LIST_CONTENT,
+            type: EElement.LIST_CONTENT,
           },
         ],
-        type: ECommonElement.LIST_ITEM,
+        type: EElement.LIST_ITEM,
       },
     ],
-    type: ECommonElement.UNORDERED_LIST,
+    type: EElement.UNORDERED_LIST,
   },
   {
     children: [
@@ -1580,7 +1582,7 @@ export const initialValue: TDocument = [
         text: 'Try here ⏎',
       },
     ],
-    type: ECommonElement.BLOCK_QUOTE,
+    type: EElement.BLOCK_QUOTE,
   },
   {
     children: [
@@ -1590,10 +1592,10 @@ export const initialValue: TDocument = [
             text: 'And here ⏎ as well.',
           },
         ],
-        type: ECommonElement.CODE_LINE,
+        type: EElement.CODE_LINE,
       },
     ],
-    type: ECommonElement.CODE_BLOCK,
+    type: EElement.CODE_BLOCK,
   },
   {
     children: [
@@ -1601,7 +1603,7 @@ export const initialValue: TDocument = [
         text: 'Exit Break ⏎',
       },
     ],
-    type: EHeadingElement.H2,
+    type: EElement.H2,
   },
   {
     children: [
@@ -1609,7 +1611,7 @@ export const initialValue: TDocument = [
         text: 'Configure how exit breaks (line breaks between blocks) behave using simple rules:',
       },
     ],
-    type: ECommonElement.PARAGRAPH,
+    type: EElement.PARAGRAPH,
   },
   {
     children: [
@@ -1621,10 +1623,10 @@ export const initialValue: TDocument = [
                 text: 'hotkey – Use hotkeys like ⌘⏎ to move the cursor to the next block',
               },
             ],
-            type: ECommonElement.LIST_CONTENT,
+            type: EElement.LIST_CONTENT,
           },
         ],
-        type: ECommonElement.LIST_ITEM,
+        type: EElement.LIST_ITEM,
       },
       {
         children: [
@@ -1634,10 +1636,10 @@ export const initialValue: TDocument = [
                 text: 'query – Specify block types where exit breaks are allowed.',
               },
             ],
-            type: ECommonElement.LIST_CONTENT,
+            type: EElement.LIST_CONTENT,
           },
         ],
-        type: ECommonElement.LIST_ITEM,
+        type: EElement.LIST_ITEM,
       },
       {
         children: [
@@ -1647,13 +1649,13 @@ export const initialValue: TDocument = [
                 text: 'before – Choose whether the cursor exits to the next or previous block',
               },
             ],
-            type: ECommonElement.LIST_CONTENT,
+            type: EElement.LIST_CONTENT,
           },
         ],
-        type: ECommonElement.LIST_ITEM,
+        type: EElement.LIST_ITEM,
       },
     ],
-    type: ECommonElement.UNORDERED_LIST,
+    type: EElement.UNORDERED_LIST,
   },
   {
     children: [
@@ -1661,7 +1663,7 @@ export const initialValue: TDocument = [
         text: 'Try here ⌘⏎',
       },
     ],
-    type: ECommonElement.BLOCK_QUOTE,
+    type: EElement.BLOCK_QUOTE,
   },
   {
     children: [
@@ -1671,10 +1673,10 @@ export const initialValue: TDocument = [
             text: 'And in the middle ⌘⏎ of a block.',
           },
         ],
-        type: ECommonElement.CODE_LINE,
+        type: EElement.CODE_LINE,
       },
     ],
-    type: ECommonElement.CODE_BLOCK,
+    type: EElement.CODE_BLOCK,
   },
   {
     children: [
@@ -1682,7 +1684,7 @@ export const initialValue: TDocument = [
         text: 'Exit breaks also work within nested blocks:',
       },
     ],
-    type: ECommonElement.PARAGRAPH,
+    type: EElement.PARAGRAPH,
   },
   {
     children: [
@@ -1697,10 +1699,10 @@ export const initialValue: TDocument = [
                     text: 'Plugin',
                   },
                 ],
-                type: ECommonElement.PARAGRAPH,
+                type: EElement.PARAGRAPH,
               },
             ],
-            type: ECommonElement.TABLE_HEADER,
+            type: EElement.TABLE_HEADER,
           },
           {
             children: [
@@ -1711,10 +1713,10 @@ export const initialValue: TDocument = [
                     text: 'Element',
                   },
                 ],
-                type: ECommonElement.PARAGRAPH,
+                type: EElement.PARAGRAPH,
               },
             ],
-            type: ECommonElement.TABLE_HEADER,
+            type: EElement.TABLE_HEADER,
           },
           {
             children: [
@@ -1725,10 +1727,10 @@ export const initialValue: TDocument = [
                     text: 'Inline',
                   },
                 ],
-                type: ECommonElement.PARAGRAPH,
+                type: EElement.PARAGRAPH,
               },
             ],
-            type: ECommonElement.TABLE_HEADER,
+            type: EElement.TABLE_HEADER,
           },
           {
             children: [
@@ -1739,13 +1741,13 @@ export const initialValue: TDocument = [
                     text: 'Void',
                   },
                 ],
-                type: ECommonElement.PARAGRAPH,
+                type: EElement.PARAGRAPH,
               },
             ],
-            type: ECommonElement.TABLE_HEADER,
+            type: EElement.TABLE_HEADER,
           },
         ],
-        type: ECommonElement.TABLE_ROW,
+        type: EElement.TABLE_ROW,
       },
       {
         children: [
@@ -1758,10 +1760,10 @@ export const initialValue: TDocument = [
                     text: 'Heading',
                   },
                 ],
-                type: ECommonElement.PARAGRAPH,
+                type: EElement.PARAGRAPH,
               },
             ],
-            type: ECommonElement.TABLE_CELL,
+            type: EElement.TABLE_CELL,
           },
           {
             children: [
@@ -1771,10 +1773,10 @@ export const initialValue: TDocument = [
                     text: 'Yes',
                   },
                 ],
-                type: ECommonElement.PARAGRAPH,
+                type: EElement.PARAGRAPH,
               },
             ],
-            type: ECommonElement.TABLE_CELL,
+            type: EElement.TABLE_CELL,
           },
           {
             children: [
@@ -1784,10 +1786,10 @@ export const initialValue: TDocument = [
                     text: 'No',
                   },
                 ],
-                type: ECommonElement.PARAGRAPH,
+                type: EElement.PARAGRAPH,
               },
             ],
-            type: ECommonElement.TABLE_CELL,
+            type: EElement.TABLE_CELL,
           },
           {
             children: [
@@ -1797,13 +1799,13 @@ export const initialValue: TDocument = [
                     text: 'No',
                   },
                 ],
-                type: ECommonElement.PARAGRAPH,
+                type: EElement.PARAGRAPH,
               },
             ],
-            type: ECommonElement.TABLE_CELL,
+            type: EElement.TABLE_CELL,
           },
         ],
-        type: ECommonElement.TABLE_ROW,
+        type: EElement.TABLE_ROW,
       },
       {
         children: [
@@ -1816,10 +1818,10 @@ export const initialValue: TDocument = [
                     text: 'Image',
                   },
                 ],
-                type: ECommonElement.PARAGRAPH,
+                type: EElement.PARAGRAPH,
               },
             ],
-            type: ECommonElement.TABLE_CELL,
+            type: EElement.TABLE_CELL,
           },
           {
             children: [
@@ -1829,10 +1831,10 @@ export const initialValue: TDocument = [
                     text: 'Yes',
                   },
                 ],
-                type: ECommonElement.PARAGRAPH,
+                type: EElement.PARAGRAPH,
               },
             ],
-            type: ECommonElement.TABLE_CELL,
+            type: EElement.TABLE_CELL,
           },
           {
             children: [
@@ -1842,10 +1844,10 @@ export const initialValue: TDocument = [
                     text: 'No',
                   },
                 ],
-                type: ECommonElement.PARAGRAPH,
+                type: EElement.PARAGRAPH,
               },
             ],
-            type: ECommonElement.TABLE_CELL,
+            type: EElement.TABLE_CELL,
           },
           {
             children: [
@@ -1855,13 +1857,13 @@ export const initialValue: TDocument = [
                     text: 'Yes',
                   },
                 ],
-                type: ECommonElement.PARAGRAPH,
+                type: EElement.PARAGRAPH,
               },
             ],
-            type: ECommonElement.TABLE_CELL,
+            type: EElement.TABLE_CELL,
           },
         ],
-        type: ECommonElement.TABLE_ROW,
+        type: EElement.TABLE_ROW,
       },
       {
         children: [
@@ -1874,10 +1876,10 @@ export const initialValue: TDocument = [
                     text: 'Mention',
                   },
                 ],
-                type: ECommonElement.PARAGRAPH,
+                type: EElement.PARAGRAPH,
               },
             ],
-            type: ECommonElement.TABLE_CELL,
+            type: EElement.TABLE_CELL,
           },
           {
             children: [
@@ -1887,10 +1889,10 @@ export const initialValue: TDocument = [
                     text: 'Yes',
                   },
                 ],
-                type: ECommonElement.PARAGRAPH,
+                type: EElement.PARAGRAPH,
               },
             ],
-            type: ECommonElement.TABLE_CELL,
+            type: EElement.TABLE_CELL,
           },
           {
             children: [
@@ -1900,10 +1902,10 @@ export const initialValue: TDocument = [
                     text: 'Yes',
                   },
                 ],
-                type: ECommonElement.PARAGRAPH,
+                type: EElement.PARAGRAPH,
               },
             ],
-            type: ECommonElement.TABLE_CELL,
+            type: EElement.TABLE_CELL,
           },
           {
             children: [
@@ -1913,18 +1915,18 @@ export const initialValue: TDocument = [
                     text: 'Yes',
                   },
                 ],
-                type: ECommonElement.PARAGRAPH,
+                type: EElement.PARAGRAPH,
               },
             ],
-            type: ECommonElement.TABLE_CELL,
+            type: EElement.TABLE_CELL,
           },
         ],
-        type: ECommonElement.TABLE_ROW,
+        type: EElement.TABLE_ROW,
       },
     ],
     colSizes: [100, 100, 100, 100],
     marginLeft: 20,
-    type: ECommonElement.TABLE,
+    type: EElement.TABLE,
   },
   {
     children: [
@@ -1932,7 +1934,7 @@ export const initialValue: TDocument = [
         text: 'Cursor Overlay',
       },
     ],
-    type: EHeadingElement.H2,
+    type: EElement.H2,
   },
   {
     children: [
@@ -1940,7 +1942,7 @@ export const initialValue: TDocument = [
         text: 'Try to drag over text: you will see a black cursor on the drop target: color and other styles are customizable!',
       },
     ],
-    type: ECommonElement.PARAGRAPH,
+    type: EElement.PARAGRAPH,
   },
   {
     children: [
@@ -1948,7 +1950,7 @@ export const initialValue: TDocument = [
         text: 'Tabbable',
       },
     ],
-    type: EHeadingElement.H2,
+    type: EElement.H2,
   },
   {
     children: [
@@ -1956,7 +1958,7 @@ export const initialValue: TDocument = [
         text: 'Ensure a smooth tab navigation experience within your editor with the Tabbable plugin.',
       },
     ],
-    type: ECommonElement.PARAGRAPH,
+    type: EElement.PARAGRAPH,
   },
   {
     children: [
@@ -1964,7 +1966,7 @@ export const initialValue: TDocument = [
         text: 'Properly handle tab orders for void nodes, allowing for seamless navigation and interaction. Without this plugin, DOM elements inside void nodes come after the editor in the tab order.',
       },
     ],
-    type: ECommonElement.PARAGRAPH,
+    type: EElement.PARAGRAPH,
   },
   {
     children: [
@@ -1972,7 +1974,7 @@ export const initialValue: TDocument = [
         text: '',
       },
     ],
-    type: ECommonElement.TABBABLE,
+    type: EElement.TABBABLE,
   },
   {
     children: [
@@ -1980,7 +1982,7 @@ export const initialValue: TDocument = [
         text: '',
       },
     ],
-    type: ECommonElement.TABBABLE,
+    type: EElement.TABBABLE,
   },
   {
     children: [
@@ -1988,7 +1990,7 @@ export const initialValue: TDocument = [
         text: 'Place your cursor here and try pressing tab or shift+tab.',
       },
     ],
-    type: ECommonElement.PARAGRAPH,
+    type: EElement.PARAGRAPH,
   },
   {
     children: [
@@ -2000,10 +2002,10 @@ export const initialValue: TDocument = [
                 text: 'List item 1',
               },
             ],
-            type: ECommonElement.LIST_CONTENT,
+            type: EElement.LIST_CONTENT,
           },
         ],
-        type: ECommonElement.LIST_ITEM,
+        type: EElement.LIST_ITEM,
       },
       {
         children: [
@@ -2013,10 +2015,10 @@ export const initialValue: TDocument = [
                 text: 'List item 2',
               },
             ],
-            type: ECommonElement.LIST_CONTENT,
+            type: EElement.LIST_CONTENT,
           },
         ],
-        type: ECommonElement.LIST_ITEM,
+        type: EElement.LIST_ITEM,
       },
       {
         children: [
@@ -2026,13 +2028,13 @@ export const initialValue: TDocument = [
                 text: 'List item 3',
               },
             ],
-            type: ECommonElement.LIST_CONTENT,
+            type: EElement.LIST_CONTENT,
           },
         ],
-        type: ECommonElement.LIST_ITEM,
+        type: EElement.LIST_ITEM,
       },
     ],
-    type: ECommonElement.UNORDERED_LIST,
+    type: EElement.UNORDERED_LIST,
   },
   {
     children: [
@@ -2042,7 +2044,7 @@ export const initialValue: TDocument = [
             text: 'if (true) {',
           },
         ],
-        type: ECommonElement.CODE_LINE,
+        type: EElement.CODE_LINE,
       },
       {
         children: [
@@ -2050,7 +2052,7 @@ export const initialValue: TDocument = [
             text: '// <- Place cursor at start of line and press tab',
           },
         ],
-        type: ECommonElement.CODE_LINE,
+        type: EElement.CODE_LINE,
       },
       {
         children: [
@@ -2058,11 +2060,11 @@ export const initialValue: TDocument = [
             text: '}',
           },
         ],
-        type: ECommonElement.CODE_LINE,
+        type: EElement.CODE_LINE,
       },
     ],
     codeLang: 'javascript',
-    type: ECommonElement.CODE_BLOCK,
+    type: EElement.CODE_BLOCK,
   },
   {
     children: [
@@ -2077,7 +2079,7 @@ export const initialValue: TDocument = [
         text: ' option.',
       },
     ],
-    type: ECommonElement.PARAGRAPH,
+    type: EElement.PARAGRAPH,
   },
   {
     children: [
@@ -2085,7 +2087,7 @@ export const initialValue: TDocument = [
         text: '',
       },
     ],
-    type: ECommonElement.TABBABLE,
+    type: EElement.TABBABLE,
   },
   {
     children: [
@@ -2093,7 +2095,7 @@ export const initialValue: TDocument = [
         text: 'When you press tab at the end of the editor, the focus should go to the button below.',
       },
     ],
-    type: ECommonElement.PARAGRAPH,
+    type: EElement.PARAGRAPH,
   },
   {
     children: [
@@ -2101,7 +2103,7 @@ export const initialValue: TDocument = [
         text: '💬 Comments',
       },
     ],
-    type: EHeadingElement.H2,
+    type: EElement.H2,
   },
   {
     children: [
@@ -2121,7 +2123,7 @@ export const initialValue: TDocument = [
         text: '  with others',
       },
     ],
-    type: ECommonElement.PARAGRAPH,
+    type: EElement.PARAGRAPH,
   },
   {
     children: [
@@ -2129,7 +2131,7 @@ export const initialValue: TDocument = [
         text: 'Deserialize HTML',
       },
     ],
-    type: EHeadingElement.H2,
+    type: EElement.H2,
   },
   {
     children: [
@@ -2151,7 +2153,7 @@ export const initialValue: TDocument = [
         text: 'data.',
       },
     ],
-    type: ECommonElement.PARAGRAPH,
+    type: EElement.PARAGRAPH,
   },
   {
     children: [
@@ -2159,7 +2161,7 @@ export const initialValue: TDocument = [
         text: "To experience the seamless preservation of formatting, simply copy and paste rendered HTML rich text content (not the source code) from another website into this editor. You'll notice that the formatting of the pasted content is maintained.",
       },
     ],
-    type: ECommonElement.PARAGRAPH,
+    type: EElement.PARAGRAPH,
   },
   {
     children: [
@@ -2167,7 +2169,7 @@ export const initialValue: TDocument = [
         text: 'Deserialize Markdown',
       },
     ],
-    type: EHeadingElement.H2,
+    type: EElement.H2,
   },
   {
     children: [
@@ -2180,14 +2182,14 @@ export const initialValue: TDocument = [
             text: 'markdown-it.github.io/',
           },
         ],
-        type: ECommonElement.LINK,
+        type: EElement.LINK,
         url: 'https://markdown-it.github.io/',
       },
       {
         text: ' into the editor for easy conversion and editing.',
       },
     ],
-    type: ECommonElement.PARAGRAPH,
+    type: EElement.PARAGRAPH,
   },
   {
     children: [
@@ -2195,7 +2197,7 @@ export const initialValue: TDocument = [
         text: 'Deserialize Docx',
       },
     ],
-    type: EHeadingElement.H2,
+    type: EElement.H2,
   },
   {
     children: [
@@ -2203,7 +2205,7 @@ export const initialValue: TDocument = [
         text: 'Easily import content from Microsoft Word documents by simply copying and pasting the Docx content into the editor.',
       },
     ],
-    type: ECommonElement.PARAGRAPH,
+    type: EElement.PARAGRAPH,
   },
   {
     children: [
@@ -2211,7 +2213,7 @@ export const initialValue: TDocument = [
         text: 'Deserialize CSV',
       },
     ],
-    type: EHeadingElement.H2,
+    type: EElement.H2,
   },
   {
     children: [
@@ -2219,7 +2221,7 @@ export const initialValue: TDocument = [
         text: 'Copy and paste CSV content into a table.',
       },
     ],
-    type: ECommonElement.PARAGRAPH,
+    type: EElement.PARAGRAPH,
   },
   {
     children: [
@@ -2227,7 +2229,7 @@ export const initialValue: TDocument = [
         text: 'Trailing Block',
       },
     ],
-    type: EHeadingElement.H2,
+    type: EElement.H2,
   },
   {
     children: [
@@ -2235,7 +2237,7 @@ export const initialValue: TDocument = [
         text: 'Always have a trailing paragraph at the end of your editor.',
       },
     ],
-    type: ECommonElement.PARAGRAPH,
+    type: EElement.PARAGRAPH,
   },
   {
     children: [
@@ -2243,7 +2245,7 @@ export const initialValue: TDocument = [
         text: 'Excalidraw',
       },
     ],
-    type: EHeadingElement.H2,
+    type: EElement.H2,
   },
   {
     children: [
@@ -2251,7 +2253,7 @@ export const initialValue: TDocument = [
         text: 'Unleash your creativity with the Excalidraw plugin, which enables you to embed and draw diagrams directly within your editor.',
       },
     ],
-    type: ECommonElement.PARAGRAPH,
+    type: EElement.PARAGRAPH,
   },
   {
     children: [
@@ -2307,7 +2309,7 @@ export const initialValue: TDocument = [
         viewhighlight: '#AFEEEE',
       },
     },
-    type: ECommonElement.EXCALIDRAW,
+    type: EElement.EXCALIDRAW,
   },
   {
     children: [
@@ -2315,6 +2317,6 @@ export const initialValue: TDocument = [
         text: '',
       },
     ],
-    type: ECommonElement.PARAGRAPH,
+    type: EElement.PARAGRAPH,
   },
 ]

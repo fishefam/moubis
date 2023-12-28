@@ -5,11 +5,11 @@ import { PlateElement } from '@udecode/plate'
 export function ElementParagraph({ children, ...props }: TPlateElementProps) {
   return (
     <PlateElement
-      asChild
       data-node-id={props.element.id}
+      style={{ width: '100%' }}
       {...props}
     >
-      <p>{children}</p>
+      {children}
     </PlateElement>
   )
 }

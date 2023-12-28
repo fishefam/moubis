@@ -1,21 +1,18 @@
-import type { ListStyleType, PlateElementProps } from '@udecode/plate'
+import type { ListStyleType, PlateElementProps, PlateLeafProps } from '@udecode/plate'
 import type { Attributes } from 'react'
 
-export enum EHeadingElement {
+export enum EElement {
+  BLOCK_QUOTE = 'blockquote',
+  CODE_BLOCK = 'codeBlock',
+  CODE_LINE = 'codeLine',
+  DIVIDER = 'divider',
+  EXCALIDRAW = 'excalidraw',
   H1 = 'h1',
   H2 = 'h2',
   H3 = 'h3',
   H4 = 'h4',
   H5 = 'h5',
   H6 = 'h6',
-}
-
-export enum ECommonElement {
-  BLOCK_QUOTE = 'blockquote',
-  CODE_BLOCK = 'codeBlock',
-  CODE_LINE = 'codeLine',
-  DIVIDER = 'divider',
-  EXCALIDRAW = 'excalidraw',
   IMAGE = 'image',
   LATEX = 'latex',
   LINK = 'link',
@@ -41,7 +38,7 @@ export enum EAlign {
   RIGHT = 'right',
 }
 
-export enum EMARK {
+export enum EMark {
   ALIGN = 'align',
   BOLD = 'bold',
   CODE = 'code',
@@ -56,10 +53,10 @@ export enum EMARK {
   UNDERLINE = 'underline',
 }
 
-export type TElementType = ECommonElement | EHeadingElement
+export type TElementType = EElement
 export type TEmptyText = { text: '' }
 export type TText = { text: string }
-export type TLeaf = (TEmptyText | TText) & { [key in EMARK]?: number | string | true }
+export type TLeaf = (TEmptyText | TText) & { [key in EMark]?: number | string | true }
 
 export type TElement = {
   align?: EAlign
@@ -87,6 +84,7 @@ export type TElement = {
 
 export type TDocument = TElement[]
 export type TPlateElementProps = PlateElementProps & { element: TElement }
+export type TPlateLeafProps = PlateLeafProps & { leaf: TLeaf }
 
 export type TProgrammingLang = 'css' | 'html' | 'javascript' | 'latex'
 export type TExcalidrawData = Record<string, unknown>

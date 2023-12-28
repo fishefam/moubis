@@ -3,8 +3,8 @@ import type { PlateEditor } from '@udecode/plate'
 
 import { AppContext } from '@/App'
 import { initialValue as mockValue } from '@/lib/mock'
-import { populatePlateElementId } from '@/lib/utils'
-import { ECommonElement } from '@/types/plate'
+import { populatePlateElementId } from '@/lib/util'
+import { EElement } from '@/types/plate'
 import { Plate, PlateContent } from '@udecode/plate'
 import { useContext } from 'react'
 
@@ -25,7 +25,7 @@ export function TextEditor() {
 }
 
 function getInitialValue(mock?: boolean): TDocument {
-  return populatePlateElementId(mock ? mockValue : [{ children: [{ text: '' }], type: ECommonElement.PARAGRAPH }])
+  return populatePlateElementId(mock ? mockValue : [{ children: [{ text: '' }], type: EElement.PARAGRAPH }])
 }
 
 function handleChange(editor: PlateEditor<TDocument>) {
