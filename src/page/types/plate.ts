@@ -112,8 +112,8 @@ export type TOtherElementProps = {
 export type TElement = TBlockElement | TInlineElement | TVoidElement
 
 export type TDocument = (TBlockElement | TVoidElement)[]
-export type TPlateElementProps = PlateElementProps & {
-  element: TElement
+export type TPlateElementProps<T extends TElement = TElement> = PlateElementProps & {
+  element: T
 }
 export type TPlateLeafProps = PlateLeafProps & { leaf: TLeaf }
 

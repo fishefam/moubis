@@ -9,7 +9,13 @@ export function ElementLink({ children, ...props }: TPlateElementProps) {
       asChild
       data-key={props.element.id}
     >
-      <a href={props.element.url}>{children}</a>
+      <a
+        className='hover:no-underline'
+        href={props.element.url}
+        style={{ color: 'rgb(37 99 235)', textDecoration: 'underline' }}
+      >
+        {children}
+      </a>
     </PlateElement>
   )
 }

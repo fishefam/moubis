@@ -11,6 +11,15 @@ export const initialValue: TDocument = [
       {
         text: '🌳 Blocks',
       },
+      {
+        children: [
+          {
+            text: 'Link In Header',
+          },
+        ],
+        id: nanoid(),
+        type: EInlineElement.LINK,
+      },
     ],
     id: nanoid(),
     type: EBlockElement.HEADING_1,
@@ -632,17 +641,7 @@ export const initialValue: TDocument = [
     ],
     id: nanoid(),
     type: EVoidElement.VIDEO,
-    url: 'https://www.youtube.com/watch?v=MyiBAziEWUA',
-  },
-  {
-    children: [
-      {
-        text: '',
-      },
-    ],
-    id: nanoid(),
-    type: EVoidElement.VIDEO,
-    url: 'https://twitter.com/zbeyens/status/1677214892212776960',
+    url: 'https://www.youtube.com/embed/MyiBAziEWUA',
   },
   {
     children: [
