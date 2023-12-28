@@ -6,15 +6,10 @@ export function ElementLink({ children, ...props }: TPlateElementProps) {
   return (
     <PlateElement
       {...props}
-      as='span'
-      data-node-id={props.element.id}
+      asChild
+      data-key={props.element.id}
     >
-      <a
-        href={props.element.url}
-        style={{ whiteSpace: 'nowrap' }}
-      >
-        {children}
-      </a>
+      <a href={props.element.url}>{children}</a>
     </PlateElement>
   )
 }

@@ -11,7 +11,7 @@ export function ElementImage({ children, ...props }: TPlateElementProps) {
       {...props}
       as={isInline ? 'span' : 'div'}
       contentEditable={false}
-      data-node-id={element.id}
+      data-key={element.id}
       style={{ margin: isInline ? '0 0.5rem' : '1rem 0' }}
     >
       {children}

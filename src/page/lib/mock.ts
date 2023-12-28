@@ -1,6 +1,6 @@
-import type { TDocument } from '@/types/plate'
+import { EAlign, EBlockElement, EInlineElement, EVoidElement, type TDocument } from '@/types/plate'
 
-import { EAlign, EElement } from '@/types/plate'
+import { nanoid } from './util'
 
 export const html =
   '<p>Y<span class="inline numeric" contenteditable="false" data-questiontext="%3Cinput%20type%3D%22text%22%20size%3D%2220%22%20value%3D%22Numeric%20with%20Units%22%20class%3D%22blankdisabled%20form-control%22%20readonly%3D%22readonly%22%3E" data-source="mode%3DNumeric%40negStyle%3Dminus%40grading%3Dexact_value%40name%3DresponseNaN%40answer.num%3D43%40numStyle%3Dthousands%20scientific%20%20arithmetic%40comment%3D%40weighting%3D1%40answer.units%3Dff%40showUnits%3Dtrue%40" id="sro_id_1" style="display:inline" title="Double-click the response area to edit">&zwnj;</span><span>&nbsp;</span>OOOOOOOOOOOOO IT WORKDS NOWWWWWWWWW</p><p>testing new one stuffwdraftedork great agin</p><div class="question-container"><div class="input-container"><div><label for="radius-range">Radius</label><input class="radius-range" id="radius-range" type="range"></div><fieldset><legend>Position</legend><div><label for="x-range">Left Right</label><input class="x-range" id="x-range" max="500" type="range"></div><div><label for="y-range">Up Down</label><input class="y-range" id="y-range" max="300" type="range"></div></fieldset><fieldset><legend>Color</legend><div><label for="red-range">Red</label><input class="red-range" defaultvalue="50" id="red-range" max="255" type="range"></div><div><label for="green-range">Green</label><input class="green-range" defaultvalue="50" id="green-range" max="255" type="range"></div><div><label for="blue-range">Blue</label><input class="blue-range" defaultvalue="50" id="blue-range" max="255" type="range"></div></fieldset></div><svg height="300" width="500"><circle class="circle" cx="250" cy="150" r="50" style="fill:#7b7b7b"></circle></svg>Now it should save again</div>'
@@ -9,59 +9,20 @@ export const initialValue: TDocument = [
   {
     children: [
       {
-        text: 'google link',
-      },
-      {
-        children: [{ text: 'dafsdf' }],
-        type: EElement.LINK,
-        url: 'https://tinhte.vn',
-      },
-      {
-        children: [
-          {
-            text: '',
-          },
-        ],
-        type: EElement.INLINE_IMAGE,
-        url: 'https://source.unsplash.com/kFrdX5IeQzI',
-        width: '100%',
+        text: '🌳 Blocks',
       },
     ],
-    type: EElement.PARAGRAPH,
+    id: nanoid(),
+    type: EBlockElement.HEADING_1,
   },
   {
     children: [
-      { text: 'beforescript' },
-      {
-        superscript: true,
-        text: '🌳Blocks',
-      },
-    ],
-    type: EElement.HEADING_1,
-  },
-  {
-    children: [
-      { text: 'Before the mathjax element' },
-      {
-        children: [
-          { text: 'Before the mathjax element' },
-          {
-            text: '\\(\\frac{3}{1234}\\)',
-          },
-          {
-            text: 'Easily create headings of various levels, from H1 to H6, to structure your content and make it more organized.',
-          },
-        ],
-        type: EElement.PARAGRAPH,
-      },
-      {
-        text: '\\(\\frac{3}{1234}\\)',
-      },
       {
         text: 'Easily create headings of various levels, from H1 to H6, to structure your content and make it more organized.',
       },
     ],
-    type: EElement.PARAGRAPH,
+    id: nanoid(),
+    type: EBlockElement.PARAGRAPH,
   },
   {
     children: [
@@ -69,7 +30,8 @@ export const initialValue: TDocument = [
         text: 'Create blockquotes to emphasize important information or highlight quotes from external sources.',
       },
     ],
-    type: EElement.BLOCK_QUOTE,
+    id: nanoid(),
+    type: EBlockElement.BLOCK_QUOTE,
   },
   {
     children: [
@@ -79,7 +41,8 @@ export const initialValue: TDocument = [
             text: '// Use code blocks to showcase code snippets',
           },
         ],
-        type: EElement.CODE_LINE,
+        id: nanoid(),
+        type: EBlockElement.CODE_LINE,
       },
       {
         children: [
@@ -87,7 +50,8 @@ export const initialValue: TDocument = [
             text: 'function greet() {',
           },
         ],
-        type: EElement.CODE_LINE,
+        id: nanoid(),
+        type: EBlockElement.CODE_LINE,
       },
       {
         children: [
@@ -95,7 +59,8 @@ export const initialValue: TDocument = [
             text: "  console.info('Hello World!');",
           },
         ],
-        type: EElement.CODE_LINE,
+        id: nanoid(),
+        type: EBlockElement.CODE_LINE,
       },
       {
         children: [
@@ -103,11 +68,13 @@ export const initialValue: TDocument = [
             text: '}',
           },
         ],
-        type: EElement.CODE_LINE,
+        id: nanoid(),
+        type: EBlockElement.CODE_LINE,
       },
     ],
-    codeLang: 'javascript',
-    type: EElement.CODE_BLOCK,
+    id: nanoid(),
+    lang: 'javascript',
+    type: EBlockElement.CODE_BLOCK,
   },
   {
     children: [
@@ -115,7 +82,8 @@ export const initialValue: TDocument = [
         text: 'Each block is a React component in which you can manage the state:',
       },
     ],
-    type: EElement.PARAGRAPH,
+    id: nanoid(),
+    type: EBlockElement.PARAGRAPH,
   },
   {
     checked: true,
@@ -124,7 +92,8 @@ export const initialValue: TDocument = [
         text: 'Create a "banana language" translation plugin',
       },
     ],
-    type: EElement.TODO,
+    id: nanoid(),
+    type: EBlockElement.TODO,
   },
   {
     checked: true,
@@ -133,7 +102,8 @@ export const initialValue: TDocument = [
         text: 'Create a "detect sarcasm" plugin (good luck with that)',
       },
     ],
-    type: EElement.TODO,
+    id: nanoid(),
+    type: EBlockElement.TODO,
   },
   {
     children: [
@@ -141,7 +111,8 @@ export const initialValue: TDocument = [
         text: 'Create an AI auto-complete plugin',
       },
     ],
-    type: EElement.TODO,
+    id: nanoid(),
+    type: EBlockElement.TODO,
   },
   {
     children: [
@@ -149,7 +120,8 @@ export const initialValue: TDocument = [
         text: '🔗 Link',
       },
     ],
-    type: EElement.HEADING_2,
+    id: nanoid(),
+    type: EBlockElement.HEADING_2,
   },
   {
     children: [
@@ -162,14 +134,16 @@ export const initialValue: TDocument = [
             text: 'hyperlinks',
           },
         ],
-        type: EElement.LINK,
+        id: nanoid(),
+        type: EInlineElement.LINK,
         url: 'https://en.wikipedia.org/wiki/Hypertext',
       },
       {
         text: ' within your text to reference external sources or provide additional information using the Link plugin.',
       },
     ],
-    type: EElement.PARAGRAPH,
+    id: nanoid(),
+    type: EBlockElement.PARAGRAPH,
   },
   {
     children: [
@@ -177,7 +151,8 @@ export const initialValue: TDocument = [
         text: 'Effortlessly create hyperlinks using the toolbar or by pasting a URL while selecting the desired text.',
       },
     ],
-    type: EElement.PARAGRAPH,
+    id: nanoid(),
+    type: EBlockElement.PARAGRAPH,
   },
   {
     children: [
@@ -185,7 +160,8 @@ export const initialValue: TDocument = [
         text: '🌱 Marks',
       },
     ],
-    type: EElement.HEADING_1,
+    id: nanoid(),
+    type: EBlockElement.HEADING_1,
   },
   {
     children: [
@@ -193,7 +169,8 @@ export const initialValue: TDocument = [
         text: 'Add style and emphasis to your text using the mark plugins, which offers a variety of formatting options.',
       },
     ],
-    type: EElement.PARAGRAPH,
+    id: nanoid(),
+    type: EBlockElement.PARAGRAPH,
   },
   {
     children: [
@@ -231,7 +208,8 @@ export const initialValue: TDocument = [
         text: ' of these styles for a visually striking effect.',
       },
     ],
-    type: EElement.PARAGRAPH,
+    id: nanoid(),
+    type: EBlockElement.PARAGRAPH,
   },
   {
     children: [
@@ -246,7 +224,8 @@ export const initialValue: TDocument = [
         text: ' to indicate deleted or outdated content.',
       },
     ],
-    type: EElement.PARAGRAPH,
+    id: nanoid(),
+    type: EBlockElement.PARAGRAPH,
   },
   {
     children: [
@@ -261,7 +240,8 @@ export const initialValue: TDocument = [
         text: ' formatting for easy readability.',
       },
     ],
-    type: EElement.PARAGRAPH,
+    id: nanoid(),
+    type: EBlockElement.PARAGRAPH,
   },
   {
     children: [
@@ -269,43 +249,43 @@ export const initialValue: TDocument = [
         text: 'Add ',
       },
       {
+        backgroundColor: '#df4538',
         color: 'white',
-        highlight: '#df4538',
         text: 'm',
       },
       {
+        backgroundColor: '#e2533a',
         color: 'white',
-        highlight: '#e2533a',
         text: 'u',
       },
       {
+        backgroundColor: '#e6603d',
         color: 'white',
-        highlight: '#e6603d',
         text: 'l',
       },
       {
+        backgroundColor: '#e96f40',
         color: 'white',
-        highlight: '#e96f40',
         text: 't',
       },
       {
+        backgroundColor: '#ec7d43',
         color: 'white',
-        highlight: '#ec7d43',
         text: 'i',
       },
       {
+        backgroundColor: '#ef8a45',
         color: 'white',
-        highlight: '#ef8a45',
         text: 'p',
       },
       {
+        backgroundColor: '#f29948',
         color: 'white',
-        highlight: '#f29948',
         text: 'l',
       },
       {
+        backgroundColor: '#f5a74b',
         color: 'white',
-        highlight: '#f5a74b',
         text: 'e',
       },
       {
@@ -319,15 +299,16 @@ export const initialValue: TDocument = [
         text: ' and ',
       },
       {
+        backgroundColor: 'rgb(252, 109, 38)',
         color: 'white',
-        highlight: 'rgb(252, 109, 38)',
         text: 'background',
       },
       {
         text: ' colors to create vibrant and eye-catching text.',
       },
     ],
-    type: EElement.PARAGRAPH,
+    id: nanoid(),
+    type: EBlockElement.PARAGRAPH,
   },
   {
     children: [
@@ -339,7 +320,8 @@ export const initialValue: TDocument = [
         text: ' important information for better clarity.',
       },
     ],
-    type: EElement.PARAGRAPH,
+    id: nanoid(),
+    type: EBlockElement.PARAGRAPH,
   },
   {
     children: [
@@ -347,21 +329,22 @@ export const initialValue: TDocument = [
         text: 'Press ',
       },
       {
-        highlight: '#637647',
+        kbd: true,
         text: '⌘ + B',
       },
       {
         text: ' to apply bold mark or ',
       },
       {
-        highlight: '#637647',
+        kbd: true,
         text: '⌘ + I',
       },
       {
         text: ' for italic mark.',
       },
     ],
-    type: EElement.PARAGRAPH,
+    id: nanoid(),
+    type: EBlockElement.PARAGRAPH,
   },
   {
     children: [
@@ -369,7 +352,8 @@ export const initialValue: TDocument = [
         text: '＠ Mention',
       },
     ],
-    type: EElement.HEADING_2,
+    id: nanoid(),
+    type: EBlockElement.HEADING_2,
   },
   {
     children: [
@@ -377,7 +361,8 @@ export const initialValue: TDocument = [
         text: 'Mention and reference other users or entities within your text using @-mentions.',
       },
     ],
-    type: EElement.PARAGRAPH,
+    id: nanoid(),
+    type: EBlockElement.PARAGRAPH,
   },
   {
     children: [
@@ -390,7 +375,8 @@ export const initialValue: TDocument = [
             text: '',
           },
         ],
-        type: EElement.MENTION,
+        id: nanoid(),
+        type: EInlineElement.MENTION,
         value: 'R2-D2',
       },
       {
@@ -402,14 +388,16 @@ export const initialValue: TDocument = [
             text: '',
           },
         ],
-        type: EElement.MENTION,
+        id: nanoid(),
+        type: EInlineElement.MENTION,
         value: 'Mace Windu',
       },
       {
         text: '.',
       },
     ],
-    type: EElement.PARAGRAPH,
+    id: nanoid(),
+    type: EBlockElement.PARAGRAPH,
   },
   {
     children: [
@@ -417,7 +405,8 @@ export const initialValue: TDocument = [
         text: "🙂 Emoji's",
       },
     ],
-    type: EElement.HEADING_2,
+    id: nanoid(),
+    type: EBlockElement.HEADING_2,
   },
   {
     children: [
@@ -425,7 +414,8 @@ export const initialValue: TDocument = [
         text: 'Express yourself with a touch of fun 🎉 and emotion 😃.',
       },
     ],
-    type: EElement.PARAGRAPH,
+    id: nanoid(),
+    type: EBlockElement.PARAGRAPH,
   },
   {
     children: [
@@ -433,7 +423,8 @@ export const initialValue: TDocument = [
         text: 'Pick from the toolbar or write after the colon to open the combobox :',
       },
     ],
-    type: EElement.PARAGRAPH,
+    id: nanoid(),
+    type: EBlockElement.PARAGRAPH,
   },
   {
     align: EAlign.RIGHT,
@@ -442,7 +433,8 @@ export const initialValue: TDocument = [
         text: 'Alignment',
       },
     ],
-    type: EElement.HEADING_2,
+    id: nanoid(),
+    type: EBlockElement.HEADING_2,
   },
   {
     align: EAlign.RIGHT,
@@ -451,7 +443,8 @@ export const initialValue: TDocument = [
         text: 'Align text within blocks to create visually appealing and balanced layouts.',
       },
     ],
-    type: EElement.PARAGRAPH,
+    id: nanoid(),
+    type: EBlockElement.PARAGRAPH,
   },
   {
     align: EAlign.CENTER,
@@ -460,7 +453,8 @@ export const initialValue: TDocument = [
         text: 'Center',
       },
     ],
-    type: EElement.HEADING_3,
+    id: nanoid(),
+    type: EBlockElement.HEADING_3,
   },
   {
     align: EAlign.JUSTIFY,
@@ -469,7 +463,8 @@ export const initialValue: TDocument = [
         text: 'Create clean and balanced layouts by justifying block text, providing a professional and polished look.',
       },
     ],
-    type: EElement.PARAGRAPH,
+    id: nanoid(),
+    type: EBlockElement.PARAGRAPH,
   },
   {
     children: [
@@ -477,7 +472,8 @@ export const initialValue: TDocument = [
         text: 'Line Height',
       },
     ],
-    type: EElement.HEADING_2,
+    id: nanoid(),
+    type: EBlockElement.HEADING_2,
   },
   {
     children: [
@@ -485,7 +481,8 @@ export const initialValue: TDocument = [
         text: 'Control the line height of your text to improve readability and adjust the spacing between lines.',
       },
     ],
-    type: EElement.PARAGRAPH,
+    id: nanoid(),
+    type: EBlockElement.PARAGRAPH,
   },
   {
     children: [
@@ -493,8 +490,9 @@ export const initialValue: TDocument = [
         text: 'Choose the ideal line height to ensure comfortable reading and an aesthetically pleasing document.',
       },
     ],
+    id: nanoid(),
     lineHeight: 2,
-    type: EElement.PARAGRAPH,
+    type: EBlockElement.PARAGRAPH,
   },
   {
     children: [
@@ -502,7 +500,8 @@ export const initialValue: TDocument = [
         text: 'Indentation',
       },
     ],
-    type: EElement.HEADING_2,
+    id: nanoid(),
+    type: EBlockElement.HEADING_2,
   },
   {
     children: [
@@ -510,8 +509,9 @@ export const initialValue: TDocument = [
         text: 'Easily control the indentation of specific blocks to highlight important information and improve visual structure.',
       },
     ],
+    id: nanoid(),
     indent: 1,
-    type: EElement.PARAGRAPH,
+    type: EBlockElement.PARAGRAPH,
   },
   {
     children: [
@@ -519,8 +519,27 @@ export const initialValue: TDocument = [
         text: 'For instance, this paragraph looks like it belongs to the previous one.',
       },
     ],
+    id: nanoid(),
     indent: 2,
-    type: EElement.PARAGRAPH,
+    type: EBlockElement.PARAGRAPH,
+  },
+  {
+    children: [
+      {
+        text: 'Indent List',
+      },
+    ],
+    id: nanoid(),
+    type: EBlockElement.HEADING_2,
+  },
+  {
+    children: [
+      {
+        text: 'Create indented lists with multiple levels of indentation and customize the list style type for each level.',
+      },
+    ],
+    id: nanoid(),
+    type: EBlockElement.PARAGRAPH,
   },
   {
     children: [
@@ -528,31 +547,17 @@ export const initialValue: TDocument = [
         text: 'Horizontal Rule',
       },
     ],
-    type: EElement.HEADING_2,
+    id: nanoid(),
+    type: EBlockElement.HEADING_2,
   },
   {
     children: [
       {
-        text: 'Add mhorizontal rules to visually separate sections and content within your document.',
+        text: 'Add horizontal rules to visually separate sections and content within your document.',
       },
     ],
-    type: EElement.PARAGRAPH,
-  },
-  {
-    children: [
-      {
-        text: '',
-      },
-    ],
-    type: EElement.DIVIDER,
-  },
-  {
-    children: [
-      {
-        text: '✍️ List',
-      },
-    ],
-    type: EElement.HEADING_2,
+    id: nanoid(),
+    type: EBlockElement.PARAGRAPH,
   },
   {
     children: [
@@ -560,219 +565,8 @@ export const initialValue: TDocument = [
         text: '',
       },
     ],
-    type: EElement.PARAGRAPH,
-  },
-  {
-    children: [
-      {
-        children: [
-          {
-            children: [
-              {
-                text: 'Cats',
-              },
-            ],
-            type: EElement.LIST_CONTENT,
-          },
-        ],
-        type: EElement.LIST_ITEM,
-      },
-      {
-        children: [
-          {
-            children: [
-              {
-                text: 'Dogs',
-              },
-            ],
-            type: EElement.LIST_CONTENT,
-          },
-        ],
-        type: EElement.LIST_ITEM,
-      },
-      {
-        children: [
-          {
-            children: [
-              {
-                text: 'Birds',
-              },
-            ],
-            type: EElement.LIST_CONTENT,
-          },
-          {
-            children: [
-              {
-                children: [
-                  {
-                    children: [
-                      {
-                        text: 'Parrots',
-                      },
-                    ],
-                    type: EElement.LIST_CONTENT,
-                  },
-                ],
-                type: EElement.LIST_ITEM,
-              },
-              {
-                children: [
-                  {
-                    children: [
-                      {
-                        text: 'Owls',
-                      },
-                    ],
-                    type: EElement.LIST_CONTENT,
-                  },
-                  {
-                    children: [
-                      {
-                        children: [
-                          {
-                            children: [
-                              {
-                                text: 'Barn Owls',
-                              },
-                            ],
-                            type: EElement.LIST_CONTENT,
-                          },
-                        ],
-                        type: EElement.LIST_ITEM,
-                      },
-                      {
-                        children: [
-                          {
-                            children: [
-                              {
-                                text: 'Snowy Owls',
-                              },
-                            ],
-                            type: EElement.LIST_CONTENT,
-                          },
-                        ],
-                        type: EElement.LIST_ITEM,
-                      },
-                    ],
-                    type: EElement.UNORDERED_LIST,
-                  },
-                ],
-                type: EElement.LIST_ITEM,
-              },
-            ],
-            type: EElement.UNORDERED_LIST,
-          },
-        ],
-        type: EElement.LIST_ITEM,
-      },
-    ],
-    type: EElement.UNORDERED_LIST,
-  },
-  {
-    children: [
-      {
-        children: [
-          {
-            children: [
-              {
-                text: 'Red',
-              },
-            ],
-            type: EElement.LIST_CONTENT,
-          },
-        ],
-        type: EElement.LIST_ITEM,
-      },
-      {
-        children: [
-          {
-            children: [
-              {
-                text: 'Blue',
-              },
-            ],
-            type: EElement.LIST_CONTENT,
-          },
-          {
-            children: [
-              {
-                children: [
-                  {
-                    children: [
-                      {
-                        text: 'Light blue',
-                      },
-                    ],
-                    type: EElement.LIST_CONTENT,
-                  },
-                ],
-                type: EElement.LIST_ITEM,
-              },
-              {
-                children: [
-                  {
-                    children: [
-                      {
-                        text: 'Dark blue',
-                      },
-                    ],
-                    type: EElement.LIST_CONTENT,
-                  },
-                  {
-                    children: [
-                      {
-                        children: [
-                          {
-                            children: [
-                              {
-                                text: 'Navy blue',
-                              },
-                            ],
-                            type: EElement.LIST_CONTENT,
-                          },
-                        ],
-                        type: EElement.LIST_ITEM,
-                      },
-                      {
-                        children: [
-                          {
-                            children: [
-                              {
-                                text: 'Turquoise blue',
-                              },
-                            ],
-                            type: EElement.LIST_CONTENT,
-                          },
-                        ],
-                        type: EElement.LIST_ITEM,
-                      },
-                    ],
-                    type: EElement.ORDERED_LIST,
-                  },
-                ],
-                type: EElement.LIST_ITEM,
-              },
-            ],
-            type: EElement.UNORDERED_LIST,
-          },
-        ],
-        type: EElement.LIST_ITEM,
-      },
-      {
-        children: [
-          {
-            children: [
-              {
-                text: 'Green',
-              },
-            ],
-            type: EElement.LIST_CONTENT,
-          },
-        ],
-        type: EElement.LIST_ITEM,
-      },
-    ],
-    type: EElement.ORDERED_LIST,
+    id: nanoid(),
+    type: EVoidElement.DIVIDER,
   },
   {
     children: [
@@ -780,7 +574,8 @@ export const initialValue: TDocument = [
         text: '📸 Image',
       },
     ],
-    type: EElement.HEADING_2,
+    id: nanoid(),
+    type: EBlockElement.HEADING_2,
   },
   {
     children: [
@@ -788,7 +583,8 @@ export const initialValue: TDocument = [
         text: 'Add images by either uploading them or providing the image URL:',
       },
     ],
-    type: EElement.PARAGRAPH,
+    id: nanoid(),
+    type: EBlockElement.PARAGRAPH,
   },
   {
     children: [
@@ -796,7 +592,8 @@ export const initialValue: TDocument = [
         text: '',
       },
     ],
-    type: EElement.BLOCK_IMAGE,
+    id: nanoid(),
+    type: EVoidElement.BLOCK_IMAGE,
     url: 'https://source.unsplash.com/kFrdX5IeQzI',
     width: '75%',
   },
@@ -806,7 +603,8 @@ export const initialValue: TDocument = [
         text: 'Customize image captions and resize images.',
       },
     ],
-    type: EElement.PARAGRAPH,
+    id: nanoid(),
+    type: EBlockElement.PARAGRAPH,
   },
   {
     children: [
@@ -814,7 +612,8 @@ export const initialValue: TDocument = [
         text: '📺 Embed',
       },
     ],
-    type: EElement.HEADING_2,
+    id: nanoid(),
+    type: EBlockElement.HEADING_2,
   },
   {
     children: [
@@ -822,7 +621,8 @@ export const initialValue: TDocument = [
         text: 'Embed various types of content, such as videos and tweets:',
       },
     ],
-    type: EElement.PARAGRAPH,
+    id: nanoid(),
+    type: EBlockElement.PARAGRAPH,
   },
   {
     children: [
@@ -830,8 +630,19 @@ export const initialValue: TDocument = [
         text: '',
       },
     ],
-    type: EElement.VIDEO,
+    id: nanoid(),
+    type: EVoidElement.VIDEO,
     url: 'https://www.youtube.com/watch?v=MyiBAziEWUA',
+  },
+  {
+    children: [
+      {
+        text: '',
+      },
+    ],
+    id: nanoid(),
+    type: EVoidElement.VIDEO,
+    url: 'https://twitter.com/zbeyens/status/1677214892212776960',
   },
   {
     children: [
@@ -839,7 +650,8 @@ export const initialValue: TDocument = [
         text: '🏓 Table',
       },
     ],
-    type: EElement.HEADING_2,
+    id: nanoid(),
+    type: EBlockElement.HEADING_2,
   },
   {
     children: [
@@ -847,7 +659,8 @@ export const initialValue: TDocument = [
         text: 'Create customizable tables with resizable columns and rows, allowing you to design structured layouts.',
       },
     ],
-    type: EElement.PARAGRAPH,
+    id: nanoid(),
+    type: EBlockElement.PARAGRAPH,
   },
   {
     children: [
@@ -862,10 +675,12 @@ export const initialValue: TDocument = [
                     text: 'Plugin',
                   },
                 ],
-                type: EElement.PARAGRAPH,
+                id: nanoid(),
+                type: EBlockElement.PARAGRAPH,
               },
             ],
-            type: EElement.TABLE_HEADER,
+            id: nanoid(),
+            type: EBlockElement.TABLE_HEADER,
           },
           {
             children: [
@@ -876,10 +691,12 @@ export const initialValue: TDocument = [
                     text: 'Element',
                   },
                 ],
-                type: EElement.PARAGRAPH,
+                id: nanoid(),
+                type: EBlockElement.PARAGRAPH,
               },
             ],
-            type: EElement.TABLE_HEADER,
+            id: nanoid(),
+            type: EBlockElement.TABLE_HEADER,
           },
           {
             children: [
@@ -890,10 +707,12 @@ export const initialValue: TDocument = [
                     text: 'Inline',
                   },
                 ],
-                type: EElement.PARAGRAPH,
+                id: nanoid(),
+                type: EBlockElement.PARAGRAPH,
               },
             ],
-            type: EElement.TABLE_HEADER,
+            id: nanoid(),
+            type: EBlockElement.TABLE_HEADER,
           },
           {
             children: [
@@ -904,13 +723,16 @@ export const initialValue: TDocument = [
                     text: 'Void',
                   },
                 ],
-                type: EElement.PARAGRAPH,
+                id: nanoid(),
+                type: EBlockElement.PARAGRAPH,
               },
             ],
-            type: EElement.TABLE_HEADER,
+            id: nanoid(),
+            type: EBlockElement.TABLE_HEADER,
           },
         ],
-        type: EElement.TABLE_ROW,
+        id: nanoid(),
+        type: EBlockElement.TABLE_ROW,
       },
       {
         children: [
@@ -923,10 +745,12 @@ export const initialValue: TDocument = [
                     text: 'Heading',
                   },
                 ],
-                type: EElement.PARAGRAPH,
+                id: nanoid(),
+                type: EBlockElement.PARAGRAPH,
               },
             ],
-            type: EElement.TABLE_CELL,
+            id: nanoid(),
+            type: EBlockElement.TABLE_CELL,
           },
           {
             children: [
@@ -936,10 +760,12 @@ export const initialValue: TDocument = [
                     text: 'Yes',
                   },
                 ],
-                type: EElement.PARAGRAPH,
+                id: nanoid(),
+                type: EBlockElement.PARAGRAPH,
               },
             ],
-            type: EElement.TABLE_CELL,
+            id: nanoid(),
+            type: EBlockElement.TABLE_CELL,
           },
           {
             children: [
@@ -949,10 +775,12 @@ export const initialValue: TDocument = [
                     text: 'No',
                   },
                 ],
-                type: EElement.PARAGRAPH,
+                id: nanoid(),
+                type: EBlockElement.PARAGRAPH,
               },
             ],
-            type: EElement.TABLE_CELL,
+            id: nanoid(),
+            type: EBlockElement.TABLE_CELL,
           },
           {
             children: [
@@ -962,13 +790,16 @@ export const initialValue: TDocument = [
                     text: 'No',
                   },
                 ],
-                type: EElement.PARAGRAPH,
+                id: nanoid(),
+                type: EBlockElement.PARAGRAPH,
               },
             ],
-            type: EElement.TABLE_CELL,
+            id: nanoid(),
+            type: EBlockElement.TABLE_CELL,
           },
         ],
-        type: EElement.TABLE_ROW,
+        id: nanoid(),
+        type: EBlockElement.TABLE_ROW,
       },
       {
         children: [
@@ -981,10 +812,12 @@ export const initialValue: TDocument = [
                     text: 'Image',
                   },
                 ],
-                type: EElement.PARAGRAPH,
+                id: nanoid(),
+                type: EBlockElement.PARAGRAPH,
               },
             ],
-            type: EElement.TABLE_CELL,
+            id: nanoid(),
+            type: EBlockElement.TABLE_CELL,
           },
           {
             children: [
@@ -994,10 +827,12 @@ export const initialValue: TDocument = [
                     text: 'Yes',
                   },
                 ],
-                type: EElement.PARAGRAPH,
+                id: nanoid(),
+                type: EBlockElement.PARAGRAPH,
               },
             ],
-            type: EElement.TABLE_CELL,
+            id: nanoid(),
+            type: EBlockElement.TABLE_CELL,
           },
           {
             children: [
@@ -1007,10 +842,12 @@ export const initialValue: TDocument = [
                     text: 'No',
                   },
                 ],
-                type: EElement.PARAGRAPH,
+                id: nanoid(),
+                type: EBlockElement.PARAGRAPH,
               },
             ],
-            type: EElement.TABLE_CELL,
+            id: nanoid(),
+            type: EBlockElement.TABLE_CELL,
           },
           {
             children: [
@@ -1020,13 +857,16 @@ export const initialValue: TDocument = [
                     text: 'Yes',
                   },
                 ],
-                type: EElement.PARAGRAPH,
+                id: nanoid(),
+                type: EBlockElement.PARAGRAPH,
               },
             ],
-            type: EElement.TABLE_CELL,
+            id: nanoid(),
+            type: EBlockElement.TABLE_CELL,
           },
         ],
-        type: EElement.TABLE_ROW,
+        id: nanoid(),
+        type: EBlockElement.TABLE_ROW,
       },
       {
         children: [
@@ -1039,10 +879,12 @@ export const initialValue: TDocument = [
                     text: 'Mention',
                   },
                 ],
-                type: EElement.PARAGRAPH,
+                id: nanoid(),
+                type: EBlockElement.PARAGRAPH,
               },
             ],
-            type: EElement.TABLE_CELL,
+            id: nanoid(),
+            type: EBlockElement.TABLE_CELL,
           },
           {
             children: [
@@ -1052,10 +894,12 @@ export const initialValue: TDocument = [
                     text: 'Yes',
                   },
                 ],
-                type: EElement.PARAGRAPH,
+                id: nanoid(),
+                type: EBlockElement.PARAGRAPH,
               },
             ],
-            type: EElement.TABLE_CELL,
+            id: nanoid(),
+            type: EBlockElement.TABLE_CELL,
           },
           {
             children: [
@@ -1065,10 +909,12 @@ export const initialValue: TDocument = [
                     text: 'Yes',
                   },
                 ],
-                type: EElement.PARAGRAPH,
+                id: nanoid(),
+                type: EBlockElement.PARAGRAPH,
               },
             ],
-            type: EElement.TABLE_CELL,
+            id: nanoid(),
+            type: EBlockElement.TABLE_CELL,
           },
           {
             children: [
@@ -1078,18 +924,22 @@ export const initialValue: TDocument = [
                     text: 'Yes',
                   },
                 ],
-                type: EElement.PARAGRAPH,
+                id: nanoid(),
+                type: EBlockElement.PARAGRAPH,
               },
             ],
-            type: EElement.TABLE_CELL,
+            id: nanoid(),
+            type: EBlockElement.TABLE_CELL,
           },
         ],
-        type: EElement.TABLE_ROW,
+        id: nanoid(),
+        type: EBlockElement.TABLE_ROW,
       },
     ],
     colSizes: [100, 100, 100, 100],
+    id: nanoid(),
     marginLeft: 20,
-    type: EElement.TABLE,
+    type: EBlockElement.TABLE,
   },
   {
     children: [
@@ -1097,7 +947,8 @@ export const initialValue: TDocument = [
         text: '🏃‍♀️ Autoformat',
       },
     ],
-    type: EElement.HEADING_2,
+    id: nanoid(),
+    type: EBlockElement.HEADING_2,
   },
   {
     children: [
@@ -1105,7 +956,8 @@ export const initialValue: TDocument = [
         text: 'Empower your writing experience by enabling autoformatting features. Add Markdown-like shortcuts that automatically apply formatting as you type.',
       },
     ],
-    type: EElement.PARAGRAPH,
+    id: nanoid(),
+    type: EBlockElement.PARAGRAPH,
   },
   {
     children: [
@@ -1113,7 +965,8 @@ export const initialValue: TDocument = [
         text: 'While typing, try these mark rules:',
       },
     ],
-    type: EElement.PARAGRAPH,
+    id: nanoid(),
+    type: EBlockElement.PARAGRAPH,
   },
   {
     children: [
@@ -1139,10 +992,12 @@ export const initialValue: TDocument = [
                 text: ' on either side of your text to add **bold* mark.',
               },
             ],
-            type: EElement.LIST_CONTENT,
+            id: nanoid(),
+            type: EBlockElement.LIST_CONTENT,
           },
         ],
-        type: EElement.LIST_ITEM,
+        id: nanoid(),
+        type: EBlockElement.LIST_ITEM,
       },
       {
         children: [
@@ -1166,10 +1021,12 @@ export const initialValue: TDocument = [
                 text: ' on either side of your text to add *italic mark.',
               },
             ],
-            type: EElement.LIST_CONTENT,
+            id: nanoid(),
+            type: EBlockElement.LIST_CONTENT,
           },
         ],
-        type: EElement.LIST_ITEM,
+        id: nanoid(),
+        type: EBlockElement.LIST_ITEM,
       },
       {
         children: [
@@ -1186,10 +1043,12 @@ export const initialValue: TDocument = [
                 text: ' on either side of your text to add `inline code mark.',
               },
             ],
-            type: EElement.LIST_CONTENT,
+            id: nanoid(),
+            type: EBlockElement.LIST_CONTENT,
           },
         ],
-        type: EElement.LIST_ITEM,
+        id: nanoid(),
+        type: EBlockElement.LIST_ITEM,
       },
       {
         children: [
@@ -1206,10 +1065,12 @@ export const initialValue: TDocument = [
                 text: ' on either side of your text to add ~~strikethrough~ mark.',
               },
             ],
-            type: EElement.LIST_CONTENT,
+            id: nanoid(),
+            type: EBlockElement.LIST_CONTENT,
           },
         ],
-        type: EElement.LIST_ITEM,
+        id: nanoid(),
+        type: EBlockElement.LIST_ITEM,
       },
       {
         children: [
@@ -1219,10 +1080,12 @@ export const initialValue: TDocument = [
                 text: 'Note that nothing happens when there is a character before, try on:*bold',
               },
             ],
-            type: EElement.LIST_CONTENT,
+            id: nanoid(),
+            type: EBlockElement.LIST_CONTENT,
           },
         ],
-        type: EElement.LIST_ITEM,
+        id: nanoid(),
+        type: EBlockElement.LIST_ITEM,
       },
       {
         children: [
@@ -1239,13 +1102,16 @@ export const initialValue: TDocument = [
                 text: '.',
               },
             ],
-            type: EElement.LIST_CONTENT,
+            id: nanoid(),
+            type: EBlockElement.LIST_CONTENT,
           },
         ],
-        type: EElement.LIST_ITEM,
+        id: nanoid(),
+        type: EBlockElement.LIST_ITEM,
       },
     ],
-    type: EElement.UNORDERED_LIST,
+    id: nanoid(),
+    type: EBlockElement.UNORDERED_LIST,
   },
   {
     children: [
@@ -1253,7 +1119,8 @@ export const initialValue: TDocument = [
         text: 'At the beginning of any new block or existing block, try these (block rules):',
       },
     ],
-    type: EElement.PARAGRAPH,
+    id: nanoid(),
+    type: EBlockElement.PARAGRAPH,
   },
   {
     children: [
@@ -1293,10 +1160,12 @@ export const initialValue: TDocument = [
                 text: ' to create a bulleted list.',
               },
             ],
-            type: EElement.LIST_CONTENT,
+            id: nanoid(),
+            type: EBlockElement.LIST_CONTENT,
           },
         ],
-        type: EElement.LIST_ITEM,
+        id: nanoid(),
+        type: EBlockElement.LIST_ITEM,
       },
       {
         children: [
@@ -1327,10 +1196,12 @@ export const initialValue: TDocument = [
                 text: 'to create a numbered list.',
               },
             ],
-            type: EElement.LIST_CONTENT,
+            id: nanoid(),
+            type: EBlockElement.LIST_CONTENT,
           },
         ],
-        type: EElement.LIST_ITEM,
+        id: nanoid(),
+        type: EBlockElement.LIST_ITEM,
       },
       {
         children: [
@@ -1354,10 +1225,12 @@ export const initialValue: TDocument = [
                 text: ' to create a block quote.',
               },
             ],
-            type: EElement.LIST_CONTENT,
+            id: nanoid(),
+            type: EBlockElement.LIST_CONTENT,
           },
         ],
-        type: EElement.LIST_ITEM,
+        id: nanoid(),
+        type: EBlockElement.LIST_ITEM,
       },
       {
         children: [
@@ -1374,10 +1247,12 @@ export const initialValue: TDocument = [
                 text: ' to create a code block.',
               },
             ],
-            type: EElement.LIST_CONTENT,
+            id: nanoid(),
+            type: EBlockElement.LIST_CONTENT,
           },
         ],
-        type: EElement.LIST_ITEM,
+        id: nanoid(),
+        type: EBlockElement.LIST_ITEM,
       },
       {
         children: [
@@ -1394,10 +1269,12 @@ export const initialValue: TDocument = [
                 text: ' to create a horizontal rule.',
               },
             ],
-            type: EElement.LIST_CONTENT,
+            id: nanoid(),
+            type: EBlockElement.LIST_CONTENT,
           },
         ],
-        type: EElement.LIST_ITEM,
+        id: nanoid(),
+        type: EBlockElement.LIST_ITEM,
       },
       {
         children: [
@@ -1421,10 +1298,12 @@ export const initialValue: TDocument = [
                 text: ' to create an H1 heading.',
               },
             ],
-            type: EElement.LIST_CONTENT,
+            id: nanoid(),
+            type: EBlockElement.LIST_CONTENT,
           },
         ],
-        type: EElement.LIST_ITEM,
+        id: nanoid(),
+        type: EBlockElement.LIST_ITEM,
       },
       {
         children: [
@@ -1448,10 +1327,12 @@ export const initialValue: TDocument = [
                 text: ' to create an H2 sub-heading.',
               },
             ],
-            type: EElement.LIST_CONTENT,
+            id: nanoid(),
+            type: EBlockElement.LIST_CONTENT,
           },
         ],
-        type: EElement.LIST_ITEM,
+        id: nanoid(),
+        type: EBlockElement.LIST_ITEM,
       },
       {
         children: [
@@ -1475,10 +1356,12 @@ export const initialValue: TDocument = [
                 text: ' to create an H3 sub-heading.',
               },
             ],
-            type: EElement.LIST_CONTENT,
+            id: nanoid(),
+            type: EBlockElement.LIST_CONTENT,
           },
         ],
-        type: EElement.LIST_ITEM,
+        id: nanoid(),
+        type: EBlockElement.LIST_ITEM,
       },
       {
         children: [
@@ -1502,10 +1385,12 @@ export const initialValue: TDocument = [
                 text: ' to create an H4 sub-heading.',
               },
             ],
-            type: EElement.LIST_CONTENT,
+            id: nanoid(),
+            type: EBlockElement.LIST_CONTENT,
           },
         ],
-        type: EElement.LIST_ITEM,
+        id: nanoid(),
+        type: EBlockElement.LIST_ITEM,
       },
       {
         children: [
@@ -1529,10 +1414,12 @@ export const initialValue: TDocument = [
                 text: ' to create an H5 sub-heading.',
               },
             ],
-            type: EElement.LIST_CONTENT,
+            id: nanoid(),
+            type: EBlockElement.LIST_CONTENT,
           },
         ],
-        type: EElement.LIST_ITEM,
+        id: nanoid(),
+        type: EBlockElement.LIST_ITEM,
       },
       {
         children: [
@@ -1556,13 +1443,16 @@ export const initialValue: TDocument = [
                 text: ' to create an H6 sub-heading.',
               },
             ],
-            type: EElement.LIST_CONTENT,
+            id: nanoid(),
+            type: EBlockElement.LIST_CONTENT,
           },
         ],
-        type: EElement.LIST_ITEM,
+        id: nanoid(),
+        type: EBlockElement.LIST_ITEM,
       },
     ],
-    type: EElement.UNORDERED_LIST,
+    id: nanoid(),
+    type: EBlockElement.UNORDERED_LIST,
   },
   {
     children: [
@@ -1570,7 +1460,8 @@ export const initialValue: TDocument = [
         text: 'Soft Break ⇧⏎',
       },
     ],
-    type: EElement.HEADING_2,
+    id: nanoid(),
+    type: EBlockElement.HEADING_2,
   },
   {
     children: [
@@ -1578,7 +1469,8 @@ export const initialValue: TDocument = [
         text: 'Customize how soft breaks (line breaks within a paragraph) are handled using configurable rules',
       },
     ],
-    type: EElement.PARAGRAPH,
+    id: nanoid(),
+    type: EBlockElement.PARAGRAPH,
   },
   {
     children: [
@@ -1590,10 +1482,12 @@ export const initialValue: TDocument = [
                 text: 'hotkey – Use hotkeys like ⇧⏎ to insert a soft break anywhere within a paragraph.',
               },
             ],
-            type: EElement.LIST_CONTENT,
+            id: nanoid(),
+            type: EBlockElement.LIST_CONTENT,
           },
         ],
-        type: EElement.LIST_ITEM,
+        id: nanoid(),
+        type: EBlockElement.LIST_ITEM,
       },
       {
         children: [
@@ -1603,13 +1497,16 @@ export const initialValue: TDocument = [
                 text: 'query – Define custom rules to limit soft breaks to specific block types.',
               },
             ],
-            type: EElement.LIST_CONTENT,
+            id: nanoid(),
+            type: EBlockElement.LIST_CONTENT,
           },
         ],
-        type: EElement.LIST_ITEM,
+        id: nanoid(),
+        type: EBlockElement.LIST_ITEM,
       },
     ],
-    type: EElement.UNORDERED_LIST,
+    id: nanoid(),
+    type: EBlockElement.UNORDERED_LIST,
   },
   {
     children: [
@@ -1617,7 +1514,8 @@ export const initialValue: TDocument = [
         text: 'Try here ⏎',
       },
     ],
-    type: EElement.BLOCK_QUOTE,
+    id: nanoid(),
+    type: EBlockElement.BLOCK_QUOTE,
   },
   {
     children: [
@@ -1627,10 +1525,12 @@ export const initialValue: TDocument = [
             text: 'And here ⏎ as well.',
           },
         ],
-        type: EElement.CODE_LINE,
+        id: nanoid(),
+        type: EBlockElement.CODE_LINE,
       },
     ],
-    type: EElement.CODE_BLOCK,
+    id: nanoid(),
+    type: EBlockElement.CODE_BLOCK,
   },
   {
     children: [
@@ -1638,7 +1538,8 @@ export const initialValue: TDocument = [
         text: 'Exit Break ⏎',
       },
     ],
-    type: EElement.HEADING_2,
+    id: nanoid(),
+    type: EBlockElement.HEADING_2,
   },
   {
     children: [
@@ -1646,7 +1547,8 @@ export const initialValue: TDocument = [
         text: 'Configure how exit breaks (line breaks between blocks) behave using simple rules:',
       },
     ],
-    type: EElement.PARAGRAPH,
+    id: nanoid(),
+    type: EBlockElement.PARAGRAPH,
   },
   {
     children: [
@@ -1658,10 +1560,12 @@ export const initialValue: TDocument = [
                 text: 'hotkey – Use hotkeys like ⌘⏎ to move the cursor to the next block',
               },
             ],
-            type: EElement.LIST_CONTENT,
+            id: nanoid(),
+            type: EBlockElement.LIST_CONTENT,
           },
         ],
-        type: EElement.LIST_ITEM,
+        id: nanoid(),
+        type: EBlockElement.LIST_ITEM,
       },
       {
         children: [
@@ -1671,10 +1575,12 @@ export const initialValue: TDocument = [
                 text: 'query – Specify block types where exit breaks are allowed.',
               },
             ],
-            type: EElement.LIST_CONTENT,
+            id: nanoid(),
+            type: EBlockElement.LIST_CONTENT,
           },
         ],
-        type: EElement.LIST_ITEM,
+        id: nanoid(),
+        type: EBlockElement.LIST_ITEM,
       },
       {
         children: [
@@ -1684,13 +1590,16 @@ export const initialValue: TDocument = [
                 text: 'before – Choose whether the cursor exits to the next or previous block',
               },
             ],
-            type: EElement.LIST_CONTENT,
+            id: nanoid(),
+            type: EBlockElement.LIST_CONTENT,
           },
         ],
-        type: EElement.LIST_ITEM,
+        id: nanoid(),
+        type: EBlockElement.LIST_ITEM,
       },
     ],
-    type: EElement.UNORDERED_LIST,
+    id: nanoid(),
+    type: EBlockElement.UNORDERED_LIST,
   },
   {
     children: [
@@ -1698,7 +1607,8 @@ export const initialValue: TDocument = [
         text: 'Try here ⌘⏎',
       },
     ],
-    type: EElement.BLOCK_QUOTE,
+    id: nanoid(),
+    type: EBlockElement.BLOCK_QUOTE,
   },
   {
     children: [
@@ -1708,10 +1618,12 @@ export const initialValue: TDocument = [
             text: 'And in the middle ⌘⏎ of a block.',
           },
         ],
-        type: EElement.CODE_LINE,
+        id: nanoid(),
+        type: EBlockElement.CODE_LINE,
       },
     ],
-    type: EElement.CODE_BLOCK,
+    id: nanoid(),
+    type: EBlockElement.CODE_BLOCK,
   },
   {
     children: [
@@ -1719,7 +1631,8 @@ export const initialValue: TDocument = [
         text: 'Exit breaks also work within nested blocks:',
       },
     ],
-    type: EElement.PARAGRAPH,
+    id: nanoid(),
+    type: EBlockElement.PARAGRAPH,
   },
   {
     children: [
@@ -1734,10 +1647,12 @@ export const initialValue: TDocument = [
                     text: 'Plugin',
                   },
                 ],
-                type: EElement.PARAGRAPH,
+                id: nanoid(),
+                type: EBlockElement.PARAGRAPH,
               },
             ],
-            type: EElement.TABLE_HEADER,
+            id: nanoid(),
+            type: EBlockElement.TABLE_HEADER,
           },
           {
             children: [
@@ -1748,10 +1663,12 @@ export const initialValue: TDocument = [
                     text: 'Element',
                   },
                 ],
-                type: EElement.PARAGRAPH,
+                id: nanoid(),
+                type: EBlockElement.PARAGRAPH,
               },
             ],
-            type: EElement.TABLE_HEADER,
+            id: nanoid(),
+            type: EBlockElement.TABLE_HEADER,
           },
           {
             children: [
@@ -1762,10 +1679,12 @@ export const initialValue: TDocument = [
                     text: 'Inline',
                   },
                 ],
-                type: EElement.PARAGRAPH,
+                id: nanoid(),
+                type: EBlockElement.PARAGRAPH,
               },
             ],
-            type: EElement.TABLE_HEADER,
+            id: nanoid(),
+            type: EBlockElement.TABLE_HEADER,
           },
           {
             children: [
@@ -1776,13 +1695,16 @@ export const initialValue: TDocument = [
                     text: 'Void',
                   },
                 ],
-                type: EElement.PARAGRAPH,
+                id: nanoid(),
+                type: EBlockElement.PARAGRAPH,
               },
             ],
-            type: EElement.TABLE_HEADER,
+            id: nanoid(),
+            type: EBlockElement.TABLE_HEADER,
           },
         ],
-        type: EElement.TABLE_ROW,
+        id: nanoid(),
+        type: EBlockElement.TABLE_ROW,
       },
       {
         children: [
@@ -1795,10 +1717,12 @@ export const initialValue: TDocument = [
                     text: 'Heading',
                   },
                 ],
-                type: EElement.PARAGRAPH,
+                id: nanoid(),
+                type: EBlockElement.PARAGRAPH,
               },
             ],
-            type: EElement.TABLE_CELL,
+            id: nanoid(),
+            type: EBlockElement.TABLE_CELL,
           },
           {
             children: [
@@ -1808,10 +1732,12 @@ export const initialValue: TDocument = [
                     text: 'Yes',
                   },
                 ],
-                type: EElement.PARAGRAPH,
+                id: nanoid(),
+                type: EBlockElement.PARAGRAPH,
               },
             ],
-            type: EElement.TABLE_CELL,
+            id: nanoid(),
+            type: EBlockElement.TABLE_CELL,
           },
           {
             children: [
@@ -1821,10 +1747,12 @@ export const initialValue: TDocument = [
                     text: 'No',
                   },
                 ],
-                type: EElement.PARAGRAPH,
+                id: nanoid(),
+                type: EBlockElement.PARAGRAPH,
               },
             ],
-            type: EElement.TABLE_CELL,
+            id: nanoid(),
+            type: EBlockElement.TABLE_CELL,
           },
           {
             children: [
@@ -1834,13 +1762,16 @@ export const initialValue: TDocument = [
                     text: 'No',
                   },
                 ],
-                type: EElement.PARAGRAPH,
+                id: nanoid(),
+                type: EBlockElement.PARAGRAPH,
               },
             ],
-            type: EElement.TABLE_CELL,
+            id: nanoid(),
+            type: EBlockElement.TABLE_CELL,
           },
         ],
-        type: EElement.TABLE_ROW,
+        id: nanoid(),
+        type: EBlockElement.TABLE_ROW,
       },
       {
         children: [
@@ -1853,10 +1784,12 @@ export const initialValue: TDocument = [
                     text: 'Image',
                   },
                 ],
-                type: EElement.PARAGRAPH,
+                id: nanoid(),
+                type: EBlockElement.PARAGRAPH,
               },
             ],
-            type: EElement.TABLE_CELL,
+            id: nanoid(),
+            type: EBlockElement.TABLE_CELL,
           },
           {
             children: [
@@ -1866,10 +1799,12 @@ export const initialValue: TDocument = [
                     text: 'Yes',
                   },
                 ],
-                type: EElement.PARAGRAPH,
+                id: nanoid(),
+                type: EBlockElement.PARAGRAPH,
               },
             ],
-            type: EElement.TABLE_CELL,
+            id: nanoid(),
+            type: EBlockElement.TABLE_CELL,
           },
           {
             children: [
@@ -1879,10 +1814,12 @@ export const initialValue: TDocument = [
                     text: 'No',
                   },
                 ],
-                type: EElement.PARAGRAPH,
+                id: nanoid(),
+                type: EBlockElement.PARAGRAPH,
               },
             ],
-            type: EElement.TABLE_CELL,
+            id: nanoid(),
+            type: EBlockElement.TABLE_CELL,
           },
           {
             children: [
@@ -1892,13 +1829,16 @@ export const initialValue: TDocument = [
                     text: 'Yes',
                   },
                 ],
-                type: EElement.PARAGRAPH,
+                id: nanoid(),
+                type: EBlockElement.PARAGRAPH,
               },
             ],
-            type: EElement.TABLE_CELL,
+            id: nanoid(),
+            type: EBlockElement.TABLE_CELL,
           },
         ],
-        type: EElement.TABLE_ROW,
+        id: nanoid(),
+        type: EBlockElement.TABLE_ROW,
       },
       {
         children: [
@@ -1911,10 +1851,12 @@ export const initialValue: TDocument = [
                     text: 'Mention',
                   },
                 ],
-                type: EElement.PARAGRAPH,
+                id: nanoid(),
+                type: EBlockElement.PARAGRAPH,
               },
             ],
-            type: EElement.TABLE_CELL,
+            id: nanoid(),
+            type: EBlockElement.TABLE_CELL,
           },
           {
             children: [
@@ -1924,10 +1866,12 @@ export const initialValue: TDocument = [
                     text: 'Yes',
                   },
                 ],
-                type: EElement.PARAGRAPH,
+                id: nanoid(),
+                type: EBlockElement.PARAGRAPH,
               },
             ],
-            type: EElement.TABLE_CELL,
+            id: nanoid(),
+            type: EBlockElement.TABLE_CELL,
           },
           {
             children: [
@@ -1937,10 +1881,12 @@ export const initialValue: TDocument = [
                     text: 'Yes',
                   },
                 ],
-                type: EElement.PARAGRAPH,
+                id: nanoid(),
+                type: EBlockElement.PARAGRAPH,
               },
             ],
-            type: EElement.TABLE_CELL,
+            id: nanoid(),
+            type: EBlockElement.TABLE_CELL,
           },
           {
             children: [
@@ -1950,18 +1896,22 @@ export const initialValue: TDocument = [
                     text: 'Yes',
                   },
                 ],
-                type: EElement.PARAGRAPH,
+                id: nanoid(),
+                type: EBlockElement.PARAGRAPH,
               },
             ],
-            type: EElement.TABLE_CELL,
+            id: nanoid(),
+            type: EBlockElement.TABLE_CELL,
           },
         ],
-        type: EElement.TABLE_ROW,
+        id: nanoid(),
+        type: EBlockElement.TABLE_ROW,
       },
     ],
     colSizes: [100, 100, 100, 100],
+    id: nanoid(),
     marginLeft: 20,
-    type: EElement.TABLE,
+    type: EBlockElement.TABLE,
   },
   {
     children: [
@@ -1969,7 +1919,8 @@ export const initialValue: TDocument = [
         text: 'Cursor Overlay',
       },
     ],
-    type: EElement.HEADING_2,
+    id: nanoid(),
+    type: EBlockElement.HEADING_2,
   },
   {
     children: [
@@ -1977,7 +1928,8 @@ export const initialValue: TDocument = [
         text: 'Try to drag over text: you will see a black cursor on the drop target: color and other styles are customizable!',
       },
     ],
-    type: EElement.PARAGRAPH,
+    id: nanoid(),
+    type: EBlockElement.PARAGRAPH,
   },
   {
     children: [
@@ -1985,7 +1937,8 @@ export const initialValue: TDocument = [
         text: 'Tabbable',
       },
     ],
-    type: EElement.HEADING_2,
+    id: nanoid(),
+    type: EBlockElement.HEADING_2,
   },
   {
     children: [
@@ -1993,7 +1946,8 @@ export const initialValue: TDocument = [
         text: 'Ensure a smooth tab navigation experience within your editor with the Tabbable plugin.',
       },
     ],
-    type: EElement.PARAGRAPH,
+    id: nanoid(),
+    type: EBlockElement.PARAGRAPH,
   },
   {
     children: [
@@ -2001,7 +1955,8 @@ export const initialValue: TDocument = [
         text: 'Properly handle tab orders for void nodes, allowing for seamless navigation and interaction. Without this plugin, DOM elements inside void nodes come after the editor in the tab order.',
       },
     ],
-    type: EElement.PARAGRAPH,
+    id: nanoid(),
+    type: EBlockElement.PARAGRAPH,
   },
   {
     children: [
@@ -2009,7 +1964,8 @@ export const initialValue: TDocument = [
         text: '',
       },
     ],
-    type: EElement.TABBABLE,
+    id: nanoid(),
+    type: EBlockElement.TABBABLE,
   },
   {
     children: [
@@ -2017,7 +1973,8 @@ export const initialValue: TDocument = [
         text: '',
       },
     ],
-    type: EElement.TABBABLE,
+    id: nanoid(),
+    type: EBlockElement.TABBABLE,
   },
   {
     children: [
@@ -2025,7 +1982,8 @@ export const initialValue: TDocument = [
         text: 'Place your cursor here and try pressing tab or shift+tab.',
       },
     ],
-    type: EElement.PARAGRAPH,
+    id: nanoid(),
+    type: EBlockElement.PARAGRAPH,
   },
   {
     children: [
@@ -2037,10 +1995,12 @@ export const initialValue: TDocument = [
                 text: 'List item 1',
               },
             ],
-            type: EElement.LIST_CONTENT,
+            id: nanoid(),
+            type: EBlockElement.LIST_CONTENT,
           },
         ],
-        type: EElement.LIST_ITEM,
+        id: nanoid(),
+        type: EBlockElement.LIST_ITEM,
       },
       {
         children: [
@@ -2050,10 +2010,12 @@ export const initialValue: TDocument = [
                 text: 'List item 2',
               },
             ],
-            type: EElement.LIST_CONTENT,
+            id: nanoid(),
+            type: EBlockElement.LIST_CONTENT,
           },
         ],
-        type: EElement.LIST_ITEM,
+        id: nanoid(),
+        type: EBlockElement.LIST_ITEM,
       },
       {
         children: [
@@ -2063,13 +2025,16 @@ export const initialValue: TDocument = [
                 text: 'List item 3',
               },
             ],
-            type: EElement.LIST_CONTENT,
+            id: nanoid(),
+            type: EBlockElement.LIST_CONTENT,
           },
         ],
-        type: EElement.LIST_ITEM,
+        id: nanoid(),
+        type: EBlockElement.LIST_ITEM,
       },
     ],
-    type: EElement.UNORDERED_LIST,
+    id: nanoid(),
+    type: EBlockElement.UNORDERED_LIST,
   },
   {
     children: [
@@ -2079,7 +2044,8 @@ export const initialValue: TDocument = [
             text: 'if (true) {',
           },
         ],
-        type: EElement.CODE_LINE,
+        id: nanoid(),
+        type: EBlockElement.CODE_LINE,
       },
       {
         children: [
@@ -2087,7 +2053,8 @@ export const initialValue: TDocument = [
             text: '// <- Place cursor at start of line and press tab',
           },
         ],
-        type: EElement.CODE_LINE,
+        id: nanoid(),
+        type: EBlockElement.CODE_LINE,
       },
       {
         children: [
@@ -2095,11 +2062,13 @@ export const initialValue: TDocument = [
             text: '}',
           },
         ],
-        type: EElement.CODE_LINE,
+        id: nanoid(),
+        type: EBlockElement.CODE_LINE,
       },
     ],
-    codeLang: 'javascript',
-    type: EElement.CODE_BLOCK,
+    id: nanoid(),
+    lang: 'javascript',
+    type: EBlockElement.CODE_BLOCK,
   },
   {
     children: [
@@ -2114,7 +2083,8 @@ export const initialValue: TDocument = [
         text: ' option.',
       },
     ],
-    type: EElement.PARAGRAPH,
+    id: nanoid(),
+    type: EBlockElement.PARAGRAPH,
   },
   {
     children: [
@@ -2122,7 +2092,8 @@ export const initialValue: TDocument = [
         text: '',
       },
     ],
-    type: EElement.TABBABLE,
+    id: nanoid(),
+    type: EBlockElement.TABBABLE,
   },
   {
     children: [
@@ -2130,7 +2101,8 @@ export const initialValue: TDocument = [
         text: 'When you press tab at the end of the editor, the focus should go to the button below.',
       },
     ],
-    type: EElement.PARAGRAPH,
+    id: nanoid(),
+    type: EBlockElement.PARAGRAPH,
   },
   {
     children: [
@@ -2138,27 +2110,8 @@ export const initialValue: TDocument = [
         text: '💬 Comments',
       },
     ],
-    type: EElement.HEADING_2,
-  },
-  {
-    children: [
-      {
-        text: 'Add ',
-      },
-      {
-        text: 'comments to your content',
-      },
-      {
-        text: ' to provide additional context, insights, or ',
-      },
-      {
-        text: 'collaborate',
-      },
-      {
-        text: '  with others',
-      },
-    ],
-    type: EElement.PARAGRAPH,
+    id: nanoid(),
+    type: EBlockElement.HEADING_2,
   },
   {
     children: [
@@ -2166,7 +2119,8 @@ export const initialValue: TDocument = [
         text: 'Deserialize HTML',
       },
     ],
-    type: EElement.HEADING_2,
+    id: nanoid(),
+    type: EBlockElement.HEADING_2,
   },
   {
     children: [
@@ -2188,7 +2142,8 @@ export const initialValue: TDocument = [
         text: 'data.',
       },
     ],
-    type: EElement.PARAGRAPH,
+    id: nanoid(),
+    type: EBlockElement.PARAGRAPH,
   },
   {
     children: [
@@ -2196,7 +2151,8 @@ export const initialValue: TDocument = [
         text: "To experience the seamless preservation of formatting, simply copy and paste rendered HTML rich text content (not the source code) from another website into this editor. You'll notice that the formatting of the pasted content is maintained.",
       },
     ],
-    type: EElement.PARAGRAPH,
+    id: nanoid(),
+    type: EBlockElement.PARAGRAPH,
   },
   {
     children: [
@@ -2204,7 +2160,8 @@ export const initialValue: TDocument = [
         text: 'Deserialize Markdown',
       },
     ],
-    type: EElement.HEADING_2,
+    id: nanoid(),
+    type: EBlockElement.HEADING_2,
   },
   {
     children: [
@@ -2217,14 +2174,16 @@ export const initialValue: TDocument = [
             text: 'markdown-it.github.io/',
           },
         ],
-        type: EElement.LINK,
+        id: nanoid(),
+        type: EInlineElement.LINK,
         url: 'https://markdown-it.github.io/',
       },
       {
         text: ' into the editor for easy conversion and editing.',
       },
     ],
-    type: EElement.PARAGRAPH,
+    id: nanoid(),
+    type: EBlockElement.PARAGRAPH,
   },
   {
     children: [
@@ -2232,7 +2191,8 @@ export const initialValue: TDocument = [
         text: 'Deserialize Docx',
       },
     ],
-    type: EElement.HEADING_2,
+    id: nanoid(),
+    type: EBlockElement.HEADING_2,
   },
   {
     children: [
@@ -2240,7 +2200,8 @@ export const initialValue: TDocument = [
         text: 'Easily import content from Microsoft Word documents by simply copying and pasting the Docx content into the editor.',
       },
     ],
-    type: EElement.PARAGRAPH,
+    id: nanoid(),
+    type: EBlockElement.PARAGRAPH,
   },
   {
     children: [
@@ -2248,7 +2209,8 @@ export const initialValue: TDocument = [
         text: 'Deserialize CSV',
       },
     ],
-    type: EElement.HEADING_2,
+    id: nanoid(),
+    type: EBlockElement.HEADING_2,
   },
   {
     children: [
@@ -2256,7 +2218,8 @@ export const initialValue: TDocument = [
         text: 'Copy and paste CSV content into a table.',
       },
     ],
-    type: EElement.PARAGRAPH,
+    id: nanoid(),
+    type: EBlockElement.PARAGRAPH,
   },
   {
     children: [
@@ -2264,7 +2227,8 @@ export const initialValue: TDocument = [
         text: 'Trailing Block',
       },
     ],
-    type: EElement.HEADING_2,
+    id: nanoid(),
+    type: EBlockElement.HEADING_2,
   },
   {
     children: [
@@ -2272,7 +2236,8 @@ export const initialValue: TDocument = [
         text: 'Always have a trailing paragraph at the end of your editor.',
       },
     ],
-    type: EElement.PARAGRAPH,
+    id: nanoid(),
+    type: EBlockElement.PARAGRAPH,
   },
   {
     children: [
@@ -2280,7 +2245,8 @@ export const initialValue: TDocument = [
         text: 'Excalidraw',
       },
     ],
-    type: EElement.HEADING_2,
+    id: nanoid(),
+    type: EBlockElement.HEADING_2,
   },
   {
     children: [
@@ -2288,7 +2254,8 @@ export const initialValue: TDocument = [
         text: 'Unleash your creativity with the Excalidraw plugin, which enables you to embed and draw diagrams directly within your editor.',
       },
     ],
-    type: EElement.PARAGRAPH,
+    id: nanoid(),
+    type: EBlockElement.PARAGRAPH,
   },
   {
     children: [
@@ -2296,14 +2263,15 @@ export const initialValue: TDocument = [
         text: '',
       },
     ],
-    excalidrawData: {
+    data: {
       elements: [
         {
           angle: 0,
+          backgroundColor: 'transparent',
           fillStyle: 'hachure',
           groupIds: [],
           height: 141.9765625,
-          highlight: 'transparent',
+          id: nanoid(),
           isDeleted: false,
           opacity: 100,
           roughness: 1,
@@ -2320,10 +2288,11 @@ export const initialValue: TDocument = [
         },
         {
           angle: 0,
+          backgroundColor: 'transparent',
           fillStyle: 'hachure',
           groupIds: [],
           height: 129.51171875,
-          highlight: 'transparent',
+          id: nanoid(),
           isDeleted: false,
           opacity: 100,
           roughness: 1,
@@ -2341,10 +2310,11 @@ export const initialValue: TDocument = [
       ],
       state: {
         currentItemFontFamily: 1,
-        viewhighlight: '#AFEEEE',
+        viewBackgroundColor: '#AFEEEE',
       },
     },
-    type: EElement.EXCALIDRAW,
+    id: nanoid(),
+    type: EVoidElement.EXCALIDRAW,
   },
   {
     children: [
@@ -2352,6 +2322,7 @@ export const initialValue: TDocument = [
         text: '',
       },
     ],
-    type: EElement.PARAGRAPH,
+    id: nanoid(),
+    type: EBlockElement.PARAGRAPH,
   },
 ]

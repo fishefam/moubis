@@ -8,7 +8,7 @@ export function ElementDivider({ children, ...props }: TPlateElementProps) {
       {...props}
       className='hover:ring-4 hover:ring-offset-1 transition duration-100 h-4'
       contentEditable={false}
-      data-node-id={props.element.id}
+      data-key={props.element.id}
       style={{
         alignItems: 'center',
         borderRadius: '30px',

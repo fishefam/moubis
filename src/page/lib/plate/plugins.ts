@@ -6,9 +6,10 @@ import { LeafHighlight } from '@/components/plate-ui/leafs/highlight'
 import { LeafItalic } from '@/components/plate-ui/leafs/italic'
 import { LeafStrikethrough } from '@/components/plate-ui/leafs/strikethrough'
 import { LeafSubSuperscript } from '@/components/plate-ui/leafs/subscript'
+import { LeafUnderline } from '@/components/plate-ui/leafs/underline'
 import { ElementDivider } from '@/components/plate-ui/voids/divider'
 import { ElementImage } from '@/components/plate-ui/voids/image'
-import { EElement, EMark } from '@/types/plate'
+import { EBlockElement, EInlineElement, EMarkBool, EMarkValue, EVoidElement } from '@/types/plate'
 import {
   createBoldPlugin,
   createHeadingPlugin,
@@ -26,52 +27,52 @@ import {
 } from '@udecode/plate'
 
 import { nanoid } from '../util'
-import { LeafUnderline } from './underline'
+import { withLink } from './overrides/withLinks'
 
 export const plugins = createPlugins(
   [
     /* Elements */
     createHeadingPlugin(),
-    createLinkPlugin({ isInline: true, key: EElement.LINK }),
-    createParagraphPlugin({ key: EElement.PARAGRAPH }),
+    createLinkPlugin({ key: EInlineElement.LINK, withOverrides: withLink }),
+    createParagraphPlugin({ key: EBlockElement.PARAGRAPH }),
 
     /* Voids */
-    createHorizontalRulePlugin({ isVoid: true, key: EElement.DIVIDER }),
-    createImagePlugin({ key: EElement.BLOCK_IMAGE }),
-    createImagePlugin({ isInline: true, key: EElement.INLINE_IMAGE }),
+    createHorizontalRulePlugin({ key: EVoidElement.DIVIDER }),
+    createImagePlugin({ key: EVoidElement.BLOCK_IMAGE }),
+    // createImagePlugin({ isInline: true, key: EVoidElement.INLINE_IMAGE }),
 
     /* Marks */
-    createBoldPlugin({ key: EMark.BOLD }),
-    createHighlightPlugin({ key: EMark.HIGHLIGHT }),
-    createItalicPlugin({ key: EMark.ITALIC }),
-    createStrikethroughPlugin({ key: EMark.STRIKETHROUGH }),
-    createSubscriptPlugin({ key: EMark.SUBSCRIPT }),
-    createSubscriptPlugin({ key: EMark.SUPERSCRIPT }),
-    createUnderlinePlugin({ key: EMark.UNDERLINE }),
+    createBoldPlugin({ key: EMarkBool.BOLD }),
+    createHighlightPlugin({ key: EMarkValue.HIGHLIGHT }),
+    createItalicPlugin({ key: EMarkBool.ITALIC }),
+    createStrikethroughPlugin({ key: EMarkBool.STRIKETHROUGH }),
+    createSubscriptPlugin({ key: EMarkBool.SUBSCRIPT }),
+    createSubscriptPlugin({ key: EMarkBool.SUPERSCRIPT }),
+    createUnderlinePlugin({ key: EMarkBool.UNDERLINE }),
 
     /* Functionalities */
     createNodeIdPlugin({ options: { idCreator: nanoid, reuseId: true } }),
   ],
   {
     components: {
-      [EElement.BLOCK_IMAGE]: ElementImage,
-      [EElement.DIVIDER]: ElementDivider,
-      [EElement.HEADING_1]: ElementHeading,
-      [EElement.HEADING_2]: ElementHeading,
-      [EElement.HEADING_3]: ElementHeading,
-      [EElement.HEADING_4]: ElementHeading,
-      [EElement.HEADING_5]: ElementHeading,
-      [EElement.HEADING_6]: ElementHeading,
-      [EElement.INLINE_IMAGE]: ElementImage,
-      [EElement.LINK]: ElementLink,
-      [EElement.PARAGRAPH]: ElementParagraph,
-      [EMark.BOLD]: LeafBold,
-      [EMark.HIGHLIGHT]: LeafHighlight,
-      [EMark.ITALIC]: LeafItalic,
-      [EMark.STRIKETHROUGH]: LeafStrikethrough,
-      [EMark.SUBSCRIPT]: LeafSubSuperscript,
-      [EMark.SUPERSCRIPT]: LeafSubSuperscript,
-      [EMark.UNDERLINE]: LeafUnderline,
+      [EBlockElement.HEADING_1]: ElementHeading,
+      [EBlockElement.HEADING_2]: ElementHeading,
+      [EBlockElement.HEADING_3]: ElementHeading,
+      [EBlockElement.HEADING_4]: ElementHeading,
+      [EBlockElement.HEADING_5]: ElementHeading,
+      [EBlockElement.HEADING_6]: ElementHeading,
+      [EBlockElement.PARAGRAPH]: ElementParagraph,
+      [EInlineElement.LINK]: ElementLink,
+      [EMarkBool.BOLD]: LeafBold,
+      [EMarkBool.ITALIC]: LeafItalic,
+      [EMarkBool.STRIKETHROUGH]: LeafStrikethrough,
+      [EMarkBool.SUBSCRIPT]: LeafSubSuperscript,
+      [EMarkBool.SUPERSCRIPT]: LeafSubSuperscript,
+      [EMarkBool.UNDERLINE]: LeafUnderline,
+      [EMarkValue.HIGHLIGHT]: LeafHighlight,
+      [EVoidElement.BLOCK_IMAGE]: ElementImage,
+      [EVoidElement.DIVIDER]: ElementDivider,
+      [EVoidElement.INLINE_IMAGE]: ElementImage,
     },
   },
 )

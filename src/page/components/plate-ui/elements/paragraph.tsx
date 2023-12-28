@@ -6,7 +6,8 @@ export function ElementParagraph({ children, ...props }: TPlateElementProps) {
   return (
     <PlateElement
       {...props}
-      data-node-id={props.element.id}
+      data-key={props.element.id}
+      style={{ maxWidth: '100%' }}
     >
       {children}
     </PlateElement>

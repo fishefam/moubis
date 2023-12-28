@@ -1,7 +1,7 @@
-import type { TPlateElementProps } from '@/types/plate'
+import type { EElement, TPlateElementProps } from '@/types/plate'
 import type { CSSProperties } from 'react'
 
-import { EElement } from '@/types/plate'
+import { EBlockElement } from '@/types/plate'
 import { PlateElement } from '@udecode/plate'
 
 export function ElementHeading({ children, ...props }: TPlateElementProps) {
@@ -11,7 +11,7 @@ export function ElementHeading({ children, ...props }: TPlateElementProps) {
   return (
     <PlateElement
       {...props}
-      data-node-id={props.element.id}
+      data-key={props.element.id}
       style={{ width: '100%' }}
     >
       <Tag style={{ ...headingStyle, textAlign: props.element.align ?? 'left', width: '100%' }}>{children}</Tag>
@@ -20,11 +20,11 @@ export function ElementHeading({ children, ...props }: TPlateElementProps) {
 }
 
 function getHeadingTag(type: EElement) {
-  if (type === EElement.HEADING_1) return 'h1'
-  if (type === EElement.HEADING_2) return 'h2'
-  if (type === EElement.HEADING_3) return 'h3'
-  if (type === EElement.HEADING_4) return 'h4'
-  if (type === EElement.HEADING_5) return 'h5'
+  if (type === EBlockElement.HEADING_1) return 'h1'
+  if (type === EBlockElement.HEADING_2) return 'h2'
+  if (type === EBlockElement.HEADING_3) return 'h3'
+  if (type === EBlockElement.HEADING_4) return 'h4'
+  if (type === EBlockElement.HEADING_5) return 'h5'
   return 'h6'
 }
 
