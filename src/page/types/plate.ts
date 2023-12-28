@@ -1,4 +1,4 @@
-import type { ListStyleType } from '@udecode/plate'
+import type { ListStyleType, PlateElementProps } from '@udecode/plate'
 import type { Attributes } from 'react'
 
 export enum EHeadingElement {
@@ -86,6 +86,7 @@ export type TElement = {
 }
 
 export type TDocument = TElement[]
+export type TPlateElementProps = PlateElementProps & { element: TElement }
 
 export type TProgrammingLang = 'css' | 'html' | 'javascript' | 'latex'
 export type TExcalidrawData = Record<string, unknown>

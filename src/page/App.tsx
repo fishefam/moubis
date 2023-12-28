@@ -1,14 +1,15 @@
 import type { PlateEditor } from '@udecode/plate'
 
 import { TextEditor } from '@/components/text-editor'
-import { getExtensionBaseUrl } from '@/lib/utils'
+import { plugins } from '@/lib/plate/plugins'
+import { getExtensionBaseUrl, nanoid } from '@/lib/utils'
 import { createPlateEditor } from '@udecode/plate'
 import { MathJaxContext } from 'better-react-mathjax'
 import { createContext } from 'react'
 
 import type { TDocument } from './types/plate'
 
-const TEXT_EDITOR = createPlateEditor() as unknown as PlateEditor<TDocument>
+const TEXT_EDITOR = createPlateEditor({ id: nanoid(), plugins: plugins }) as unknown as PlateEditor<TDocument>
 
 export const AppContext = createContext<{ textEditor: PlateEditor<TDocument> }>({ textEditor: TEXT_EDITOR })
 
