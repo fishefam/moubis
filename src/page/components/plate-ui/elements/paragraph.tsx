@@ -7,7 +7,6 @@ export function ElementParagraph({ children, ...props }: TPlateElementProps) {
     <PlateElement
       {...props}
       data-node-id={props.element.id}
-      style={{ width: '100%' }}
     >
       {children}
     </PlateElement>

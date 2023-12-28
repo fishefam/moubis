@@ -16,6 +16,16 @@ export const initialValue: TDocument = [
         type: EElement.LINK,
         url: 'https://tinhte.vn',
       },
+      {
+        children: [
+          {
+            text: '',
+          },
+        ],
+        type: EElement.INLINE_IMAGE,
+        url: 'https://source.unsplash.com/kFrdX5IeQzI',
+        width: '100%',
+      },
     ],
     type: EElement.PARAGRAPH,
   },
@@ -786,7 +796,7 @@ export const initialValue: TDocument = [
         text: '',
       },
     ],
-    type: EElement.IMAGE,
+    type: EElement.BLOCK_IMAGE,
     url: 'https://source.unsplash.com/kFrdX5IeQzI',
     width: '75%',
   },

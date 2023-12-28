@@ -2,6 +2,7 @@ import type { ListStyleType, PlateElementProps, PlateLeafProps } from '@udecode/
 import type { Attributes } from 'react'
 
 export enum EElement {
+  BLOCK_IMAGE = 'blockImage',
   BLOCK_QUOTE = 'blockquote',
   CODE_BLOCK = 'codeBlock',
   CODE_LINE = 'codeLine',
@@ -13,7 +14,7 @@ export enum EElement {
   HEADING_4 = 'h4',
   HEADING_5 = 'h5',
   HEADING_6 = 'h6',
-  IMAGE = 'image',
+  INLINE_IMAGE = 'inlineImage',
   LATEX = 'latex',
   LINK = 'link',
   LIST_CONTENT = 'listContent',

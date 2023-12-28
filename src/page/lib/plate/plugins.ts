@@ -37,7 +37,8 @@ export const plugins = createPlugins(
 
     /* Voids */
     createHorizontalRulePlugin({ isVoid: true, key: EElement.DIVIDER }),
-    createImagePlugin({ key: EElement.IMAGE }),
+    createImagePlugin({ key: EElement.BLOCK_IMAGE }),
+    createImagePlugin({ isInline: true, key: EElement.INLINE_IMAGE }),
 
     /* Marks */
     createBoldPlugin({ key: EMark.BOLD }),
@@ -53,6 +54,7 @@ export const plugins = createPlugins(
   ],
   {
     components: {
+      [EElement.BLOCK_IMAGE]: ElementImage,
       [EElement.DIVIDER]: ElementDivider,
       [EElement.HEADING_1]: ElementHeading,
       [EElement.HEADING_2]: ElementHeading,
@@ -60,7 +62,7 @@ export const plugins = createPlugins(
       [EElement.HEADING_4]: ElementHeading,
       [EElement.HEADING_5]: ElementHeading,
       [EElement.HEADING_6]: ElementHeading,
-      [EElement.IMAGE]: ElementImage,
+      [EElement.INLINE_IMAGE]: ElementImage,
       [EElement.LINK]: ElementLink,
       [EElement.PARAGRAPH]: ElementParagraph,
       [EMark.BOLD]: LeafBold,
