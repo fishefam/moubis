@@ -29,5 +29,5 @@ function getInitialValue(mock?: boolean): TDocument {
 }
 
 function handleChange(editor: PlateEditor<TDocument>) {
-  // console.log(editor.value)
+  console.log(editor.children)
 }

@@ -48,8 +48,8 @@ dependencies:
     specifier: ^6.16.0
     version: 6.16.0(eslint@8.56.0)(typescript@5.3.3)
   '@udecode/plate':
-    specifier: ^24.5.2
-    version: 24.5.2(@types/react-dom@18.2.18)(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
+    specifier: ^29.0.0
+    version: 29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
   autoprefixer:
     specifier: ^10.4.16
     version: 10.4.16(postcss@8.4.32)
@@ -1782,8 +1782,8 @@ packages:
       eslint-visitor-keys: 3.4.3
     dev: false
 
-  /@udecode/plate-alignment@24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5):
-    resolution: {integrity: sha512-6oki4hDEmk4HsqcFxm50YiVyI7f0tKDLOBEc7Zd3lTjrgiWRvxwz3WviTR2X2G/KWLbnSAAO+zg9I8pUKzNeow==}
+  /@udecode/plate-alignment@29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5):
+    resolution: {integrity: sha512-j87jFgG2sfiGAevCqYhnqU1ddWRbHMT2x/O33zw0J0coVzIjOXi2SIZp/EyoAjaW9rRDhrQjYMVhfGj2lOYa4w==}
     peerDependencies:
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
@@ -1792,7 +1792,7 @@ packages:
       slate-hyperscript: '>=0.66.0'
       slate-react: '>=0.99.0'
     dependencies:
-      '@udecode/plate-common': 24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
+      '@udecode/plate-common': 29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
       slate: 0.101.5
@@ -1800,22 +1800,14 @@ packages:
       slate-hyperscript: 0.100.0(slate@0.101.5)
       slate-react: 0.101.5(react-dom@18.2.0)(react@18.2.0)(slate@0.101.5)
     transitivePeerDependencies:
-      - '@babel/core'
-      - '@babel/template'
       - '@types/react'
-      - '@urql/core'
       - immer
-      - optics-ts
       - react-native
-      - react-query
       - scheduler
-      - valtio
-      - wonka
-      - xstate
     dev: false
 
-  /@udecode/plate-autoformat@24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5):
-    resolution: {integrity: sha512-3OVAw/L7F8jZpirPvonfsHgIreOYqDTj3RidxZM0k2d3TUlXULYSklSLbzgpKSfiDQfyrtdIIYjzwGyr7qbUMQ==}
+  /@udecode/plate-autoformat@29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5):
+    resolution: {integrity: sha512-RizTYk1g6ppXih8Xmw2u1H18rolYZ7xfHlXpvHtzZDm555tZBb5/lzF5cwfnn59aIZE0y9WHOlV53QmfP2w85w==}
     peerDependencies:
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
@@ -1824,7 +1816,7 @@ packages:
       slate-hyperscript: '>=0.66.0'
       slate-react: '>=0.99.0'
     dependencies:
-      '@udecode/plate-common': 24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
+      '@udecode/plate-common': 29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
       lodash: 4.17.21
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
@@ -1833,22 +1825,14 @@ packages:
       slate-hyperscript: 0.100.0(slate@0.101.5)
       slate-react: 0.101.5(react-dom@18.2.0)(react@18.2.0)(slate@0.101.5)
     transitivePeerDependencies:
-      - '@babel/core'
-      - '@babel/template'
       - '@types/react'
-      - '@urql/core'
       - immer
-      - optics-ts
       - react-native
-      - react-query
       - scheduler
-      - valtio
-      - wonka
-      - xstate
     dev: false
 
-  /@udecode/plate-basic-elements@24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5):
-    resolution: {integrity: sha512-vZTksEDQNJQQ/dpwR/tlWQlP5nuKqp2qo5jGCtWTIHL1Wo/Mp7tsm78/G+mIAw/eAAn/Wee0cCdPVarVvp+eZg==}
+  /@udecode/plate-basic-elements@29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5):
+    resolution: {integrity: sha512-wCAWWYZn5k7aTfuvjEQkxerY7JFFe3uyuk5mITmRAgOHnsTCJ2GBYk7t9S0PBdWF9/ZB+sLuh7hdfCFYy/U0wQ==}
     peerDependencies:
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
@@ -1857,11 +1841,11 @@ packages:
       slate-hyperscript: '>=0.66.0'
       slate-react: '>=0.99.0'
     dependencies:
-      '@udecode/plate-block-quote': 24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
-      '@udecode/plate-code-block': 24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
-      '@udecode/plate-common': 24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
-      '@udecode/plate-heading': 24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
-      '@udecode/plate-paragraph': 24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
+      '@udecode/plate-block-quote': 29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
+      '@udecode/plate-code-block': 29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
+      '@udecode/plate-common': 29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
+      '@udecode/plate-heading': 29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
+      '@udecode/plate-paragraph': 29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
       slate: 0.101.5
@@ -1869,22 +1853,14 @@ packages:
       slate-hyperscript: 0.100.0(slate@0.101.5)
       slate-react: 0.101.5(react-dom@18.2.0)(react@18.2.0)(slate@0.101.5)
     transitivePeerDependencies:
-      - '@babel/core'
-      - '@babel/template'
       - '@types/react'
-      - '@urql/core'
       - immer
-      - optics-ts
       - react-native
-      - react-query
       - scheduler
-      - valtio
-      - wonka
-      - xstate
     dev: false
 
-  /@udecode/plate-basic-marks@24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5):
-    resolution: {integrity: sha512-P5ZqRhBBT9GWmm8kTGPVbntIUa6RumJ5WAQe1/5oUk5udGiDQv6Nam7yxzUWvv3CZojiZE1/UaPg/5taw+80Ug==}
+  /@udecode/plate-basic-marks@29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5):
+    resolution: {integrity: sha512-BXqfIYgg8Lns4hL22sGYLKnYvPSSeUD39tf9DdIHRNxGRZk6QiJVWKKABQ24WCakXcpONSLD3pkErG6s6TbOGQ==}
     peerDependencies:
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
@@ -1893,7 +1869,7 @@ packages:
       slate-hyperscript: '>=0.66.0'
       slate-react: '>=0.99.0'
     dependencies:
-      '@udecode/plate-common': 24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
+      '@udecode/plate-common': 29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
       slate: 0.101.5
@@ -1901,22 +1877,14 @@ packages:
       slate-hyperscript: 0.100.0(slate@0.101.5)
       slate-react: 0.101.5(react-dom@18.2.0)(react@18.2.0)(slate@0.101.5)
     transitivePeerDependencies:
-      - '@babel/core'
-      - '@babel/template'
       - '@types/react'
-      - '@urql/core'
       - immer
-      - optics-ts
       - react-native
-      - react-query
       - scheduler
-      - valtio
-      - wonka
-      - xstate
     dev: false
 
-  /@udecode/plate-block-quote@24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5):
-    resolution: {integrity: sha512-3ej13FhvzZWapUIHGb6xe2M61EZYXZKrsplSqohE0oNRHh6xRUyyXZWk6TASute4QKJaEcGBHoSdRuSronRt/Q==}
+  /@udecode/plate-block-quote@29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5):
+    resolution: {integrity: sha512-PFntDO9tJV0Ic31vaYgIJoXKtj9X/mD95pInL3EZtDjeCYlkuyegKovSSNZUQmSYqE7kfzYbT/Nc1ETtsKZXAQ==}
     peerDependencies:
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
@@ -1925,7 +1893,7 @@ packages:
       slate-hyperscript: '>=0.66.0'
       slate-react: '>=0.99.0'
     dependencies:
-      '@udecode/plate-common': 24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
+      '@udecode/plate-common': 29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
       slate: 0.101.5
@@ -1933,22 +1901,14 @@ packages:
       slate-hyperscript: 0.100.0(slate@0.101.5)
       slate-react: 0.101.5(react-dom@18.2.0)(react@18.2.0)(slate@0.101.5)
     transitivePeerDependencies:
-      - '@babel/core'
-      - '@babel/template'
       - '@types/react'
-      - '@urql/core'
       - immer
-      - optics-ts
       - react-native
-      - react-query
       - scheduler
-      - valtio
-      - wonka
-      - xstate
     dev: false
 
-  /@udecode/plate-break@24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5):
-    resolution: {integrity: sha512-9GcNOrd9LfGPzsaK7U8CeiOmPtQWoSwTxtxhthOEbK04t/3sR+JklwBqJtm7DsNRm1oqbQECRC5I+LKs7bJ2+w==}
+  /@udecode/plate-break@29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5):
+    resolution: {integrity: sha512-fUASwwxpv3hWirLgPHEAXJsByi2qMaoMTt+5sXO7klqPCEmne/EXE533X1QFQg0GEcifRwqEzBmbMoUNmNWJ6g==}
     peerDependencies:
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
@@ -1957,7 +1917,7 @@ packages:
       slate-hyperscript: '>=0.66.0'
       slate-react: '>=0.99.0'
     dependencies:
-      '@udecode/plate-common': 24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
+      '@udecode/plate-common': 29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
       slate: 0.101.5
@@ -1965,22 +1925,14 @@ packages:
       slate-hyperscript: 0.100.0(slate@0.101.5)
       slate-react: 0.101.5(react-dom@18.2.0)(react@18.2.0)(slate@0.101.5)
     transitivePeerDependencies:
-      - '@babel/core'
-      - '@babel/template'
       - '@types/react'
-      - '@urql/core'
       - immer
-      - optics-ts
       - react-native
-      - react-query
       - scheduler
-      - valtio
-      - wonka
-      - xstate
     dev: false
 
-  /@udecode/plate-code-block@24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5):
-    resolution: {integrity: sha512-5KDObxbm7nXU0EkGxlMGKtAhdKvgvSGJFqSYGWjN1emoPvDFhwAl3W3h+ivktP+jQa8qD/vsudZoI76SyGv+kA==}
+  /@udecode/plate-code-block@29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5):
+    resolution: {integrity: sha512-uGD3Gl9MCFkquRNpBNhKi8R6iNOOtG+EDzDuDy5oZIidcOlfNNtGv5fVfkknryy+mAN91gI6NORFTiRkPfBKAg==}
     peerDependencies:
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
@@ -1989,7 +1941,7 @@ packages:
       slate-hyperscript: '>=0.66.0'
       slate-react: '>=0.99.0'
     dependencies:
-      '@udecode/plate-common': 24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
+      '@udecode/plate-common': 29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
       prismjs: 1.29.0
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
@@ -1998,22 +1950,14 @@ packages:
       slate-hyperscript: 0.100.0(slate@0.101.5)
       slate-react: 0.101.5(react-dom@18.2.0)(react@18.2.0)(slate@0.101.5)
     transitivePeerDependencies:
-      - '@babel/core'
-      - '@babel/template'
       - '@types/react'
-      - '@urql/core'
       - immer
-      - optics-ts
       - react-native
-      - react-query
       - scheduler
-      - valtio
-      - wonka
-      - xstate
     dev: false
 
-  /@udecode/plate-combobox@24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5):
-    resolution: {integrity: sha512-5cLz49kHQLno9yLsDi8xe8gNoh1JLtobBoLGjH5BpdlysNCCwBhowf8g+sWraR65LEJL1HofiTgHaZBq0iRKDw==}
+  /@udecode/plate-combobox@29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5):
+    resolution: {integrity: sha512-IKhsd3Bd+DUoZanIHcnbdjsZFLr63E+7Bn+RuVrd9i8e44Ixf+m0kEUsXsuYwgjVv5TtPamnG2UJTOkpN4z/PQ==}
     peerDependencies:
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
@@ -2022,7 +1966,7 @@ packages:
       slate-hyperscript: '>=0.66.0'
       slate-react: '>=0.99.0'
     dependencies:
-      '@udecode/plate-common': 24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
+      '@udecode/plate-common': 29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
       downshift: 6.1.12(react@18.2.0)
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
@@ -2031,22 +1975,14 @@ packages:
       slate-hyperscript: 0.100.0(slate@0.101.5)
       slate-react: 0.101.5(react-dom@18.2.0)(react@18.2.0)(slate@0.101.5)
     transitivePeerDependencies:
-      - '@babel/core'
-      - '@babel/template'
       - '@types/react'
-      - '@urql/core'
       - immer
-      - optics-ts
       - react-native
-      - react-query
       - scheduler
-      - valtio
-      - wonka
-      - xstate
     dev: false
 
-  /@udecode/plate-comments@24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5):
-    resolution: {integrity: sha512-FxER5NG0d2q8je04w0bv+NGFxA3Ph3DS97goRzyRPdjMOqLfnsgTospsRyu/WE+e1xilKgaecspvwgmIma/wAA==}
+  /@udecode/plate-comments@29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5):
+    resolution: {integrity: sha512-uWYn1Tm3PtxmWFuXWcN7hboG3kFU+9/GFg4evmlfBweXFtPQJUuDKLeXb0cLi4ze9l6jyK7pKpMMCZmnXQaAXw==}
     peerDependencies:
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
@@ -2055,7 +1991,7 @@ packages:
       slate-hyperscript: '>=0.66.0'
       slate-react: '>=0.99.0'
     dependencies:
-      '@udecode/plate-common': 24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
+      '@udecode/plate-common': 29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
       lodash: 4.17.21
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
@@ -2064,22 +2000,14 @@ packages:
       slate-hyperscript: 0.100.0(slate@0.101.5)
       slate-react: 0.101.5(react-dom@18.2.0)(react@18.2.0)(slate@0.101.5)
     transitivePeerDependencies:
-      - '@babel/core'
-      - '@babel/template'
       - '@types/react'
-      - '@urql/core'
       - immer
-      - optics-ts
       - react-native
-      - react-query
       - scheduler
-      - valtio
-      - wonka
-      - xstate
     dev: false
 
-  /@udecode/plate-common@24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5):
-    resolution: {integrity: sha512-UbaQGWc2BXyxrMVkQMBb8JK5QclDYRwjFYgbNp8KpjbsaxqU3g5siPHuzU34PbJfqSVB7sdudO/JO4g9GUfBSQ==}
+  /@udecode/plate-common@29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5):
+    resolution: {integrity: sha512-0srH1g4fkPMuV81SvRyMVdd5XoNhviR5qUFulZHbhz3jSVxgGHv1zTs2zi6gRJDkhP0//H3cVCQJpS5jO2zG7w==}
     peerDependencies:
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
@@ -2088,11 +2016,12 @@ packages:
       slate-hyperscript: '>=0.66.0'
       slate-react: '>=0.99.0'
     dependencies:
-      '@udecode/plate-core': 24.4.0(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
-      '@udecode/plate-utils': 24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
-      '@udecode/slate': 24.3.6(slate-history@0.100.0)(slate@0.101.5)
-      '@udecode/slate-react': 24.4.0(react-dom@18.2.0)(react@18.2.0)(slate-history@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
-      '@udecode/slate-utils': 24.3.6(slate-history@0.100.0)(slate@0.101.5)
+      '@udecode/plate-core': 29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
+      '@udecode/plate-utils': 29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
+      '@udecode/react-utils': 29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)
+      '@udecode/slate': 25.0.0(slate-history@0.100.0)(slate@0.101.5)
+      '@udecode/slate-react': 29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(slate-history@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
+      '@udecode/slate-utils': 25.0.0(slate-history@0.100.0)(slate@0.101.5)
       '@udecode/utils': 24.3.0
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
@@ -2101,22 +2030,14 @@ packages:
       slate-hyperscript: 0.100.0(slate@0.101.5)
       slate-react: 0.101.5(react-dom@18.2.0)(react@18.2.0)(slate@0.101.5)
     transitivePeerDependencies:
-      - '@babel/core'
-      - '@babel/template'
       - '@types/react'
-      - '@urql/core'
       - immer
-      - optics-ts
       - react-native
-      - react-query
       - scheduler
-      - valtio
-      - wonka
-      - xstate
     dev: false
 
-  /@udecode/plate-core@24.4.0(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5):
-    resolution: {integrity: sha512-xg/ZzqpnNQmtXQBM02KMBLHczy2LpGQ2HLEjZVXWsHU1YLyiUCyVW/DCi/woPY1dSuSy60ZnVGPKnxs4Ao7zCQ==}
+  /@udecode/plate-core@29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5):
+    resolution: {integrity: sha512-U5EQBCXHt+3hy97/atvD7OEGN1JZB/HEYxycc2BMKht4Zld+JCO1GWuqoKZ/zh5DR9/+TTehlpsul96FdbguKQ==}
     peerDependencies:
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
@@ -2125,14 +2046,14 @@ packages:
       slate-hyperscript: '>=0.66.0'
       slate-react: '>=0.99.0'
     dependencies:
-      '@udecode/slate': 24.3.6(slate-history@0.100.0)(slate@0.101.5)
-      '@udecode/slate-react': 24.4.0(react-dom@18.2.0)(react@18.2.0)(slate-history@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
-      '@udecode/slate-utils': 24.3.6(slate-history@0.100.0)(slate@0.101.5)
+      '@udecode/slate': 25.0.0(slate-history@0.100.0)(slate@0.101.5)
+      '@udecode/slate-react': 29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(slate-history@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
+      '@udecode/slate-utils': 25.0.0(slate-history@0.100.0)(slate@0.101.5)
       '@udecode/utils': 24.3.0
-      '@udecode/zustood': 1.1.3(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(zustand@3.7.2)
       clsx: 1.2.1
       is-hotkey: 0.2.0
-      jotai: 1.7.2(react@18.2.0)
+      jotai: 2.6.0(@types/react@18.2.45)(react@18.2.0)
+      jotai-x: 1.1.0(@types/react@18.2.45)(jotai@2.6.0)(react@18.2.0)
       lodash: 4.17.21
       nanoid: 3.3.7
       react: 18.2.0
@@ -2143,23 +2064,17 @@ packages:
       slate-hyperscript: 0.100.0(slate@0.101.5)
       slate-react: 0.101.5(react-dom@18.2.0)(react@18.2.0)(slate@0.101.5)
       use-deep-compare: 1.2.1(react@18.2.0)
-      zustand: 3.7.2(react@18.2.0)
+      zustand: 4.4.7(@types/react@18.2.45)(react@18.2.0)
+      zustand-x: 3.0.1(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(zustand@4.4.7)
     transitivePeerDependencies:
-      - '@babel/core'
-      - '@babel/template'
-      - '@urql/core'
+      - '@types/react'
       - immer
-      - optics-ts
       - react-native
-      - react-query
       - scheduler
-      - valtio
-      - wonka
-      - xstate
     dev: false
 
-  /@udecode/plate-find-replace@24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5):
-    resolution: {integrity: sha512-5otuHpdLrILWfwQoibLKvC3Z88zx9GadXkwLq4xfw6twAN9chJjMBfoVTHgSFyTb+ShKaKfPkWzhD6bOF3ELpQ==}
+  /@udecode/plate-find-replace@29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5):
+    resolution: {integrity: sha512-abpivy09V6PQIOdzojh4/NUcDmMMiqzolCJAUhYJM9LsH1e5HkJKa/O7JvA2JaKYgnFVTq/0ErgEs0O2oAIb8g==}
     peerDependencies:
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
@@ -2168,7 +2083,7 @@ packages:
       slate-hyperscript: '>=0.66.0'
       slate-react: '>=0.99.0'
     dependencies:
-      '@udecode/plate-common': 24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
+      '@udecode/plate-common': 29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
       slate: 0.101.5
@@ -2176,22 +2091,14 @@ packages:
       slate-hyperscript: 0.100.0(slate@0.101.5)
       slate-react: 0.101.5(react-dom@18.2.0)(react@18.2.0)(slate@0.101.5)
     transitivePeerDependencies:
-      - '@babel/core'
-      - '@babel/template'
       - '@types/react'
-      - '@urql/core'
       - immer
-      - optics-ts
       - react-native
-      - react-query
       - scheduler
-      - valtio
-      - wonka
-      - xstate
     dev: false
 
-  /@udecode/plate-floating@24.5.2(@types/react-dom@18.2.18)(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5):
-    resolution: {integrity: sha512-m8wsD/fp+iBLPXd8uPuxFmRIQwwmK0F8i0L9fCu0oIVb1OyDYQzYl1T/jm3u1HRZwBmlvZ5VT6S0ZZJ2uaCZag==}
+  /@udecode/plate-floating@29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5):
+    resolution: {integrity: sha512-VJSGdcDDY1/m52sdk9FmBiMTeRg+fmru7rdX4302hDLvQ1Zxq0RYGp+eR9P8USsXACZFqO5rhDkAfqZWin8oiA==}
     peerDependencies:
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
@@ -2202,8 +2109,7 @@ packages:
     dependencies:
       '@floating-ui/core': 1.5.2
       '@floating-ui/react': 0.22.3(react-dom@18.2.0)(react@18.2.0)
-      '@radix-ui/react-dropdown-menu': 2.0.6(@types/react-dom@18.2.18)(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)
-      '@udecode/plate-common': 24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
+      '@udecode/plate-common': 29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
       slate: 0.101.5
@@ -2211,23 +2117,14 @@ packages:
       slate-hyperscript: 0.100.0(slate@0.101.5)
       slate-react: 0.101.5(react-dom@18.2.0)(react@18.2.0)(slate@0.101.5)
     transitivePeerDependencies:
-      - '@babel/core'
-      - '@babel/template'
       - '@types/react'
-      - '@types/react-dom'
-      - '@urql/core'
       - immer
-      - optics-ts
       - react-native
-      - react-query
       - scheduler
-      - valtio
-      - wonka
-      - xstate
     dev: false
 
-  /@udecode/plate-font@24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5):
-    resolution: {integrity: sha512-sdi6kW0sCVg6C/+RWlQg0ul0etS1v8svxcTQVGvdcGLBSyDaA4EjSm0mHXv4QeYvadAMmJFHrEatrGqMu90SYw==}
+  /@udecode/plate-font@29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5):
+    resolution: {integrity: sha512-ZWOe+O50qwuOU2j61bJZRnDG2jHSk9pKXT4Bvj8R64WXp3+jnGAdB8Nw+YMdWqY287+NEEKq1aPSC6CIcG+V2g==}
     peerDependencies:
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
@@ -2236,7 +2133,7 @@ packages:
       slate-hyperscript: '>=0.66.0'
       slate-react: '>=0.99.0'
     dependencies:
-      '@udecode/plate-common': 24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
+      '@udecode/plate-common': 29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
       lodash: 4.17.21
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
@@ -2245,22 +2142,14 @@ packages:
       slate-hyperscript: 0.100.0(slate@0.101.5)
       slate-react: 0.101.5(react-dom@18.2.0)(react@18.2.0)(slate@0.101.5)
     transitivePeerDependencies:
-      - '@babel/core'
-      - '@babel/template'
       - '@types/react'
-      - '@urql/core'
       - immer
-      - optics-ts
       - react-native
-      - react-query
       - scheduler
-      - valtio
-      - wonka
-      - xstate
     dev: false
 
-  /@udecode/plate-heading@24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5):
-    resolution: {integrity: sha512-kN2ujjoy7Q1a2/rSMKpYoky7nV9/2jRW6y/8xRIFekvlrKXfXQGPuKFxoiJXxcGD7MRBFqg5QvwS94xroAuXiQ==}
+  /@udecode/plate-heading@29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5):
+    resolution: {integrity: sha512-Mlh9Efk+hG5hx+gSD7Ei0mtf8NcAreaPx3Izt2WwTz2jimBgFk8pASrpNy6m8qSWR+f9vfIQomryW2F7ROt8PQ==}
     peerDependencies:
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
@@ -2269,7 +2158,7 @@ packages:
       slate-hyperscript: '>=0.66.0'
       slate-react: '>=0.99.0'
     dependencies:
-      '@udecode/plate-common': 24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
+      '@udecode/plate-common': 29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
       slate: 0.101.5
@@ -2277,22 +2166,14 @@ packages:
       slate-hyperscript: 0.100.0(slate@0.101.5)
       slate-react: 0.101.5(react-dom@18.2.0)(react@18.2.0)(slate@0.101.5)
     transitivePeerDependencies:
-      - '@babel/core'
-      - '@babel/template'
       - '@types/react'
-      - '@urql/core'
       - immer
-      - optics-ts
       - react-native
-      - react-query
       - scheduler
-      - valtio
-      - wonka
-      - xstate
     dev: false
 
-  /@udecode/plate-highlight@24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5):
-    resolution: {integrity: sha512-bzFLHurm22qxczDoWTKQPVCsLvu6nXhOCuGhtay4E/6+mlQkc4E/WR95QJGRXKToo49BqhAhiqkpQUKHgZ0vGA==}
+  /@udecode/plate-highlight@29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5):
+    resolution: {integrity: sha512-YDVLlPq2ADiGWcZw4MIT2xoeF7ma+fKYT/A/4JSxhoJL2iCkzHBxJgYVJbcX95pd88k6M2cD9d4II/TaBZyuJw==}
     peerDependencies:
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
@@ -2301,7 +2182,7 @@ packages:
       slate-hyperscript: '>=0.66.0'
       slate-react: '>=0.99.0'
     dependencies:
-      '@udecode/plate-common': 24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
+      '@udecode/plate-common': 29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
       slate: 0.101.5
@@ -2309,22 +2190,14 @@ packages:
       slate-hyperscript: 0.100.0(slate@0.101.5)
       slate-react: 0.101.5(react-dom@18.2.0)(react@18.2.0)(slate@0.101.5)
     transitivePeerDependencies:
-      - '@babel/core'
-      - '@babel/template'
       - '@types/react'
-      - '@urql/core'
       - immer
-      - optics-ts
       - react-native
-      - react-query
       - scheduler
-      - valtio
-      - wonka
-      - xstate
     dev: false
 
-  /@udecode/plate-horizontal-rule@24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5):
-    resolution: {integrity: sha512-EuszMzbf4iqvOfxz9XnyKqAmXpukLHVOilfuGmfE5oPBJWDjrSRPP7rWcyVCT4ksxo/qzzfGT1TlKyMDtI1ylw==}
+  /@udecode/plate-horizontal-rule@29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5):
+    resolution: {integrity: sha512-2d7BmIuS9WsKSmMQD+3E5zBxwU3v0hz9BRjWMEv0J2uNRPNFojqBrhgy5rRAf5QtlubRZWNFHNYEULNiO28r7g==}
     peerDependencies:
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
@@ -2333,7 +2206,7 @@ packages:
       slate-hyperscript: '>=0.66.0'
       slate-react: '>=0.99.0'
     dependencies:
-      '@udecode/plate-common': 24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
+      '@udecode/plate-common': 29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
       slate: 0.101.5
@@ -2341,22 +2214,14 @@ packages:
       slate-hyperscript: 0.100.0(slate@0.101.5)
       slate-react: 0.101.5(react-dom@18.2.0)(react@18.2.0)(slate@0.101.5)
     transitivePeerDependencies:
-      - '@babel/core'
-      - '@babel/template'
       - '@types/react'
-      - '@urql/core'
       - immer
-      - optics-ts
       - react-native
-      - react-query
       - scheduler
-      - valtio
-      - wonka
-      - xstate
     dev: false
 
-  /@udecode/plate-indent-list@24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5):
-    resolution: {integrity: sha512-m+TZqqEXW1dU6SMNiEJo2yjZTl7JJMPu1YkBZ4gS3/50sPZnFJoY9FBAJjCHhxShmNoL+qe7TO+v3ZV8A8SVYA==}
+  /@udecode/plate-indent-list@29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5):
+    resolution: {integrity: sha512-Uxo38SzPmCkb7nfs1kBIMUhPzxRyObZlHZ3Y8fISvUq1nZTz9RPDnQF1dMVshIPBni6O1B/FocBLLEWAyMubQg==}
     peerDependencies:
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
@@ -2365,9 +2230,9 @@ packages:
       slate-hyperscript: '>=0.66.0'
       slate-react: '>=0.99.0'
     dependencies:
-      '@udecode/plate-common': 24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
-      '@udecode/plate-indent': 24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
-      '@udecode/plate-list': 24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
+      '@udecode/plate-common': 29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
+      '@udecode/plate-indent': 29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
+      '@udecode/plate-list': 29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
       clsx: 1.2.1
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
@@ -2376,22 +2241,14 @@ packages:
       slate-hyperscript: 0.100.0(slate@0.101.5)
       slate-react: 0.101.5(react-dom@18.2.0)(react@18.2.0)(slate@0.101.5)
     transitivePeerDependencies:
-      - '@babel/core'
-      - '@babel/template'
       - '@types/react'
-      - '@urql/core'
       - immer
-      - optics-ts
       - react-native
-      - react-query
       - scheduler
-      - valtio
-      - wonka
-      - xstate
     dev: false
 
-  /@udecode/plate-indent@24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5):
-    resolution: {integrity: sha512-HocUEjTpHe5/wt6X5PyyB1Og71PjnMVM4c1Y90iGvCPKwN2FlSEVhdzvdOghbsTf5ISA55+3u0s5y3yZeFzF3A==}
+  /@udecode/plate-indent@29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5):
+    resolution: {integrity: sha512-E13r1BqQay7apEqk0q4TV5FMx9fvW47zd3scWI1wIUpdw3QwpBzDUWDn+H6EAx8EFgPSYPDscJhMLzT+YC/4QQ==}
     peerDependencies:
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
@@ -2400,7 +2257,7 @@ packages:
       slate-hyperscript: '>=0.66.0'
       slate-react: '>=0.99.0'
     dependencies:
-      '@udecode/plate-common': 24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
+      '@udecode/plate-common': 29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
       slate: 0.101.5
@@ -2408,22 +2265,14 @@ packages:
       slate-hyperscript: 0.100.0(slate@0.101.5)
       slate-react: 0.101.5(react-dom@18.2.0)(react@18.2.0)(slate@0.101.5)
     transitivePeerDependencies:
-      - '@babel/core'
-      - '@babel/template'
       - '@types/react'
-      - '@urql/core'
       - immer
-      - optics-ts
       - react-native
-      - react-query
       - scheduler
-      - valtio
-      - wonka
-      - xstate
     dev: false
 
-  /@udecode/plate-kbd@24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5):
-    resolution: {integrity: sha512-boJlBz6IlJclsUE21d5OH0vbO1W+c4HqXW2o3qfB/lQcickaleh3VluSIW06kn9ik2Rb9uYzl2M6tFBTyLzvQA==}
+  /@udecode/plate-kbd@29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5):
+    resolution: {integrity: sha512-O+uHnfgOuUG++gS0cMuKDLRRf7hS+VelmHDpCQAkUi9BMvDNKen6UIimQH3EKh6t36yRmsB8Djt/Q6Gd8VTyiw==}
     peerDependencies:
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
@@ -2432,7 +2281,7 @@ packages:
       slate-hyperscript: '>=0.66.0'
       slate-react: '>=0.99.0'
     dependencies:
-      '@udecode/plate-common': 24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
+      '@udecode/plate-common': 29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
       slate: 0.101.5
@@ -2440,22 +2289,14 @@ packages:
       slate-hyperscript: 0.100.0(slate@0.101.5)
       slate-react: 0.101.5(react-dom@18.2.0)(react@18.2.0)(slate@0.101.5)
     transitivePeerDependencies:
-      - '@babel/core'
-      - '@babel/template'
       - '@types/react'
-      - '@urql/core'
       - immer
-      - optics-ts
       - react-native
-      - react-query
       - scheduler
-      - valtio
-      - wonka
-      - xstate
     dev: false
 
-  /@udecode/plate-line-height@24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5):
-    resolution: {integrity: sha512-9K+aHjTcKk2qg0QDFQ05TYy7WzHkYfAcGmT3WCspzmpOEujf377TWLBTh1WzHMLDNYxoicMskbXxyzfTsKyuzw==}
+  /@udecode/plate-line-height@29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5):
+    resolution: {integrity: sha512-1AWIhMuE3FdUBQ4Vr1VH5p2aAYpqAjpFP6TlIbVCIdvF84LCQEwU1xI0IBiIFQiFlAWmr2OqD65qWopNJq35sQ==}
     peerDependencies:
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
@@ -2464,7 +2305,7 @@ packages:
       slate-hyperscript: '>=0.66.0'
       slate-react: '>=0.99.0'
     dependencies:
-      '@udecode/plate-common': 24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
+      '@udecode/plate-common': 29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
       slate: 0.101.5
@@ -2472,22 +2313,14 @@ packages:
       slate-hyperscript: 0.100.0(slate@0.101.5)
       slate-react: 0.101.5(react-dom@18.2.0)(react@18.2.0)(slate@0.101.5)
     transitivePeerDependencies:
-      - '@babel/core'
-      - '@babel/template'
       - '@types/react'
-      - '@urql/core'
       - immer
-      - optics-ts
       - react-native
-      - react-query
       - scheduler
-      - valtio
-      - wonka
-      - xstate
     dev: false
 
-  /@udecode/plate-link@24.5.2(@types/react-dom@18.2.18)(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5):
-    resolution: {integrity: sha512-fIIGoxn/CynuX+qrZ1vXOReAzIbeiIM2RW6cp9U1CtTtr9PzwLk2Ozoz4V6IKOYhp4MwQ7K56ExJe91dbx8Y8A==}
+  /@udecode/plate-link@29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5):
+    resolution: {integrity: sha512-RR+GJkP4QOLooHVZBAAWjmYZNaQv+YtVLBuHMvK1nRxnoQx+E8mYRNKMOz1QW8wIlQSzzslRCqXlgVQK7pWs3Q==}
     peerDependencies:
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
@@ -2496,9 +2329,9 @@ packages:
       slate-hyperscript: '>=0.66.0'
       slate-react: '>=0.99.0'
     dependencies:
-      '@udecode/plate-common': 24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
-      '@udecode/plate-floating': 24.5.2(@types/react-dom@18.2.18)(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
-      '@udecode/plate-normalizers': 24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
+      '@udecode/plate-common': 29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
+      '@udecode/plate-floating': 29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
+      '@udecode/plate-normalizers': 29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
       slate: 0.101.5
@@ -2506,23 +2339,14 @@ packages:
       slate-hyperscript: 0.100.0(slate@0.101.5)
       slate-react: 0.101.5(react-dom@18.2.0)(react@18.2.0)(slate@0.101.5)
     transitivePeerDependencies:
-      - '@babel/core'
-      - '@babel/template'
       - '@types/react'
-      - '@types/react-dom'
-      - '@urql/core'
       - immer
-      - optics-ts
       - react-native
-      - react-query
       - scheduler
-      - valtio
-      - wonka
-      - xstate
     dev: false
 
-  /@udecode/plate-list@24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5):
-    resolution: {integrity: sha512-03u3f7SxPOYkqqxvEoWr/VzvhsGo0CdGrGyzQOAmwiT14vMAhrwacmxTAEauqOEhmDhu09ql6Xt8cS4SrO2Hpg==}
+  /@udecode/plate-list@29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5):
+    resolution: {integrity: sha512-BD6VIo1WeWxpHj6CtqypRkxVdFE51UlwguLYAOJYPevEDQchJhYqjfSiXOq9bb6xWKo5glLL4R8msz/lexI/dA==}
     peerDependencies:
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
@@ -2531,8 +2355,8 @@ packages:
       slate-hyperscript: '>=0.66.0'
       slate-react: '>=0.99.0'
     dependencies:
-      '@udecode/plate-common': 24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
-      '@udecode/plate-reset-node': 24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
+      '@udecode/plate-common': 29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
+      '@udecode/plate-reset-node': 29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
       lodash: 4.17.21
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
@@ -2541,22 +2365,14 @@ packages:
       slate-hyperscript: 0.100.0(slate@0.101.5)
       slate-react: 0.101.5(react-dom@18.2.0)(react@18.2.0)(slate@0.101.5)
     transitivePeerDependencies:
-      - '@babel/core'
-      - '@babel/template'
       - '@types/react'
-      - '@urql/core'
       - immer
-      - optics-ts
       - react-native
-      - react-query
       - scheduler
-      - valtio
-      - wonka
-      - xstate
     dev: false
 
-  /@udecode/plate-media@24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5):
-    resolution: {integrity: sha512-6UWX8+SWLMVg43SX5LbueLumaOYzuTlQ17rA9L5TteMH8JvCY9JLMyrIeJJD4bJ51xrwRakew0v2Rn6AU5FyAQ==}
+  /@udecode/plate-media@29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5):
+    resolution: {integrity: sha512-BVAP+52AhqHpDY49Yy2eN8gwGx3USdt0WbcEollQ+zxIdn3HesO093F+HZwJ1r4FnoGaKbuFW4F6JThTDy7+8g==}
     peerDependencies:
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
@@ -2565,7 +2381,7 @@ packages:
       slate-hyperscript: '>=0.66.0'
       slate-react: '>=0.99.0'
     dependencies:
-      '@udecode/plate-common': 24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
+      '@udecode/plate-common': 29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
       js-video-url-parser: 0.5.1
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
@@ -2574,22 +2390,14 @@ packages:
       slate-hyperscript: 0.100.0(slate@0.101.5)
       slate-react: 0.101.5(react-dom@18.2.0)(react@18.2.0)(slate@0.101.5)
     transitivePeerDependencies:
-      - '@babel/core'
-      - '@babel/template'
       - '@types/react'
-      - '@urql/core'
       - immer
-      - optics-ts
       - react-native
-      - react-query
       - scheduler
-      - valtio
-      - wonka
-      - xstate
     dev: false
 
-  /@udecode/plate-mention@24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5):
-    resolution: {integrity: sha512-HQ2XWC9lN/TqdfoUUY8sQolZWGO1SYGHaJQ14JwZunysWy1LCpofDQEpxzCgVxCWnVWzFLibIbZK4qyM8UqCFQ==}
+  /@udecode/plate-mention@29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5):
+    resolution: {integrity: sha512-iXM9A+JYYT1oJ0OL7lSNtqjii0I9SBYz0EXO3J5hFtW2dD/5sRCc+XZlmDQbSMOdSCMbunVVDHa9ndoZEi6GPg==}
     peerDependencies:
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
@@ -2598,8 +2406,8 @@ packages:
       slate-hyperscript: '>=0.66.0'
       slate-react: '>=0.99.0'
     dependencies:
-      '@udecode/plate-combobox': 24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
-      '@udecode/plate-common': 24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
+      '@udecode/plate-combobox': 29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
+      '@udecode/plate-common': 29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
       slate: 0.101.5
@@ -2607,22 +2415,14 @@ packages:
       slate-hyperscript: 0.100.0(slate@0.101.5)
       slate-react: 0.101.5(react-dom@18.2.0)(react@18.2.0)(slate@0.101.5)
     transitivePeerDependencies:
-      - '@babel/core'
-      - '@babel/template'
       - '@types/react'
-      - '@urql/core'
       - immer
-      - optics-ts
       - react-native
-      - react-query
       - scheduler
-      - valtio
-      - wonka
-      - xstate
     dev: false
 
-  /@udecode/plate-node-id@24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5):
-    resolution: {integrity: sha512-KoStOYH420FfCjNv5wmqK1/BR+GoHywiT/9iMClYI4EuS+oR660KP9/3fAOb1SuvVfndLPSGWhuO02JRaAqTQQ==}
+  /@udecode/plate-node-id@29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5):
+    resolution: {integrity: sha512-UNbehGgoprjXz1e5ew2TQLlwiaY3lEQ6Ws2PquW6lS46HiqhWj51Ojrng7neJXVDPP8XwscON3LZJDStY+ht5Q==}
     peerDependencies:
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
@@ -2631,7 +2431,7 @@ packages:
       slate-hyperscript: '>=0.66.0'
       slate-react: '>=0.99.0'
     dependencies:
-      '@udecode/plate-common': 24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
+      '@udecode/plate-common': 29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
       lodash: 4.17.21
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
@@ -2640,22 +2440,14 @@ packages:
       slate-hyperscript: 0.100.0(slate@0.101.5)
       slate-react: 0.101.5(react-dom@18.2.0)(react@18.2.0)(slate@0.101.5)
     transitivePeerDependencies:
-      - '@babel/core'
-      - '@babel/template'
       - '@types/react'
-      - '@urql/core'
       - immer
-      - optics-ts
       - react-native
-      - react-query
       - scheduler
-      - valtio
-      - wonka
-      - xstate
     dev: false
 
-  /@udecode/plate-normalizers@24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5):
-    resolution: {integrity: sha512-itSo6foWumPbyMGm/tSipbXcZULyVizAnKdpoNpJRP2tNhS9MCthkQuiBAKqwIK+oL5NgYYlkEYIUkUy+XRewg==}
+  /@udecode/plate-normalizers@29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5):
+    resolution: {integrity: sha512-vHsW/hYpkGl691P3/LrBHWg7h6Nz7q25dGvXxfPvWSTd1kXdZ5eWvmcPXtSWRYi8U3Au4Sit94HacXE+VipaLQ==}
     peerDependencies:
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
@@ -2664,7 +2456,7 @@ packages:
       slate-hyperscript: '>=0.66.0'
       slate-react: '>=0.99.0'
     dependencies:
-      '@udecode/plate-common': 24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
+      '@udecode/plate-common': 29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
       lodash: 4.17.21
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
@@ -2673,22 +2465,14 @@ packages:
       slate-hyperscript: 0.100.0(slate@0.101.5)
       slate-react: 0.101.5(react-dom@18.2.0)(react@18.2.0)(slate@0.101.5)
     transitivePeerDependencies:
-      - '@babel/core'
-      - '@babel/template'
       - '@types/react'
-      - '@urql/core'
       - immer
-      - optics-ts
       - react-native
-      - react-query
       - scheduler
-      - valtio
-      - wonka
-      - xstate
     dev: false
 
-  /@udecode/plate-paragraph@24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5):
-    resolution: {integrity: sha512-H62t+Fh5SLLRHL0MSAdPKXnc8tzIK/KJrhWBo7evRkI3zX09VRtbgksJPS53UMbiOW1/oT59sTsXg7wmBDWiBQ==}
+  /@udecode/plate-paragraph@29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5):
+    resolution: {integrity: sha512-T3r65apzUqTYCeHqeE9JNSUrpXT2PmVlCS/HZ/zLbcDHR6FZfPreDcFYf8LwcxIN6kXyjzNftivJ/DOf39YQpA==}
     peerDependencies:
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
@@ -2697,7 +2481,7 @@ packages:
       slate-hyperscript: '>=0.66.0'
       slate-react: '>=0.99.0'
     dependencies:
-      '@udecode/plate-common': 24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
+      '@udecode/plate-common': 29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
       slate: 0.101.5
@@ -2705,22 +2489,14 @@ packages:
       slate-hyperscript: 0.100.0(slate@0.101.5)
       slate-react: 0.101.5(react-dom@18.2.0)(react@18.2.0)(slate@0.101.5)
     transitivePeerDependencies:
-      - '@babel/core'
-      - '@babel/template'
       - '@types/react'
-      - '@urql/core'
       - immer
-      - optics-ts
       - react-native
-      - react-query
       - scheduler
-      - valtio
-      - wonka
-      - xstate
     dev: false
 
-  /@udecode/plate-reset-node@24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5):
-    resolution: {integrity: sha512-jbBYWjYcb7AkOpZnsHZu1i8bG7YkNmjqI/wkI4j8asx4DesKkfHasYcIRBcHi7aDFsm/JQlpEMnGWfoB1PXfbA==}
+  /@udecode/plate-reset-node@29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5):
+    resolution: {integrity: sha512-BGCwY5hpu4JKFXKvINZFEec22je3N6mOELA3nH/73Ero6UL0O4ToNKG/jrqfnsIl6Dr286rGFcJjw22H1Jmssg==}
     peerDependencies:
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
@@ -2729,7 +2505,7 @@ packages:
       slate-hyperscript: '>=0.66.0'
       slate-react: '>=0.99.0'
     dependencies:
-      '@udecode/plate-common': 24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
+      '@udecode/plate-common': 29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
       slate: 0.101.5
@@ -2737,22 +2513,14 @@ packages:
       slate-hyperscript: 0.100.0(slate@0.101.5)
       slate-react: 0.101.5(react-dom@18.2.0)(react@18.2.0)(slate@0.101.5)
     transitivePeerDependencies:
-      - '@babel/core'
-      - '@babel/template'
       - '@types/react'
-      - '@urql/core'
       - immer
-      - optics-ts
       - react-native
-      - react-query
       - scheduler
-      - valtio
-      - wonka
-      - xstate
     dev: false
 
-  /@udecode/plate-resizable@24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5):
-    resolution: {integrity: sha512-l97li5rfqxSedP2hx9nfQkrcm1ijVuMZhZsCmJpcHDEHqLjeFicfewmBQuI7EyreMiRZI1OtAfkCV/udTb5Wzg==}
+  /@udecode/plate-resizable@29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5):
+    resolution: {integrity: sha512-ac5kJ6gHPH4PCiFGEaNCm1Smh4aAn4blR7onSrvyEWQ+7oDd/y3nBMPVwA94/Gqh1Mt6O/793E79SQl4tNthOw==}
     peerDependencies:
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
@@ -2761,7 +2529,7 @@ packages:
       slate-hyperscript: '>=0.66.0'
       slate-react: '>=0.99.0'
     dependencies:
-      '@udecode/plate-common': 24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
+      '@udecode/plate-common': 29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
       slate: 0.101.5
@@ -2769,22 +2537,14 @@ packages:
       slate-hyperscript: 0.100.0(slate@0.101.5)
       slate-react: 0.101.5(react-dom@18.2.0)(react@18.2.0)(slate@0.101.5)
     transitivePeerDependencies:
-      - '@babel/core'
-      - '@babel/template'
       - '@types/react'
-      - '@urql/core'
       - immer
-      - optics-ts
       - react-native
-      - react-query
       - scheduler
-      - valtio
-      - wonka
-      - xstate
     dev: false
 
-  /@udecode/plate-select@24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5):
-    resolution: {integrity: sha512-uuL3zHcrewQpuuu/q7VeL0EyNuwfph5qlv1WGSpsgPMgpmsOK1Lo7jctpbfB030d5KtkD/e5PuPbZsLMtseSXA==}
+  /@udecode/plate-select@29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5):
+    resolution: {integrity: sha512-LWIyQROCGq+XSbBA/wnwgUWcIiWorIL5bgA1XULQtT3nosKVlGZOqK0CkTZHOjBXzcogy0u7cfG/4p/BZAFGWg==}
     peerDependencies:
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
@@ -2793,7 +2553,7 @@ packages:
       slate-hyperscript: '>=0.66.0'
       slate-react: '>=0.99.0'
     dependencies:
-      '@udecode/plate-common': 24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
+      '@udecode/plate-common': 29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
       slate: 0.101.5
@@ -2801,22 +2561,14 @@ packages:
       slate-hyperscript: 0.100.0(slate@0.101.5)
       slate-react: 0.101.5(react-dom@18.2.0)(react@18.2.0)(slate@0.101.5)
     transitivePeerDependencies:
-      - '@babel/core'
-      - '@babel/template'
       - '@types/react'
-      - '@urql/core'
       - immer
-      - optics-ts
       - react-native
-      - react-query
       - scheduler
-      - valtio
-      - wonka
-      - xstate
     dev: false
 
-  /@udecode/plate-serializer-csv@24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5):
-    resolution: {integrity: sha512-OgGX5+xmC0OvYudttEOOtm0EkuzEuFnBZu2KxoWmv2sGFhs5CB8YNPXeH+OpkEntJNitQSw7hvSfTPZ79Guutw==}
+  /@udecode/plate-serializer-csv@29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5):
+    resolution: {integrity: sha512-0lr6QERw9UTgr28PY8K+Wr50vQI1DqGKCmaYVVcQp/BoehfhhIcT83A9zp5xdoZoQowZhKpPfv7DebspiiJxWg==}
     peerDependencies:
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
@@ -2825,8 +2577,8 @@ packages:
       slate-hyperscript: '>=0.66.0'
       slate-react: '>=0.99.0'
     dependencies:
-      '@udecode/plate-common': 24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
-      '@udecode/plate-table': 24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
+      '@udecode/plate-common': 29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
+      '@udecode/plate-table': 29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
       papaparse: 5.4.1
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
@@ -2835,22 +2587,14 @@ packages:
       slate-hyperscript: 0.100.0(slate@0.101.5)
       slate-react: 0.101.5(react-dom@18.2.0)(react@18.2.0)(slate@0.101.5)
     transitivePeerDependencies:
-      - '@babel/core'
-      - '@babel/template'
       - '@types/react'
-      - '@urql/core'
       - immer
-      - optics-ts
       - react-native
-      - react-query
       - scheduler
-      - valtio
-      - wonka
-      - xstate
     dev: false
 
-  /@udecode/plate-serializer-docx@24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5):
-    resolution: {integrity: sha512-jUUBe+I+OeIpVbhEPkg7bE8OyWWElAQ3sIi2uGcwqAiSgxJcgqnn9+VJJMN9gsbWYBNFTwPNsY+W6nFUI1nPIA==}
+  /@udecode/plate-serializer-docx@29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5):
+    resolution: {integrity: sha512-IOuOMrbn1ZdaYW+qwZhx7ONejv3W9kOj+jw6ECd/ijQQhduFYtLFE5f//c7+b/CX9Y0U1iUQGAgWXEg1cKlMmw==}
     peerDependencies:
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
@@ -2859,13 +2603,13 @@ packages:
       slate-hyperscript: '>=0.66.0'
       slate-react: '>=0.99.0'
     dependencies:
-      '@udecode/plate-common': 24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
-      '@udecode/plate-heading': 24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
-      '@udecode/plate-indent': 24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
-      '@udecode/plate-indent-list': 24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
-      '@udecode/plate-media': 24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
-      '@udecode/plate-paragraph': 24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
-      '@udecode/plate-table': 24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
+      '@udecode/plate-common': 29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
+      '@udecode/plate-heading': 29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
+      '@udecode/plate-indent': 29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
+      '@udecode/plate-indent-list': 29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
+      '@udecode/plate-media': 29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
+      '@udecode/plate-paragraph': 29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
+      '@udecode/plate-table': 29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
       slate: 0.101.5
@@ -2874,22 +2618,14 @@ packages:
       slate-react: 0.101.5(react-dom@18.2.0)(react@18.2.0)(slate@0.101.5)
       validator: 13.11.0
     transitivePeerDependencies:
-      - '@babel/core'
-      - '@babel/template'
       - '@types/react'
-      - '@urql/core'
       - immer
-      - optics-ts
       - react-native
-      - react-query
       - scheduler
-      - valtio
-      - wonka
-      - xstate
     dev: false
 
-  /@udecode/plate-serializer-html@24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5):
-    resolution: {integrity: sha512-zm5b3hbriB9A+CP4Id4v/KBr2rDpJs6Jz7g516d6sEHTZRpZK43YUXKtzXaWqmwJvQEG4x2YjMyF/ijclUZGKA==}
+  /@udecode/plate-serializer-html@29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5):
+    resolution: {integrity: sha512-lDqOgpS69TUweWAoF15o6+nnV5+/Qwob8WAaK7deYJpS8U62B84rdmsGD1jbmIcLwXIp+VPwpZc5dFCBzDFXSg==}
     peerDependencies:
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
@@ -2898,7 +2634,7 @@ packages:
       slate-hyperscript: '>=0.66.0'
       slate-react: '>=0.99.0'
     dependencies:
-      '@udecode/plate-common': 24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
+      '@udecode/plate-common': 29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
       html-entities: 2.4.0
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
@@ -2907,22 +2643,14 @@ packages:
       slate-hyperscript: 0.100.0(slate@0.101.5)
       slate-react: 0.101.5(react-dom@18.2.0)(react@18.2.0)(slate@0.101.5)
     transitivePeerDependencies:
-      - '@babel/core'
-      - '@babel/template'
       - '@types/react'
-      - '@urql/core'
       - immer
-      - optics-ts
       - react-native
-      - react-query
       - scheduler
-      - valtio
-      - wonka
-      - xstate
     dev: false
 
-  /@udecode/plate-serializer-md@24.5.2(@types/react-dom@18.2.18)(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5):
-    resolution: {integrity: sha512-wSBH2Cz6Y+al/ptvlYYtNh6rApafdNJ5RGIajKgAArz5aTcf2VpSoOWDUeZiur/FoiIu0mdb3j+ut0oLZusTqA==}
+  /@udecode/plate-serializer-md@29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5):
+    resolution: {integrity: sha512-D9vZNeui+R7hSGgYNxNXTMoQcSGKIiVZgEgCpnszKeot6GFruMrX0Wkr5vT13L9VYkj+ZmHsNo/TBZZUYv4SEA==}
     peerDependencies:
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
@@ -2931,16 +2659,16 @@ packages:
       slate-hyperscript: '>=0.66.0'
       slate-react: '>=0.99.0'
     dependencies:
-      '@udecode/plate-basic-marks': 24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
-      '@udecode/plate-block-quote': 24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
-      '@udecode/plate-code-block': 24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
-      '@udecode/plate-common': 24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
-      '@udecode/plate-heading': 24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
-      '@udecode/plate-horizontal-rule': 24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
-      '@udecode/plate-link': 24.5.2(@types/react-dom@18.2.18)(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
-      '@udecode/plate-list': 24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
-      '@udecode/plate-media': 24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
-      '@udecode/plate-paragraph': 24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
+      '@udecode/plate-basic-marks': 29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
+      '@udecode/plate-block-quote': 29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
+      '@udecode/plate-code-block': 29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
+      '@udecode/plate-common': 29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
+      '@udecode/plate-heading': 29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
+      '@udecode/plate-horizontal-rule': 29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
+      '@udecode/plate-link': 29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
+      '@udecode/plate-list': 29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
+      '@udecode/plate-media': 29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
+      '@udecode/plate-paragraph': 29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
       remark-parse: 9.0.0
@@ -2950,24 +2678,15 @@ packages:
       slate-react: 0.101.5(react-dom@18.2.0)(react@18.2.0)(slate@0.101.5)
       unified: 9.2.2
     transitivePeerDependencies:
-      - '@babel/core'
-      - '@babel/template'
       - '@types/react'
-      - '@types/react-dom'
-      - '@urql/core'
       - immer
-      - optics-ts
       - react-native
-      - react-query
       - scheduler
       - supports-color
-      - valtio
-      - wonka
-      - xstate
     dev: false
 
-  /@udecode/plate-suggestion@24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5):
-    resolution: {integrity: sha512-1psPasEkCMN6z8V1iTfiRkjvGBdQb89P6C/zBpEzeM0FfVlBXZqJzAYvRnGCVjqknyf3yKPWar/GL3zBU6n7+w==}
+  /@udecode/plate-suggestion@29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5):
+    resolution: {integrity: sha512-pRFS6jDCmH1k1b+EKz5Uml53A+mbZ6AYmmFB5RFmDS/4VkXyZJDvuIx8kbtNfLxs8xb118l9zh4URD4fkUGu2w==}
     peerDependencies:
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
@@ -2976,7 +2695,7 @@ packages:
       slate-hyperscript: '>=0.66.0'
       slate-react: '>=0.99.0'
     dependencies:
-      '@udecode/plate-common': 24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
+      '@udecode/plate-common': 29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
       slate: 0.101.5
@@ -2984,22 +2703,14 @@ packages:
       slate-hyperscript: 0.100.0(slate@0.101.5)
       slate-react: 0.101.5(react-dom@18.2.0)(react@18.2.0)(slate@0.101.5)
     transitivePeerDependencies:
-      - '@babel/core'
-      - '@babel/template'
       - '@types/react'
-      - '@urql/core'
       - immer
-      - optics-ts
       - react-native
-      - react-query
       - scheduler
-      - valtio
-      - wonka
-      - xstate
     dev: false
 
-  /@udecode/plate-tabbable@24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5):
-    resolution: {integrity: sha512-J83i3QyQFxRojvUEBUhVpiYHsDVD1Ui3vunREqyJ3/7+B6nGRuCTA+JtzsCAa3YL3l3SfotY8v1ojGQmw5WLAg==}
+  /@udecode/plate-tabbable@29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5):
+    resolution: {integrity: sha512-0blyakr/lDqp8QMzX9g3D8T05pI4kd/ju+HbDVgFC+GHW8e0PcnfAWKbeQGtDye0GfQl4IeW3lh9o1Q1j+MnLA==}
     peerDependencies:
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
@@ -3008,7 +2719,7 @@ packages:
       slate-hyperscript: '>=0.66.0'
       slate-react: '>=0.99.0'
     dependencies:
-      '@udecode/plate-common': 24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
+      '@udecode/plate-common': 29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
       slate: 0.101.5
@@ -3017,22 +2728,14 @@ packages:
       slate-react: 0.101.5(react-dom@18.2.0)(react@18.2.0)(slate@0.101.5)
       tabbable: 6.2.0
     transitivePeerDependencies:
-      - '@babel/core'
-      - '@babel/template'
       - '@types/react'
-      - '@urql/core'
       - immer
-      - optics-ts
       - react-native
-      - react-query
       - scheduler
-      - valtio
-      - wonka
-      - xstate
     dev: false
 
-  /@udecode/plate-table@24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5):
-    resolution: {integrity: sha512-h5XvFTA0hqoa5WjThJ+j3A9xKjWXVTtI4mKPXg5qYIn5xutH9LQoAI6zMLUD28HETonXS2hW1eJ/FfwfYuUIEw==}
+  /@udecode/plate-table@29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5):
+    resolution: {integrity: sha512-MNQY/zmGvVjL3UnSvs0BAe4KiVkOnuYrSTtRtzLWP6Mo/i0OQA6RmJapfe6cyXmntO/oVznNJHl+mxDpCGHsJQ==}
     peerDependencies:
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
@@ -3040,8 +2743,8 @@ packages:
       slate-history: '>=0.93.0'
       slate-react: '>=0.99.0'
     dependencies:
-      '@udecode/plate-common': 24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
-      '@udecode/plate-resizable': 24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
+      '@udecode/plate-common': 29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
+      '@udecode/plate-resizable': 29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
       lodash: 4.17.21
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
@@ -3049,23 +2752,15 @@ packages:
       slate-history: 0.100.0(slate@0.101.5)
       slate-react: 0.101.5(react-dom@18.2.0)(react@18.2.0)(slate@0.101.5)
     transitivePeerDependencies:
-      - '@babel/core'
-      - '@babel/template'
       - '@types/react'
-      - '@urql/core'
       - immer
-      - optics-ts
       - react-native
-      - react-query
       - scheduler
       - slate-hyperscript
-      - valtio
-      - wonka
-      - xstate
     dev: false
 
-  /@udecode/plate-trailing-block@24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5):
-    resolution: {integrity: sha512-21vKEi/AmFBjey8v6r6tjhW5oIBcSX76khhGkC0uyqGuGlKSyS7VVmgYm9c/Sxit5QGE3tm5bSkVBsE6Xm2zGQ==}
+  /@udecode/plate-trailing-block@29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5):
+    resolution: {integrity: sha512-g23vUqKnjZs8fwhCzqF3c9DJGmfubT52LXpS6CUNMXoFJwhsg7+oLF82lpzeydfpNMPrLIAoYpSIZ4QSOIsLJg==}
     peerDependencies:
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
@@ -3074,7 +2769,7 @@ packages:
       slate-hyperscript: '>=0.66.0'
       slate-react: '>=0.99.0'
     dependencies:
-      '@udecode/plate-common': 24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
+      '@udecode/plate-common': 29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
       slate: 0.101.5
@@ -3082,22 +2777,14 @@ packages:
       slate-hyperscript: 0.100.0(slate@0.101.5)
       slate-react: 0.101.5(react-dom@18.2.0)(react@18.2.0)(slate@0.101.5)
     transitivePeerDependencies:
-      - '@babel/core'
-      - '@babel/template'
       - '@types/react'
-      - '@urql/core'
       - immer
-      - optics-ts
       - react-native
-      - react-query
       - scheduler
-      - valtio
-      - wonka
-      - xstate
     dev: false
 
-  /@udecode/plate-utils@24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5):
-    resolution: {integrity: sha512-cd00XYvVWOIRqwNWEMk7ZiAr3OEgHNX2xAd5IADW0KSfDWfaFRiFfgmrlwYjHpfkpW6XVJJpuUbyRSl0MyDNbw==}
+  /@udecode/plate-utils@29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5):
+    resolution: {integrity: sha512-9rTkAG6FKE3HNSiKjwHjkkRQX7UcjyYsEDbwiwN5FQnKmuQjdUjO8qR2EZ2zMUMfH/qnLxS/zf66gEXmoCC0mw==}
     peerDependencies:
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
@@ -3106,11 +2793,11 @@ packages:
       slate-hyperscript: '>=0.66.0'
       slate-react: '>=0.99.0'
     dependencies:
-      '@radix-ui/react-slot': 1.0.2(@types/react@18.2.45)(react@18.2.0)
-      '@udecode/plate-core': 24.4.0(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
-      '@udecode/slate': 24.3.6(slate-history@0.100.0)(slate@0.101.5)
-      '@udecode/slate-react': 24.4.0(react-dom@18.2.0)(react@18.2.0)(slate-history@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
-      '@udecode/slate-utils': 24.3.6(slate-history@0.100.0)(slate@0.101.5)
+      '@udecode/plate-core': 29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
+      '@udecode/react-utils': 29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)
+      '@udecode/slate': 25.0.0(slate-history@0.100.0)(slate@0.101.5)
+      '@udecode/slate-react': 29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(slate-history@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
+      '@udecode/slate-utils': 25.0.0(slate-history@0.100.0)(slate@0.101.5)
       '@udecode/utils': 24.3.0
       clsx: 1.2.1
       lodash: 4.17.21
@@ -3121,22 +2808,14 @@ packages:
       slate-hyperscript: 0.100.0(slate@0.101.5)
       slate-react: 0.101.5(react-dom@18.2.0)(react@18.2.0)(slate@0.101.5)
     transitivePeerDependencies:
-      - '@babel/core'
-      - '@babel/template'
       - '@types/react'
-      - '@urql/core'
       - immer
-      - optics-ts
       - react-native
-      - react-query
       - scheduler
-      - valtio
-      - wonka
-      - xstate
     dev: false
 
-  /@udecode/plate@24.5.2(@types/react-dom@18.2.18)(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5):
-    resolution: {integrity: sha512-Jw690Gk+1chDfOG5x7AiYwEZy1KB2s8lU4J7NQRqW//SFiVi1Bq6nKPMBUfMB9260lxR6m2d/rB88SwvoE1gTQ==}
+  /@udecode/plate@29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5):
+    resolution: {integrity: sha512-nv/aJb1mFhj2wsyxNMwfSXjuIm8uiXgmBA13nvx6b/Ln//TAdvPz3UNPOiScevsqZ182yNjNuev9tKuT6tyncQ==}
     peerDependencies:
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
@@ -3145,44 +2824,44 @@ packages:
       slate-hyperscript: '>=0.66.0'
       slate-react: '>=0.99.0'
     dependencies:
-      '@udecode/plate-alignment': 24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
-      '@udecode/plate-autoformat': 24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
-      '@udecode/plate-basic-elements': 24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
-      '@udecode/plate-basic-marks': 24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
-      '@udecode/plate-block-quote': 24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
-      '@udecode/plate-break': 24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
-      '@udecode/plate-code-block': 24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
-      '@udecode/plate-combobox': 24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
-      '@udecode/plate-comments': 24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
-      '@udecode/plate-common': 24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
-      '@udecode/plate-find-replace': 24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
-      '@udecode/plate-floating': 24.5.2(@types/react-dom@18.2.18)(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
-      '@udecode/plate-font': 24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
-      '@udecode/plate-heading': 24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
-      '@udecode/plate-highlight': 24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
-      '@udecode/plate-horizontal-rule': 24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
-      '@udecode/plate-indent': 24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
-      '@udecode/plate-indent-list': 24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
-      '@udecode/plate-kbd': 24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
-      '@udecode/plate-line-height': 24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
-      '@udecode/plate-link': 24.5.2(@types/react-dom@18.2.18)(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
-      '@udecode/plate-list': 24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
-      '@udecode/plate-media': 24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
-      '@udecode/plate-mention': 24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
-      '@udecode/plate-node-id': 24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
-      '@udecode/plate-normalizers': 24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
-      '@udecode/plate-paragraph': 24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
-      '@udecode/plate-reset-node': 24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
-      '@udecode/plate-resizable': 24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
-      '@udecode/plate-select': 24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
-      '@udecode/plate-serializer-csv': 24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
-      '@udecode/plate-serializer-docx': 24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
-      '@udecode/plate-serializer-html': 24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
-      '@udecode/plate-serializer-md': 24.5.2(@types/react-dom@18.2.18)(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
-      '@udecode/plate-suggestion': 24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
-      '@udecode/plate-tabbable': 24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
-      '@udecode/plate-table': 24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
-      '@udecode/plate-trailing-block': 24.5.2(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
+      '@udecode/plate-alignment': 29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
+      '@udecode/plate-autoformat': 29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
+      '@udecode/plate-basic-elements': 29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
+      '@udecode/plate-basic-marks': 29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
+      '@udecode/plate-block-quote': 29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
+      '@udecode/plate-break': 29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
+      '@udecode/plate-code-block': 29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
+      '@udecode/plate-combobox': 29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
+      '@udecode/plate-comments': 29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
+      '@udecode/plate-common': 29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
+      '@udecode/plate-find-replace': 29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
+      '@udecode/plate-floating': 29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
+      '@udecode/plate-font': 29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
+      '@udecode/plate-heading': 29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
+      '@udecode/plate-highlight': 29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
+      '@udecode/plate-horizontal-rule': 29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
+      '@udecode/plate-indent': 29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
+      '@udecode/plate-indent-list': 29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
+      '@udecode/plate-kbd': 29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
+      '@udecode/plate-line-height': 29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
+      '@udecode/plate-link': 29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
+      '@udecode/plate-list': 29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
+      '@udecode/plate-media': 29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
+      '@udecode/plate-mention': 29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
+      '@udecode/plate-node-id': 29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
+      '@udecode/plate-normalizers': 29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
+      '@udecode/plate-paragraph': 29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
+      '@udecode/plate-reset-node': 29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
+      '@udecode/plate-resizable': 29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
+      '@udecode/plate-select': 29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
+      '@udecode/plate-serializer-csv': 29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
+      '@udecode/plate-serializer-docx': 29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
+      '@udecode/plate-serializer-html': 29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
+      '@udecode/plate-serializer-md': 29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
+      '@udecode/plate-suggestion': 29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
+      '@udecode/plate-tabbable': 29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
+      '@udecode/plate-table': 29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
+      '@udecode/plate-trailing-block': 29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(slate-history@0.100.0)(slate-hyperscript@0.100.0)(slate-react@0.101.5)(slate@0.101.5)
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
       slate: 0.101.5
@@ -3190,24 +2869,30 @@ packages:
       slate-hyperscript: 0.100.0(slate@0.101.5)
       slate-react: 0.101.5(react-dom@18.2.0)(react@18.2.0)(slate@0.101.5)
     transitivePeerDependencies:
-      - '@babel/core'
-      - '@babel/template'
       - '@types/react'
-      - '@types/react-dom'
-      - '@urql/core'
       - immer
-      - optics-ts
       - react-native
-      - react-query
       - scheduler
       - supports-color
-      - valtio
-      - wonka
-      - xstate
     dev: false
 
-  /@udecode/slate-react@24.4.0(react-dom@18.2.0)(react@18.2.0)(slate-history@0.100.0)(slate-react@0.101.5)(slate@0.101.5):
-    resolution: {integrity: sha512-qQ+k6j5a5n0NIVGhgCpK8AbAFN+dxYtQLvbQEIoqr4vWtq9zR9PvJTuPurD8UWATt+ngJ7B1gC6bvSwMh8Uikg==}
+  /@udecode/react-utils@29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-ds49LWYodIPsg/DGEqDJlBuIYME2T1T+qoXUN5WTzsSUckUR6qYnrqljfWQLZzxhdV/l87NtIIDg55POyAW+Rg==}
+    peerDependencies:
+      react: '>=16.8.0'
+      react-dom: '>=16.8.0'
+    dependencies:
+      '@radix-ui/react-slot': 1.0.2(@types/react@18.2.45)(react@18.2.0)
+      '@udecode/utils': 24.3.0
+      clsx: 1.2.1
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+    transitivePeerDependencies:
+      - '@types/react'
+    dev: false
+
+  /@udecode/slate-react@29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)(slate-history@0.100.0)(slate-react@0.101.5)(slate@0.101.5):
+    resolution: {integrity: sha512-q3Zl6O9NyNT69DeRg4awKHh4O10SHN4hgm/dGXo8NNAj2GLwmUH0PRTYMNo/vNtwnsDCm/a2KGVkAiw6EXl98w==}
     peerDependencies:
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
@@ -3215,30 +2900,33 @@ packages:
       slate-history: '>=0.93.0'
       slate-react: '>=0.99.0'
     dependencies:
-      '@udecode/slate': 24.3.6(slate-history@0.100.0)(slate@0.101.5)
+      '@udecode/react-utils': 29.0.0(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)
+      '@udecode/slate': 25.0.0(slate-history@0.100.0)(slate@0.101.5)
       '@udecode/utils': 24.3.0
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
       slate: 0.101.5
       slate-history: 0.100.0(slate@0.101.5)
       slate-react: 0.101.5(react-dom@18.2.0)(react@18.2.0)(slate@0.101.5)
+    transitivePeerDependencies:
+      - '@types/react'
     dev: false
 
-  /@udecode/slate-utils@24.3.6(slate-history@0.100.0)(slate@0.101.5):
-    resolution: {integrity: sha512-bYyj0UYn6pWF1jqraWNQFxhLnUsPcbgrv6MDDKu6I8RlUkrc/ykGaRSoQLwJdRaRmLc4xivUrOnJXLyMfadqLQ==}
+  /@udecode/slate-utils@25.0.0(slate-history@0.100.0)(slate@0.101.5):
+    resolution: {integrity: sha512-H8dECl5Tu44Nt946rkSXCJ1yzsc2R9GXSoA9oNIBmcyNo3jTHZOyG/Ocn3RGgfzAK996A43GBD/keNabJEPtQg==}
     peerDependencies:
       slate: '>=0.94.0'
       slate-history: '>=0.93.0'
     dependencies:
-      '@udecode/slate': 24.3.6(slate-history@0.100.0)(slate@0.101.5)
+      '@udecode/slate': 25.0.0(slate-history@0.100.0)(slate@0.101.5)
       '@udecode/utils': 24.3.0
       lodash: 4.17.21
       slate: 0.101.5
       slate-history: 0.100.0(slate@0.101.5)
     dev: false
 
-  /@udecode/slate@24.3.6(slate-history@0.100.0)(slate@0.101.5):
-    resolution: {integrity: sha512-NfIR4Qkndoba/Ncw+nZ4fNPcd/F+mAHtoOqunRtZR5HdOJN1uBGnSK39duvZST/iB78nPueAVG5hrZ3awGcb4w==}
+  /@udecode/slate@25.0.0(slate-history@0.100.0)(slate@0.101.5):
+    resolution: {integrity: sha512-mGb9nMDwIygLqERwJ8kTOfo3wIxMQ0xLJEPKn09jrshEIxUCyO3mYj8y/5vOMcrzj6yexOsgQ6VNX8ylS3lnIQ==}
     peerDependencies:
       slate: '>=0.94.0'
       slate-history: '>=0.93.0'
@@ -3250,21 +2938,6 @@ packages:
 
   /@udecode/utils@24.3.0:
     resolution: {integrity: sha512-/Y2lh/Ih1wx4zN35Ky2Z1G1/5f7cSAS7F6dkhrcbJUnDF0srTidoEIRabK+og/yIK/MCEFfOsQGetoV7Ert5hg==}
-    dev: false
-
-  /@udecode/zustood@1.1.3(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(zustand@3.7.2):
-    resolution: {integrity: sha512-f3mxHDaOF+q2XvDh/mMvLhCNs0LfCLhIBl8jGmvZT/i3WWq7YujzGXgnbK8mxIkun9irfe6wlPhg9sTIB9Gnug==}
-    peerDependencies:
-      zustand: '>=3.5.10'
-    dependencies:
-      immer: 9.0.21
-      react-tracked: 1.7.11(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)
-      zustand: 3.7.2(react@18.2.0)
-    transitivePeerDependencies:
-      - react
-      - react-dom
-      - react-native
-      - scheduler
     dev: false
 
   /@ungap/structured-clone@1.2.0:
@@ -5326,10 +4999,6 @@ packages:
     resolution: {integrity: sha512-pwupu3eWfouuaowscykeckFmVTpqbzW+rXFCX8rQLkZzM9ftBmU/++Ra+o+L27mz03zJTlyV4UUr+fdKNffo4A==}
     dev: false
 
-  /immer@9.0.21:
-    resolution: {integrity: sha512-bc4NBHqOqSfRW7POMkHd51LvClaeMXpm8dx0e8oE2GORbq5aRK7Bxl4FyzVLdGtLmvLKL7BTDBG5ACQm4HWjTA==}
-    dev: false
-
   /import-fresh@3.3.0:
     resolution: {integrity: sha512-veYYhQa+D1QBKznvhUHxb8faxlrwUnxseDAbAp457E0wLNio2bOSKnjYDhMj+YiAq61xrMGhQk9iXVk5FzgQMw==}
     engines: {node: '>=6'}
@@ -5730,40 +5399,36 @@ packages:
     resolution: {integrity: sha512-MSJQC5vXco5Br38mzaQKiq9mwt7lwj2eXpgpRyQYNHYt2lq1PjkWa7DLXX0WVcQLE9HhMh3jPiufS7fhJf+CLQ==}
     dev: false
 
-  /jotai@1.7.2(react@18.2.0):
-    resolution: {integrity: sha512-ksvpW1Wu+/HwW1iDYq23PpXLu2df5Vv+eWw70jRAx7IEY4c+qRsORULnqPFurSy/X8LSoPcRhVDJx/cyf8jjMg==}
-    engines: {node: '>=12.7.0'}
+  /jotai-x@1.1.0(@types/react@18.2.45)(jotai@2.6.0)(react@18.2.0):
+    resolution: {integrity: sha512-40Tw6st20+utgffGYVELk5dga+qOaeDmx2EEQgD8f32qjV7LIC5sAihGwkwyDgUpTqmexP0KLdLGJYT+UQj3ag==}
     peerDependencies:
-      '@babel/core': '*'
-      '@babel/template': '*'
-      '@urql/core': '*'
-      immer: '*'
-      optics-ts: '*'
-      react: '>=16.8'
-      react-query: '*'
-      valtio: '*'
-      wonka: '*'
-      xstate: '*'
+      '@types/react': '>=17.0.0'
+      jotai: '>=2.0.0'
+      react: '>=17.0.0'
     peerDependenciesMeta:
-      '@babel/core':
+      '@types/react':
         optional: true
-      '@babel/template':
-        optional: true
-      '@urql/core':
-        optional: true
-      immer:
-        optional: true
-      optics-ts:
-        optional: true
-      react-query:
-        optional: true
-      valtio:
-        optional: true
-      wonka:
-        optional: true
-      xstate:
+      react:
         optional: true
     dependencies:
+      '@types/react': 18.2.45
+      jotai: 2.6.0(@types/react@18.2.45)(react@18.2.0)
+      react: 18.2.0
+    dev: false
+
+  /jotai@2.6.0(@types/react@18.2.45)(react@18.2.0):
+    resolution: {integrity: sha512-Vt6hsc04Km4j03l+Ax+Sc+FVft5cRJhqgxt6GTz6GM2eM3DyX3CdBdzcG0z2FrlZToL1/0OAkqDghIyARWnSuQ==}
+    engines: {node: '>=12.20.0'}
+    peerDependencies:
+      '@types/react': '>=17.0.0'
+      react: '>=17.0.0'
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+      react:
+        optional: true
+    dependencies:
+      '@types/react': 18.2.45
       react: 18.2.0
     dev: false
 
@@ -7975,6 +7640,14 @@ packages:
       tslib: 2.6.2
     dev: false
 
+  /use-sync-external-store@1.2.0(react@18.2.0):
+    resolution: {integrity: sha512-eEgnFxGQ1Ife9bzYs6VLi8/4X6CObHMw9Qr9tPY43iKwsPw8xE8+EFsf/2cFZ5S3esXgpWgtSCtLNS41F+sKPA==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+    dependencies:
+      react: 18.2.0
+    dev: false
+
   /util-deprecate@1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
     dev: false
@@ -8319,14 +7992,37 @@ packages:
       jszip: 3.10.1
     dev: false
 
-  /zustand@3.7.2(react@18.2.0):
-    resolution: {integrity: sha512-PIJDIZKtokhof+9+60cpockVOq05sJzHCriyvaLBmEJixseQ1a5Kdov6fWZfWOu5SK9c+FhH1jU0tntLxRJYMA==}
+  /zustand-x@3.0.1(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)(zustand@4.4.7):
+    resolution: {integrity: sha512-HPk2zFT7boCIyeqhDPNHyOPEmE/WixmEbHAsPzKmUCIzUifY4VUM2PsGVC3eRtnARM9JFS9iSUImrKTTzj92JQ==}
+    peerDependencies:
+      zustand: '>=4.3.9'
+    dependencies:
+      immer: 10.0.3
+      react-tracked: 1.7.11(react-dom@18.2.0)(react@18.2.0)(scheduler@0.23.0)
+      zustand: 4.4.7(@types/react@18.2.45)(react@18.2.0)
+    transitivePeerDependencies:
+      - react
+      - react-dom
+      - react-native
+      - scheduler
+    dev: false
+
+  /zustand@4.4.7(@types/react@18.2.45)(react@18.2.0):
+    resolution: {integrity: sha512-QFJWJMdlETcI69paJwhSMJz7PPWjVP8Sjhclxmxmxv/RYI7ZOvR5BHX+ktH0we9gTWQMxcne8q1OY8xxz604gw==}
     engines: {node: '>=12.7.0'}
     peerDependencies:
+      '@types/react': '>=16.8'
+      immer: '>=9.0'
       react: '>=16.8'
     peerDependenciesMeta:
+      '@types/react':
+        optional: true
+      immer:
+        optional: true
       react:
         optional: true
     dependencies:
+      '@types/react': 18.2.45
       react: 18.2.0
+      use-sync-external-store: 1.2.0(react@18.2.0)
     dev: false

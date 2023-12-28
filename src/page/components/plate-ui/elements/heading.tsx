@@ -10,8 +10,9 @@ export function ElementHeading({ children, ...props }: TPlateElementProps) {
 
   return (
     <PlateElement
-      data-node-id={props.element.id}
       {...props}
+      data-node-id={props.element.id}
+      style={{ width: '100%' }}
     >
       <Tag style={{ ...headingStyle, textAlign: props.element.align ?? 'left', width: '100%' }}>{children}</Tag>
     </PlateElement>

@@ -5,8 +5,8 @@ import { PlateLeaf } from '@udecode/plate'
 export function LeafSubSuperscript({ children, ...props }: TPlateLeafProps) {
   return (
     <PlateLeaf
-      as={props.leaf.subscript ? 'sub' : 'sup'}
       {...props}
+      as={props.leaf.subscript ? 'sub' : 'sup'}
     >
       {children}
     </PlateLeaf>

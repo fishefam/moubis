@@ -1,4 +1,5 @@
 import { ElementHeading } from '@/components/plate-ui/elements/heading'
+import { ElementLink } from '@/components/plate-ui/elements/link'
 import { ElementParagraph } from '@/components/plate-ui/elements/paragraph'
 import { LeafBold } from '@/components/plate-ui/leafs/bold'
 import { LeafHighlight } from '@/components/plate-ui/leafs/highlight'
@@ -15,6 +16,7 @@ import {
   createHorizontalRulePlugin,
   createImagePlugin,
   createItalicPlugin,
+  createLinkPlugin,
   createNodeIdPlugin,
   createParagraphPlugin,
   createPlugins,
@@ -22,17 +24,20 @@ import {
   createSubscriptPlugin,
   createUnderlinePlugin,
 } from '@udecode/plate'
-import { nanoid } from 'nanoid'
 
+import { nanoid } from '../util'
 import { LeafUnderline } from './underline'
 
 export const plugins = createPlugins(
   [
     /* Elements */
     createHeadingPlugin(),
+    createLinkPlugin({ isInline: true, key: EElement.LINK }),
+    createParagraphPlugin({ key: EElement.PARAGRAPH }),
+
+    /* Voids */
     createHorizontalRulePlugin({ isVoid: true, key: EElement.DIVIDER }),
     createImagePlugin({ key: EElement.IMAGE }),
-    createParagraphPlugin({ key: EElement.PARAGRAPH }),
 
     /* Marks */
     createBoldPlugin({ key: EMark.BOLD }),
@@ -44,7 +49,7 @@ export const plugins = createPlugins(
     createUnderlinePlugin({ key: EMark.UNDERLINE }),
 
     /* Functionalities */
-    createNodeIdPlugin({ options: { idCreator: nanoid } }),
+    createNodeIdPlugin({ options: { idCreator: nanoid, reuseId: true } }),
   ],
   {
     components: {
@@ -56,6 +61,7 @@ export const plugins = createPlugins(
       [EElement.HEADING_5]: ElementHeading,
       [EElement.HEADING_6]: ElementHeading,
       [EElement.IMAGE]: ElementImage,
+      [EElement.LINK]: ElementLink,
       [EElement.PARAGRAPH]: ElementParagraph,
       [EMark.BOLD]: LeafBold,
       [EMark.HIGHLIGHT]: LeafHighlight,

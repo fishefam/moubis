@@ -5,8 +5,8 @@ import { PlateLeaf } from '@udecode/plate'
 export function LeafHighlight({ children, ...props }: TPlateLeafProps) {
   return (
     <PlateLeaf
-      style={{ backgroundColor: props.leaf.highlight + '', color: 'white' }}
       {...props}
+      style={{ backgroundColor: props.leaf.highlight + '', color: 'white' }}
     >
       {children}
     </PlateLeaf>

@@ -5,8 +5,8 @@ import { PlateLeaf } from '@udecode/plate'
 export function LeafStrikethrough({ children, ...props }: TPlateLeafProps) {
   return (
     <PlateLeaf
-      as='s'
       {...props}
+      as='s'
     >
       {children}
     </PlateLeaf>

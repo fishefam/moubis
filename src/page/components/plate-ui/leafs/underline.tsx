@@ -5,8 +5,8 @@ import { PlateLeaf } from '@udecode/plate'
 export function LeafUnderline({ children, ...props }: TPlateLeafProps) {
   return (
     <PlateLeaf
-      as='u'
       {...props}
+      as='u'
     >
       {children}
     </PlateLeaf>

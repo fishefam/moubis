@@ -2,14 +2,14 @@ import type { TPlateElementProps } from '@/types/plate'
 
 import { PlateElement } from '@udecode/plate'
 
-export function ElementParagraph({ children, ...props }: TPlateElementProps) {
+export function ElementLink({ children, ...props }: TPlateElementProps) {
   return (
     <PlateElement
       {...props}
+      as='span'
       data-node-id={props.element.id}
-      style={{ width: '100%' }}
     >
-      {children}
+      <a href={props.element.url}>{children}</a>
     </PlateElement>
   )
 }

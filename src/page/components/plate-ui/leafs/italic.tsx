@@ -5,8 +5,8 @@ import { PlateLeaf } from '@udecode/plate'
 export function LeafItalic({ children, ...props }: TPlateLeafProps) {
   return (
     <PlateLeaf
-      as='em'
       {...props}
+      as='em'
     >
       {children}
     </PlateLeaf>

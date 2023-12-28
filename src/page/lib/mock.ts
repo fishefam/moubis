@@ -8,6 +8,19 @@ export const html =
 export const initialValue: TDocument = [
   {
     children: [
+      {
+        text: 'google link',
+      },
+      {
+        children: [{ text: 'dafsdf' }],
+        type: EElement.LINK,
+        url: 'https://tinhte.vn',
+      },
+    ],
+    type: EElement.PARAGRAPH,
+  },
+  {
+    children: [
       { text: 'beforescript' },
       {
         superscript: true,
@@ -19,6 +32,18 @@ export const initialValue: TDocument = [
   {
     children: [
       { text: 'Before the mathjax element' },
+      {
+        children: [
+          { text: 'Before the mathjax element' },
+          {
+            text: '\\(\\frac{3}{1234}\\)',
+          },
+          {
+            text: 'Easily create headings of various levels, from H1 to H6, to structure your content and make it more organized.',
+          },
+        ],
+        type: EElement.PARAGRAPH,
+      },
       {
         text: '\\(\\frac{3}{1234}\\)',
       },

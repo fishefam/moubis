@@ -5,8 +5,8 @@ import { PlateLeaf } from '@udecode/plate'
 export function LeafBold({ children, ...props }: TPlateLeafProps) {
   return (
     <PlateLeaf
-      as='strong'
       {...props}
+      as='strong'
     >
       {children}
     </PlateLeaf>
