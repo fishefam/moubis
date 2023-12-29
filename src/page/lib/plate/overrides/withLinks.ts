@@ -36,7 +36,10 @@ import { type BaseRange, Path } from 'slate'
  */
 export const withLink = <V extends Value = Value, E extends PlateEditor<V> = PlateEditor<V>>(
   editor: E,
-  { options: { getUrlHref, isUrl, rangeBeforeOptions }, type }: WithPlatePlugin<LinkPlugin, V, E>,
+  {
+    options: { getUrlHref, isUrl, keepSelectedTextOnPaste, rangeBeforeOptions },
+    type,
+  }: WithPlatePlugin<LinkPlugin, V, E>,
 ) => {
   const { apply, insertBreak, insertText, normalizeNode } = editor
 
@@ -111,7 +114,7 @@ export const withLink = <V extends Value = Value, E extends PlateEditor<V> = Pla
   //     if (inserted) return
   //   }
 
-  //   insertData(data)
+  //   editor.insertData(data)
   // }
 
   // TODO: plugin

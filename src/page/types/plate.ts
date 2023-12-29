@@ -1,5 +1,4 @@
 import type { ListStyleType, PlateElementProps, PlateLeafProps } from '@udecode/plate'
-import type { Attributes } from 'react'
 
 export enum EBlockElement {
   BLOCK_QUOTE = 'blockquote',
@@ -11,9 +10,6 @@ export enum EBlockElement {
   HEADING_4 = 'h4',
   HEADING_5 = 'h5',
   HEADING_6 = 'h6',
-  LIST_CONTENT = 'list-content',
-  LIST_ITEM = 'list-item',
-  ORDERED_LIST = 'ordered-list',
   PARAGRAPH = 'paragraph',
   TABBABLE = 'tabbable',
   TABLE = 'table',
@@ -21,7 +17,6 @@ export enum EBlockElement {
   TABLE_HEADER = 'table-header',
   TABLE_ROW = 'table-row',
   TODO = 'todo',
-  UNORDERED_LIST = 'unordered-list',
 }
 
 export enum EVoidElement {
@@ -74,39 +69,42 @@ export type TLeaf = (TEmptyText | TText) & {
   [key in EMarkBool | EMarkValue]?: number | string | true
 }
 
-export type TInlineElement = {
+export type TInlineElement<T = EInlineElement.LINK> = {
   children: (TInlineElement | TLeaf)[]
   type: EInlineElement
-} & TOtherElementProps
+} & (T extends EInlineElement.LINK ? Pick<TExtraElementProps, 'url'> : Partial<TExtraElementProps>)
 
 export type TBlockElement = {
   children: (TInlineElement | TLeaf)[] | TBlockElement[] | TVoidElement[]
   type: EBlockElement
-} & TOtherElementProps
+} & Partial<TExtraElementProps>
 
 export type TVoidElement = {
   children: TEmptyText[]
   type: EVoidElement
-} & TOtherElementProps
+} & Partial<TExtraElementProps>
 
-export type TOtherElementProps = {
-  align?: EAlign
-  attributes?: Attributes
-  checked?: true
-  colSizes?: number[]
-  data?: TExcalidrawData
+export type TIndentListProps = {
+  listStyleType?: ListStyleType
+}
+
+export type TExtraElementProps = TIndentListProps & {
+  align: EAlign
+  checked: true
+  colSizes: number[]
+  data: TExcalidrawData
   id: string
-  indent?: number
-  lang?: TCodeLang
-  lineHeight?: number
-  listItemType?: ListStyleType
-  marginBottom?: number
-  marginLeft?: number
-  marginRight?: number
-  marginTop?: number
-  url?: string
-  value?: string
-  width?: number | string
+  indent: number
+  lang: TCodeLang
+  lineHeight: number
+  listStart: number
+  marginBottom: number
+  marginLeft: number
+  marginRight: number
+  marginTop: number
+  url: string
+  value: string
+  width: number | string
 }
 
 export type TElement = TBlockElement | TInlineElement | TVoidElement

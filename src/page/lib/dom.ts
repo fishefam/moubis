@@ -1,5 +1,3 @@
-import { toArray } from './util'
-
 type CreateElementOptions<T> = {
   attributes?: Array<[string, string]>
   classnames?: string[]
@@ -28,8 +26,51 @@ export function createElement<T extends keyof HTMLElementTagNameMap>(options: Cr
   return element
 }
 
-export function namedNodeMapToObject<T>(namedNodeMap: NamedNodeMap) {
-  const obj: Record<string, string> = {}
-  for (const { name, value } of toArray(namedNodeMap)) obj[name] = value
-  return obj as T
+export function parseHTML(html: string) {
+  return new DOMParser().parseFromString(html, 'text/html').body
+}
+
+/**
+ *
+ * @requires getAttributes Function in this module
+ * @param nodeList
+ * @returns
+ */
+export function deserialize(nodeList: NodeListOf<ChildNode>) {
+  const clone = Array.from(nodeList) as (ChildNode & { attributes: NamedNodeMap })[]
+  const nodes = clone.map<{
+    attributes?: Record<string, string>
+    children?: NodeListOf<ChildNode>
+    text?: string
+    type?: string
+  }>(({ attributes, childNodes, nodeName, textContent }) => {
+    const hasAttributes = attributes && attributes.length
+    const isTextNode = /#text/i.test(nodeName)
+    if (hasAttributes && !isTextNode)
+      return {
+        attributes: getAttributes(attributes),
+        children: childNodes,
+        type: nodeName.toLowerCase(),
+      }
+    if (!hasAttributes && !isTextNode)
+      return {
+        children: childNodes,
+        type: nodeName.toLowerCase(),
+      }
+    return {
+      text: textContent?.trim() ?? '',
+    }
+  })
+
+  nodes.forEach(({ children }, i) => {
+    if (children?.length) nodes[i].children = deserialize(children) as unknown as NodeListOf<ChildNode>
+  })
+
+  return nodes
+}
+
+export function getAttributes<T extends Record<string, string>>(nodeMap: NamedNodeMap) {
+  const result = {} as T
+  if (nodeMap) Array.from(nodeMap).forEach(({ name, value }) => Object.defineProperty(result, name, { value }))
+  return result
 }

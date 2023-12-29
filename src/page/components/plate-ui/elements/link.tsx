@@ -1,17 +1,21 @@
-import type { TPlateElementProps } from '@/types/plate'
+import type { EInlineElement, TInlineElement, TPlateElementProps } from '@/types/plate'
 
-import { PlateElement } from '@udecode/plate'
+import { PlateElement, useElement, useLink } from '@udecode/plate'
 
 export function ElementLink({ children, ...props }: TPlateElementProps) {
+  const element = useElement<TInlineElement<EInlineElement.LINK>>()
+  const linkProps: object = useLink({ element }).props
+
   return (
     <PlateElement
-      {...props}
       asChild
       data-key={props.element.id}
+      {...linkProps}
+      {...props}
     >
       <a
-        className='hover:no-underline'
-        href={props.element.url}
+        className='hover:!no-underline'
+        href={props.element.url ?? '#'}
         style={{ color: 'rgb(37 99 235)', textDecoration: 'underline' }}
       >
         {children}

@@ -1,7 +1,6 @@
 import { ElementBlockquote } from '@/components/plate-ui/elements/blockquote'
 import { ElementHeading } from '@/components/plate-ui/elements/heading'
 import { ElementLink } from '@/components/plate-ui/elements/link'
-import { ElementList } from '@/components/plate-ui/elements/list'
 import { ElementParagraph } from '@/components/plate-ui/elements/paragraph'
 import { ElementVideo } from '@/components/plate-ui/elements/video'
 import { LeafBold } from '@/components/plate-ui/leafs/bold'
@@ -20,12 +19,13 @@ import {
   createHighlightPlugin,
   createHorizontalRulePlugin,
   createImagePlugin,
+  createIndentListPlugin,
+  createIndentPlugin,
   createItalicPlugin,
   createLinkPlugin,
   createMediaEmbedPlugin,
   createNodeIdPlugin,
   createParagraphPlugin,
-  createPluginFactory,
   createPlugins,
   createStrikethroughPlugin,
   createSubscriptPlugin,
@@ -43,13 +43,10 @@ export const plugins = createPlugins(
     createBlockquotePlugin({ key: EBlockElement.BLOCK_QUOTE }),
     createParagraphPlugin({ key: EBlockElement.PARAGRAPH }),
     createMediaEmbedPlugin({ key: EVoidElement.VIDEO }),
-    createPluginFactory({ isElement: true, key: EBlockElement.UNORDERED_LIST })(),
-    createPluginFactory({ isElement: true, key: EBlockElement.ORDERED_LIST })(),
 
     /* Voids */
     createHorizontalRulePlugin({ key: EVoidElement.DIVIDER }),
     createImagePlugin({ key: EVoidElement.BLOCK_IMAGE }),
-    // createImagePlugin({ isInline: true, key: EVoidElement.INLINE_IMAGE }),
 
     /* Marks */
     createBoldPlugin({ key: EMarkBool.BOLD }),
@@ -62,6 +59,10 @@ export const plugins = createPlugins(
 
     /* Functionalities */
     createNodeIdPlugin({ options: { idCreator: nanoid, reuseId: true } }),
+
+    /* Block Style */
+    createIndentPlugin({ inject: { props: { validTypes: getIndentTypes() } } }),
+    createIndentListPlugin({ inject: { props: { validTypes: getIndentTypes() } } }),
   ],
   {
     components: {
@@ -73,7 +74,6 @@ export const plugins = createPlugins(
       [EBlockElement.HEADING_5]: ElementHeading,
       [EBlockElement.HEADING_6]: ElementHeading,
       [EBlockElement.PARAGRAPH]: ElementParagraph,
-      [EBlockElement.UNORDERED_LIST]: ElementList,
       [EInlineElement.LINK]: ElementLink,
       [EMarkBool.BOLD]: LeafBold,
       [EMarkBool.ITALIC]: LeafItalic,
@@ -89,3 +89,16 @@ export const plugins = createPlugins(
     },
   },
 )
+
+function getIndentTypes() {
+  return [
+    EBlockElement.PARAGRAPH,
+    EBlockElement.BLOCK_QUOTE,
+    EBlockElement.HEADING_1,
+    EBlockElement.HEADING_2,
+    EBlockElement.HEADING_3,
+    EBlockElement.HEADING_4,
+    EBlockElement.HEADING_5,
+    EBlockElement.HEADING_6,
+  ]
+}

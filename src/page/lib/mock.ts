@@ -1,4 +1,5 @@
 import { EAlign, EBlockElement, EInlineElement, EVoidElement, type TDocument } from '@/types/plate'
+import { ListStyleType } from '@udecode/plate'
 
 import { nanoid } from './util'
 
@@ -6,6 +7,133 @@ export const html =
   '<p>Y<span class="inline numeric" contenteditable="false" data-questiontext="%3Cinput%20type%3D%22text%22%20size%3D%2220%22%20value%3D%22Numeric%20with%20Units%22%20class%3D%22blankdisabled%20form-control%22%20readonly%3D%22readonly%22%3E" data-source="mode%3DNumeric%40negStyle%3Dminus%40grading%3Dexact_value%40name%3DresponseNaN%40answer.num%3D43%40numStyle%3Dthousands%20scientific%20%20arithmetic%40comment%3D%40weighting%3D1%40answer.units%3Dff%40showUnits%3Dtrue%40" id="sro_id_1" style="display:inline" title="Double-click the response area to edit">&zwnj;</span><span>&nbsp;</span>OOOOOOOOOOOOO IT WORKDS NOWWWWWWWWW</p><p>testing new one stuffwdraftedork great agin</p><div class="question-container"><div class="input-container"><div><label for="radius-range">Radius</label><input class="radius-range" id="radius-range" type="range"></div><fieldset><legend>Position</legend><div><label for="x-range">Left Right</label><input class="x-range" id="x-range" max="500" type="range"></div><div><label for="y-range">Up Down</label><input class="y-range" id="y-range" max="300" type="range"></div></fieldset><fieldset><legend>Color</legend><div><label for="red-range">Red</label><input class="red-range" defaultvalue="50" id="red-range" max="255" type="range"></div><div><label for="green-range">Green</label><input class="green-range" defaultvalue="50" id="green-range" max="255" type="range"></div><div><label for="blue-range">Blue</label><input class="blue-range" defaultvalue="50" id="blue-range" max="255" type="range"></div></fieldset></div><svg height="300" width="500"><circle class="circle" cx="250" cy="150" r="50" style="fill:#7b7b7b"></circle></svg>Now it should save again</div>'
 
 export const initialValue: TDocument = [
+  {
+    children: [
+      {
+        text: 'Roman 1',
+      },
+    ],
+    id: '3',
+    indent: 2,
+    listStyleType: ListStyleType.UpperRoman,
+    type: EBlockElement.PARAGRAPH,
+  },
+  {
+    children: [
+      {
+        text: 'Decimal 11',
+      },
+    ],
+    id: '4',
+    indent: 2,
+    listStyleType: ListStyleType.Decimal,
+    type: EBlockElement.PARAGRAPH,
+  },
+  {
+    children: [
+      {
+        text: 'Decimal 111',
+      },
+    ],
+    id: '5',
+    indent: 3,
+    listStyleType: ListStyleType.Decimal,
+    type: EBlockElement.PARAGRAPH,
+  },
+  {
+    children: [
+      {
+        text: 'Decimal 112',
+      },
+    ],
+    id: '6',
+    indent: 3,
+    listStart: 2,
+    listStyleType: ListStyleType.Decimal,
+    type: EBlockElement.PARAGRAPH,
+  },
+  {
+    children: [
+      {
+        text: 'Decimal 12',
+      },
+    ],
+    id: '7',
+    indent: 2,
+    listStart: 2,
+    listStyleType: ListStyleType.Decimal,
+    type: EBlockElement.PARAGRAPH,
+  },
+  {
+    children: [
+      {
+        text: 'Decimal 13',
+      },
+    ],
+    id: '8',
+    indent: 2,
+    listStart: 3,
+    listStyleType: ListStyleType.Decimal,
+    type: EBlockElement.PARAGRAPH,
+  },
+  {
+    children: [
+      {
+        text: 'Roman 2',
+      },
+    ],
+    id: '9',
+    indent: 1,
+    listStyleType: ListStyleType.UpperRoman,
+    type: EBlockElement.PARAGRAPH,
+  },
+  {
+    children: [
+      {
+        text: 'Decimal 11',
+      },
+    ],
+    id: '10',
+    indent: 2,
+    listStyleType: ListStyleType.Decimal,
+    type: EBlockElement.PARAGRAPH,
+  },
+  {
+    children: [
+      {
+        text: 'Decimal 12',
+      },
+    ],
+    id: '11',
+    indent: 2,
+    listStart: 2,
+    listStyleType: ListStyleType.Decimal,
+    type: EBlockElement.PARAGRAPH,
+  },
+  {
+    children: [
+      {
+        text: 'Roman 3',
+      },
+    ],
+    id: '12',
+    indent: 1,
+    listStart: 2,
+    listStyleType: ListStyleType.UpperRoman,
+    type: EBlockElement.PARAGRAPH,
+  },
+  {
+    children: [
+      {
+        text: 'Roman 4',
+      },
+    ],
+    id: '13',
+    indent: 1,
+    listStart: 3,
+    listStyleType: ListStyleType.UpperRoman,
+    type: EBlockElement.PARAGRAPH,
+  },
   {
     children: [
       {
@@ -970,488 +1098,11 @@ export const initialValue: TDocument = [
   {
     children: [
       {
-        children: [
-          {
-            children: [
-              {
-                text: 'Type ',
-              },
-              {
-                code: true,
-                text: '**',
-              },
-              {
-                text: ' or ',
-              },
-              {
-                code: true,
-                text: '__',
-              },
-              {
-                text: ' on either side of your text to add **bold* mark.',
-              },
-            ],
-            id: nanoid(),
-            type: EBlockElement.LIST_CONTENT,
-          },
-        ],
-        id: nanoid(),
-        type: EBlockElement.LIST_ITEM,
-      },
-      {
-        children: [
-          {
-            children: [
-              {
-                text: 'Type ',
-              },
-              {
-                code: true,
-                text: '*',
-              },
-              {
-                text: ' or ',
-              },
-              {
-                code: true,
-                text: '_',
-              },
-              {
-                text: ' on either side of your text to add *italic mark.',
-              },
-            ],
-            id: nanoid(),
-            type: EBlockElement.LIST_CONTENT,
-          },
-        ],
-        id: nanoid(),
-        type: EBlockElement.LIST_ITEM,
-      },
-      {
-        children: [
-          {
-            children: [
-              {
-                text: 'Type ',
-              },
-              {
-                code: true,
-                text: '`',
-              },
-              {
-                text: ' on either side of your text to add `inline code mark.',
-              },
-            ],
-            id: nanoid(),
-            type: EBlockElement.LIST_CONTENT,
-          },
-        ],
-        id: nanoid(),
-        type: EBlockElement.LIST_ITEM,
-      },
-      {
-        children: [
-          {
-            children: [
-              {
-                text: 'Type ',
-              },
-              {
-                code: true,
-                text: '~~',
-              },
-              {
-                text: ' on either side of your text to add ~~strikethrough~ mark.',
-              },
-            ],
-            id: nanoid(),
-            type: EBlockElement.LIST_CONTENT,
-          },
-        ],
-        id: nanoid(),
-        type: EBlockElement.LIST_ITEM,
-      },
-      {
-        children: [
-          {
-            children: [
-              {
-                text: 'Note that nothing happens when there is a character before, try on:*bold',
-              },
-            ],
-            id: nanoid(),
-            type: EBlockElement.LIST_CONTENT,
-          },
-        ],
-        id: nanoid(),
-        type: EBlockElement.LIST_ITEM,
-      },
-      {
-        children: [
-          {
-            children: [
-              {
-                text: 'We even support smart quotes, try typing ',
-              },
-              {
-                code: true,
-                text: '"hello" \'world\'',
-              },
-              {
-                text: '.',
-              },
-            ],
-            id: nanoid(),
-            type: EBlockElement.LIST_CONTENT,
-          },
-        ],
-        id: nanoid(),
-        type: EBlockElement.LIST_ITEM,
-      },
-    ],
-    id: nanoid(),
-    type: EBlockElement.UNORDERED_LIST,
-  },
-  {
-    children: [
-      {
         text: 'At the beginning of any new block or existing block, try these (block rules):',
       },
     ],
     id: nanoid(),
     type: EBlockElement.PARAGRAPH,
-  },
-  {
-    children: [
-      {
-        children: [
-          {
-            children: [
-              {
-                text: 'Type ',
-              },
-              {
-                code: true,
-                text: '*',
-              },
-              {
-                text: ', ',
-              },
-              {
-                code: true,
-                text: '-',
-              },
-              {
-                text: ' or ',
-              },
-              {
-                code: true,
-                text: '+',
-              },
-              {
-                text: 'followed by ',
-              },
-              {
-                code: true,
-                text: 'space',
-              },
-              {
-                text: ' to create a bulleted list.',
-              },
-            ],
-            id: nanoid(),
-            type: EBlockElement.LIST_CONTENT,
-          },
-        ],
-        id: nanoid(),
-        type: EBlockElement.LIST_ITEM,
-      },
-      {
-        children: [
-          {
-            children: [
-              {
-                text: 'Type ',
-              },
-              {
-                code: true,
-                text: '1.',
-              },
-              {
-                text: ' or ',
-              },
-              {
-                code: true,
-                text: '1)',
-              },
-              {
-                text: ' followed by ',
-              },
-              {
-                code: true,
-                text: 'space',
-              },
-              {
-                text: 'to create a numbered list.',
-              },
-            ],
-            id: nanoid(),
-            type: EBlockElement.LIST_CONTENT,
-          },
-        ],
-        id: nanoid(),
-        type: EBlockElement.LIST_ITEM,
-      },
-      {
-        children: [
-          {
-            children: [
-              {
-                text: 'Type ',
-              },
-              {
-                code: true,
-                text: '>',
-              },
-              {
-                text: ' followed by ',
-              },
-              {
-                code: true,
-                text: 'space',
-              },
-              {
-                text: ' to create a block quote.',
-              },
-            ],
-            id: nanoid(),
-            type: EBlockElement.LIST_CONTENT,
-          },
-        ],
-        id: nanoid(),
-        type: EBlockElement.LIST_ITEM,
-      },
-      {
-        children: [
-          {
-            children: [
-              {
-                text: 'Type ',
-              },
-              {
-                code: true,
-                text: '```',
-              },
-              {
-                text: ' to create a code block.',
-              },
-            ],
-            id: nanoid(),
-            type: EBlockElement.LIST_CONTENT,
-          },
-        ],
-        id: nanoid(),
-        type: EBlockElement.LIST_ITEM,
-      },
-      {
-        children: [
-          {
-            children: [
-              {
-                text: 'Type ',
-              },
-              {
-                code: true,
-                text: '---',
-              },
-              {
-                text: ' to create a horizontal rule.',
-              },
-            ],
-            id: nanoid(),
-            type: EBlockElement.LIST_CONTENT,
-          },
-        ],
-        id: nanoid(),
-        type: EBlockElement.LIST_ITEM,
-      },
-      {
-        children: [
-          {
-            children: [
-              {
-                text: 'Type ',
-              },
-              {
-                code: true,
-                text: '#',
-              },
-              {
-                text: ' followed by ',
-              },
-              {
-                code: true,
-                text: 'space',
-              },
-              {
-                text: ' to create an H1 heading.',
-              },
-            ],
-            id: nanoid(),
-            type: EBlockElement.LIST_CONTENT,
-          },
-        ],
-        id: nanoid(),
-        type: EBlockElement.LIST_ITEM,
-      },
-      {
-        children: [
-          {
-            children: [
-              {
-                text: 'Type ',
-              },
-              {
-                code: true,
-                text: '##',
-              },
-              {
-                text: ' followed by ',
-              },
-              {
-                code: true,
-                text: 'space',
-              },
-              {
-                text: ' to create an H2 sub-heading.',
-              },
-            ],
-            id: nanoid(),
-            type: EBlockElement.LIST_CONTENT,
-          },
-        ],
-        id: nanoid(),
-        type: EBlockElement.LIST_ITEM,
-      },
-      {
-        children: [
-          {
-            children: [
-              {
-                text: 'Type ',
-              },
-              {
-                code: true,
-                text: '###',
-              },
-              {
-                text: ' followed by ',
-              },
-              {
-                code: true,
-                text: 'space',
-              },
-              {
-                text: ' to create an H3 sub-heading.',
-              },
-            ],
-            id: nanoid(),
-            type: EBlockElement.LIST_CONTENT,
-          },
-        ],
-        id: nanoid(),
-        type: EBlockElement.LIST_ITEM,
-      },
-      {
-        children: [
-          {
-            children: [
-              {
-                text: 'Type ',
-              },
-              {
-                code: true,
-                text: '####',
-              },
-              {
-                text: ' followed by ',
-              },
-              {
-                code: true,
-                text: 'space',
-              },
-              {
-                text: ' to create an H4 sub-heading.',
-              },
-            ],
-            id: nanoid(),
-            type: EBlockElement.LIST_CONTENT,
-          },
-        ],
-        id: nanoid(),
-        type: EBlockElement.LIST_ITEM,
-      },
-      {
-        children: [
-          {
-            children: [
-              {
-                text: 'Type ',
-              },
-              {
-                code: true,
-                text: '#####',
-              },
-              {
-                text: ' followed by ',
-              },
-              {
-                code: true,
-                text: 'space',
-              },
-              {
-                text: ' to create an H5 sub-heading.',
-              },
-            ],
-            id: nanoid(),
-            type: EBlockElement.LIST_CONTENT,
-          },
-        ],
-        id: nanoid(),
-        type: EBlockElement.LIST_ITEM,
-      },
-      {
-        children: [
-          {
-            children: [
-              {
-                text: 'Type ',
-              },
-              {
-                code: true,
-                text: '######',
-              },
-              {
-                text: ' followed by ',
-              },
-              {
-                code: true,
-                text: 'space',
-              },
-              {
-                text: ' to create an H6 sub-heading.',
-              },
-            ],
-            id: nanoid(),
-            type: EBlockElement.LIST_CONTENT,
-          },
-        ],
-        id: nanoid(),
-        type: EBlockElement.LIST_ITEM,
-      },
-    ],
-    id: nanoid(),
-    type: EBlockElement.UNORDERED_LIST,
   },
   {
     children: [
@@ -1476,13 +1127,7 @@ export const initialValue: TDocument = [
       {
         children: [
           {
-            children: [
-              {
-                text: 'hotkey – Use hotkeys like ⇧⏎ to insert a soft break anywhere within a paragraph.',
-              },
-            ],
-            id: nanoid(),
-            type: EBlockElement.LIST_CONTENT,
+            text: 'hotkey – Use hotkeys like ⇧⏎ to insert a soft break anywhere within a paragraph.',
           },
         ],
         id: nanoid(),
@@ -1491,13 +1136,7 @@ export const initialValue: TDocument = [
       {
         children: [
           {
-            children: [
-              {
-                text: 'query – Define custom rules to limit soft breaks to specific block types.',
-              },
-            ],
-            id: nanoid(),
-            type: EBlockElement.LIST_CONTENT,
+            text: 'query – Define custom rules to limit soft breaks to specific block types.',
           },
         ],
         id: nanoid(),
