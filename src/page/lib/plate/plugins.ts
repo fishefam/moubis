@@ -11,7 +11,7 @@ import { LeafSubSuperscript } from '@/components/plate-ui/leafs/subscript'
 import { LeafUnderline } from '@/components/plate-ui/leafs/underline'
 import { ElementDivider } from '@/components/plate-ui/voids/divider'
 import { ElementImage } from '@/components/plate-ui/voids/image'
-import { EBlockElement, EInlineElement, EMarkBool, EMarkValue, EVoidElement } from '@/types/plate'
+import { EBlockElement, EInlineElement, EMarkTrue, EMarkValue, EVoidElement } from '@/types/plate'
 import {
   createBlockquotePlugin,
   createBoldPlugin,
@@ -49,13 +49,13 @@ export const plugins = createPlugins(
     createImagePlugin({ key: EVoidElement.BLOCK_IMAGE }),
 
     /* Marks */
-    createBoldPlugin({ key: EMarkBool.BOLD }),
+    createBoldPlugin({ key: EMarkTrue.BOLD }),
     createHighlightPlugin({ key: EMarkValue.HIGHLIGHT }),
-    createItalicPlugin({ key: EMarkBool.ITALIC }),
-    createStrikethroughPlugin({ key: EMarkBool.STRIKETHROUGH }),
-    createSubscriptPlugin({ key: EMarkBool.SUBSCRIPT }),
-    createSubscriptPlugin({ key: EMarkBool.SUPERSCRIPT }),
-    createUnderlinePlugin({ key: EMarkBool.UNDERLINE }),
+    createItalicPlugin({ key: EMarkTrue.ITALIC }),
+    createStrikethroughPlugin({ key: EMarkTrue.STRIKETHROUGH }),
+    createSubscriptPlugin({ key: EMarkTrue.SUBSCRIPT }),
+    createSubscriptPlugin({ key: EMarkTrue.SUPERSCRIPT }),
+    createUnderlinePlugin({ key: EMarkTrue.UNDERLINE }),
 
     /* Functionalities */
     createNodeIdPlugin({ options: { idCreator: nanoid, reuseId: true } }),
@@ -75,12 +75,12 @@ export const plugins = createPlugins(
       [EBlockElement.HEADING_6]: ElementHeading,
       [EBlockElement.PARAGRAPH]: ElementParagraph,
       [EInlineElement.LINK]: ElementLink,
-      [EMarkBool.BOLD]: LeafBold,
-      [EMarkBool.ITALIC]: LeafItalic,
-      [EMarkBool.STRIKETHROUGH]: LeafStrikethrough,
-      [EMarkBool.SUBSCRIPT]: LeafSubSuperscript,
-      [EMarkBool.SUPERSCRIPT]: LeafSubSuperscript,
-      [EMarkBool.UNDERLINE]: LeafUnderline,
+      [EMarkTrue.BOLD]: LeafBold,
+      [EMarkTrue.ITALIC]: LeafItalic,
+      [EMarkTrue.STRIKETHROUGH]: LeafStrikethrough,
+      [EMarkTrue.SUBSCRIPT]: LeafSubSuperscript,
+      [EMarkTrue.SUPERSCRIPT]: LeafSubSuperscript,
+      [EMarkTrue.UNDERLINE]: LeafUnderline,
       [EMarkValue.HIGHLIGHT]: LeafHighlight,
       [EVoidElement.BLOCK_IMAGE]: ElementImage,
       [EVoidElement.DIVIDER]: ElementDivider,

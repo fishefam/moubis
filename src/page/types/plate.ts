@@ -41,7 +41,7 @@ export enum EAlign {
   RIGHT = 'right',
 }
 
-export enum EMarkBool {
+export enum EMarkTrue {
   BOLD = 'bold',
   CODE = 'code',
   ITALIC = 'italic',
@@ -66,7 +66,7 @@ export type EElement = EBlockElement | EInlineElement | EVoidElement
 export type TEmptyText = { text: '' }
 export type TText = { text: string }
 export type TLeaf = (TEmptyText | TText) & {
-  [key in EMarkBool | EMarkValue]?: number | string | true
+  [key in EMarkTrue | EMarkValue]?: number | string | true
 }
 
 export type TInlineElement<T = EInlineElement.LINK> = {
@@ -110,10 +110,10 @@ export type TExtraElementProps = TIndentListProps & {
 export type TElement = TBlockElement | TInlineElement | TVoidElement
 
 export type TDocument = (TBlockElement | TVoidElement)[]
-export type TPlateElementProps<T extends TElement = TElement> = PlateElementProps & {
+export type TElementProps<T extends TElement = TElement> = PlateElementProps & {
   element: T
 }
-export type TPlateLeafProps = PlateLeafProps & { leaf: TLeaf }
+export type TLeafProps = PlateLeafProps & { leaf: TLeaf }
 
 export type TCodeLang = 'css' | 'html' | 'javascript' | 'latex'
 export type TExcalidrawData = Record<string, unknown>

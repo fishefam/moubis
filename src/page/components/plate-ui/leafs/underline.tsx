@@ -1,8 +1,8 @@
-import type { TPlateLeafProps } from '@/types/plate'
+import type { TLeafProps } from '@/types/plate'
 
 import { PlateLeaf } from '@udecode/plate'
 
-export function LeafUnderline({ children, ...props }: TPlateLeafProps) {
+export function LeafUnderline({ children, ...props }: TLeafProps) {
   return (
     <PlateLeaf
       {...props}
