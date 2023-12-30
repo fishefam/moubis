@@ -2,7 +2,7 @@ import type { TPlateElementProps } from '@/types/plate'
 
 import { PlateElement } from '@udecode/plate'
 
-export function ElementVideo({ children, ...props }: TPlateElementProps) {
+export function Video({ children, ...props }: TPlateElementProps) {
   return (
     <PlateElement
       {...props}

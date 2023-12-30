@@ -1,16 +1,16 @@
-import { ElementBlockquote } from '@/components/plate-ui/elements/blockquote'
-import { ElementHeading } from '@/components/plate-ui/elements/heading'
-import { ElementLink } from '@/components/plate-ui/elements/link'
-import { ElementParagraph } from '@/components/plate-ui/elements/paragraph'
-import { ElementVideo } from '@/components/plate-ui/elements/video'
-import { LeafBold } from '@/components/plate-ui/leafs/bold'
-import { LeafHighlight } from '@/components/plate-ui/leafs/highlight'
-import { LeafItalic } from '@/components/plate-ui/leafs/italic'
-import { LeafStrikethrough } from '@/components/plate-ui/leafs/strikethrough'
-import { LeafSubSuperscript } from '@/components/plate-ui/leafs/subscript'
-import { LeafUnderline } from '@/components/plate-ui/leafs/underline'
-import { ElementDivider } from '@/components/plate-ui/voids/divider'
-import { ElementImage } from '@/components/plate-ui/voids/image'
+import { Blockquote } from '@/components/plate/elements/Blockquote'
+import { Heading } from '@/components/plate/elements/Heading'
+import { Link } from '@/components/plate/elements/Link'
+import { Paragraph } from '@/components/plate/elements/Paragraph'
+import { Video } from '@/components/plate/elements/Video'
+import { Bold } from '@/components/plate/leafs/Bold'
+import { Highlight } from '@/components/plate/leafs/Highlight'
+import { Italic } from '@/components/plate/leafs/Italic'
+import { Strikethrough } from '@/components/plate/leafs/Strikethrough'
+import { SubSuperscript } from '@/components/plate/leafs/SubSuperscript'
+import { Underline } from '@/components/plate/leafs/Underline'
+import { Divider } from '@/components/plate/voids/Divider'
+import { nanoid } from '@/lib/util'
 import { EBlockElement, EInlineElement, EMarkTrue, EMarkValue, EVoidElement } from '@/types/plate'
 import {
   createBlockquotePlugin,
@@ -18,7 +18,6 @@ import {
   createHeadingPlugin,
   createHighlightPlugin,
   createHorizontalRulePlugin,
-  createImagePlugin,
   createIndentListPlugin,
   createIndentPlugin,
   createItalicPlugin,
@@ -30,10 +29,8 @@ import {
   createStrikethroughPlugin,
   createSubscriptPlugin,
   createUnderlinePlugin,
+  withLink,
 } from '@udecode/plate'
-
-import { nanoid } from '../util'
-import { withLink } from './overrides/withLinks'
 
 export const plugins = createPlugins(
   [
@@ -46,7 +43,7 @@ export const plugins = createPlugins(
 
     /* Voids */
     createHorizontalRulePlugin({ key: EVoidElement.DIVIDER }),
-    createImagePlugin({ key: EVoidElement.BLOCK_IMAGE }),
+    // createImagePlugin({ key: EVoidElement.BLOCK_IMAGE }),
 
     /* Marks */
     createBoldPlugin({ key: EMarkTrue.BOLD }),
@@ -66,26 +63,24 @@ export const plugins = createPlugins(
   ],
   {
     components: {
-      [EBlockElement.BLOCK_QUOTE]: ElementBlockquote,
-      [EBlockElement.HEADING_1]: ElementHeading,
-      [EBlockElement.HEADING_2]: ElementHeading,
-      [EBlockElement.HEADING_3]: ElementHeading,
-      [EBlockElement.HEADING_4]: ElementHeading,
-      [EBlockElement.HEADING_5]: ElementHeading,
-      [EBlockElement.HEADING_6]: ElementHeading,
-      [EBlockElement.PARAGRAPH]: ElementParagraph,
-      [EInlineElement.LINK]: ElementLink,
-      [EMarkTrue.BOLD]: LeafBold,
-      [EMarkTrue.ITALIC]: LeafItalic,
-      [EMarkTrue.STRIKETHROUGH]: LeafStrikethrough,
-      [EMarkTrue.SUBSCRIPT]: LeafSubSuperscript,
-      [EMarkTrue.SUPERSCRIPT]: LeafSubSuperscript,
-      [EMarkTrue.UNDERLINE]: LeafUnderline,
-      [EMarkValue.HIGHLIGHT]: LeafHighlight,
-      [EVoidElement.BLOCK_IMAGE]: ElementImage,
-      [EVoidElement.DIVIDER]: ElementDivider,
-      [EVoidElement.INLINE_IMAGE]: ElementImage,
-      [EVoidElement.VIDEO]: ElementVideo,
+      [EBlockElement.BLOCK_QUOTE]: Blockquote,
+      [EBlockElement.HEADING_1]: Heading,
+      [EBlockElement.HEADING_2]: Heading,
+      [EBlockElement.HEADING_3]: Heading,
+      [EBlockElement.HEADING_4]: Heading,
+      [EBlockElement.HEADING_5]: Heading,
+      [EBlockElement.HEADING_6]: Heading,
+      [EBlockElement.PARAGRAPH]: Paragraph,
+      [EInlineElement.LINK]: Link,
+      [EMarkTrue.BOLD]: Bold,
+      [EMarkTrue.ITALIC]: Italic,
+      [EMarkTrue.STRIKETHROUGH]: Strikethrough,
+      [EMarkTrue.SUBSCRIPT]: SubSuperscript,
+      [EMarkTrue.SUPERSCRIPT]: SubSuperscript,
+      [EMarkTrue.UNDERLINE]: Underline,
+      [EMarkValue.HIGHLIGHT]: Highlight,
+      [EVoidElement.DIVIDER]: Divider,
+      [EVoidElement.VIDEO]: Video,
     },
   },
 )

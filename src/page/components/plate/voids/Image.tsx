@@ -2,7 +2,7 @@ import type { TPlateElementProps } from '@/types/plate'
 
 import { PlateElement } from '@udecode/plate'
 
-export function ElementImage({ children, ...props }: TPlateElementProps) {
+export function Image({ children, ...props }: TPlateElementProps) {
   const { attributes, element } = props
   const isInline = attributes['data-slate-inline']
 

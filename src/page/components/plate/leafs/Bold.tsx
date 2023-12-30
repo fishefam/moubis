@@ -2,7 +2,7 @@ import type { TPlateLeafProps } from '@/types/plate'
 
 import { PlateLeaf } from '@udecode/plate'
 
-export function LeafBold({ children, ...props }: TPlateLeafProps) {
+export function Bold({ children, ...props }: TPlateLeafProps) {
   return (
     <PlateLeaf
       {...props}

@@ -4,7 +4,7 @@ import type { CSSProperties } from 'react'
 import { EBlockElement } from '@/types/plate'
 import { PlateElement } from '@udecode/plate'
 
-export function ElementHeading({ children, ...props }: TPlateElementProps) {
+export function Heading({ children, ...props }: TPlateElementProps) {
   const Tag = getHeadingTag(props.element.type)
   const headingStyle = getHeadingStyle(Tag)
 

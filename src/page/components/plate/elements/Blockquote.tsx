@@ -2,7 +2,7 @@ import type { TPlateElementProps } from '@/types/plate'
 
 import { PlateElement } from '@udecode/plate'
 
-export function ElementBlockquote({ children, ...props }: TPlateElementProps) {
+export function Blockquote({ children, ...props }: TPlateElementProps) {
   return (
     <PlateElement
       {...props}

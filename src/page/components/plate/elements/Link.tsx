@@ -2,7 +2,7 @@ import type { EInlineElement, TInlineElement, TPlateElementProps } from '@/types
 
 import { PlateElement, useElement, useLink } from '@udecode/plate'
 
-export function ElementLink({ children, ...props }: TPlateElementProps) {
+export function Link({ children, ...props }: TPlateElementProps) {
   const element = useElement<TInlineElement<EInlineElement.LINK>>()
   const linkProps: object = useLink({ element }).props
 
