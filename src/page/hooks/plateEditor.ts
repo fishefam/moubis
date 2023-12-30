@@ -1,26 +1,29 @@
-import type { EditorView } from 'codemirror'
-import type { MutableRefObject } from 'react'
+import type { TSetState } from '@/types/app'
+import type { PlateEditor } from '@udecode/plate'
 
 import { plugins } from '@/lib/plate/plugins'
-import { prettier } from '@/lib/util'
+import { serializeFragment } from '@/lib/util'
 import { createPlateEditor } from '@udecode/plate'
 import { useDebounce } from '@uidotdev/usehooks'
 import { useEffect, useRef, useState } from 'react'
 
 export function usePlateEditor() {
-  const plateContainer = useRef<HTMLDivElement>(null)
   const { current: plateState } = useRef(createPlateEditor({ plugins }))
-  return { plateContainer, plateState }
+  return [plateState]
 }
 
-export function useSyncWithCodeEditor(codeView: EditorView, codeContainer: MutableRefObject<HTMLDivElement>) {
-  const [isChanged, setIsChanged] = useState('')
-  const debouncedIschanged = useDebounce(isChanged, 500)
-
+/**
+ * @param codeView
+ * @param codeContainer
+ * @returns
+ */
+export function useSyncWithCodeEditor(state: PlateEditor, setCodeValue: TSetState<string>, debounceTime = 300) {
+  const [isMounting, setIsMounting] = useState(true)
+  const [changeSignal, setChangeSignal] = useState('')
+  const debouncedChange = useDebounce(changeSignal, debounceTime)
   useEffect(() => {
-    const html = codeContainer.current.firstElementChild?.innerHTML ?? ''
-    prettier(html, (val) => codeView.dispatch({ changes: { from: 0, insert: val, to: codeView.state.doc.length } }))
-  }, [codeContainer, codeView, debouncedIschanged])
-
-  return { setIsChanged }
+    if (!isMounting) setCodeValue(serializeFragment(state.children))
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [debouncedChange])
+  return { isMounting, setChangeSignal, setIsMounting }
 }

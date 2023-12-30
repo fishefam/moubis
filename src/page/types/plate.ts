@@ -1,4 +1,4 @@
-import type { ListStyleType, PlateElementProps, PlateLeafProps } from '@udecode/plate'
+import type { ListStyleType, PlateElementProps, PlateLeafProps, Value } from '@udecode/plate'
 
 export enum EBlockElement {
   BLOCK_QUOTE = 'blockquote',
@@ -121,3 +121,5 @@ export type TPlateLeafProps = PlateLeafProps & { leaf: TLeaf }
 
 export type TCodeLang = 'css' | 'html' | 'javascript' | 'latex'
 export type TExcalidrawData = Record<string, unknown>
+
+export type TValue = Value

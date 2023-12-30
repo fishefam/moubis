@@ -1,21 +1,35 @@
-import type { EditorState } from '@codemirror/state'
-import type { EditorView } from 'codemirror'
-import type { ForwardedRef } from 'react'
+import type { PlateEditor } from '@udecode/plate'
+import type { ReactCodeMirrorRef } from '@uiw/react-codemirror'
 
-import { forwardRef } from 'react'
+import { nanoid } from '@/lib/util'
+import CodeMirror from '@uiw/react-codemirror'
+import { type Dispatch, type MutableRefObject, type SetStateAction, useRef } from 'react'
 
-type Props = { state: EditorState; view: EditorView }
+type Props = { plate: PlateEditor; value: string }
 
-function Editor(_: Props, ref: ForwardedRef<HTMLDivElement>) {
+export function CodeEditor({ value }: Props) {
+  const ref = useRef<ReactCodeMirrorRef>(null)
+
+  console.log('Code Render')
   return (
-    <div
+    <CodeMirror
       className='h-80 overflow-scroll'
+      // onChange={
+      // (v) => handleChange({ container, setIsChanged, state, view })
+      // const fragment = deserializeHtml(plateState, { element: v })
+      // plateState.children.forEach(() => plateState.delete({ at: [0] }))
+      // plateState.children = [{ children: [{ text: '' }], type: EBlockElement.PARAGRAPH }]
+      // plateState.insertFragment(fragment)
+      // }
       ref={ref}
-    ></div>
+      value={value}
+    />
   )
 }
 
-const CodeEditor = forwardRef<HTMLDivElement, Props>(Editor)
-CodeEditor.displayName = 'CodeEditor'
-
-export { CodeEditor }
+function handleChange({
+  container,
+  setIsChanged,
+}: Props & { container: MutableRefObject<HTMLDivElement>; setIsChanged: Dispatch<SetStateAction<string>> }) {
+  if (document.activeElement === container.current?.firstElementChild) setIsChanged(nanoid(5))
+}

@@ -18,6 +18,7 @@
     "@typescript-eslint/parser": "^6.16.0",
     "@udecode/plate": "^29.0.1",
     "@uidotdev/usehooks": "^2.4.1",
+    "@uiw/react-codemirror": "^4.21.21",
     "autoprefixer": "^10.4.16",
     "better-react-mathjax": "^2.0.3",
     "class-variance-authority": "^0.7.0",

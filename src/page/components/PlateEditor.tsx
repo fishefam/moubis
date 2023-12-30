@@ -1,38 +1,30 @@
-import type { PlateEditor as TPlateEditor, Value } from '@udecode/plate'
-import type { EditorView } from 'codemirror'
-import type { Dispatch, ForwardRefRenderFunction, MutableRefObject, SetStateAction } from 'react'
+import type { TSetState } from '@/types/app'
+import type { TValue } from '@/types/plate'
+import type { PlateEditor as TPlateEditor } from '@udecode/plate'
 
 import { useSyncWithCodeEditor } from '@/hooks/plateEditor'
-import { getInitialValue, nanoid } from '@/lib/util'
+import { nanoid } from '@/lib/util'
 import { Plate, PlateContent } from '@udecode/plate'
-import { forwardRef } from 'react'
 
-type Props = { codeView: EditorView; state: TPlateEditor }
+type TProps = { setCodeValue: TSetState<string>; state: TPlateEditor; value: TValue }
+type THandleChangeProps = { isMounting: boolean; setChangeSignal: TSetState<string>; setIsMounting: TSetState<boolean> }
 
-function Editor({ codeView, state }: Props, ref: MutableRefObject<HTMLDivElement>) {
-  const { setIsChanged } = useSyncWithCodeEditor(codeView, ref)
+export function PlateEditor({ setCodeValue, state, value }: TProps) {
+  const { isMounting, setChangeSignal, setIsMounting } = useSyncWithCodeEditor(state, setCodeValue)
 
+  console.log('Plate Render')
   return (
     <Plate
       editor={state}
-      initialValue={getInitialValue<Value>(true)}
-      onChange={() => handleChange({ codeView, container: ref, setIsChanged, state })}
+      initialValue={value}
+      onChange={() => handleChange({ isMounting, setChangeSignal, setIsMounting })}
     >
-      <div ref={ref}>
-        <PlateContent className='w-full mx-auto bg-white shadow p-5 border border-gray-200 overflow-scroll rounded-md h-[40rem]' />
-      </div>
+      <PlateContent className='w-full mx-auto bg-white shadow p-5 border border-gray-200 overflow-scroll rounded-md h-[40rem]' />
     </Plate>
   )
 }
 
-function handleChange({
-  container,
-  setIsChanged,
-}: Props & { container: MutableRefObject<HTMLDivElement>; setIsChanged: Dispatch<SetStateAction<string>> }) {
-  if (document.activeElement === container.current?.firstElementChild) setIsChanged(nanoid(5))
+function handleChange({ isMounting, setChangeSignal, setIsMounting }: THandleChangeProps) {
+  if (isMounting) setIsMounting(false)
+  if (!isMounting) setChangeSignal(nanoid(5))
 }
-
-const PlateEditor = forwardRef(Editor as ForwardRefRenderFunction<HTMLDivElement, Props>)
-PlateEditor.displayName = 'PlateEditor'
-
-export { PlateEditor }

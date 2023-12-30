@@ -1,14 +1,17 @@
 import { MathJaxContext } from 'better-react-mathjax'
+import { useState } from 'react'
 
 import { CodeEditor } from './components/CodeEditor'
 import { PlateEditor } from './components/PlateEditor'
-import { useCodeEditor } from './hooks/codeEditor'
 import { usePlateEditor } from './hooks/plateEditor'
-import { getExtensionBaseUrl } from './lib/util'
+import { getExtensionBaseUrl, getInitialValue, serializeFragment } from './lib/util'
+
+const INITIAL_PLATE_VALUE = getInitialValue(true)
 
 export default function App() {
-  const { plateContainer, plateState } = usePlateEditor()
-  const { codeContainer, codeState, codeView } = useCodeEditor(plateState)
+  const [plate] = usePlateEditor()
+  const [plateValue] = useState(INITIAL_PLATE_VALUE)
+  const [codeValue, setCodeValue] = useState(serializeFragment(INITIAL_PLATE_VALUE))
 
   return (
     <MathJaxContext
@@ -18,14 +21,13 @@ export default function App() {
     >
       <div className='p-10'>
         <CodeEditor
-          ref={codeContainer}
-          state={codeState}
-          view={codeView}
+          plate={plate}
+          value={codeValue}
         />
         <PlateEditor
-          codeView={codeView}
-          ref={plateContainer}
-          state={plateState}
+          setCodeValue={setCodeValue}
+          state={plate}
+          value={plateValue}
         />
       </div>
     </MathJaxContext>

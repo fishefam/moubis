@@ -1,14 +1,17 @@
 import type { TMobiusBaseData } from '@/types/mobius'
+import type { TValue } from '@/types/plate'
 import type { ClassValue } from 'clsx'
 
 import { ELocalStorage } from '@/types/app'
 import { EBlockElement, type TDocument } from '@/types/plate'
 import prettify from '@liquify/prettify'
+import { createPlateEditor, serializeHtml } from '@udecode/plate'
 import { clsx } from 'clsx'
 import { customAlphabet } from 'nanoid'
 import { twMerge } from 'tailwind-merge'
 
 import { initialValue as mockSlateValue } from './mock'
+import { plugins } from './plate/plugins'
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
@@ -58,9 +61,21 @@ export function extractHTML(html: string, type: 'css' | 'html' | 'script') {
 }
 
 export function getInitialValue<T = TDocument>(mock?: boolean) {
-  return (mock ? mockSlateValue : [{ children: [{ text: '' }], id: nanoid(), type: EBlockElement.PARAGRAPH }]) as T
+  if (mock) return mockSlateValue as T
+
+  const emptyNode = [{ children: [{ text: '' }], id: nanoid(), type: EBlockElement.PARAGRAPH }]
+  return emptyNode as T
 }
 
 export function prettier(value: string, cb: (result: string) => void) {
   prettify.format?.(value, { preserveLine: 1, wrap: 100 }).then(cb)
+}
+
+export function prettierSync(value: string) {
+  return prettify.formatSync?.(value, { preserveLine: 1, wrap: 100 }) ?? ''
+}
+
+export function serializeFragment(fragment: TDocument | TValue, format = true) {
+  const html = serializeHtml(createPlateEditor({ plugins }), { nodes: fragment })
+  return format ? prettierSync(html) : html
 }
