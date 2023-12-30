@@ -11,7 +11,7 @@ const INITIAL_PLATE_VALUE = getInitialValue(true)
 export default function App() {
   const [plate] = usePlateEditor()
   const [plateValue] = useState(INITIAL_PLATE_VALUE)
-  const [codeValue, setCodeValue] = useState(serializeFragment(INITIAL_PLATE_VALUE))
+  const [codeValue, setCodeValue] = useState(serializeFragment(INITIAL_PLATE_VALUE, plate))
 
   console.log(INITIAL_PLATE_VALUE)
   return (
@@ -22,7 +22,7 @@ export default function App() {
     >
       <div className='p-10'>
         <PlateEditor
-          setCodeValue={setCodeValue}
+          setCodeValue={() => ''}
           state={plate}
           value={plateValue}
         />

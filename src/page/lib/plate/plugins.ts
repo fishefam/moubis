@@ -28,6 +28,7 @@ import {
   createPlugins,
   createStrikethroughPlugin,
   createSubscriptPlugin,
+  createTodoListPlugin,
   createUnderlinePlugin,
   withLink,
 } from '@udecode/plate'
@@ -40,6 +41,8 @@ export const plugins = createPlugins(
     createBlockquotePlugin({ key: EBlockElement.BLOCK_QUOTE }),
     createParagraphPlugin({ key: EBlockElement.PARAGRAPH }),
     createMediaEmbedPlugin({ key: EVoidElement.VIDEO }),
+    // createTablePlugin({ key: EBlockElement.TABLE }),
+    createTodoListPlugin({ key: EBlockElement.TODO }),
 
     /* Voids */
     createHorizontalRulePlugin({ key: EVoidElement.DIVIDER }),

@@ -75,7 +75,7 @@ export function prettierSync(value: string) {
   return prettify.formatSync?.(value, { preserveLine: 1, wrap: 100 }) ?? ''
 }
 
-export function serializeFragment(fragment: TDocument | TValue, format = true) {
-  const html = serializeHtml(createPlateEditor({ plugins }), { nodes: fragment })
+export function serializeFragment(fragment: TDocument | TValue, plate = createPlateEditor({ plugins }), format = true) {
+  const html = serializeHtml(plate, { nodes: fragment })
   return format ? prettierSync(html) : html
 }

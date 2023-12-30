@@ -5,11 +5,11 @@ import { plugins } from '@/lib/plate/plugins'
 import { serializeFragment } from '@/lib/util'
 import { createPlateEditor } from '@udecode/plate'
 import { useDebounce } from '@uidotdev/usehooks'
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
 
 export function usePlateEditor() {
-  const { current: plateState } = useRef(createPlateEditor({ plugins }))
-  return [plateState]
+  // const { current: plateState } = useRef(createPlateEditor({ plugins }))
+  return useState(createPlateEditor({ plugins }))
 }
 
 /**
