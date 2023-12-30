@@ -26,10 +26,8 @@ function Editor({ codeView, state }: Props, ref: MutableRefObject<HTMLDivElement
 }
 
 function handleChange({
-  codeView,
   container,
   setIsChanged,
-  state,
 }: Props & { container: MutableRefObject<HTMLDivElement>; setIsChanged: Dispatch<SetStateAction<string>> }) {
   if (document.activeElement === container.current?.firstElementChild) setIsChanged(nanoid(5))
 }
