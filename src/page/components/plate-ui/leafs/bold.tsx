@@ -1,8 +1,8 @@
-import type { TLeafProps } from '@/types/plate'
+import type { TPlateLeafProps } from '@/types/plate'
 
 import { PlateLeaf } from '@udecode/plate'
 
-export function LeafBold({ children, ...props }: TLeafProps) {
+export function LeafBold({ children, ...props }: TPlateLeafProps) {
   return (
     <PlateLeaf
       {...props}

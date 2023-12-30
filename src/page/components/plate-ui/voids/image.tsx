@@ -1,8 +1,8 @@
-import type { TElementProps } from '@/types/plate'
+import type { TPlateElementProps } from '@/types/plate'
 
 import { PlateElement } from '@udecode/plate'
 
-export function ElementImage({ children, ...props }: TElementProps) {
+export function ElementImage({ children, ...props }: TPlateElementProps) {
   const { attributes, element } = props
   const isInline = attributes['data-slate-inline']
 

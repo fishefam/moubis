@@ -1,8 +1,8 @@
-import type { TElementProps } from '@/types/plate'
+import type { TPlateElementProps } from '@/types/plate'
 
 import { PlateElement } from '@udecode/plate'
 
-export function ElementDivider({ children, ...props }: TElementProps) {
+export function ElementDivider({ children, ...props }: TPlateElementProps) {
   return (
     <PlateElement
       {...props}

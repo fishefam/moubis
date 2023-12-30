@@ -3,6 +3,7 @@ import type { ClassValue } from 'clsx'
 
 import { ELocalStorage } from '@/types/app'
 import { EBlockElement, type TDocument } from '@/types/plate'
+import prettify from '@liquify/prettify'
 import { clsx } from 'clsx'
 import { customAlphabet } from 'nanoid'
 import { twMerge } from 'tailwind-merge'
@@ -56,56 +57,10 @@ export function extractHTML(html: string, type: 'css' | 'html' | 'script') {
     : htmls.map((script) => `{${script}}`).join('')
 }
 
-export function getInitialValue(mock?: boolean): TDocument {
-  return mock ? mockSlateValue : [{ children: [{ text: '' }], id: nanoid(), type: EBlockElement.PARAGRAPH }]
+export function getInitialValue<T = TDocument>(mock?: boolean) {
+  return (mock ? mockSlateValue : [{ children: [{ text: '' }], id: nanoid(), type: EBlockElement.PARAGRAPH }]) as T
 }
 
-export function parseHTML(html: string) {
-  return new DOMParser().parseFromString(html, 'text/html').body
-}
-
-export function deserialize(nodeList: NodeListOf<ChildNode>): any {
-  const nodes = Array.from(nodeList as unknown as HTMLCollection).map<{
-    attributes?: Record<string, string>
-    children?: NodeListOf<ChildNode>
-    type?: string
-  }>(({ attributes, childNodes, nodeName }) =>
-    attributes && attributes.length
-      ? /#text/i.test(nodeName)
-        ? {
-            attributes: getAttributes(attributes),
-            children: childNodes,
-          }
-        : {
-            attributes: getAttributes(attributes),
-            children: childNodes,
-            type: nodeName.toLowerCase(),
-          }
-      : /#text/i.test(nodeName)
-        ? {
-            children: childNodes,
-          }
-        : {
-            children: childNodes,
-            type: nodeName.toLowerCase(),
-          },
-  )
-  nodes.forEach(({ children }, i) => {
-    if (!children?.length) delete nodes[i].children
-  })
-  nodes.forEach(({ children }, i) => {
-    if (!children?.length) (nodes[i] as any).text = nodeList[i].textContent
-    if (typeof nodes[i].children === 'undefined' && nodes[i].type && typeof (nodes[i] as any).text === 'string') {
-      nodes[i].children = [{ text: '' }]
-      delete (nodes[i] as any).text
-    }
-    if (children?.length) nodes[i].children = deserialize(children) as any
-  })
-  return nodes
-}
-
-export function getAttributes(nodeMap: NamedNodeMap) {
-  const result: Record<string, string> = {}
-  if (nodeMap) Array.from(nodeMap).forEach(({ name, value }) => Object.defineProperty(result, name, { value }))
-  return result
+export function prettier(value: string, cb: (result: string) => void) {
+  prettify.format?.(value, { preserveLine: 1, wrap: 100 }).then(cb)
 }

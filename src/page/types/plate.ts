@@ -65,9 +65,13 @@ export type EElement = EBlockElement | EInlineElement | EVoidElement
 
 export type TEmptyText = { text: '' }
 export type TText = { text: string }
-export type TLeaf = (TEmptyText | TText) & {
-  [key in EMarkTrue | EMarkValue]?: number | string | true
-}
+export type TLeaf = (TEmptyText | TText) &
+  (
+    | {
+        [key in EMarkValue]?: number | string
+      }
+    | { [key in EMarkTrue]: true }
+  )
 
 export type TInlineElement<T = EInlineElement.LINK> = {
   children: (TInlineElement | TLeaf)[]
@@ -75,7 +79,7 @@ export type TInlineElement<T = EInlineElement.LINK> = {
 } & (T extends EInlineElement.LINK ? Pick<TExtraElementProps, 'url'> : Partial<TExtraElementProps>)
 
 export type TBlockElement = {
-  children: (TInlineElement | TLeaf)[] | TBlockElement[] | TVoidElement[]
+  children: (TBlockElement | TVoidElement)[] | (TInlineElement | TLeaf)[]
   type: EBlockElement
 } & Partial<TExtraElementProps>
 
@@ -85,7 +89,7 @@ export type TVoidElement = {
 } & Partial<TExtraElementProps>
 
 export type TIndentListProps = {
-  listStyleType?: ListStyleType
+  listStyleType: ListStyleType
 }
 
 export type TExtraElementProps = TIndentListProps & {
@@ -110,10 +114,10 @@ export type TExtraElementProps = TIndentListProps & {
 export type TElement = TBlockElement | TInlineElement | TVoidElement
 
 export type TDocument = (TBlockElement | TVoidElement)[]
-export type TElementProps<T extends TElement = TElement> = PlateElementProps & {
+export type TPlateElementProps<T extends TElement = TElement> = PlateElementProps & {
   element: T
 }
-export type TLeafProps = PlateLeafProps & { leaf: TLeaf }
+export type TPlateLeafProps = PlateLeafProps & { leaf: TLeaf }
 
 export type TCodeLang = 'css' | 'html' | 'javascript' | 'latex'
 export type TExcalidrawData = Record<string, unknown>
