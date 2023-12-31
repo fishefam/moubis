@@ -9,3 +9,7 @@ export type TMobiusBaseData = {
   name: string
   uid: string
 }
+
+export type TMobiusPreparedData = {
+  [key in keyof TMobiusBaseData]: { css: string; html: string; script: string } | string
+}

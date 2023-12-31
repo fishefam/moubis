@@ -1,4 +1,15 @@
-import type { ListStyleType, PlateElementProps, PlateLeafProps, Value } from '@udecode/plate'
+import type { CreatePlateEditorOptions, PlateEditor, PlateProps } from '@udecode/plate'
+
+import { plugins } from '@/lib/plate/plugins'
+import {
+  createPlateEditor as _createPlateEditor,
+  deserializeHtml as _deserializeHtml,
+  Plate as _Plate,
+  type ListStyleType,
+  type PlateElementProps,
+  type PlateLeafProps,
+  type Value,
+} from '@udecode/plate'
 
 export enum EBlockElement {
   BLOCK_QUOTE = 'blockquote',
@@ -113,7 +124,6 @@ export type TExtraElementProps = TIndentListProps & {
 
 export type TElement = TBlockElement | TInlineElement | TVoidElement
 
-export type TDocument = (TBlockElement | TVoidElement)[]
 export type TPlateElementProps<T extends TElement = TElement> = PlateElementProps & {
   element: T
 }
@@ -123,3 +133,20 @@ export type TCodeLang = 'css' | 'html' | 'javascript' | 'latex'
 export type TExcalidrawData = Record<string, unknown>
 
 export type TValue = Value
+
+export type TDocument = (TBlockElement | TVoidElement)[] & Value
+export type TPlateEditor = PlateEditor<TDocument>
+
+/* Typed wrapper functions */
+export const createPlateEditor = (options?: CreatePlateEditorOptions<TDocument, PlateEditor<TDocument>>) =>
+  _createPlateEditor(options) as unknown as PlateEditor<TDocument>
+export const deserializeHTML = (
+  element: HTMLElement | string,
+  editor = createPlateEditor({ plugins }),
+  options?: {
+    collapseWhiteSpace?: boolean | undefined
+  },
+) => _deserializeHtml(editor as unknown as PlateEditor<Value>, { ...options, element }) as TDocument
+
+/* Typed wrapper components */
+export const Plate = _Plate as (props: PlateProps<TDocument, PlateEditor<TDocument>>) => JSX.Element

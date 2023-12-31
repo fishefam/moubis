@@ -1,11 +1,13 @@
+import type { TContextData } from '@/contexts/Editor'
 import type { TMobiusBaseData } from '@/types/mobius'
-import type { TValue } from '@/types/plate'
+import type { LanguageNames } from '@liquify/prettify'
 import type { ClassValue } from 'clsx'
 
 import { ELocalStorage } from '@/types/app'
-import { EBlockElement, type TDocument } from '@/types/plate'
+import { createPlateEditor, deserializeHTML, EBlockElement, type TDocument } from '@/types/plate'
 import prettify from '@liquify/prettify'
-import { createPlateEditor, serializeHtml } from '@udecode/plate'
+import { serializeHtml } from '@udecode/plate'
+import { EditorView } from '@uiw/react-codemirror'
 import { clsx } from 'clsx'
 import { customAlphabet } from 'nanoid'
 import { twMerge } from 'tailwind-merge'
@@ -43,6 +45,23 @@ export function processMobiusData(key: keyof TMobiusBaseData) {
   return { css: css ?? '', html: html ?? '', script: script ?? '' }
 }
 
+export function processData(data: string): TContextData {
+  const html = extractHTML(data, 'html')
+  const css = extractHTML(data, 'css')
+  const script = extractHTML(data, 'script')
+  return {
+    code: {
+      css: { editor: new EditorView(), value: prettierSync(css, 'css') },
+      html: { editor: new EditorView(), value: prettierSync(html, 'html') },
+      js: { editor: new EditorView(), value: prettierSync(script, 'javascript') },
+    },
+    plate: {
+      editor: createPlateEditor({ plugins }),
+      value: data ? deserializeHTML(html) : [{ children: [{ text: '' }], type: EBlockElement.PARAGRAPH }],
+    },
+  }
+}
+
 export function getMobiusData(key: keyof TMobiusBaseData): string {
   return JSON.parse(localStorage.getItem(ELocalStorage.DATA)!)[key] ?? ''
 }
@@ -75,11 +94,11 @@ export function prettier(value: string, cb: (result: string) => void) {
   prettify.format?.(value, { preserveLine: 1, wrap: 100 }).then(cb)
 }
 
-export function prettierSync(value: string) {
-  return prettify.formatSync?.(value, { preserveLine: 1, wrap: 100 }) ?? ''
+export function prettierSync(value: string, language: LanguageNames) {
+  return prettify.formatSync?.(value, { language, preserveLine: 1, wrap: 100 }) ?? ''
 }
 
-export function serializeFragment(fragment: TDocument | TValue, plate = createPlateEditor({ plugins }), format = true) {
-  const html = serializeHtml(plate, { nodes: fragment })
+export function serializeFragment(fragment: TDocument, plate = createPlateEditor({ plugins }), format = true) {
+  const html = serializeHtml(plate, { nodes: fragment as any }) as any
   return format ? prettierSync(html) : html
 }

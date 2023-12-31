@@ -1,73 +1,49 @@
-import type { TSetState } from '@/types/app'
-import type { PlateEditor } from '@udecode/plate'
-import type { ReactCodeMirrorRef } from '@uiw/react-codemirror'
-import type { MutableRefObject, RefObject } from 'react'
+import type { Extension } from '@uiw/react-codemirror'
 
-import { useRootContext } from '@/Context'
-import { nanoid } from '@/lib/util'
-import { deserializeHtml } from '@udecode/plate'
+import { useEditorContext } from '@/contexts/Editor'
+import { color } from '@uiw/codemirror-extensions-color'
+import { langs } from '@uiw/codemirror-extensions-langs'
+import { xcodeLight } from '@uiw/codemirror-themes-all'
 import { useCodeMirror } from '@uiw/react-codemirror'
 import { useEffect, useRef } from 'react'
 
-type TProps = Record<string, never>
-type THandleChangeProps = {
-  container: RefObject<ReactCodeMirrorRef>
-  isMounting: boolean
-  setChangeSignal: TSetState<string>
-  setIsMounting: TSetState<boolean>
-  value: string
-  valueRef: MutableRefObject<string>
-}
+type TProps = { lang: 'css' | 'html' | 'js' }
 
-export function CodeEditor(_: TProps) {
-  const { codeView, plate } = useRootContext()
+export function CodeEditor({ lang }: TProps) {
+  const { code, plate } = useEditorContext()
   const container = useRef<HTMLDivElement>(null)
   const { setView, view } = useCodeMirror({
     container: container.current,
+    extensions: [getLangExtension(lang), color],
     onChange: (v) => {
-      if (document.activeElement === container.current?.firstElementChild?.lastElementChild?.children[1])
-        plate.insertFragment(deserializeHtml(plate as unknown as PlateEditor, { element: v }))
+      // if (document.activeElement === container.current?.firstElementChild?.lastElementChild?.children[1])
+      //   plate.insertFragment(deserializeHtml(plate as unknown as PlateEditor, { element: v }))
     },
-    value: 'dfasf',
+    theme: xcodeLight,
+    value: code[lang].value,
   })
-  // const { isMounting, setChangeSignal, setIsMounting } = useSyncWithPlateEditor(plate, valueRef.current)
 
   useEffect(() => {
     if (view) {
-      setView(codeView)
-      container.current?.appendChild(codeView.dom)
+      setView(code[lang].editor)
+      container.current?.appendChild(code[lang].editor.dom)
+      const rootElement = container.current?.firstElementChild as HTMLElement | null
+      if (rootElement) {
+        rootElement.style.height = '100%'
+        rootElement.style.scrollBehavior = 'smooth'
+      }
     }
-  }, [codeView, setView, view])
+  }, [code, lang, setView, view])
 
   console.log('Code Render')
-  return <div ref={container}></div>
-}
-
-function handleChange({ container, isMounting, setChangeSignal, setIsMounting, value, valueRef }: THandleChangeProps) {
-  const isFocused =
-    document.activeElement === container.current?.editor?.firstElementChild?.lastElementChild?.children[1]
-
-  if (isMounting && isFocused) setIsMounting(false)
-  if (!isMounting && isFocused) {
-    valueRef.current = value
-    setChangeSignal(nanoid(5))
-  }
-}
-
-function Test() {
-  const cm = useCodeMirror({})
-  console.log(cm)
-  useEffect(() => {})
   return (
-    <div>
-      <button
-        onClick={() => {
-          cm.view?.dispatch({ changes: { from: 0, insert: 'hahahah' } })
-        }}
-      >
-        click here
-      </button>{' '}
-      WHAT IS UP TESTING
-    </div>
+    <div
+      className='h-full'
+      ref={container}
+    ></div>
   )
+}
+
+function getLangExtension(lang: TProps['lang']): Extension {
+  return lang === 'html' ? langs.html() : lang === 'css' ? langs.css() : langs.javascript()
 }

@@ -15,6 +15,7 @@ async function main() {
 function preparePage() {
   selectElement('html')!.innerHTML = `
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="${resolveUrl('main.css')}" /> 
         <link rel="icon" type="image/x-icon" href="${resolveUrl('assets/favicon.ico')}">
     </head>
