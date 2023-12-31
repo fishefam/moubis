@@ -3,13 +3,13 @@ import type { PlateEditor } from '@udecode/plate'
 import type { ReactCodeMirrorRef } from '@uiw/react-codemirror'
 import type { MutableRefObject, RefObject } from 'react'
 
-import { useSyncWithPlateEditor } from '@/hooks/codeEditor'
+import { useRootContext } from '@/Context'
 import { nanoid } from '@/lib/util'
-import { noctisLilac } from '@uiw/codemirror-themes-all'
-import CodeMirror from '@uiw/react-codemirror'
-import { useRef } from 'react'
+import { deserializeHtml } from '@udecode/plate'
+import { useCodeMirror } from '@uiw/react-codemirror'
+import { useEffect, useRef } from 'react'
 
-type TProps = { plate: PlateEditor; value: string }
+type TProps = Record<string, never>
 type THandleChangeProps = {
   container: RefObject<ReactCodeMirrorRef>
   isMounting: boolean
@@ -19,22 +19,28 @@ type THandleChangeProps = {
   valueRef: MutableRefObject<string>
 }
 
-export function CodeEditor({ plate, value }: TProps) {
-  const container = useRef<ReactCodeMirrorRef>(null)
-  const valueRef = useRef(value)
-  const { isMounting, setChangeSignal, setIsMounting } = useSyncWithPlateEditor(plate, valueRef.current)
+export function CodeEditor(_: TProps) {
+  const { codeView, plate } = useRootContext()
+  const container = useRef<HTMLDivElement>(null)
+  const { setView, view } = useCodeMirror({
+    container: container.current,
+    onChange: (v) => {
+      if (document.activeElement === container.current?.firstElementChild?.lastElementChild?.children[1])
+        plate.insertFragment(deserializeHtml(plate as unknown as PlateEditor, { element: v }))
+    },
+    value: 'dfasf',
+  })
+  // const { isMounting, setChangeSignal, setIsMounting } = useSyncWithPlateEditor(plate, valueRef.current)
+
+  useEffect(() => {
+    if (view) {
+      setView(codeView)
+      container.current?.appendChild(codeView.dom)
+    }
+  }, [codeView, setView, view])
 
   console.log('Code Render')
-  return (
-    <CodeMirror
-      className='h-80 overflow-scroll'
-      extensions={[]}
-      onChange={(v) => handleChange({ container, isMounting, setChangeSignal, setIsMounting, value: v, valueRef })}
-      ref={container}
-      theme={noctisLilac}
-      value={value}
-    />
-  )
+  return <div ref={container}></div>
 }
 
 function handleChange({ container, isMounting, setChangeSignal, setIsMounting, value, valueRef }: THandleChangeProps) {
@@ -46,4 +52,22 @@ function handleChange({ container, isMounting, setChangeSignal, setIsMounting, v
     valueRef.current = value
     setChangeSignal(nanoid(5))
   }
+}
+
+function Test() {
+  const cm = useCodeMirror({})
+  console.log(cm)
+  useEffect(() => {})
+  return (
+    <div>
+      <button
+        onClick={() => {
+          cm.view?.dispatch({ changes: { from: 0, insert: 'hahahah' } })
+        }}
+      >
+        click here
+      </button>{' '}
+      WHAT IS UP TESTING
+    </div>
+  )
 }

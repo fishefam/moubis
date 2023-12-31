@@ -67,6 +67,10 @@ export function getInitialValue<T = TDocument>(mock?: boolean) {
   return emptyNode as T
 }
 
+export function getInitialMockValue<T = TDocument>() {
+  return mockSlateValue as T
+}
+
 export function prettier(value: string, cb: (result: string) => void) {
   prettify.format?.(value, { preserveLine: 1, wrap: 100 }).then(cb)
 }

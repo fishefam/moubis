@@ -1,14 +1,13 @@
 import type { TSetState } from '@/types/app'
-import type { TValue } from '@/types/plate'
-import type { PlateEditor as TPlateEditor } from '@udecode/plate'
+import type { PlateEditor } from '@udecode/plate'
 import type { RefObject } from 'react'
 
-import { useSyncWithCodeEditor } from '@/hooks/plateEditor'
-import { nanoid } from '@/lib/util'
+import { useRootContext } from '@/Context'
+import { nanoid, serializeFragment } from '@/lib/util'
 import { Plate, PlateContent } from '@udecode/plate'
 import { useRef } from 'react'
 
-type TProps = { setCodeValue: TSetState<string>; state: TPlateEditor; value: TValue }
+type TProps = Record<string, never>
 type THandleChangeProps = {
   container: RefObject<HTMLDivElement>
   isMounting: boolean
@@ -16,15 +15,21 @@ type THandleChangeProps = {
   setIsMounting: TSetState<boolean>
 }
 
-export function PlateEditor({ setCodeValue, state, value }: TProps) {
+export function PlateEditor(_: TProps) {
+  const { codeView, plate, plateValue } = useRootContext()
   const container = useRef<HTMLDivElement>(null)
-  const { isMounting, setChangeSignal, setIsMounting } = useSyncWithCodeEditor(state, setCodeValue)
+  // const { isMounting, setChangeSignal, setIsMounting } = useSyncWithCodeEditor(state, setCodeValue)
 
+  console.log('Plate Render')
   return (
     <Plate
-      editor={state}
-      initialValue={value}
-      onChange={() => handleChange({ container, isMounting, setChangeSignal, setIsMounting })}
+      editor={plate}
+      initialValue={plateValue}
+      // onChange={() => handleChange({ container, isMounting, setChangeSignal, setIsMounting })}
+      onChange={(v) => {
+        if (document.activeElement === container.current?.firstElementChild)
+          codeView.dispatch({ changes: { from: 0, insert: serializeFragment(v) } })
+      }}
     >
       <div ref={container}>
         <PlateContent className='w-full mx-auto bg-white shadow p-5 border border-gray-200 overflow-scroll rounded-md h-[40rem]' />
