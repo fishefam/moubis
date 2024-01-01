@@ -1,21 +1,27 @@
 import { Layout } from '@/components/Layout'
+import { useRef } from 'react'
 
 import { Footer } from './components/Footer'
 import { MainArea } from './components/MainArea'
 import { Navbar } from './components/Navbar'
 import { Sidebar } from './components/Sidebar'
+import { RootContextProvider } from './contexts/Root'
+import { getData, normalizeData, prepareData } from './lib/data'
 
-export type TData = { [key in TDataKeys]: TContextData }
-const MOBIUS_DATA_KEYS: TDataKeys[] = ['algorithm', 'authorNotesEditor', 'commentEditor', 'editor']
-// const MOBIUS_DATA = getData(MOBIUS_DATA_KEYS)
+const RAW_EDITOR_DATA = normalizeData(getData())
 
 export default function App() {
+  const { current: editorData } = useRef(prepareData(RAW_EDITOR_DATA))
+
+  console.log('App Render')
   return (
-    <Layout
-      bottom={<Footer />}
-      left={<Sidebar />}
-      main={<MainArea />}
-      top={<Navbar />}
-    />
+    <RootContextProvider>
+      <Layout
+        bottom={<Footer />}
+        left={<Sidebar />}
+        main={<MainArea editorData={editorData} />}
+        top={<Navbar />}
+      />
+    </RootContextProvider>
   )
 }

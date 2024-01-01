@@ -136,6 +136,7 @@ export type TValue = Value
 
 export type TDocument = (TBlockElement | TVoidElement)[] & Value
 export type TPlateEditor = PlateEditor<TDocument>
+export type TPlateProps = PlateProps<TDocument, TPlateEditor>
 
 /* Typed wrapper functions */
 export const createPlateEditor = (options?: CreatePlateEditorOptions<TDocument, PlateEditor<TDocument>>) =>

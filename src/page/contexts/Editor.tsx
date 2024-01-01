@@ -1,33 +1,59 @@
-import type { TDocument, TPlateEditor } from '@/types/plate'
+import type { TData } from '@/types/data'
 import type { ReactNode } from 'react'
 
 import { plugins } from '@/lib/plate/plugins'
-import { getExtensionBaseUrl, nanoid } from '@/lib/util'
-import { createPlateEditor, deserializeHTML, Plate } from '@/types/plate'
-import { EditorView } from '@uiw/react-codemirror'
+import { getExtensionBaseUrl } from '@/lib/util'
+import { createPlateEditor, EBlockElement, Plate } from '@/types/plate'
+import { EditorState, EditorView } from '@uiw/react-codemirror'
 import { MathJaxContext } from 'better-react-mathjax'
 import { createContext, useContext } from 'react'
 
-type TBaseInfo<T extends EditorView | TPlateEditor> = { editor: T; value: T extends EditorView ? string : TDocument }
-export type TContextData = {
-  code: { css: TBaseInfo<EditorView>; html: TBaseInfo<EditorView>; js: TBaseInfo<EditorView> }
-  plate: TBaseInfo<TPlateEditor>
-}
-type TProps = { children: ReactNode; data: TContextData }
+type TProps = { children: ReactNode; data: TData }
 
-const PLATE = createPlateEditor({ id: nanoid() })
-export const INITIAL_CONTEXT: TContextData = {
-  code: {
-    css: { editor: new EditorView(), value: '' },
-    html: { editor: new EditorView(), value: '' },
-    js: { editor: new EditorView(), value: '' },
+const ROOT_PLATE_STATE = createPlateEditor({ id: 'root-plate-state' })
+const INITIAL_CONTEXT: TData = {
+  algorithm: { code: { state: EditorState.create(), value: '', view: new EditorView() } },
+  authorNotes: {
+    code: {
+      css: { state: EditorState.create(), value: '', view: new EditorView() },
+      html: { state: EditorState.create(), value: '', view: new EditorView() },
+      javascript: { state: EditorState.create(), value: '', view: new EditorView() },
+    },
+    plate: {
+      state: createPlateEditor(),
+      value: [{ children: [{ text: '' }], type: EBlockElement.PARAGRAPH }],
+      view: Plate,
+    },
   },
-  plate: { editor: createPlateEditor(), value: deserializeHTML('<p></p>') },
+  feedback: {
+    code: {
+      css: { state: EditorState.create(), value: '', view: new EditorView() },
+      html: { state: EditorState.create(), value: '', view: new EditorView() },
+      javascript: { state: EditorState.create(), value: '', view: new EditorView() },
+    },
+    plate: {
+      state: createPlateEditor(),
+      value: [{ children: [{ text: '' }], type: EBlockElement.PARAGRAPH }],
+      view: Plate,
+    },
+  },
+  question: {
+    code: {
+      css: { state: EditorState.create(), value: '', view: new EditorView() },
+      html: { state: EditorState.create(), value: '', view: new EditorView() },
+      javascript: { state: EditorState.create(), value: '', view: new EditorView() },
+    },
+    plate: {
+      state: createPlateEditor(),
+      value: [{ children: [{ text: '' }], type: EBlockElement.PARAGRAPH }],
+      view: Plate,
+    },
+  },
 }
 
-export const EditorContext = createContext<TContextData>(INITIAL_CONTEXT)
+export const EditorContext = createContext(INITIAL_CONTEXT)
 
-export default function EditorContextProvider({ children, data }: TProps) {
+export function EditorContextProvider({ children, data }: TProps) {
   return (
     <EditorContext.Provider value={data}>
       <MathJaxContext
@@ -36,7 +62,7 @@ export default function EditorContextProvider({ children, data }: TProps) {
         src={`${getExtensionBaseUrl()}assets/tex-mml-chtml.js`}
       >
         <Plate
-          editor={PLATE}
+          editor={ROOT_PLATE_STATE}
           plugins={plugins}
         >
           {children}

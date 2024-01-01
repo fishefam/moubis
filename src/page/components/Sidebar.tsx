@@ -1,22 +1,21 @@
 import type { TDataKeys } from '@/App'
 import type { TSetState } from '@/types/app'
+import type { TEditableDataKey } from '@/types/data'
 import type { LucideIcon } from 'lucide-react'
 
+import { useRootContext } from '@/contexts/Root'
 import { cn } from '@/lib/util'
 import * as Navbar from '@radix-ui/react-navigation-menu'
 import * as Tooltip from '@radix-ui/react-tooltip'
-import { useState } from 'react'
 
 import { Icons } from './Icons'
 
-type TProps = { currentKey: string; setCurrentKey: TSetState<TDataKeys> }
 type TButtonProps = { Icon: LucideIcon; key: TDataKeys; tooltip: string }
 type TListItemProps = {
   dataKey: TDataKeys
   Icon: LucideIcon
   isSelected: boolean
-  setCurrentKey: TSetState<TDataKeys>
-  setTooltip: TSetState<string>
+  setEditorType: TSetState<TEditableDataKey>
   tooltip: string
 }
 
@@ -27,8 +26,9 @@ const buttons: TButtonProps[] = [
   { Icon: Icons.book, key: 'commentEditor', tooltip: 'Feedback' },
 ]
 
-export function Sidebar({ currentKey, setCurrentKey }: TProps) {
-  const [tooltip, setTooltip] = useState(buttons[0].tooltip)
+export function Sidebar() {
+  const { editorType, setEditorType } = useRootContext()
+
   return (
     <Navbar.Root
       delayDuration={0}
@@ -40,10 +40,9 @@ export function Sidebar({ currentKey, setCurrentKey }: TProps) {
             <ListItem
               dataKey={key}
               Icon={Icon}
-              isSelected={currentKey === key}
+              isSelected={editorType === key}
               key={key}
-              setCurrentKey={setCurrentKey}
-              setTooltip={setTooltip}
+              setEditorType={setEditorType}
               tooltip={tooltip}
             />
           ))}
@@ -53,7 +52,7 @@ export function Sidebar({ currentKey, setCurrentKey }: TProps) {
   )
 }
 
-function ListItem({ dataKey, Icon, isSelected, setCurrentKey, setTooltip, tooltip }: TListItemProps) {
+function ListItem({ dataKey, Icon, isSelected, setEditorType, tooltip }: TListItemProps) {
   return (
     <Tooltip.Root delayDuration={0}>
       <Tooltip.Trigger asChild>
@@ -65,9 +64,8 @@ function ListItem({ dataKey, Icon, isSelected, setCurrentKey, setTooltip, toolti
               'hover:bg-slate-100 p-2 rounded transition-colors duration-75 mx-auto block mb-2',
             )}
             onClick={() => {
-              if (!isSelected) setCurrentKey(dataKey)
+              if (!isSelected) setEditorType(dataKey)
             }}
-            onMouseOver={() => setTooltip(tooltip)}
           >
             <button>
               <Icon

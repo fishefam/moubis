@@ -1,5 +1,5 @@
 import type { TContextData } from '@/contexts/Editor'
-import type { TMobiusBaseData } from '@/types/mobius'
+import type { TMobiusBaseData } from '@/types/data'
 import type { LanguageNames } from '@liquify/prettify'
 import type { ClassValue } from 'clsx'
 
@@ -62,11 +62,7 @@ export function processData(data: string): TContextData {
   }
 }
 
-export function getMobiusData(key: keyof TMobiusBaseData): string {
-  return JSON.parse(localStorage.getItem(ELocalStorage.DATA)!)[key] ?? ''
-}
-
-export function extractHTML(html: string, type: 'css' | 'html' | 'script') {
+export function extractHTML(html: string, type: 'css' | 'html' | 'javascript') {
   if (type === 'css') return (html.match(/(?<=<style.*>)(.|\n)*?(?=<\/style>)/g) ?? []).join(' ')
 
   const dom = new DOMParser().parseFromString(html, 'text/html').body
