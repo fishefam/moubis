@@ -19,12 +19,12 @@ export function PlateEditor() {
 
   return (
     <div
-      className='h-full hover:border-2'
+      className='h-full'
       ref={ref}
     >
       {plates.map(({ key, state, value }, i) => (
         <div
-          className={cn(editorType !== key && 'hidden', 'h-full')}
+          className={cn(editorType !== key && 'hidden', 'h-full p-[1.8rem]')}
           key={state.id}
         >
           <Plate
@@ -32,7 +32,7 @@ export function PlateEditor() {
             initialValue={value}
             onChange={(v) => updateCodeState(codes, i, v, ref)}
           >
-            <PlateContent className='h-full' />
+            <PlateContent className='h-full outline-none' />
           </Plate>
         </div>
       ))}

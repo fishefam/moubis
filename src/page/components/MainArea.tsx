@@ -78,7 +78,7 @@ export function MainArea({ codeData, textData }: TProps) {
           <PanelResizeHandle className='w-2 bg-slate-200 hover:bg-slate-400 transition rounded flex justify-center items-center hover:text-white'>
             <Icons.dragHandle className='w-2 h-2' />
           </PanelResizeHandle>
-          <Panel className='rounded bg-white outline-2'>
+          <Panel className='rounded bg-white overflow-scroll'>
             <PlateEditor />
           </Panel>
         </PanelGroup>

@@ -30,6 +30,7 @@ function preparePage() {
 }
 
 function resolveUrl(path: string): string {
+  if (chrome) return chrome.runtime.getURL(path)
   return browser.runtime.getURL(path)
 }
 
