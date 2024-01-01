@@ -44,10 +44,26 @@ export function MainArea({ codeData, textData }: TProps) {
                 return (
                   <Fragment key={lang}>
                     <Panel
-                      className='rounded bg-white grid grid-rows-[1fr_5fr] !overflow-scroll'
+                      className='rounded bg-white grid grid-rows-[1.8rem_auto] overflow-hidden'
                       defaultSize={33}
+                      minSize={4.7}
                     >
-                      <CodeEditor lang={lang} />
+                      <div className='border-b mb-0 sticky'>
+                        <div className='w-fit bg-[lightblue] h-full'>
+                          <h4 className='text-black px-2'>
+                            {lang === 'html' ? (
+                              <Icons.html className='w-7 h-7' />
+                            ) : lang === 'css' ? (
+                              <Icons.css className='w-7 h-7' />
+                            ) : (
+                              <Icons.javascript className='w-7 h-7' />
+                            )}
+                          </h4>
+                        </div>
+                      </div>
+                      <div className='overflow-scroll h-full'>
+                        <CodeEditor lang={lang} />
+                      </div>
                     </Panel>
                     {i < langs.length - 1 && (
                       <PanelResizeHandle className='h-2 bg-slate-200 hover:bg-slate-400 transition rounded flex justify-center items-center hover:text-white'>

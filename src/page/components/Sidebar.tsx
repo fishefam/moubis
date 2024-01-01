@@ -30,6 +30,7 @@ export function Sidebar() {
 
   return (
     <Navbar.Root
+      className='mt-1'
       delayDuration={0}
       orientation='vertical'
     >

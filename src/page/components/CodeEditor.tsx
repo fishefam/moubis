@@ -25,7 +25,7 @@ export function CodeEditor({ isCodeData = false, lang }: TProps) {
     <>
       {data.map(({ key, state, value, view }, i) => (
         <div
-          className={cn(editorType !== key && 'hidden')}
+          className={cn('h-full', editorType !== key && 'hidden')}
           key={i}
         >
           <CodeMirror
@@ -47,14 +47,25 @@ function getLangExtension(lang: TProps['lang']): Extension {
 type TCodeMirrorProps = { extensions: Extension[]; state: EditorState; value: string; view: EditorView }
 
 function CodeMirror({ extensions, state, value, view }: TCodeMirrorProps) {
-  const { setView } = useCodeMirror({ basicSetup: {foldGutter: false},extensions: [basicSetup(), ...extensions], value,})
+  const { setView } = useCodeMirror({
+    basicSetup: { foldGutter: false },
+    extensions: [basicSetup(), ...extensions],
+    style: { height: '100%' },
+    value,
+  })
   const ref = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     view.setState(state)
     setView(view)
     ref.current?.appendChild(view.dom)
+    view.dom.style.height = '100%'
   }, [setView, state, view])
 
-  return <div ref={ref}></div>
+  return (
+    <div
+      className='h-full'
+      ref={ref}
+    ></div>
+  )
 }
