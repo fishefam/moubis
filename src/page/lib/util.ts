@@ -56,8 +56,8 @@ export function processData(data: string): TContextData {
       js: { editor: new EditorView(), value: prettierSync(script, 'javascript') },
     },
     plate: {
-      editor: createPlateEditor({ plugins }),
-      value: data ? deserializeHTML(html) : [{ children: [{ text: '' }], type: EBlockElement.PARAGRAPH }],
+      editor: createPlateEditor({ id: nanoid(), plugins }),
+      value: deserializeHTML(html.length ? html : '<p></p>'),
     },
   }
 }

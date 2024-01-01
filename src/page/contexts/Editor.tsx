@@ -16,13 +16,13 @@ export type TContextData = {
 type TProps = { children: ReactNode; data: TContextData }
 
 const PLATE = createPlateEditor({ id: nanoid() })
-const INITIAL_CONTEXT: TContextData = {
+export const INITIAL_CONTEXT: TContextData = {
   code: {
     css: { editor: new EditorView(), value: '' },
     html: { editor: new EditorView(), value: '' },
     js: { editor: new EditorView(), value: '' },
   },
-  plate: { editor: createPlateEditor(), value: deserializeHTML('') },
+  plate: { editor: createPlateEditor(), value: deserializeHTML('<p></p>') },
 }
 
 export const EditorContext = createContext<TContextData>(INITIAL_CONTEXT)

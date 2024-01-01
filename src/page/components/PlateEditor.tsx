@@ -1,31 +1,29 @@
-import type { PlateEditor } from '@udecode/plate'
-
-import { useEditorContext } from '@/contexts/Editor'
-import { Plate, PlateContent } from '@udecode/plate'
+import { Plate } from '@/types/plate'
+import { PlateContent, type PlateEditor } from '@udecode/plate'
 import { useRef } from 'react'
 
 type TProps = Record<string, never>
 
-export function PlateEditor(_: TProps) {
-  const { code, plate } = useEditorContext()
+export function PlateEditor({ a }: TProps) {
+  // const { code, plate } = useEditorContext()
   const container = useRef<HTMLDivElement>(null)
 
-  console.log(plate)
+  console.log(plate.value)
   return (
     <Plate
-      editor={plate.editor}
-      initialValue={plate.value}
+      editor={a.editor}
+      // initialValue={[{ children: [{ text: nanoid() }], type: EBlockElement.PARAGRAPH }]}
       onChange={(v) => {
         // if (document.activeElement === container.current?.firstElementChild)
         //   code[codeLang].editor.dispatch({ changes: { from: 0, insert: serializeFragment(v) } })
       }}
     >
-      <div
-        className='flex-grow'
+      {/* <div
+        className='h-full'
         ref={container}
-      >
-        <PlateContent className='w-full mx-auto bg-white p-5 overflow-scroll md:h-[40rem] focus:outline-none' />
-      </div>
+      > */}
+      <PlateContent className='w-full mx-auto bg-white p-5 overflow-scroll h-full focus:outline-none' />
+      {/* </div> */}
     </Plate>
   )
 }

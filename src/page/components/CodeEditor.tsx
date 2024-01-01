@@ -14,7 +14,7 @@ export function CodeEditor({ lang }: TProps) {
   const container = useRef<HTMLDivElement>(null)
   const { setView, view } = useCodeMirror({
     container: container.current,
-    extensions: [getLangExtension(lang), color],
+    extensions: [color, getLangExtension(lang)],
     onChange: (v) => {
       // if (document.activeElement === container.current?.firstElementChild?.lastElementChild?.children[1])
       //   plate.insertFragment(deserializeHtml(plate as unknown as PlateEditor, { element: v }))
@@ -35,10 +35,9 @@ export function CodeEditor({ lang }: TProps) {
     }
   }, [code, lang, setView, view])
 
-  console.log('Code Render')
   return (
     <div
-      className='h-full'
+      className={'h-full'}
       ref={container}
     ></div>
   )

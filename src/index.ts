@@ -25,7 +25,7 @@ function preparePage() {
     </body>
   `
   /** Scripts need to be injected after the template has been set for them to take effect */
-  createElement({ attributes: [['src', 'http://localhost:8097']], parent: document.head, tag: 'script' })
+  // createElement({ attributes: [['src', 'http://localhost:8097']], parent: document.head, tag: 'script' })
   createElement({ attributes: [['src', resolveUrl('main.js')]], parent: document.head, tag: 'script' })
 }
 
