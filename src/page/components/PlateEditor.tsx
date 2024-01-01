@@ -1,4 +1,6 @@
-import type { TTextData } from '@/types/data'
+import type { TFinalTextDataProps, TTextData } from '@/types/data'
+import type { TDocument } from '@/types/plate'
+import type { RefObject } from 'react'
 
 import { useEditorContext } from '@/contexts/Editor'
 import { useRootContext } from '@/contexts/Root'
@@ -28,13 +30,7 @@ export function PlateEditor() {
           <Plate
             editor={state}
             initialValue={value}
-            onChange={(v) => {
-              if (ref.current?.children[i].firstElementChild === document.activeElement) {
-                const serializedHTML = prettierSync(serializeFragment(v), 'html')
-                const view = codes[i].html.view
-                view.dispatch({ changes: { from: 0, insert: serializedHTML, to: view.state.doc.length } })
-              }
-            }}
+            onChange={(v) => updateCodeState(codes, i, v, ref)}
           >
             <PlateContent className='h-full' />
           </Plate>
@@ -42,4 +38,17 @@ export function PlateEditor() {
       ))}
     </div>
   )
+}
+
+function updateCodeState(
+  codes: TFinalTextDataProps['code'][],
+  index: number,
+  value: TDocument,
+  ref: RefObject<HTMLDivElement>,
+) {
+  if (ref.current?.children[index].firstElementChild === document.activeElement) {
+    const serializedHTML = prettierSync(serializeFragment(value), 'html')
+    const view = codes[index].html.view
+    view.dispatch({ changes: { from: 0, insert: serializedHTML, to: view.state.doc.length } })
+  }
 }

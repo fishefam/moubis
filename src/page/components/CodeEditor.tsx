@@ -1,6 +1,7 @@
 import type { TCodeData, TFinalTextDataProps, TTextData } from '@/types/data'
 import type { TPlateEditor } from '@/types/plate'
 import type { EditorState, EditorView } from '@uiw/react-codemirror'
+import type { RefObject } from 'react'
 import type { BaseEditor } from 'slate'
 
 import { useEditorContext } from '@/contexts/Editor'
@@ -56,19 +57,7 @@ function CodeMirror({ extensions, plate, state, value, view }: TCodeMirrorProps)
   const { setView } = useCodeMirror({
     basicSetup: { foldGutter: false },
     extensions: [basicSetup(), ...extensions],
-    onChange: (v) => {
-      if (ref.current?.firstElementChild?.lastElementChild?.children[1] === document.activeElement) {
-        const fragment = deserializeHTML(v)
-        plate.children.forEach(() => Transforms.delete(plate as BaseEditor, { at: [0] }))
-        plate.children = [
-          {
-            children: [{ text: '' }],
-            type: EBlockElement.PARAGRAPH,
-          },
-        ]
-        plate.insertFragment(fragment)
-      }
-    },
+    onChange: (v) => updatePlateState(plate, v, ref),
     style: { height: '100%' },
     value,
   })
@@ -87,4 +76,18 @@ function CodeMirror({ extensions, plate, state, value, view }: TCodeMirrorProps)
       ref={ref}
     />
   )
+}
+
+function updatePlateState(plate: TPlateEditor, v: string, ref: RefObject<HTMLDivElement>): void {
+  if (ref.current?.firstElementChild?.lastElementChild?.children[1] === document.activeElement) {
+    const fragment = deserializeHTML(v)
+    plate.children.forEach(() => Transforms.delete(plate as BaseEditor, { at: [0] }))
+    plate.children = [
+      {
+        children: [{ text: '' }],
+        type: EBlockElement.PARAGRAPH,
+      },
+    ]
+    plate.insertFragment(fragment)
+  }
 }
