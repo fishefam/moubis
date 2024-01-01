@@ -1,48 +1,60 @@
-import type { Extension } from '@uiw/react-codemirror'
+import type { TCodeData, TFinalTextDataProps, TTextData } from '@/types/data'
+import type { EditorState, EditorView } from '@uiw/react-codemirror'
 
 import { useEditorContext } from '@/contexts/Editor'
+import { useRootContext } from '@/contexts/Root'
+import { cn } from '@/lib/util'
 import { color } from '@uiw/codemirror-extensions-color'
 import { langs } from '@uiw/codemirror-extensions-langs'
-import { xcodeLight } from '@uiw/codemirror-themes-all'
-import { useCodeMirror } from '@uiw/react-codemirror'
+import { noctisLilac } from '@uiw/codemirror-themes-all'
+import { basicSetup, type Extension, useCodeMirror } from '@uiw/react-codemirror'
 import { useEffect, useRef } from 'react'
 
-type TProps = { lang: 'css' | 'html' | 'js' }
+type TProps = { isCodeData?: boolean; lang: keyof TFinalTextDataProps['code'] }
 
-export function CodeEditor({ lang }: TProps) {
-  const { code, plate } = useEditorContext()
-  const container = useRef<HTMLDivElement>(null)
-  const { setView, view } = useCodeMirror({
-    container: container.current,
-    extensions: [color, getLangExtension(lang)],
-    onChange: (v) => {
-      // if (document.activeElement === container.current?.firstElementChild?.lastElementChild?.children[1])
-      //   plate.insertFragment(deserializeHtml(plate as unknown as PlateEditor, { element: v }))
-    },
-    theme: xcodeLight,
-    value: code[lang].value,
-  })
+export function CodeEditor({ isCodeData = false, lang }: TProps) {
+  const { editorType } = useRootContext()
+  const { codeData, textData } = useEditorContext()
 
-  useEffect(() => {
-    if (view) {
-      setView(code[lang].editor)
-      container.current?.appendChild(code[lang].editor.dom)
-      const rootElement = container.current?.firstElementChild as HTMLElement | null
-      if (rootElement) {
-        rootElement.style.height = '100%'
-        rootElement.style.scrollBehavior = 'smooth'
-      }
-    }
-  }, [code, lang, setView, view])
+  const code = Object.keys(codeData).map((k) => ({ key: k, ...codeData[k as keyof TCodeData].code }))
+  const text = Object.keys(textData).map((k) => ({ key: k, ...textData[k as keyof TTextData].code[lang] }))
+
+  const data = isCodeData ? code : text
 
   return (
-    <div
-      className={'h-full'}
-      ref={container}
-    ></div>
+    <>
+      {data.map(({ key, state, value, view }, i) => (
+        <div
+          className={cn(editorType !== key && 'hidden')}
+          key={i}
+        >
+          <CodeMirror
+            extensions={[color, noctisLilac, getLangExtension(lang)]}
+            state={state}
+            value={value}
+            view={view}
+          />
+        </div>
+      ))}
+    </>
   )
 }
 
 function getLangExtension(lang: TProps['lang']): Extension {
   return lang === 'html' ? langs.html() : lang === 'css' ? langs.css() : langs.javascript()
+}
+
+type TCodeMirrorProps = { extensions: Extension[]; state: EditorState; value: string; view: EditorView }
+
+function CodeMirror({ extensions, state, value, view }: TCodeMirrorProps) {
+  const { setView } = useCodeMirror({ basicSetup: {foldGutter: false},extensions: [basicSetup(), ...extensions], value,})
+  const ref = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    view.setState(state)
+    setView(view)
+    ref.current?.appendChild(view.dom)
+  }, [setView, state, view])
+
+  return <div ref={ref}></div>
 }

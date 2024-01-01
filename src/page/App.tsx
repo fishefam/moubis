@@ -6,20 +6,33 @@ import { MainArea } from './components/MainArea'
 import { Navbar } from './components/Navbar'
 import { Sidebar } from './components/Sidebar'
 import { RootContextProvider } from './contexts/Root'
-import { getData, normalizeData, prepareData } from './lib/data'
+import {
+  getRawCodeData,
+  getRawTextData,
+  normalizeCodeData,
+  normalizeTextData,
+  prepareCodeData,
+  prepareTextData,
+} from './lib/data'
 
-const RAW_EDITOR_DATA = normalizeData(getData())
+const NORMALIZED_CODE_DATA = normalizeCodeData(getRawCodeData())
+const NORMALIZED_TEXT_DATA = normalizeTextData(getRawTextData())
 
 export default function App() {
-  const { current: editorData } = useRef(prepareData(RAW_EDITOR_DATA))
+  const { current: codeData } = useRef(prepareCodeData(NORMALIZED_CODE_DATA))
+  const { current: textData } = useRef(prepareTextData(NORMALIZED_TEXT_DATA))
 
-  console.log('App Render')
   return (
     <RootContextProvider>
       <Layout
         bottom={<Footer />}
         left={<Sidebar />}
-        main={<MainArea editorData={editorData} />}
+        main={
+          <MainArea
+            codeData={codeData}
+            textData={textData}
+          />
+        }
         top={<Navbar />}
       />
     </RootContextProvider>

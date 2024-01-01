@@ -1,4 +1,4 @@
-import type { TData } from '@/types/data'
+import type { TCodeData, TTextData } from '@/types/data'
 import type { ReactNode } from 'react'
 
 import { plugins } from '@/lib/plate/plugins'
@@ -8,11 +8,10 @@ import { EditorState, EditorView } from '@uiw/react-codemirror'
 import { MathJaxContext } from 'better-react-mathjax'
 import { createContext, useContext } from 'react'
 
-type TProps = { children: ReactNode; data: TData }
+type TProps = { children: ReactNode; codeData: TCodeData; textData: TTextData }
 
 const ROOT_PLATE_STATE = createPlateEditor({ id: 'root-plate-state' })
-const INITIAL_CONTEXT: TData = {
-  algorithm: { code: { state: EditorState.create(), value: '', view: new EditorView() } },
+const INITIAL_TEXT_DATA: TTextData = {
   authorNotes: {
     code: {
       css: { state: EditorState.create(), value: '', view: new EditorView() },
@@ -22,7 +21,6 @@ const INITIAL_CONTEXT: TData = {
     plate: {
       state: createPlateEditor(),
       value: [{ children: [{ text: '' }], type: EBlockElement.PARAGRAPH }],
-      view: Plate,
     },
   },
   feedback: {
@@ -34,7 +32,6 @@ const INITIAL_CONTEXT: TData = {
     plate: {
       state: createPlateEditor(),
       value: [{ children: [{ text: '' }], type: EBlockElement.PARAGRAPH }],
-      view: Plate,
     },
   },
   question: {
@@ -46,16 +43,20 @@ const INITIAL_CONTEXT: TData = {
     plate: {
       state: createPlateEditor(),
       value: [{ children: [{ text: '' }], type: EBlockElement.PARAGRAPH }],
-      view: Plate,
     },
   },
 }
+const INITIAL_CODE_DATA: TCodeData = {
+  algorithm: {
+    code: { state: EditorState.create(), value: '', view: new EditorView() },
+  },
+}
 
-export const EditorContext = createContext(INITIAL_CONTEXT)
+export const EditorContext = createContext({ codeData: INITIAL_CODE_DATA, textData: INITIAL_TEXT_DATA })
 
-export function EditorContextProvider({ children, data }: TProps) {
+export function EditorContextProvider({ children, codeData, textData }: TProps) {
   return (
-    <EditorContext.Provider value={data}>
+    <EditorContext.Provider value={{ codeData, textData }}>
       <MathJaxContext
         config={{ startup: { typeset: false } }}
         hideUntilTypeset='every'

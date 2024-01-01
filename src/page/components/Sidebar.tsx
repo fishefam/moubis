@@ -1,6 +1,5 @@
-import type { TDataKeys } from '@/App'
 import type { TSetState } from '@/types/app'
-import type { TEditableDataKey } from '@/types/data'
+import type { TCodeData, TTextData } from '@/types/data'
 import type { LucideIcon } from 'lucide-react'
 
 import { useRootContext } from '@/contexts/Root'
@@ -10,20 +9,20 @@ import * as Tooltip from '@radix-ui/react-tooltip'
 
 import { Icons } from './Icons'
 
-type TButtonProps = { Icon: LucideIcon; key: TDataKeys; tooltip: string }
+type TButtonProps = { Icon: LucideIcon; key: keyof TCodeData | keyof TTextData; tooltip: string }
 type TListItemProps = {
-  dataKey: TDataKeys
+  dataKey: keyof TCodeData | keyof TTextData
   Icon: LucideIcon
   isSelected: boolean
-  setEditorType: TSetState<TEditableDataKey>
+  setEditorType: TSetState<keyof TCodeData | keyof TTextData>
   tooltip: string
 }
 
 const buttons: TButtonProps[] = [
-  { Icon: Icons.question, key: 'editor', tooltip: 'Question' },
-  { Icon: Icons.info, key: 'authorNotesEditor', tooltip: 'Author Notes' },
+  { Icon: Icons.question, key: 'question', tooltip: 'Question' },
+  { Icon: Icons.info, key: 'authorNotes', tooltip: 'Author Notes' },
   { Icon: Icons.code, key: 'algorithm', tooltip: 'Algorithm' },
-  { Icon: Icons.book, key: 'commentEditor', tooltip: 'Feedback' },
+  { Icon: Icons.book, key: 'feedback', tooltip: 'Feedback' },
 ]
 
 export function Sidebar() {

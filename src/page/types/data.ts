@@ -1,41 +1,41 @@
 import type { EditorState } from '@codemirror/state'
 import type { EditorView } from '@uiw/react-codemirror'
 
-import type { Plate, TDocument, TPlateEditor } from './plate'
+import type { TDocument, TPlateEditor } from './plate'
 
-export type TDataKey =
-  | 'actionId'
-  | 'algorithm'
-  | 'authorNotesEditor'
-  | 'classId'
-  | 'commentEditor'
-  | 'customCss'
-  | 'editor'
-  | 'name'
-  | 'uid'
-export type TEditableDataKey = 'algorithm' | 'authorNotesEditor' | 'commentEditor' | 'editor'
-export type TBaseDataProps = { [key in TDataKey]: string }
-export type TEditableData = Pick<TBaseDataProps, TEditableDataKey>
-export type TEditableProps = { css: string; html: string; javascript: string }
-export type TNormalizedDataPropValue =
-  | { [key in 'authorNotesEditor' | 'commentEditor' | 'editor']: TEditableProps }
-  | { [key: string]: string }
-  | { algorithm: string }
+// prettier-ignore
+export type TInfoDataKey = 'actionId'  | 'classId'  | 'customCss'  | 'name' | 'uid'
+export type TCodeDataKey = 'algorithm'
+export type TTextDataKey = 'authorNotesEditor' | 'commentEditor' | 'editor'
 
-export type TDataProps1 = {
+export type TInfoRawData = { [key in TInfoDataKey]?: string }
+export type TCodeRawData = { [key in TCodeDataKey]?: string }
+export type TTextRawData = { [key in TTextDataKey]?: string }
+
+export type TNormalizedCodeDataProps = { code: string }
+export type TNormalizedTextDataProps = { css: string; html: string; javascript: string }
+
+export type TNormalizedCodeData = { [key in TCodeDataKey]: TNormalizedCodeDataProps }
+export type TNormalizedTextData = { [key in TTextDataKey]: TNormalizedTextDataProps }
+
+export type TFinalTextDataProps = {
   code: {
     css: { state: EditorState; value: string; view: EditorView }
     html: { state: EditorState; value: string; view: EditorView }
     javascript: { state: EditorState; value: string; view: EditorView }
   }
-  plate: { state: TPlateEditor; value: TDocument; view: typeof Plate }
+  plate: { state: TPlateEditor; value: TDocument }
 }
-export type TDataProps2 = {
+export type TFinalCodeDataProps = {
   code: { state: EditorState; value: string; view: EditorView }
 }
-export type TData = {
-  algorithm: TDataProps2
-  authorNotes: TDataProps1
-  feedback: TDataProps1
-  question: TDataProps1
+
+export type TInfoData = TInfoRawData
+export type TCodeData = {
+  algorithm: TFinalCodeDataProps
+}
+export type TTextData = {
+  authorNotes: TFinalTextDataProps
+  feedback: TFinalTextDataProps
+  question: TFinalTextDataProps
 }

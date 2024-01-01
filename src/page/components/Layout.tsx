@@ -18,7 +18,7 @@ export function Layout({ bottom, left, main, top }: TProps) {
       {AREAS.map(({ coldEnd, colStart, key, rowEnd, rowStart }, i) => (
         <div
           className={cn(
-            'p-2',
+            'p-2 overflow-hidden',
             `row-start-${rowStart}`,
             `row-end-${rowEnd}`,
             `col-start-${colStart}`,
