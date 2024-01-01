@@ -1,16 +1,26 @@
 import type { TCodeData, TFinalTextDataProps, TTextData } from '@/types/data'
+import type { TPlateEditor } from '@/types/plate'
 import type { EditorState, EditorView } from '@uiw/react-codemirror'
+import type { BaseEditor } from 'slate'
 
 import { useEditorContext } from '@/contexts/Editor'
 import { useRootContext } from '@/contexts/Root'
-import { cn } from '@/lib/util'
+import { cn, getCodemirrorLangExtension } from '@/lib/util'
+import { deserializeHTML, EBlockElement } from '@/types/plate'
 import { color } from '@uiw/codemirror-extensions-color'
-import { langs } from '@uiw/codemirror-extensions-langs'
 import { noctisLilac } from '@uiw/codemirror-themes-all'
 import { basicSetup, type Extension, useCodeMirror } from '@uiw/react-codemirror'
 import { useEffect, useRef } from 'react'
+import { Transforms } from 'slate'
 
 type TProps = { isCodeData?: boolean; lang: keyof TFinalTextDataProps['code'] }
+type TCodeMirrorProps = {
+  extensions: Extension[]
+  plate: TPlateEditor
+  state: EditorState
+  value: string
+  view: EditorView
+}
 
 export function CodeEditor({ isCodeData = false, lang }: TProps) {
   const { editorType } = useRootContext()
@@ -18,6 +28,7 @@ export function CodeEditor({ isCodeData = false, lang }: TProps) {
 
   const code = Object.keys(codeData).map((k) => ({ key: k, ...codeData[k as keyof TCodeData].code }))
   const text = Object.keys(textData).map((k) => ({ key: k, ...textData[k as keyof TTextData].code[lang] }))
+  const plates = Object.keys(textData).map((k) => textData[k as keyof TTextData].plate)
 
   const data = isCodeData ? code : text
 
@@ -29,7 +40,8 @@ export function CodeEditor({ isCodeData = false, lang }: TProps) {
           key={i}
         >
           <CodeMirror
-            extensions={[color, noctisLilac, getLangExtension(lang)]}
+            extensions={[color, noctisLilac, getCodemirrorLangExtension(lang)]}
+            plate={plates[i].state}
             state={state}
             value={value}
             view={view}
@@ -40,16 +52,23 @@ export function CodeEditor({ isCodeData = false, lang }: TProps) {
   )
 }
 
-function getLangExtension(lang: TProps['lang']): Extension {
-  return lang === 'html' ? langs.html() : lang === 'css' ? langs.css() : langs.javascript()
-}
-
-type TCodeMirrorProps = { extensions: Extension[]; state: EditorState; value: string; view: EditorView }
-
-function CodeMirror({ extensions, state, value, view }: TCodeMirrorProps) {
+function CodeMirror({ extensions, plate, state, value, view }: TCodeMirrorProps) {
   const { setView } = useCodeMirror({
     basicSetup: { foldGutter: false },
     extensions: [basicSetup(), ...extensions],
+    onChange: (v) => {
+      if (ref.current?.firstElementChild?.lastElementChild?.children[1] === document.activeElement) {
+        const fragment = deserializeHTML(v)
+        plate.children.forEach(() => Transforms.delete(plate as BaseEditor, { at: [0] }))
+        plate.children = [
+          {
+            children: [{ text: '' }],
+            type: EBlockElement.PARAGRAPH,
+          },
+        ]
+        plate.insertFragment(fragment)
+      }
+    },
     style: { height: '100%' },
     value,
   })
@@ -66,6 +85,6 @@ function CodeMirror({ extensions, state, value, view }: TCodeMirrorProps) {
     <div
       className='h-full'
       ref={ref}
-    ></div>
+    />
   )
 }

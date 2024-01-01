@@ -80,3 +80,19 @@
     font-family: Arial, Helvetica, sans-serif;
   }
 }
+
+.cm-gutters {
+  width: 3rem;
+}
+
+.cm-lineNumbers {
+  flex-grow: 1;
+}
+
+.cm-content {
+  padding: 0 !important;
+}
+
+.cm-gutterElement {
+  text-align: center !important;
+}

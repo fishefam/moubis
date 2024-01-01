@@ -49,8 +49,8 @@ export function MainArea({ codeData, textData }: TProps) {
                       minSize={4.7}
                     >
                       <div className='border-b mb-0 sticky'>
-                        <div className='w-fit bg-[lightblue] h-full'>
-                          <h4 className='text-black px-2'>
+                        <div className='w-fit h-full'>
+                          <h4 className='text-black px-2 w-12'>
                             {lang === 'html' ? (
                               <Icons.html className='w-7 h-7' />
                             ) : lang === 'css' ? (

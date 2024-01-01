@@ -1,12 +1,14 @@
 import type { TContextData } from '@/contexts/Editor'
-import type { TMobiusBaseData } from '@/types/data'
+import type { TFinalTextDataProps, TMobiusBaseData } from '@/types/data'
 import type { LanguageNames } from '@liquify/prettify'
+import type { Extension } from '@uiw/react-codemirror'
 import type { ClassValue } from 'clsx'
 
 import { ELocalStorage } from '@/types/app'
 import { createPlateEditor, deserializeHTML, EBlockElement, type TDocument } from '@/types/plate'
 import prettify from '@liquify/prettify'
 import { serializeHtml } from '@udecode/plate'
+import { langs } from '@uiw/codemirror-extensions-langs'
 import { EditorView } from '@uiw/react-codemirror'
 import { clsx } from 'clsx'
 import { customAlphabet } from 'nanoid'
@@ -97,4 +99,8 @@ export function prettierSync(value: string, language: LanguageNames) {
 export function serializeFragment(fragment: TDocument, plate = createPlateEditor({ plugins }), format = true) {
   const html = serializeHtml(plate, { nodes: fragment as any }) as any
   return format ? prettierSync(html) : html
+}
+
+export function getCodemirrorLangExtension(lang: keyof TFinalTextDataProps['code']): Extension {
+  return lang === 'html' ? langs.html() : lang === 'css' ? langs.css() : langs.javascript()
 }
